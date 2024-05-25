@@ -27,5 +27,7 @@ y += vsp;
 
 //Character animations
 
-if (hsp != 0) image_xscale = sign(hsp);
+
+if (hsp != 0) image_xscale = sign(hsp) * size;
+image_yscale = size;
 

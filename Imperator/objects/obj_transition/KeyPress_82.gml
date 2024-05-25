@@ -1,1 +1,1 @@
-script_slideTransition(TRANS_MODE.RESTART)
+SlideTransition(TRANS_MODE.RESTART)
