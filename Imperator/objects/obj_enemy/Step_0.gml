@@ -1,4 +1,4 @@
-vsp = vsp+grv;
+vsp = vsp+grv; //adjust vertical speed for gravity
 
 //collision horizontal
 if (place_meeting(x+hsp,y,obj_wall))

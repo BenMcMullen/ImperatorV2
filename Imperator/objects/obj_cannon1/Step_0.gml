@@ -59,6 +59,7 @@ if (mouse_check_button(mb_left)) && (plasmadelay < 0)
 {
 
 plasmadelay = 5;
+audio_play_sound(snd_plasma,10,false);
 	with (instance_create_layer(x,y,"Plasma",obj_plasma))
 	{
 		speed = 25;
@@ -70,6 +71,7 @@ plasmadelay = 5;
 if (mouse_check_button(mb_right)) && (missiledelay < 0) 
 {
 missiledelay = 45;
+audio_play_sound(snd_missile,10,false);
 	with (instance_create_layer(x,y+15,"Missile",obj_missile1))
 	{
 		speed = 10;

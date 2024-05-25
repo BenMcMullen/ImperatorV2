@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_waspStatic",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":50,
   "bbox_left":3,
   "bbox_right":55,
