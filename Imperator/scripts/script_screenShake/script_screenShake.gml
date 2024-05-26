@@ -1,5 +1,5 @@
 
-
+function ScreenShake(){
 with (obj_camera) 
 {
 	if (argument0 > shake_remain)	
@@ -9,4 +9,5 @@ with (obj_camera)
 		shake_length = argument1;
 	}
 	
+}
 }

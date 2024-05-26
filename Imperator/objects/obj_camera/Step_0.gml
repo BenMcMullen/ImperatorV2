@@ -1,4 +1,5 @@
 
+
 galaxyLayer = layer_get_id("Galaxy");
 spaceStationLayer = layer_get_id("SpaceStation");
 planet1Layer = layer_get_id("Planet1");
@@ -9,6 +10,11 @@ if (instance_exists(follow)) {
 xTo = follow.x;
 yTo = follow.y;
 
+	if ((follow).object_index == obj_explosionPlayer)
+	{
+		x = xTo
+		y = yTo
+	}
 }
 
 
