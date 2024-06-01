@@ -17,10 +17,22 @@ if (menu_control)
 	
 	if (keyboard_check_pressed(vk_enter))
 	{
-	menu_x_target = gui_width +200;
-	menu_committed = menu_cursor;
-	menu_control = false;
+		MenuClick()
 	}
+	
+	var mouse_y_gui = device_mouse_y_to_gui(0);
+	
+	if (mouse_y_gui < menu_y) && (mouse_y_gui > menu_top)
+	{
+		menu_cursor = (menu_y - mouse_y_gui) div (menu_itemheight * 1.5); //div shows how many times a number can go into a number as a whole/ 11 div 3 = 3, 12 div 3 = 4. 
+		if (mouse_check_button_pressed(mb_left)) 
+		{
+			MenuClick()
+		}
+		
+	}
+	
+	
 }
 if (menu_x > gui_width+150) && (menu_committed != -1)
 {

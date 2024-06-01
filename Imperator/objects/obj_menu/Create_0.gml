@@ -10,7 +10,7 @@ menu_y = gui_height - gui_margin;
 menu_x_target = gui_width - gui_margin;
 menu_speed = 25;
 menu_font = font_arial;
-menu_item_height = font_get_size(font_arial);
+menu_itemheight = font_get_size(font_arial);
 menu_committed = -1;
 menu_control = true;
 
@@ -20,3 +20,5 @@ menu[0] = "Quit Game";
 
 menu_cursor = 2;
 menu_items = array_length_1d(menu)
+
+menu_top = menu_y - ((menu_itemheight * 1.5) * menu_items);
