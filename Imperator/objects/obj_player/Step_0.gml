@@ -52,6 +52,7 @@ var move_speed = walksp;
 
 if (key_boosting) {
     // Increase movement speed when boosting
+	sprite_index = spr_waspJumping;
     move_speed *= boost_speed; // You can adjust the multiplier as needed
 }
 
@@ -88,14 +89,18 @@ if (vsp != 0) {
 }
 
 // Character animations
-if (move_x != 0 || move_y != 0) {
-    sprite_index = spr_waspMove;
+if (key_boosting) {
+	sprite_index = spr_waspJumping;
+}
+else if (move_x != 0 || move_y != 0) {
+    sprite_index = spr_waspMoving;
     image_speed = 1;
     if (move_x != 0) image_xscale = sign(move_x);
-} else {
+}
+else {
     sprite_index = spr_waspStatic;
     image_speed = 0;
 }
+image_xscale = 1;
 
-if (hsp != 0) image_xscale = sign(hsp);
 }

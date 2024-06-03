@@ -4,6 +4,7 @@ y = obj_player.y;
 
 // Determine the player's current facing direction
 
+
 if (obj_player.key_left && obj_player.key_right) {
     if (obj_player.key_up) {
         facing_direction = 315; // Up-Right
@@ -108,16 +109,40 @@ image_angle = target_angle;
 plasmadelay -= 1;
 missiledelay -= 1;
 
+
+
+
+
+
+
+
+
+
+
 if (mouse_check_button(mb_left)) && (plasmadelay < 0) 
 {
-    plasmadelay = 5;
-    audio_play_sound(snd_plasma,10,false);
-    with (instance_create_layer(x,y,"Plasma",obj_plasma))
-    {
-        speed = 25;
-        direction = other.image_angle + random_range(-2,2);
-        image_angle = direction;
+	if (cooldown_timer > 0) {
+    cooldown_timer--;
+    if (cooldown_timer == 0) {
+        // Reset the shot count after the cooldown period
+        shots_fired = 0;
     }
+}
+
+if (shots_fired < max_shots && cooldown_timer == 0) {
+        plasmadelay = 5;
+        audio_play_sound(snd_plasma, 10, false);
+        with (instance_create_layer(x, y, "Plasma", obj_plasma)) {
+            speed = 25;
+            direction = other.image_angle + random_range(-2, 2);
+            image_angle = direction;
+        }
+        shots_fired++;
+        if (shots_fired >= max_shots) {
+            cooldown_timer = cooldown_duration;
+        }
+    }
+
 }
 
 if ((mouse_check_button(mb_right)) && global.canPlayerFireMissiles) && (missiledelay < 0) 
