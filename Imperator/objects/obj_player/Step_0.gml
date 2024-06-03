@@ -6,7 +6,29 @@ if (!global.music_playing) {
     global.current_music = audio_play_sound(snd_level1, 1, true);
     global.music_playing = true;
 }
+if (moving_to_target) {
+    // Move towards the target position
+        var move_speed = 5; // Adjust the speed as needed
 
+    // Calculate the distance to the target
+    var dx = target_x - x;
+    var dy = target_y - y;
+    var distance = point_distance(x, y, target_x, target_y);
+    
+    if (distance > move_speed) {
+        // Move towards the target position
+        x += move_speed * (dx / distance);
+        y += move_speed * (dy / distance);
+    } else {
+        // Snap to the target position and stop moving
+        x = target_x;
+        y = target_y;
+        moving_to_target = false;
+		 hasControl = true; // Re-enable player control
+
+    }
+} 
+else {
 if (hasControl) {
     key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
     key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
@@ -46,9 +68,6 @@ if (move_x != 0 || move_y != 0) {
 }
 
 
-// Handle acceleration when space key is held down
-
-
 
 // Horizontal movement
 if (hsp != 0) {
@@ -79,3 +98,4 @@ if (move_x != 0 || move_y != 0) {
 }
 
 if (hsp != 0) image_xscale = sign(hsp);
+}
