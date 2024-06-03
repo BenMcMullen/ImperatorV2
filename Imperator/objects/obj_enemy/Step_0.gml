@@ -1,49 +1,37 @@
-vsp = vsp+grv; //adjust vertical speed for gravity
-
-//don't walk off of edges
-
-if (grounded) && (afraidofheights) && (!place_meeting(x+hsp,y+1,obj_wall))
-{
-	hsp = -hsp
+/// obj_enemy Collision Event with obj_mapEdge
+if (place_meeting(x, y, obj_mapEdge)) {
+    var collision_instance = instance_place(x, y, obj_mapEdge);
+    
+    // Reverse the movement direction
+    hsp = -hsp;
+    vsp = -vsp;
+    
+    // Move the enemy slightly back from the collision point to prevent sticking
+    x -= lengthdir_x(5, collision_instance.image_angle);
+    y -= lengthdir_y(5, collision_instance.image_angle);
+    
+    // Add or subtract a random number between 0 and 4 to vsp and hsp
+    vsp += random_range(-4, 4);
+    hsp += random_range(-4, 4);
+    
+    // Ensure that the combined value of vsp and hsp stays under 20
+    var total_speed = abs(vsp) + abs(hsp);
+    if (total_speed > 20) {
+        var ratio = 20 / total_speed;
+        vsp *= ratio;
+        hsp *= ratio;
+    }
+    
+    // Adjust the position to stay within the bounds of the map edge
+    var distance_to_edge = 5; // Adjust as needed
+    x = clamp(x, distance_to_edge, room_width - distance_to_edge);
+    y = clamp(y, distance_to_edge, room_height - distance_to_edge);
 }
 
-//collision horizontal
-if (place_meeting(x+hsp,y,obj_wall))
-{
-	while (!place_meeting(x + sign(hsp),y,obj_wall)) {
-		x += sign(hsp); 
-}
-hsp = -hsp;
-}
-	
-x = x + hsp;
-
-//collision vertical
-if (place_meeting(x, y+vsp,obj_wall))
-{
-	while (!place_meeting(x, y + sign(vsp),obj_wall))
-	{
-		y += sign(vsp); 
-	}
-vsp = 0;
-
-}	
-
-
+// Other movement and behavior code goes here...
 
 x += hsp;
 y += vsp;
 
-//Character animations
-
-if (!place_meeting(x,y+1,obj_wall))
-{
-	grounded = false;
-}
-else {
-	grounded = true
-}
-
 if (hsp != 0) image_xscale = sign(hsp) * size;
-image_yscale = size;
-
+if (vsp != 0) image_yscale = sign(vsp) * size;
