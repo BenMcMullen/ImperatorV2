@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_plasmaCannon",
+  "%Name":"obj_playerWeapons",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_plasmaCannon",
+  "name":"obj_playerWeapons",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",

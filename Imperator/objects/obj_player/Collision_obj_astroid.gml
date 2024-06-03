@@ -6,7 +6,7 @@ if (global.current_music != -1) {
     show_debug_message("Music Stopped");
 }
 
-with (obj_plasmaCannon) instance_destroy();
+with (obj_playerWeapons) instance_destroy();
 instance_change(obj_explosionPlayer,true);
 
 

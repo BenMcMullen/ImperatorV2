@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_missileCannon",
+  "%Name":"obj_mapEdge",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_missileCannon",
+  "name":"obj_mapEdge",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,9 +30,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_plasmaCannon",
-    "path":"sprites/spr_plasmaCannon/spr_plasmaCannon.yy",
+    "name":"Sprite30",
+    "path":"sprites/Sprite30/Sprite30.yy",
   },
-  "spriteMaskId":null,
-  "visible":true,
+  "spriteMaskId":{
+    "name":"spr_wall",
+    "path":"sprites/spr_wall/spr_wall.yy",
+  },
+  "visible":false,
 }

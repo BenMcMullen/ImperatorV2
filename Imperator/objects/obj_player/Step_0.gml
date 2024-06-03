@@ -1,6 +1,5 @@
-
-//player input if (!global.music_playing) {
-     if (!global.music_playing) {
+// Player input
+if (!global.music_playing) {
     if (global.current_music != -1) {
         audio_stop_sound(global.current_music);
     }
@@ -8,82 +7,75 @@
     global.music_playing = true;
 }
 
-if (hasControl) 
-{
-	key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
-	key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-	key_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
-	key_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
-	key_jumping = keyboard_check(vk_space);
-	key_jump = keyboard_check_pressed(vk_space);
-}
-else 
-{
-	key_right = 0;
-	ley_left = 0;
-	key_jump = 0;
-	
-}
-//movement logic
-var move = key_right - key_left;
-var climb = key_up - key_down;
-var on_floor = 0;
-var jumping = 0;
-var player_direction = 0;
-hsp = move * walksp;
-
-vsp = vsp+grv;
-
-//jumping
-if (place_meeting(x, y+1, obj_wall))
-{
-on_floor = 1;
-if(key_jump)
-{
-	jumping = 1;
-	vsp = -7;
-}
+if (hasControl) {
+    key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+    key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+    key_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
+    key_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
+	key_boosting = keyboard_check(vk_space);
+} else {
+    key_left = 0;
+    key_right = 0;
+    key_up = 0;
+    key_down = 0;
+	key_boosting = 0;
 }
 
-//collision horizontal
-if (place_meeting(x+hsp,y,obj_wall))
-{
-	while (!place_meeting(x + sign(hsp),y,obj_wall)) {
-		x = x + sign(hsp); 
-}
-hsp = 0;
-}
-	
-x = x + hsp;
+// Calculate movement direction based on key input
+var move_x = key_right - key_left;
+var move_y = key_down - key_up;
+var move_speed = walksp;
 
-//collision vertical
-if (place_meeting(x, y+vsp,obj_wall))
-{
-	while (!place_meeting(x, y + sign(vsp),obj_wall))
-	{
-		y = y + sign(vsp); 
-	}
-vsp = 0;
 
-}	
 
-x = x + hsp;
-y  = y + vsp;
-
-//Character animations
-if (key_jumping) 
-{
-	sprite_index = spr_waspJump;
-	image_speed = 1;
+if (key_boosting) {
+    // Increase movement speed when boosting
+    move_speed *= boost_speed; // You can adjust the multiplier as needed
 }
-else if (key_left || key_right)
-{
-	sprite_index = spr_waspMove;
-	image_speed = 1;
+
+
+
+// Calculate horizontal and vertical speeds and movespeed
+hsp = move_x * move_speed;
+vsp = move_y * move_speed;
+
+																						
+// Calculate the angle of movement
+if (move_x != 0 || move_y != 0) {
+    image_angle = point_direction(0, 0, hsp, vsp);
 }
-else {
-	sprite_index = spr_waspStatic;
-	image_speed = 0;
+
+
+// Handle acceleration when space key is held down
+
+
+
+// Horizontal movement
+if (hsp != 0) {
+    if (!place_meeting(x + hsp, y, obj_wall)) {
+        x += hsp;
+    } else {
+        hsp = 0;
+    }
+}
+
+// Vertical movement
+if (vsp != 0) {
+    if (!place_meeting(x, y + vsp, obj_wall)) {
+        y += vsp;
+    } else {
+        vsp = 0;
+    }
+}
+
+// Character animations
+if (move_x != 0 || move_y != 0) {
+    sprite_index = spr_waspMove;
+    image_speed = 1;
+    if (move_x != 0) image_xscale = sign(move_x);
+} else {
+    sprite_index = spr_waspStatic;
+    image_speed = 0;
 }
 
 if (hsp != 0) image_xscale = sign(hsp);
