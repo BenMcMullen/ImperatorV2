@@ -35,8 +35,8 @@
   "name":"Imperator",
   "resources":[
     {"id":{"name":"font_arial","path":"fonts/font_arial/font_arial.yy",},},
-    {"id":{"name":"obj_astroid","path":"objects/obj_astroid/obj_astroid.yy",},},
-    {"id":{"name":"obj_astroidExplosion","path":"objects/obj_astroidExplosion/obj_astroidExplosion.yy",},},
+    {"id":{"name":"obj_asteroid","path":"objects/obj_asteroid/obj_asteroid.yy",},},
+    {"id":{"name":"obj_asteroidExplosion","path":"objects/obj_asteroidExplosion/obj_asteroidExplosion.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_debris","path":"objects/obj_debris/obj_debris.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
@@ -61,6 +61,7 @@
     {"id":{"name":"room_2","path":"rooms/room_2/room_2.yy",},},
     {"id":{"name":"room_4","path":"rooms/room_4/room_4.yy",},},
     {"id":{"name":"room_5","path":"rooms/room_5/room_5.yy",},},
+    {"id":{"name":"room_6","path":"rooms/room_6/room_6.yy",},},
     {"id":{"name":"script_initGlobals","path":"scripts/script_initGlobals/script_initGlobals.yy",},},
     {"id":{"name":"script_menuClick","path":"scripts/script_menuClick/script_menuClick.yy",},},
     {"id":{"name":"script_screenShake","path":"scripts/script_screenShake/script_screenShake.yy",},},
@@ -113,6 +114,7 @@
     {"roomId":{"name":"room_2","path":"rooms/room_2/room_2.yy",},},
     {"roomId":{"name":"room_4","path":"rooms/room_4/room_4.yy",},},
     {"roomId":{"name":"room_5","path":"rooms/room_5/room_5.yy",},},
+    {"roomId":{"name":"room_6","path":"rooms/room_6/room_6.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

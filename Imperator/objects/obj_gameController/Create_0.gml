@@ -7,3 +7,7 @@ if (!global.music_playing) {
     global.current_music = audio_play_sound(snd_level1, 1, true);
     global.music_playing = true;
 }
+
+#macro RES_W 1024
+#macro RES_H 768
+

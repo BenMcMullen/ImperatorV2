@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_astroidExplosion",
+  "%Name":"obj_asteroidExplosion",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_astroidExplosion",
+  "name":"obj_asteroidExplosion",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
