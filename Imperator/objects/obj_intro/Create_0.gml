@@ -9,10 +9,10 @@ endtext[5] = "Forget the simulations.";
 endtext[6] = "You've been told to learn from your mistakes...";
 endtext[7] = "But out here?";
 endtext[8] = "You only.";
-endtext[9] = "Make. ";
+endtext[9] = "Make.";
 endtext[10] = "One.                                                                                                                                                       ";
-endtext[11] = "Anyways. Welcome to the Dagger Armada!";
-endtext[12] = "I'm giving you an Acus class Wasp.";
+endtext[11] = "Anyways. Welcome to the Crown Armada!";
+endtext[12] = "I'm putting you in an Acus class Wasp.";
 endtext[13] = "It's Venuzian, so you won't run out of fuel or ammo.";
  endtext[14] = "Why don't you take her our for a spin?";
 

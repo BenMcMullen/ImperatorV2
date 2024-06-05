@@ -1,1 +1,1 @@
-target = room_5
+target = room_2

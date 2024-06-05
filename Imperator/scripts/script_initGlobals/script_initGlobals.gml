@@ -3,6 +3,5 @@
 function InitGlobals(){
 	global.currentMusic = -1;
 	global.musicPlaying = false;
-	global.canPlayerFireMissiles = false;
 }
 

@@ -7,10 +7,13 @@ display_set_gui_size(RES_W, RES_H);
 global.currentMusic = 0;
 global.musicPlaying = false;
 global.canPlayerFireMissiles = false;
-
+global.isLevelComplete = false;
+global.enemiesDefeated= false;
+global.canPlayerFireMissiles = false;
 global.kills = 0;
 global.killsThisRoom = 0;
-global.killTestScale = 1;
+killTextScale = 1;
+loseHpScale = 1;
 
 if (!global.musicPlaying) {
     if (global.currentMusic != -1) {
