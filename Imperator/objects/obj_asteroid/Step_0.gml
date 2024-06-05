@@ -42,5 +42,4 @@ if (y > room_height) {
 // Set a random size between 1 and 3
 
 // Set other properties like speed and rotation speed
-speed = flyingSpeed; // Adjust as needed
-rotationSpeed = 2; // Adjust as needed
+speed = flyingSpeed; // Adjust as needed // Adjust as needed

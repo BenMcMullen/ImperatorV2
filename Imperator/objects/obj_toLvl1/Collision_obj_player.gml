@@ -8,6 +8,10 @@ with (obj_player)
 	if (hasControl) 
 	{
 		hasControl = false;
+		global.hasContract= true;
+		global.contractCompleted= false;
+		global.contractQuantity = 3;
+		global.contractType = global.enemy_types[0]
 		SlideTransition(TRANS_MODE.GOTO,other.target);
 	
 	}

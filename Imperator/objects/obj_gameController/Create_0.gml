@@ -8,7 +8,11 @@ global.currentMusic = 0;
 global.musicPlaying = false;
 global.canPlayerFireMissiles = false;
 global.isLevelComplete = false;
-global.enemiesDefeated= false;
+
+global.contractType = "";
+global.hasContract = false;
+global.contractCompleted = false;
+global.contractQuantity = 0;
 global.canPlayerFireMissiles = false;
 global.kills = 0;
 global.killsThisRoom = 0;
