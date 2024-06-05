@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite30",
-    "path":"sprites/Sprite30/Sprite30.yy",
+    "name":"spr_mapEdge",
+    "path":"sprites/spr_mapEdge/spr_mapEdge.yy",
   },
   "spriteMaskId":{
     "name":"spr_wall",

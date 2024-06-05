@@ -1,10 +1,11 @@
 // Player input
-if (!global.music_playing) {
-    if (global.current_music != -1) {
-        audio_stop_sound(global.current_music);
+
+if (!global.musicPlaying) {
+    if (global.currentMusic != -1) {
+        audio_stop_sound(global.currentMusic);
     }
-    global.current_music = audio_play_sound(snd_level1, 1, true);
-    global.music_playing = true;
+    global.currentMusic = audio_play_sound(snd_level1, 1, true);
+    global.musicPlaying = true;
 }
 if (moving_to_target) {
     // Move towards the target position

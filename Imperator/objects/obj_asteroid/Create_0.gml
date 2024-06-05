@@ -4,4 +4,4 @@
 // Initialize movement direction and speed
 direction = irandom(359); // Random initial direction
 speed = 2; // Adjust as needed
-rotation_speed = irandom_range(1, 3); // Random rotation speed for each asteroid
+rotationSpeed = irandom_range(1, 3); // Random rotation speed for each asteroid

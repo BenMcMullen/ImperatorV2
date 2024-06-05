@@ -1,13 +1,21 @@
 // obj_game_controller Create event
 InitGlobals();
-if (!global.music_playing) {
-    if (global.current_music != -1) {
-        audio_stop_sound(global.current_music);
-    }
-    global.current_music = audio_play_sound(snd_level1, 1, true);
-    global.music_playing = true;
-}
-
 #macro RES_W 1024
 #macro RES_H 768
+display_set_gui_size(RES_W, RES_H);
 
+global.currentMusic = 0;
+global.musicPlaying = false;
+global.canPlayerFireMissiles = false;
+
+global.kills = 0;
+global.killsThisRoom = 0;
+global.killTestScale = 1;
+
+if (!global.musicPlaying) {
+    if (global.currentMusic != -1) {
+        audio_stop_sound(global.currentMusic);
+    }
+    global.currentMusic = audio_play_sound(snd_level1, 1, true);
+    global.musicPlaying = true;
+}
