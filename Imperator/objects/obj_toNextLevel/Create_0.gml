@@ -1,1 +1,1 @@
-levelTarget = global.nextLevel;
+levelTarget = global.levels[global.nextLevel];

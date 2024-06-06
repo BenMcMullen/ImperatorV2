@@ -6,9 +6,9 @@ if (global.contractQuantity <= global.killsThisRoom) {
 	//However, we often go to the hanger or shop so we have to track the actual level profression here.
 	//In the nextlevel collision object we reset the nextlevel to the level progression.
     global.contractCompleted = true;
-	global.levelProgression ++;
+	global.currentLevel ++;
 	//go to hanger after each level
-	global.nextLevel = global.levels[3]
+	global.nextLevel = 3;
 } else {
     global.contractCompleted = false;
 }

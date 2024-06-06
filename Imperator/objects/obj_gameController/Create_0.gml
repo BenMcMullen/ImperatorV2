@@ -8,8 +8,8 @@ display_set_gui_size(RES_W, RES_H);
 global.levels = [room_menu, room_intro, room_shop, room_playerHanger, 
 room_1, room_2, room_3, room_4, room_5];
 
-global.nextLevel = global.levels[5];
-global.levelProgression = 5;
+global.nextLevel = 0;
+global.currentLevel = 5;
 
 
 global.currentMusic = 0;
@@ -18,7 +18,7 @@ global.canPlayerFireMissiles = false;
 global.isLevelComplete = false;
 
 global.shipUpgrades = [];
-global.maxshipUpgrades = 20; // Example maximum size of the inventory
+global.maxshipUpgrades = 20; //Maximum ship upgrades
 
 global.contractType = "";
 global.hasContract = false;

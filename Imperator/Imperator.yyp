@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"Imperator",
   "resources":[
@@ -48,6 +48,7 @@
     {"id":{"name":"obj_hangerManager","path":"objects/obj_hangerManager/obj_hangerManager.yy",},},
     {"id":{"name":"obj_intro","path":"objects/obj_intro/obj_intro.yy",},},
     {"id":{"name":"obj_introInstructions","path":"objects/obj_introInstructions/obj_introInstructions.yy",},},
+    {"id":{"name":"obj_itemEnhancedBooster","path":"objects/obj_itemEnhancedBooster/obj_itemEnhancedBooster.yy",},},
     {"id":{"name":"obj_itemPulseShield","path":"objects/obj_itemPulseShield/obj_itemPulseShield.yy",},},
     {"id":{"name":"obj_mapEdge","path":"objects/obj_mapEdge/obj_mapEdge.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
