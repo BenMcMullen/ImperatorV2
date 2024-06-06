@@ -1,11 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_toLvl2",
+  "%Name":"obj_shop",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_toLvl2",
+  "name":"obj_shop",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,9 +31,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mapTrigger",
-    "path":"sprites/spr_mapTrigger/spr_mapTrigger.yy",
+    "name":"spr_shop",
+    "path":"sprites/spr_shop/spr_shop.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

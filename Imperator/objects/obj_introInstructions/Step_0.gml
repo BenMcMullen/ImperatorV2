@@ -8,7 +8,7 @@ if (elapsedTime >= 5 * 1000000)
     // Check if it's the last line of text
     if (currentLine + 1 == array_length(endtext)) 
     {
-        
+        text = "";
     }
     else
     {
@@ -22,5 +22,4 @@ if (elapsedTime >= 5 * 1000000)
     elapsedTime = 0;
 }
 
-// Add delta_time to elapsedTime
-elapsedTime += delta_time;
+// Add delta_time to elapsedTimes

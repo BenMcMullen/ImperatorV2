@@ -13,8 +13,7 @@ endtext[9] = "Make.";
 endtext[10] = "One.                                                                                                                                                       ";
 endtext[11] = "Anyways. Welcome to the Crown Armada!";
 endtext[12] = "I'm putting you in an Acus class Wasp.";
-endtext[13] = "It's Venuzian, so you won't run out of fuel or ammo.";
- endtext[14] = "Why don't you take her our for a spin?";
+ endtext[13] = "Why don't you take her our for a spin?";
 
 
 

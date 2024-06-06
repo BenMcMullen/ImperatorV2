@@ -7,6 +7,7 @@ text = string_copy(endtext[currentLine],1,floor(letters));
 if (keyboard_check_pressed(vk_f1))
 {
 	 SlideTransition(TRANS_MODE.NEXT);
+	}
 if (letters > -length && (keyboard_check_pressed(vk_anykey) || elapsedTime >= 3 * 1000000))
 {
     // Check if it's the last line of text
@@ -25,6 +26,6 @@ if (letters > -length && (keyboard_check_pressed(vk_anykey) || elapsedTime >= 3 
     // Reset elapsedTime
     elapsedTime = 0;
 }
-}
+	
 // Add delta_time to elapsedTime
 elapsedTime += delta_time;
