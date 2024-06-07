@@ -23,3 +23,4 @@ if (elapsedTime >= 5 * 1000000)
 }
 
 // Add delta_time to elapsedTimes
+elapsedTime += delta_time;

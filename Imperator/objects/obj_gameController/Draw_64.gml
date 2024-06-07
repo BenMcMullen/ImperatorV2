@@ -21,7 +21,7 @@ if (room != (room_menu || room_intro)) && (instance_exists(obj_player))
 }
 	
 	
-if (room != room_menu || room_intro || room_1) && (instance_exists(obj_player) && 
+if (room != room_menu || room_intro || room_testFlight) && (instance_exists(obj_player) && 
 (!instance_exists(obj_introInstructions)) && global.hasContract)
 {
 if (!global.contractCompleted) 
