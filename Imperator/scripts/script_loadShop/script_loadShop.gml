@@ -5,6 +5,6 @@
 function LoadShop() {
   
         var currentLevel = global.levels[2];
-        room_goto(currentLevel.room);
+        	SlideTransition(TRANS_MODE.GOTO, currentLevel.room);
     
 }

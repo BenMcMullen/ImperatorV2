@@ -18,7 +18,7 @@ if (instance_exists(obj_player))
 				//send player back to hanger after successful mission
 			
 				LoadHanger();
-				
+				global.totalPoints = global.totalPoints + global.levelPoints;
 				hasControl = false;
 			}
 		}

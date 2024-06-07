@@ -1,7 +1,6 @@
 //Draw Score board
 
 
-
 if (room != (room_menu || room_intro)) && (instance_exists(obj_player))
 {
 	loseHpScale = max(loseHpScale * 0.95, 1);
@@ -17,6 +16,11 @@ if (room != (room_menu || room_intro)) && (instance_exists(obj_player))
 	draw_set_colour(c_yellow);
 		draw_text(RES_W - RES_W + 10, 48, "Missiles Enabled");
 	}
+	
+	DrawSetText(c_black, font_arial2, fa_left, fa_top);
+	draw_text(RES_W - RES_W + 8, 50, "Points: " + string(global.totalPoints));
+	draw_set_colour(c_yellow);
+	draw_text(RES_W - RES_W + 10, 48, "Points: " + string(global.totalPoints));	
 	
 }
 	

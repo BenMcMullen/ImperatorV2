@@ -5,6 +5,7 @@
 function LoadHanger() {
   
         var currentLevel = global.levels[3];
-        room_goto(currentLevel.room);
+		SlideTransition(TRANS_MODE.GOTO, currentLevel.room);
+
     
 }

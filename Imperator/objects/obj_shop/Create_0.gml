@@ -1,6 +1,6 @@
 // Initialize the shop items
 items = [];
-item_prices = [2];
+item_prices = [200];
 item_sprites = [spr_pulseShield]; 
 
 for (var i = 0; i < array_length(item_prices); i++) {
