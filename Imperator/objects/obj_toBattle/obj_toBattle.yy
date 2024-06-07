@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_toNextLevel",
+  "%Name":"obj_toBattle",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_toNextLevel",
+  "name":"obj_toBattle",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mapTrigger",
-    "path":"sprites/spr_mapTrigger/spr_mapTrigger.yy",
+    "name":"spr_battleTrigger",
+    "path":"sprites/spr_battleTrigger/spr_battleTrigger.yy",
   },
   "spriteMaskId":null,
   "visible":false,

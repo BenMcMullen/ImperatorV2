@@ -10,21 +10,6 @@ if (room != (room_menu || room_intro)) && (instance_exists(obj_player))
 	draw_set_colour(c_yellow);
 	draw_text_transformed(RES_W - RES_W + 10, 10, "HP: " + string(obj_player.hp) + "/" + string(obj_player.max_hp), loseHpScale, loseHpScale, 0);
 	
-		if (global.hasContract && !global.contractCompleted) 
-	{
-	DrawSetText(c_black, font_arial2, fa_right, fa_top);
-	draw_text(RES_W - 8, 50, "Contract - " + string(global.contractQuantity) + " " + string(global.contractType));
-	draw_set_colour(c_yellow);
-		draw_text(RES_W -  10, 48, "Contract - " + string(global.contractQuantity) + " " + string(global.contractType));
-	}
-	if (global.contractCompleted == true && global.hasContract == true)
-	{
-		DrawSetText(c_black, font_arial2, fa_right, fa_top);
-	draw_text(RES_W - 8, 50, "Contract COMPLETED");
-	draw_set_colour(c_yellow);
-		draw_text(RES_W -  10, 48, "Contract COMPLETED");
-	}
-	
 	if (global.canPlayerFireMissiles) 
 	{
 	DrawSetText(c_black, font_arial2, fa_left, fa_top);
@@ -32,11 +17,28 @@ if (room != (room_menu || room_intro)) && (instance_exists(obj_player))
 	draw_set_colour(c_yellow);
 		draw_text(RES_W - RES_W + 10, 48, "Missiles Enabled");
 	}
+	
 }
 	
 	
-if (room != room_menu) && (instance_exists(obj_player))
+if (room != room_menu || room_intro || room_1) && (instance_exists(obj_player) && 
+(!instance_exists(obj_introInstructions)) && global.hasContract)
 {
+if (!global.contractCompleted) 
+	{
+	DrawSetText(c_black, font_arial2, fa_right, fa_top);
+	draw_text(RES_W - 8, 50, "Contract - " + string(global.contractQuantity) + " " + string(global.contractType));
+	draw_set_colour(c_yellow);
+		draw_text(RES_W -  10, 48, "Contract - " + string(global.contractQuantity) + " " + string(global.contractType));
+	}
+	if (global.contractCompleted)
+	{
+		DrawSetText(c_black, font_arial2, fa_right, fa_top);
+	draw_text(RES_W - 8, 50, "Contract COMPLETED");
+	draw_set_colour(c_yellow);
+		draw_text(RES_W -  10, 48, "Contract COMPLETED");
+	}
+	
 	killTextScale = max(killTextScale * 0.95, 1);
 	DrawSetText(c_black, font_arial2, fa_right, fa_top);
 	draw_text_transformed(RES_W-8, 12, string(global.killsThisRoom) + " Targets Hunted - ", killTextScale, killTextScale,0);
