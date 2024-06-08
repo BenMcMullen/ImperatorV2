@@ -1,4 +1,4 @@
 //equip missiles
 
-global.canPlayerFireMissiles = true;
+global.itemMissiles = true;
 instance_destroy();

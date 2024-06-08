@@ -7,4 +7,4 @@ buttonState = "idle";
 sprite_index = spr_btnShopStatic;
 
 // Animation speed control
-animation_speed = 0.2;
+animationSpeed = 0.2;

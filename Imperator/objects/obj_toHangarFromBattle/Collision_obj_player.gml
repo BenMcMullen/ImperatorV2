@@ -1,5 +1,5 @@
 
-//Once a contract is completed, route to the hanger immediately upon touching exfil.
+//Once a contract is completed, route to the hangar immediately upon touching exfil.
 if (instance_exists(obj_player)) 
 {
 	with (obj_player)
@@ -15,9 +15,9 @@ if (instance_exists(obj_player))
 					global.currentMusic = -1;
 					global.musicPlaying = false;
 				}
-				//send player back to hanger after successful mission
+				//send player back to hangar after successful mission
 			
-				LoadHanger();
+				Loadhangar();
 				global.totalPoints = global.totalPoints + global.levelPoints;
 				hasControl = false;
 			}

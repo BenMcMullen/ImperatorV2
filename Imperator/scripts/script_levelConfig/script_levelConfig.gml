@@ -22,7 +22,7 @@ function LevelConfiguration() {
 	global.levels[0] = LevelConfig([], 0, room_menu, 0);
     global.levels[1] = LevelConfig([], 0, room_intro, 0);
     global.levels[2] = LevelConfig([], 0, room_shop, 0);
-	global.levels[3] = LevelConfig([], 0, room_hanger, 0);
+	global.levels[3] = LevelConfig([], 0, room_hangar, 0);
 	global.levels[4] = LevelConfig([], 0, room_testFlight, 0);
 	global.levels[5] = LevelConfig(global.enemyTypes[0], 200, room_1, 2);
 	global.levels[6] = LevelConfig(global.enemyTypes[0], 300, room_2, 3);
@@ -34,6 +34,6 @@ function LevelConfiguration() {
 	global.contractType = global.enemyTypes[0];
 
 
-global.currentLevelIndex = 4; //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hanger
+global.currentLevelIndex = 4; //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
 
 }

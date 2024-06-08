@@ -1,16 +1,16 @@
 {
   "$GMRoom":"",
-  "%Name":"room_hanger",
+  "%Name":"room_hangar",
   "creationCodeFile":"",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_73E3F8C9_1","path":"rooms/room_hanger/room_hanger.yy",},
-    {"name":"inst_56B6A0B1_1","path":"rooms/room_hanger/room_hanger.yy",},
-    {"name":"inst_63A5E682","path":"rooms/room_hanger/room_hanger.yy",},
-    {"name":"inst_24249AD5","path":"rooms/room_hanger/room_hanger.yy",},
-    {"name":"inst_27CE7F4C","path":"rooms/room_hanger/room_hanger.yy",},
+    {"name":"inst_73E3F8C9_1","path":"rooms/room_hangar/room_hangar.yy",},
+    {"name":"inst_56B6A0B1_1","path":"rooms/room_hangar/room_hangar.yy",},
+    {"name":"inst_63A5E682","path":"rooms/room_hangar/room_hangar.yy",},
+    {"name":"inst_24249AD5","path":"rooms/room_hangar/room_hangar.yy",},
+    {"name":"inst_27CE7F4C","path":"rooms/room_hangar/room_hangar.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -23,7 +23,7 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_hangerManager","path":"sprites/spr_hangerManager/spr_hangerManager.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"room_hanger",
+  "name":"room_hangar",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",

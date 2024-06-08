@@ -145,7 +145,7 @@ if (shots_fired < max_shots && cooldown_timer == 0) {
 
 }
 
-if ((mouse_check_button(mb_right)) && global.canPlayerFireMissiles) && (missiledelay < 0) 
+if ((mouse_check_button(mb_right)) && global.itemMissiles) && (missiledelay < 0) 
 {
     missiledelay = 45;
     audio_play_sound(snd_missile,10,false);

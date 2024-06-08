@@ -9,12 +9,12 @@ if (room != (room_menu || room_intro)) && (instance_exists(obj_player))
 	draw_set_colour(c_yellow);
 	draw_text_transformed(RES_W - RES_W + 10, 10, "HP: " + string(obj_player.hp) + "/" + string(obj_player.max_hp), loseHpScale, loseHpScale, 0);
 	
-	if (global.canPlayerFireMissiles) 
+	if (global.itemMissiles) 
 	{
 	DrawSetText(c_black, font_arial2, fa_left, fa_top);
-	draw_text(RES_W - RES_W + 8, 50, "Missiles Enabled");
+	draw_text(RES_W - RES_W + 8, 88, "Missiles Enabled");
 	draw_set_colour(c_yellow);
-		draw_text(RES_W - RES_W + 10, 48, "Missiles Enabled");
+		draw_text(RES_W - RES_W + 10, 86, "Missiles Enabled");
 	}
 	
 	DrawSetText(c_black, font_arial2, fa_left, fa_top);

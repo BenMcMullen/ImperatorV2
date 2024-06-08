@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btnHangerStatic",
-    "path":"sprites/spr_btnHangerStatic/spr_btnHangerStatic.yy",
+    "name":"spr_btnHangarStatic",
+    "path":"sprites/spr_btnHangarStatic/spr_btnHangarStatic.yy",
   },
   "spriteMaskId":null,
   "visible":true,

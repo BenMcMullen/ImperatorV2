@@ -1,5 +1,5 @@
 
-function DrawHanger(){
+function Drawhangar(){
 
 
 var xCoordinate = argument0;

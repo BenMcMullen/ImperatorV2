@@ -4,5 +4,5 @@ sprite_index = spr_btnBattleStatic;
 
 // Reset the animation frame to start the clicked animation
 image_index = 0;
-image_speed = animation_speed;
+image_speed = animationSpeed;
 

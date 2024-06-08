@@ -1,3 +1,3 @@
 
 buttonState = "hover";
-sprite_index = spr_btnHangerHover;
+sprite_index = spr_btnHangarHover;

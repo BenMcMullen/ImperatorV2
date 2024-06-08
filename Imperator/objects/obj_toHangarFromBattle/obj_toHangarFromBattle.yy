@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_itemPulseShield",
+  "%Name":"obj_toHangarFromBattle",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_itemPulseShield",
+  "name":"obj_toHangarFromBattle",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,9 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pulseShield",
-    "path":"sprites/spr_pulseShield/spr_pulseShield.yy",
+    "name":"spr_battleTrigger",
+    "path":"sprites/spr_battleTrigger/spr_battleTrigger.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

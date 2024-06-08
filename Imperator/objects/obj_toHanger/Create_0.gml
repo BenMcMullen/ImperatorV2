@@ -4,7 +4,7 @@
 buttonState = "idle";
 
 // Set the initial sprite
-sprite_index = spr_btnHangerStatic;
+sprite_index = spr_btnHangarStatic;
 
 // Animation speed control
-animation_speed = 0.2;
+animationSpeed = 0.2;

@@ -1,7 +1,7 @@
 
 
-if (instance_exists(obj_hangerManager)) {
-	with (obj_hangerManager) 
+if (instance_exists(obj_hangarManager)) {
+	with (obj_hangarManager) 
 	{
 		if (hasControl)
 		{
@@ -12,8 +12,8 @@ if (instance_exists(obj_hangerManager)) {
 
 		// Reset the animation frame to start the clicked animation
 		image_index = 0;
-		image_speed = other.animation_speed;
-		//if player is in their hanger, they can go back to the shop.
+		image_speed = other.animationSpeed;
+		//if player is in their hangar, they can go back to the shop.
 		hasControl = false;
         LoadNextLevel();        
 		}	
