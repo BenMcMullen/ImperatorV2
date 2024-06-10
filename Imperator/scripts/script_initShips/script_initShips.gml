@@ -122,5 +122,5 @@ function InitShips() {
         "ship3Owned"             
     );
 
-    // Add more ships and engines as needed
+   global.selectedShip = global.playerShips[0];
 }

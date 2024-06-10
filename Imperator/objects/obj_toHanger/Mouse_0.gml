@@ -1,7 +1,4 @@
 
-
-if (instance_exists(obj_shop)) {
-  
 		// Change state to clicked
 		buttonState = "clicked";
 		sprite_index = spr_btnHangarClick;
@@ -13,4 +10,4 @@ if (instance_exists(obj_shop)) {
 		LoadHangar();
        
     
-}
+

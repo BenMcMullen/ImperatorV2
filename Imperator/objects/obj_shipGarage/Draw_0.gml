@@ -1,27 +1,63 @@
 draw_self();
 
-// Draw the ship sprite in the middle of the screen
-draw_sprite(global.selectedShip.sprite, 0, room_width / 2 - sprite_get_width(global.selectedShip.sprite) / 2, room_height / 2 - sprite_get_height(global.selectedShip.sprite) / 2);
+// Scale factor for the sprite
+var scaleFactor = 5.0; // Scale the sprite by a factor of 5
 
-// Draw the back button
-draw_rectangle(backButtonX, backButtonY, backButtonX + backButtonWidth, backButtonY + backButtonHeight, true);
-draw_text(backButtonX + backButtonWidth / 2, backButtonY + backButtonHeight / 2, "Back");
+// Get the original width and height of the sprite
+var spriteWidth = sprite_get_width(global.selectedShip.spriteStatic);
+var spriteHeight = sprite_get_height(global.selectedShip.spriteStatic);
+var spriteX = room_width / 2 - spriteWidth / 2;
+var spriteY = room_height / 2 - spriteHeight / 2;
 
-// Draw ship details
-for (var i = 0; i < ds_list_size(sections); i++) {
+// Draw the ship sprite
+draw_sprite_ext(global.selectedShip.spriteStatic, 0, spriteX, spriteY, scaleFactor, scaleFactor, 0, c_white, 1);
+
+// Margin for ship details
+var margin = 20;
+
+// Calculate the vertical spacing between ship details
+var detailSpacing = room_height / 4;
+
+// Calculate the X position for ship details on the left side (left third of the screen)
+var leftDetailX = margin; // Align to the left
+
+// Draw ship details on the left side
+for (var i = 0; i < 4; i++) {
     var section = ds_list_find_value(sections, i);
     var shipDetail = "";
-	
+
     switch (i) {
         case 0: shipDetail = "HP: " + string(global.selectedShip.hp); break;
-        case 1: shipDetail = "Engines: " + string(global.selectedShip.engines); break;
-        case 2: shipDetail = "Primary Weapon: " + global.selectedShip.primaryWeapon; break;
-        case 3: shipDetail = "Secondary Weapon: " + global.selectedShip.secondaryWeapon; break;
-        case 4: shipDetail = "Shields: " + string(global.selectedShip.shields); break;
-        case 5: shipDetail = "Ship Name: " + global.selectedShip.shipName; break;
-        case 6: shipDetail = "Ship Class: " + global.selectedShip.shipClass; break;
-        case 7: shipDetail = "Ship Generation: " + global.selectedShip.shipGeneration; break;
+        case 1: shipDetail = "Primary Weapon: " + global.selectedShip.primaryWeapon; break;
+        case 2: shipDetail = "Secondary Weapon: " + global.selectedShip.secondaryWeapon; break;
+        case 3: shipDetail = "Shields: " + string(global.selectedShip.shields); break;
     }
     
-    draw_text(section.x, section.y, shipDetail);
+    // Calculate the Y position for ship details in the first quarter of the height
+    var detailY = room_height / 8; // Center of one quarter of the height
+    
+    // Draw ship details with left alignment and margin
+    draw_text_ext(leftDetailX + margin, detailY + i * detailSpacing, shipDetail, 10, room_width / 3 - 2 * margin);
+}
+
+// Calculate the X position for ship details on the right side (right third of the screen)
+var rightDetailX = room_width * 2 / 3; // Align to the right
+
+// Draw ship details on the right side
+for (var i = 4; i < 8; i++) {
+    var section = ds_list_find_value(sections, i);
+    var shipDetail = "";
+
+    switch (i) {
+        case 4: shipDetail = "Ship Name: " + global.selectedShip.shipName; break;
+        case 5: shipDetail = "Ship Class: " + global.selectedShip.shipClass; break;
+        case 6: shipDetail = "Ship Generation: " + global.selectedShip.shipGeneration; break;
+        case 7: shipDetail = "Ship : " + global.selectedShip.shipGeneration; break;
+    }
+
+    // Calculate the Y position for ship details in the third quarter of the height
+    var detailY = room_height / 8; // Center of third quarter of the height
+    
+    // Draw ship details with right alignment and margin
+    draw_text_ext(rightDetailX + margin, detailY + (i - 4) * detailSpacing, shipDetail, 10, room_width / 3 - 2 * margin);
 }

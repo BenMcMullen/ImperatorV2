@@ -66,7 +66,7 @@ vsp = move_y * move_speed;
 																						
 // Calculate the angle of movement
 if (move_x != 0 || move_y != 0) {
-    image_angle = point_direction(0, 0, hsp, vsp);
+    image_angle = point_direction(0, 0, hsp, vsp) - 90; //subtract 90 because we pivoted all the sprites.
 }
 
 
@@ -89,7 +89,6 @@ if (vsp != 0) {
     }
 }
 
-// Character animations
 if (key_boosting) {
 	sprite_index = spr_waspBoosting;
 }

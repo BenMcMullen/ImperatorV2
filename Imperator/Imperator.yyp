@@ -147,7 +147,6 @@
     {"id":{"name":"spr_waspMove","path":"sprites/spr_waspMove/spr_waspMove.yy",},},
     {"id":{"name":"spr_waspMoving","path":"sprites/spr_waspMoving/spr_waspMoving.yy",},},
     {"id":{"name":"spr_waspStatic","path":"sprites/spr_waspStatic/spr_waspStatic.yy",},},
-    {"id":{"name":"Sprite49","path":"sprites/Sprite49/Sprite49.yy",},},
     {"id":{"name":"TEMPLATE","path":"sprites/TEMPLATE/TEMPLATE.yy",},},
     {"id":{"name":"tile_space","path":"tilesets/tile_space/tile_space.yy",},},
   ],
@@ -155,9 +154,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
+    {"roomId":{"name":"room_intro","path":"rooms/room_intro/room_intro.yy",},},
     {"roomId":{"name":"room_hangar","path":"rooms/room_hangar/room_hangar.yy",},},
     {"roomId":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
-    {"roomId":{"name":"room_intro","path":"rooms/room_intro/room_intro.yy",},},
     {"roomId":{"name":"room_testFlight","path":"rooms/room_testFlight/room_testFlight.yy",},},
     {"roomId":{"name":"room_1","path":"rooms/room_1/room_1.yy",},},
     {"roomId":{"name":"room_2","path":"rooms/room_2/room_2.yy",},},

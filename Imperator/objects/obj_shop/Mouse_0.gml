@@ -12,8 +12,8 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
         var item = global.shopItems[i];
         
         // Calculate the bounding box of the purchase box sprite
-        var purchaseBoxWidth = sprite_get_width(spr_shopPurchase);
-        var purchaseBoxHeight = sprite_get_height(spr_shopPurchase);
+        var purchaseBoxWidth = sprite_get_width(spr_select);
+        var purchaseBoxHeight = sprite_get_height(spr_select);
         var purchaseBoxX1 = item.x - 85;
         var purchaseBoxY1 = item.y + 120; // Positioning below the sprite, price, and name texts
         var purchaseBoxX2 = purchaseBoxX1 + purchaseBoxWidth;
