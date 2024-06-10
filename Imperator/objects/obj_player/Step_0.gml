@@ -53,7 +53,7 @@ var move_speed = walksp;
 
 if (key_boosting) {
     // Increase movement speed when boosting
-	sprite_index = spr_waspJumping;
+	sprite_index = spr_waspBoosting;
     move_speed *= boost_speed; // You can adjust the multiplier as needed
 }
 
@@ -91,7 +91,7 @@ if (vsp != 0) {
 
 // Character animations
 if (key_boosting) {
-	sprite_index = spr_waspJumping;
+	sprite_index = spr_waspBoosting;
 }
 else if (move_x != 0 || move_y != 0) {
     sprite_index = spr_waspMoving;

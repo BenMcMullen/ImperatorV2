@@ -1,6 +1,7 @@
 // obj_game_controller Create event
 MusicConfig();
-LevelConfiguration();
+InitLevels();
+InitShips();
 InitShop();
 #macro RES_W 1024
 #macro RES_H 768
@@ -28,7 +29,7 @@ global.totalCompletedContracts = 0;
 global.kills = 0;
 global.killsThisRoom = 0;
 global.levelPoints = 0;
-global.totalPoints = 0
+global.totalPoints = 100000;
 
 // Initialize the global variables to track purchased items
 global.itemMissiles = false;

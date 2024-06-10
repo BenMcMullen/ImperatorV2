@@ -10,7 +10,7 @@ if (instance_exists(obj_shop)) {
 		image_index = 0;
 		image_speed = animationSpeed;
 		//if player is in their hangar, they can go back to the shop.
-		Loadhangar();
+		InitHangar();
        
     
 }

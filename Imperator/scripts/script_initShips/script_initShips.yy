@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_initShop",
+  "%Name":"script_initShips",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_initShop",
+  "name":"script_initShips",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
