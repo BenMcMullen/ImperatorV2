@@ -260,7 +260,6 @@
     {"name":"inst_B844D02","path":"rooms/room_1/room_1.yy",},
     {"name":"inst_5927A7A6","path":"rooms/room_1/room_1.yy",},
     {"name":"inst_4E2F3231","path":"rooms/room_1/room_1.yy",},
-    {"name":"inst_F4E08BC","path":"rooms/room_1/room_1.yy",},
     {"name":"inst_4C567B21","path":"rooms/room_1/room_1.yy",},
     {"name":"inst_71B5E74A","path":"rooms/room_1/room_1.yy",},
     {"name":"inst_E26294C","path":"rooms/room_1/room_1.yy",},
@@ -278,6 +277,7 @@
     {"name":"inst_713CA862","path":"rooms/room_1/room_1.yy",},
     {"name":"inst_13275D78","path":"rooms/room_1/room_1.yy",},
     {"name":"inst_6321342C","path":"rooms/room_1/room_1.yy",},
+    {"name":"inst_53240923","path":"rooms/room_1/room_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -300,11 +300,10 @@
         {"$GMRInstance":"","%Name":"inst_13275D78","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_13275D78","objectId":{"name":"obj_asteroid","path":"objects/obj_asteroid/obj_asteroid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":672.0,"y":1536.0,},
       ],"layers":[],"name":"Asteroids","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Missile","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Missile","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRInstanceLayer":"","%Name":"Cannon","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"","%Name":"inst_F4E08BC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F4E08BC","objectId":{"name":"obj_playerWeapons","path":"objects/obj_playerWeapons/obj_playerWeapons.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":704.0,"y":384.0,},
-      ],"layers":[],"name":"Cannon","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Cannon","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Cannon","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_6B4C1124","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6B4C1124","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2016.0,"y":3744.0,},
+        {"$GMRInstance":"","%Name":"inst_53240923","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_53240923","objectId":{"name":"obj_playerPlasmaMissiles","path":"objects/obj_playerPlasmaMissiles/obj_playerPlasmaMissiles.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1888.0,"y":2208.0,},
         {"$GMRInstance":"","%Name":"inst_41167B90","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_41167B90","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":416.0,},
         {"$GMRInstance":"","%Name":"inst_78619B2C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_78619B2C","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":480.0,},
         {"$GMRInstance":"","%Name":"inst_6321342C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6321342C","objectId":{"name":"obj_toHangarFromBattle","path":"objects/obj_toHangarFromBattle/obj_toHangarFromBattle.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":1.3308978,"scaleX":9.0,"scaleY":9.5,"x":2271.9915,"y":2511.2568,},

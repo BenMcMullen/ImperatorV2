@@ -3,7 +3,7 @@
 if (hp <= 0)
 {
 	global.kills =- global.killsThisRoom;
-	with (obj_playerWeapons) instance_destroy();
+	with (obj_playerPlasmaMissiles) instance_destroy();
 	instance_change(obj_explosionPlayer,true);
 	
 }

@@ -2,7 +2,7 @@ function InitShips() {
 	
     function EngineConfig(_id, _name, _isOwned, _boostSpeed, _speed) {
         return {
-			id: _id,
+            id: _id,
             name: _name,
             isOwned: _isOwned,
             boostSpeed: _boostSpeed,
@@ -12,9 +12,9 @@ function InitShips() {
 
     function ShipConfig(_id, _hp, _engine, _primaryWeapon, _secondaryWeapon, _isOwned, _shields, _spriteStatic,
                         _spriteBoosting, _spriteMoving, _x, _y, _shipName, _shipClass, _shipGeneration,
-                        _globalVar) {
+                        _sensors) {
         return {
-			id: _id,
+            id: _id,
             hp: _hp,
             engine: _engine,
             primaryWeapon: _primaryWeapon,
@@ -29,7 +29,7 @@ function InitShips() {
             shipName: _shipName,
             shipClass: _shipClass,
             shipGeneration: _shipGeneration,
-            globalVar: _globalVar
+            sensors: _sensors
         };
     }
 
@@ -38,7 +38,7 @@ function InitShips() {
 
     // Adding engines individually
     global.engines[0] = EngineConfig(
-		1,
+        1,
         "Standard Engine",  // Name
         true,               // Is Owned
         1.5,                // Boost Speed
@@ -46,7 +46,7 @@ function InitShips() {
     );
 
     global.engines[1] = EngineConfig(
-		2,	
+        2,  
         "Advanced Engine",  // Name
         false,              // Is Owned
         2.0,                // Boost Speed
@@ -54,7 +54,7 @@ function InitShips() {
     );
 
     global.engines[2] = EngineConfig(
-		3,
+        3,
         "Hyper Engine",     // Name
         false,              // Is Owned
         2.5,                // Boost Speed
@@ -64,9 +64,15 @@ function InitShips() {
     // Initialize the global array of player ships
     global.playerShips = [];
 
+    // Define upgradeable systems for each ship. The first item is the ship ID, the rest are the different upgradable ship systems. 
+	//These systems are to be determined later. Possibly even update if we unlock new upgrade slots?
+    global.shipSystemsUpgradable[0] = [1, false, true, true, true, true, true, true, false];
+    global.shipSystemsUpgradable[1] = [2, true, false, true, true, true, true, true, false];
+    global.shipSystemsUpgradable[2] = [3, true, true, false, true, true, true, true, false];
+
     // Adding ships individually and assigning engines
     global.playerShips[0] = ShipConfig(
-		1,
+        1,
         100,                // HP
         global.engines[0],  // Engine
         "Laser",            // Primary Weapon
@@ -81,11 +87,11 @@ function InitShips() {
         "Ship 1",           // Ship Name
         "Fighter",          // Ship Class
         "Gen 1",            // Ship Generation
-        "ship1Owned"
+        "Basic Sensors"		//Sensors
     );
 
     global.playerShips[1] = ShipConfig(
-		2,
+        2,
         200,                // HP
         global.engines[1],  // Engine
         "Plasma",           // Primary Weapon
@@ -100,26 +106,27 @@ function InitShips() {
         "Ship 2",           // Ship Name
         "Bomber",           // Ship Class
         "Gen 1",            // Ship Generation
-        "ship2Owned"              
+         "Basic Sensors"		//Sensors
+       
     );
 
     global.playerShips[2] = ShipConfig(
-		3,
+        3,
         300,                // HP
         global.engines[2],  // Engine
         "Beam",             // Primary Weapon
         "Mine",             // Secondary Weapon
-        true,              // Is Owned
+        true,				// Is Owned
         100,                // Shields
-        spr_waspStatic,   // Sprite Static
-        spr_waspBoosting,    // Sprite Boosting
+        spr_waspStatic,     // Sprite Static
+        spr_waspBoosting,   // Sprite Boosting
         spr_waspMoving,     // Sprite Moving
         300,                // Hangar X position
         100,                // Hangar Y position
         "Ship 3",           // Ship Name
         "Interceptor",      // Ship Class
         "Gen 1",            // Ship Generation
-        "ship3Owned"             
+         "Basic Sensors"	//Sensors
     );
 
    global.selectedShip = global.playerShips[0];

@@ -20,7 +20,6 @@ var currentY = startY;
 
 for (var i = 0; i < array_length(global.playerShips); i++) {
 	 var ship = global.playerShips[i];
-	  if (!variable_instance_get(global, ship.globalVar)) { //don't display if purchased. 
     
     if (ship.isOwned) {
         show_debug_message("Drawing ship " + ship.shipName + " at index " + string(i));
@@ -42,7 +41,7 @@ for (var i = 0; i < array_length(global.playerShips); i++) {
         
         // Increment Y position for next ship
         currentY += shipSpacing;
-    }
+  
 }
 
 // Drawing the message box (unchanged)

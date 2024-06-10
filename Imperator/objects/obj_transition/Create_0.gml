@@ -9,3 +9,6 @@ enum TRANS_MODE
 mode = TRANS_MODE.INTRO;
 percent = 1;
 target = room;
+tSpeed = 1.1;
+centerX = window_get_width() / 2;
+centerY = window_get_height() / 2;

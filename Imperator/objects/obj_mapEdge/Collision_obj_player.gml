@@ -13,8 +13,8 @@ with (obj_player) {
         var distance = 10 * tile_size;
 
         // Calculate new position based on the reversed direction
-        target_x = x + distance * cos(degtorad(image_angle));
-        target_y = y - distance * sin(degtorad(image_angle));
+        target_x = x + distance * cos(degtorad(image_angle + 90));
+        target_y = y - distance * sin(degtorad(image_angle + 90));
 
         // Set flag to start moving towards target and disable control
         moving_to_target = true;
