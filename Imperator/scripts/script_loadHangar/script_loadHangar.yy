@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_initHangar",
+  "%Name":"script_loadHangar",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_initHangar",
+  "name":"script_loadHangar",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

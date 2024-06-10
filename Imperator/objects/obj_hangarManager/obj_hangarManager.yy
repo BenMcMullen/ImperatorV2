@@ -36,7 +36,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hangerManager",
+    "path":"sprites/spr_hangerManager/spr_hangerManager.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

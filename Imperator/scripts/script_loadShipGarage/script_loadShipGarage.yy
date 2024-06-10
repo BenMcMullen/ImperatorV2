@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_drawHanger",
+  "%Name":"script_loadShipGarage",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_drawHanger",
+  "name":"script_loadShipGarage",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

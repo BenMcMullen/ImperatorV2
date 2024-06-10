@@ -24,17 +24,18 @@ function InitLevels() {
     global.levels[1] = LevelConfig(2, [], 0, room_intro, 0);
     global.levels[2] = LevelConfig(3, [], 0, room_shop, 0);
 	global.levels[3] = LevelConfig(4, [], 0, room_hangar, 0);
-	global.levels[4] = LevelConfig(5, [], 0, room_testFlight, 0);
-	global.levels[5] = LevelConfig(6, global.enemyTypes[0], 200, room_1, 2);
-	global.levels[6] = LevelConfig(7, global.enemyTypes[0], 300, room_2, 3);
-	global.levels[7] = LevelConfig(8, global.enemyTypes[0], 500, room_3, 5);
-	global.levels[8] = LevelConfig(9, [global.enemyTypes[0], global.enemyTypes[0]], 800, room_4, 6);
+	global.levels[4] = LevelConfig(1, [], 0, room_shipSpecs, 0);
+	global.levels[5] = LevelConfig(5, [], 0, room_testFlight, 0);
+	global.levels[6] = LevelConfig(6, global.enemyTypes[0], 200, room_1, 2);
+	global.levels[7] = LevelConfig(7, global.enemyTypes[0], 300, room_2, 3);
+	global.levels[8] = LevelConfig(8, global.enemyTypes[0], 500, room_3, 5);
+	global.levels[9] = LevelConfig(9, [global.enemyTypes[0], global.enemyTypes[0]], 800, room_4, 6);
   
 
 	
 	global.contractType = global.enemyTypes[0];
 
 
-global.currentLevelIndex = 4; //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
+global.currentLevelIndex = 5; //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
 
 }
