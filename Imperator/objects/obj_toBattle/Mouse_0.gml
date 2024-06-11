@@ -1,7 +1,7 @@
 
 
-if (instance_exists(obj_hangarManager)) {
-	with (obj_hangarManager) 
+if (instance_exists(obj_shipGarage)) {
+	with (obj_shipGarage) 
 	{
 		if (hasControl)
 		{
@@ -15,6 +15,7 @@ if (instance_exists(obj_hangarManager)) {
 		image_speed = other.animationSpeed;
 		//if player is in their hangar, they can go back to the shop.
 		hasControl = false;
+		global.isDead = false;
         LoadNextLevel();        
 		}	
 	} 

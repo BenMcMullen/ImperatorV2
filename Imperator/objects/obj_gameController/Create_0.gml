@@ -11,7 +11,7 @@ display_set_gui_size(RES_W, RES_H);
 //DO NOT CHANGE THESE VALUES. THESE ARE THE DEFAULT VALUES REQUIRED FOR THE GAME 
 //TO START IN THE CORRECT PLACE AND ORDER
 
-
+ //START OFF WITH THE WASP.
 global.currentMusic = 0;
 global.musicPlaying = false;
 global.itemMissiles = false;
@@ -30,6 +30,7 @@ global.kills = 0;
 global.killsThisRoom = 0;
 global.levelPoints = 0;
 global.totalPoints = 100000;
+global.isDead = false
 
 // Initialize the global variables to track purchased items
 global.itemMissiles = false;
@@ -45,6 +46,7 @@ global.itemSecondaryGunner = false;
 
 killTextScale = 1;
 loseHpScale = 1;
+loseShieldsScale = 1;
 
 if (!global.musicPlaying) {
     if (global.currentMusic != -1) {

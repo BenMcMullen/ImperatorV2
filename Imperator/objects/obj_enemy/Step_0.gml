@@ -1,32 +1,32 @@
 /// obj_enemy Collision Event with obj_mapEdge
 if (place_meeting(x, y, obj_mapEdge)) {
-    var collision_instance = instance_place(x, y, obj_mapEdge);
+    var collisionInstance = instance_place(x, y, obj_mapEdge);
     
     // Reverse the movement direction
     hsp = -hsp;
     vsp = -vsp;
 
     // Adjust the position slightly back from the collision point to prevent sticking
-    var collision_angle = point_direction(x, y, collision_instance.x, collision_instance.y);
-    x -= lengthdir_x(5, collision_angle);
-    y -= lengthdir_y(5, collision_angle);
+    var collisionAngle = point_direction(x, y, collisionInstance.x, collisionInstance.y);
+    x -= lengthdir_x(5, collisionAngle);
+    y -= lengthdir_y(5, collisionAngle);
 
     // Add or subtract a random number between 0 and 4 to vsp and hsp
     vsp += random_range(-4, 4);
     hsp += random_range(-4, 4);
 
     // Ensure that the combined value of vsp and hsp stays under 20
-    var total_speed = sqrt(sqr(vsp) + sqr(hsp));
-    if (total_speed > 20) {
-        var ratio = 20 / total_speed;
+    var totalSpeed = sqrt(sqr(vsp) + sqr(hsp));
+    if (totalSpeed > 20) {
+        var ratio = 20 / totalSpeed;
         vsp *= ratio;
         hsp *= ratio;
     }
 
     // Clamp the position to ensure the enemy stays within the bounds of the room
-    var distance_to_edge = 5; // Adjust as needed
-    x = clamp(x, distance_to_edge, room_width - distance_to_edge);
-    y = clamp(y, distance_to_edge, room_height - distance_to_edge);
+    var distanceToEdge = 5; // Adjust as needed
+    x = clamp(x, distanceToEdge, room_width - distanceToEdge);
+    y = clamp(y, distanceToEdge, room_height - distanceToEdge);
 }
 
 // Other movement and behavior code goes here...
@@ -38,39 +38,39 @@ if (vsp != 0) image_yscale = sign(vsp) * size;
 
 if (instance_exists(obj_player)) {
     // Detect the player's position
-    var player_x = obj_player.x;
-    var player_y = obj_player.y;
+    var playerX = obj_player.x;
+    var playery = obj_player.y;
 
     // Calculate direction towards the player
-    var direction_to_player = point_direction(x, y, player_x, player_y);
+    var directionToPlayer = point_direction(x, y, playerX, playery);
 
     // Determine if the player is within range or angle to shoot plasma
-    var distance_to_player = distance_to_point(player_x, player_y);
-    var angle_to_player = abs(angle_difference(image_angle, direction_to_player));
+    var distanceToPlayer = distance_to_point(playerX, playery);
+    var angleToPlayer = abs(angle_difference(image_angle, directionToPlayer));
 
-    plasmadelay -= 1;
+    primaryDelay -= 1;
 
-    if (distance_to_player < shoot_range && angle_to_player < shoot_angle && plasmadelay < 0) {
-        plasmadelay = fire_rate;
+    if (distanceToPlayer < shootRange && angleToPlayer < shootAngle && primaryDelay < 0) {
+        primaryDelay = fireRate;
 
-        if (cooldown_timer > 0) {
-            cooldown_timer--;
-            if (cooldown_timer == 0) {
+        if (cooldownTimer > 0) {
+            cooldownTimer--;
+            if (cooldownTimer == 0) {
                 // Reset the shot count after the cooldown period
-                shots_fired = 0;
+                shotsFired = 0;
             }
         }
 
-        if (shots_fired < max_shots && cooldown_timer == 0) {
+        if (shotsFired < capacity && cooldownTimer == 0) {
             audio_play_sound(snd_plasma, 10, false);
             with (instance_create_layer(x, y, "Enemy", obj_enemyPlasma)) {
                 speed = 25;
-                direction = direction_to_player + random_range(-2, 2);
+                direction = directionToPlayer + random_range(-2, 2);
                 image_angle = direction;
             }
-            shots_fired++;
-            if (shots_fired >= max_shots) {
-                cooldown_timer = cooldown_duration;
+            shotsFired++;
+            if (shotsFired >= capacity) {
+                cooldownTimer = cooldownDuration;
             }
         }
     }

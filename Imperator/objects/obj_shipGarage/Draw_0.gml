@@ -27,10 +27,10 @@ for (var i = 0; i < 4; i++) {
     var shipDetail = "";
 
     switch (i) {
-        case 0: shipDetail = "HP: " + string(global.selectedShip.hp); break;
-        case 1: shipDetail = "Primary Weapon: " + global.selectedShip.primaryWeapon; break;
-        case 2: shipDetail = "Secondary Weapon: " + global.selectedShip.secondaryWeapon; break;
-        case 3: shipDetail = "Shields: " + string(global.selectedShip.shields); break;
+        case 0: shipDetail = "HP: " + string(global.selectedShip.hull.hp); break;
+        case 1: shipDetail = "Primary Weapon: " + string(global.selectedShip.primaryWeapon.name); break;
+        case 2: shipDetail = "Secondary Weapon: " + string(global.selectedShip.secondaryWeapon.name); break;
+        case 3: shipDetail = "Shields: " + string(global.selectedShip.shields.shieldStatic); break;
     }
     
     // Calculate the Y position for ship details in the first quarter of the height
@@ -51,8 +51,8 @@ for (var i = 4; i < 8; i++) {
     switch (i) {
         case 4: shipDetail = "Ship Name: " + global.selectedShip.shipName; break;
         case 5: shipDetail = "Ship Class: " + global.selectedShip.shipClass; break;
-        case 6: shipDetail = "Ship Generation: " + global.selectedShip.shipGeneration; break;
-        case 7: shipDetail = "Ship : " + global.selectedShip.shipGeneration; break;
+        case 6: shipDetail = "Ship : " + global.selectedShip.shipGeneration; break;
+        case 7: shipDetail = "Engine : " + global.selectedShip.engine.name; break;
     }
 
     // Calculate the Y position for ship details in the third quarter of the height
