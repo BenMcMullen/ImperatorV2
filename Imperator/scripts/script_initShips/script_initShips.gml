@@ -9,6 +9,16 @@ function InitShips() {
             speed: _speed
         };
     }
+	
+	function SensorConfig(_id, _name, _isOwned, _radius, _range) {
+        return {
+            id: _id,
+            name: _name,
+            isOwned: _isOwned,
+            radius: _radius,
+            range: _range
+        };
+    }
 
     function ShipConfig(_id, _hp, _engine, _primaryWeapon, _secondaryWeapon, _isOwned, _shields, _spriteStatic,
                         _spriteBoosting, _spriteMoving, _x, _y, _shipName, _shipClass, _shipGeneration,
@@ -41,16 +51,16 @@ function InitShips() {
         1,
         "Standard Engine",  // Name
         true,               // Is Owned
-        1.5,                // Boost Speed
-        1.0                 // Speed
+        3.0,                // Boost Speed
+        3.0                 // Speed
     );
 
     global.engines[1] = EngineConfig(
         2,  
         "Advanced Engine",  // Name
         false,              // Is Owned
-        2.0,                // Boost Speed
-        1.5                 // Speed
+        4,                // Boost Speed
+        5                 // Speed
     );
 
     global.engines[2] = EngineConfig(
@@ -59,6 +69,33 @@ function InitShips() {
         false,              // Is Owned
         2.5,                // Boost Speed
         2.0                 // Speed
+    );
+	// Initialize the global array of engines
+    global.sensors = [];
+
+    // Adding engines individually
+    global.sensors[0] = SensorConfig(
+        1,
+        "Standard Engine",  // Name
+        true,               // Is Owned
+        3.0,                //Radius
+        3.0                 //range
+    );
+
+    global.sensors[1] = SensorConfig(
+        2,  
+        "Advanced Engine",  // Name
+        false,              // Is Owned
+        4,                //Radius
+        5                 //range
+    );
+
+    global.sensors[2] = SensorConfig(
+        3,
+        "Hyper Engine",     // Name
+        false,              // Is Owned
+        2.5,                //Radius
+        2.0                 //range
     );
 
     // Initialize the global array of player ships
@@ -73,40 +110,40 @@ function InitShips() {
     // Adding ships individually and assigning engines
     global.playerShips[0] = ShipConfig(
         1,
-        100,                // HP
+        3,                // HP
         global.engines[0],  // Engine
-        "Laser",            // Primary Weapon
+        "Plasma",            // Primary Weapon
         "Missile",          // Secondary Weapon
         true,              // Is Owned
-        50,                 // Shields
+        70,                 // Shields
         spr_waspStatic,   // Sprite Static
         spr_waspBoosting,    // Sprite Boosting
         spr_waspMoving,     // Sprite Moving
         100,                // Hangar X position
         100,                // Hangar Y position
-        "Ship 1",           // Ship Name
-        "Fighter",          // Ship Class
-        "Gen 1",            // Ship Generation
-        "Basic Sensors"		//Sensors
+        "Wasp",           // Ship Name
+        "Scout",          // Ship Class
+        "Gen 4 Venuzian",            // Ship Generation
+        global.sensors[1]		//Sensors
     );
 
     global.playerShips[1] = ShipConfig(
         2,
-        200,                // HP
+        7,                // HP
         global.engines[1],  // Engine
-        "Plasma",           // Primary Weapon
-        "Torpedo",          // Secondary Weapon
+        "Kinetic",           // Primary Weapon
+        "Radial Bomb",          // Secondary Weapon
         true,              // Is Owned
-        75,                 // Shields
-        spr_waspStatic,   // Sprite Static
-        spr_waspBoosting,    // Sprite Boosting
-        spr_waspMoving,     // Sprite Moving
+        13,                 // Shields
+        spr_hawkStatic,   // Sprite Static
+        spr_hawkBoosting,    // Sprite Boosting
+        spr_hawkMoving,     // Sprite Moving
         200,                // Hangar X position
         100,                // Hangar Y position
-        "Ship 2",           // Ship Name
-        "Bomber",           // Ship Class
-        "Gen 1",            // Ship Generation
-         "Basic Sensors"		//Sensors
+        "Hawk",           // Ship Name
+        "Frigate",           // Ship Class
+        "Gen 5 Mercurian",            // Ship Generation
+        global.sensors[1]		//Sensors
        
     );
 
@@ -126,7 +163,7 @@ function InitShips() {
         "Ship 3",           // Ship Name
         "Interceptor",      // Ship Class
         "Gen 1",            // Ship Generation
-         "Basic Sensors"	//Sensors
+        global.sensors[0]	//Sensors
     );
 
    global.selectedShip = global.playerShips[0];

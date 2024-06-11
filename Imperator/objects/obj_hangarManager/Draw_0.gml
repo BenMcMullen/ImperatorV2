@@ -22,7 +22,8 @@ for (var i = 0; i < array_length(global.playerShips); i++) {
 	 var ship = global.playerShips[i];
     
     if (ship.isOwned) {
-        show_debug_message("Drawing ship " + ship.shipName + " at index " + string(i));
+		
+    
         
         // Draw ship sprite
         draw_sprite(ship.spriteStatic, 0, 50, currentY);

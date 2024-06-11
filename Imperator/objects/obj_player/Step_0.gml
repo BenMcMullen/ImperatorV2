@@ -7,7 +7,10 @@ if (!global.musicPlaying) {
     global.currentMusic = audio_play_sound(snd_level1, 1, true);
     global.musicPlaying = true;
 }
+	var ship = global.selectedShip
 if (moving_to_target) {
+
+	
     // Move towards the target position
         var move_speed = 5; // Adjust the speed as needed
 
@@ -47,14 +50,14 @@ if (hasControl) {
 // Calculate movement direction based on key input
 var move_x = key_right - key_left;
 var move_y = key_down - key_up;
-var move_speed = walksp;
+var move_speed = ship.engine.speed;
 
 
 
 if (key_boosting) {
     // Increase movement speed when boosting
-	sprite_index = spr_waspBoosting;
-    move_speed *= boost_speed; // You can adjust the multiplier as needed
+	sprite_index = ship.spriteBoosting;
+    move_speed *= ship.engine.boostSpeed; // You can adjust the multiplier as needed
 }
 
 
@@ -90,15 +93,15 @@ if (vsp != 0) {
 }
 
 if (key_boosting) {
-	sprite_index = spr_waspBoosting;
+	sprite_index = ship.spriteBoosting;
 }
 else if (move_x != 0 || move_y != 0) {
-    sprite_index = spr_waspMoving;
+    sprite_index = ship.spriteMoving;
     image_speed = 1;
     if (move_x != 0) image_xscale = sign(move_x);
 }
 else {
-    sprite_index = spr_waspStatic;
+    sprite_index = ship.spriteStatic;
     image_speed = 0;
 }
 image_xscale = 1;

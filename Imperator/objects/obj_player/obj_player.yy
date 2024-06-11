@@ -54,9 +54,6 @@
     "name":"spr_waspStatic",
     "path":"sprites/spr_waspStatic/spr_waspStatic.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_waspMove",
-    "path":"sprites/spr_waspMove/spr_waspMove.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

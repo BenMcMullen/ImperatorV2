@@ -5,31 +5,33 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
     lastClickTime = currentTime; // Update the last click time
     
     var clickedShipIndex = -1;
+    var startY = 80; // Starting Y position for ships
+    var shipSpacing = 150; // Vertical spacing between ships
     
     // Check if any ship's purchase box sprite is clicked
     for (var i = 0; i < array_length(global.playerShips); i++) {
         var ship = global.playerShips[i];
-        show_debug_message( " was selected.");
-        // Calculate the bounding box of the slect sprite
-        var purchaseBoxWidth = sprite_get_width(spr_select);
-        var purchaseBoxHeight = sprite_get_height(spr_select);
-        var purchaseBoxX1 = 200; 
-        var purchaseBoxY1 = ship.y + 60; 
-        var purchaseBoxX2 = purchaseBoxX1 + purchaseBoxWidth;
-        var purchaseBoxY2 = purchaseBoxY1 + purchaseBoxHeight;
+        
+        // Calculate the bounding box of the select sprite based on the drawing position
+        var selectBoxWidth = sprite_get_width(spr_select);
+        var selectBoxHeight = sprite_get_height(spr_select);
+        var selectBoxX1 = 200; 
+        var selectBoxY1 = startY + (i * shipSpacing) + 60; 
+        var selectBoxX2 = selectBoxX1 + selectBoxWidth;
+        var selectBoxY2 = selectBoxY1 + selectBoxHeight;
         
         // Check if the mouse click is within the bounding box
-        if (mouse_x > purchaseBoxX1 && mouse_x < purchaseBoxX2 && mouse_y > purchaseBoxY1 && mouse_y < purchaseBoxY2) {
+        if (mouse_x > selectBoxX1 && mouse_x < selectBoxX2 && mouse_y > selectBoxY1 && mouse_y < selectBoxY2) {
             clickedShipIndex = i; // Store the index of the clicked item
-			show_debug_message(" was selected.");
+            
             break;
         }
     }
     
     if (clickedShipIndex != -1) {
         var clickedShip = global.playerShips[clickedShipIndex];
-        
+        global.selectedShip = clickedShip;
         show_debug_message(clickedShip.shipName + " was selected.");
-		 LoadShipGarage();
+        LoadShipGarage();
     }
 }

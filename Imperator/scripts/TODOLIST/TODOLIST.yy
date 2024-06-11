@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"TODOLIST",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TODOLIST",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
