@@ -1,9 +1,8 @@
-// Calculate the distance traveled by the plasma bolt
+// Calculate the distance traveled by secondary weapons
  distanceTraveled = point_distance(startX, startY, x, y);
 
-// Move the plasma bolt (Your existing movement code)
 
-// Destroy the plasma bolt if it has traveled the maximum distance
-if (distanceTraveled >= maxDistance) {
+// Destroy the projectile if it has traveled the maximum distance
+if (distanceTraveled >= global.selectedShip.secondaryWeapon.range) {
     instance_destroy();
 }

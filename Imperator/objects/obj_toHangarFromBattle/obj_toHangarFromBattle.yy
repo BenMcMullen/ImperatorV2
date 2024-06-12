@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_battleTrigger",
-    "path":"sprites/spr_battleTrigger/spr_battleTrigger.yy",
+    "name":"spr_toHangarFromBattle",
+    "path":"sprites/spr_toHangarFromBattle/spr_toHangarFromBattle.yy",
   },
   "spriteMaskId":null,
   "visible":false,

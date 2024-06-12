@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_waspMove",
-    "path":"sprites/spr_waspMove/spr_waspMove.yy",
+    "name":"spr_introWasp",
+    "path":"sprites/spr_introWasp/spr_introWasp.yy",
   },
   "spriteMaskId":null,
   "visible":true,

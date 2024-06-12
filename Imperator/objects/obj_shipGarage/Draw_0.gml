@@ -1,16 +1,15 @@
 draw_self();
 
 // Scale factor for the sprite
-var scaleFactor = 5.0; // Scale the sprite by a factor of 5
-
+var ship = global.selectedShip;
 // Get the original width and height of the sprite
-var spriteWidth = sprite_get_width(global.selectedShip.spriteStatic);
-var spriteHeight = sprite_get_height(global.selectedShip.spriteStatic);
+var spriteWidth = sprite_get_width(ship.sprites.spriteGarage);
+var spriteHeight = sprite_get_height(ship.sprites.spriteGarage);
 var spriteX = room_width / 2 - spriteWidth / 2;
 var spriteY = room_height / 2 - spriteHeight / 2;
 
 // Draw the ship sprite
-draw_sprite_ext(global.selectedShip.spriteStatic, 0, spriteX, spriteY, scaleFactor, scaleFactor, 0, c_white, 1);
+draw_sprite(ship.sprites.spriteGarage, 0, spriteX, spriteY);
 
 // Margin for ship details
 var margin = 20;
@@ -27,10 +26,10 @@ for (var i = 0; i < 4; i++) {
     var shipDetail = "";
 
     switch (i) {
-        case 0: shipDetail = "HP: " + string(global.selectedShip.hull.hp); break;
-        case 1: shipDetail = "Primary Weapon: " + string(global.selectedShip.primaryWeapon.name); break;
-        case 2: shipDetail = "Secondary Weapon: " + string(global.selectedShip.secondaryWeapon.name); break;
-        case 3: shipDetail = "Shields: " + string(global.selectedShip.shields.shieldStatic); break;
+        case 0: shipDetail = "HP: " + string(ship.hull.hp); break;
+        case 1: shipDetail = "Primary Weapon: " + string(ship.primaryWeapon.name); break;
+        case 2: shipDetail = "Secondary Weapon: " + string(ship.secondaryWeapon.name); break;
+        case 3: shipDetail = "Shields: " + string(ship.shields.shieldStatic); break;
     }
     
     // Calculate the Y position for ship details in the first quarter of the height
@@ -49,10 +48,10 @@ for (var i = 4; i < 8; i++) {
     var shipDetail = "";
 
     switch (i) {
-        case 4: shipDetail = "Ship Name: " + global.selectedShip.shipName; break;
-        case 5: shipDetail = "Ship Class: " + global.selectedShip.shipClass; break;
-        case 6: shipDetail = "Ship : " + global.selectedShip.shipGeneration; break;
-        case 7: shipDetail = "Engine : " + global.selectedShip.engine.name; break;
+        case 4: shipDetail = "Ship Name: " + ship.shipName; break;
+        case 5: shipDetail = "Ship Class: " + ship.shipClass; break;
+        case 6: shipDetail = "Ship : " + ship.shipGeneration; break;
+        case 7: shipDetail = "Engine : " + ship.engine.name; break;
     }
 
     // Calculate the Y position for ship details in the third quarter of the height

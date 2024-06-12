@@ -156,7 +156,7 @@ if (secondaryCooldownTimer > 0) {
 }
 
 // Firing Mechanism
-if (mouse_check_button_pressed(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryDelay <= 0)) {
+if (mouse_check_button(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryDelay <= 0)) {
     // Fire Secondary weapon
     secondaryDelay = global.selectedShip.secondaryWeapon.delay;
     audio_play_sound(global.selectedShip.secondaryWeapon.audio, 0, false);

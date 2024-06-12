@@ -15,9 +15,12 @@ minimap_height = 200; // Adjust as needed
 //TO START IN THE CORRECT PLACE AND ORDER
 
  //START OFF WITH THE WASP.
+ global.selectedShip = global.playerShips[0];
+ 
+  //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
+ global.currentLevelIndex = 5;
 global.currentMusic = 0;
 global.musicPlaying = false;
-global.itemMissiles = false;
 
 
 global.shipUpgrades = [];
@@ -36,7 +39,7 @@ global.totalPoints = 100000;
 global.isDead = false
 
 // Initialize the global variables to track purchased items
-global.itemMissiles = false;
+
 global.itemPulseShield = false;
 global.itemBoostBooster = false;
 global.itemRailGun = false;
@@ -59,6 +62,12 @@ if (!global.musicPlaying) {
     global.musicPlaying = true;
 }
 
+
+//SAVEFILEVARIABLE
+//This is an array of structs of arrays witharrays.			
+global.saveFile = [global.kills,global.currentLevelIndex, global.totalPoints,global.selectedShip,global.shipSystemsUpgradable,global.hulls,
+global.engines,global.primaryWeapons,global.secondaryWeapons,global.shields,
+global.sprites,global.sensors ]
 
 
 

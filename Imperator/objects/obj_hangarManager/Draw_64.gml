@@ -1,4 +1,4 @@
-if (room == room_hangar)
+/*if (room == room_hangar)
 {
 	
 	DrawSetText(c_black, font_arial2, fa_left, fa_top);

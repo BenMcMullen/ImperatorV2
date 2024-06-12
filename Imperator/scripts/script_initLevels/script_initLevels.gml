@@ -36,6 +36,4 @@ function InitLevels() {
 	global.contractType = global.enemyTypes[0];
 
 
-global.currentLevelIndex = 5; //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
-
 }

@@ -33,7 +33,6 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"startX","filters":[],"listItems":[],"multiselect":false,"name":"startX","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"x","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"startY","filters":[],"listItems":[],"multiselect":false,"name":"startY","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"y","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"maxDistance","filters":[],"listItems":[],"multiselect":false,"name":"maxDistance","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"750","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"distanceTraveled","filters":[],"listItems":[],"multiselect":false,"name":"distanceTraveled","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",

@@ -23,7 +23,7 @@
   ],
   "name":"spr_hawkStatic",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":40,
-    "yorigin":100,
+    "yorigin":90,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

@@ -37,7 +37,7 @@
   ],
   "name":"spr_waspMoving",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -132,7 +132,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":20,
-    "yorigin":64,
+    "yorigin":55,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

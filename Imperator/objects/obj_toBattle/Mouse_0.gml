@@ -15,6 +15,7 @@ if (instance_exists(obj_shipGarage)) {
 		image_speed = other.animationSpeed;
 		//if player is in their hangar, they can go back to the shop.
 		hasControl = false;
+		SaveFile(SAVEFILE)
         LoadNextLevel();   
 		
 		}	

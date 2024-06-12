@@ -7,6 +7,7 @@
 		image_index = 0;
 		image_speed = animationSpeed;
 		//if player is in their hangar, they can go back to the shop.
+		SaveFile(SAVEFILE)
 		LoadHangar();
        
     

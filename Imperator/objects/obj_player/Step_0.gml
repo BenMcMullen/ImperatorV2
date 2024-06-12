@@ -35,13 +35,13 @@ if (moving_to_target) {
         keyRight = keyboard_check(vk_right) || keyboard_check(ord("D"));
         keyUp = keyboard_check(vk_up) || keyboard_check(ord("W"));
         keyDown = keyboard_check(vk_down) || keyboard_check(ord("S"));
-        key_boosting = keyboard_check(vk_space);
+        keyBoosting = keyboard_check(vk_space);
     } else {
         keyLeft = 0;
         keyRight = 0;
         keyUp = 0;
         keyDown = 0;
-        key_boosting = 0;
+        keyBoosting = 0;
     }
 
     // Calculate movement direction based on key input
@@ -49,9 +49,9 @@ if (moving_to_target) {
     var moveY = keyDown - keyUp;
     var moveSpeed = ship.engine.speed;
 
-    if (key_boosting) {
+    if (keyBoosting) {
         // Increase movement speed when boosting
-        sprite_index = ship.spriteBoosting;
+        sprite_index = ship.sprites.spriteBoosting;
         moveSpeed *= ship.engine.boostSpeed; // You can adjust the multiplier as needed
     }
 
@@ -91,14 +91,14 @@ if (moving_to_target) {
         }
     }
 
-    if (key_boosting) {
-        sprite_index = ship.spriteBoosting;
+    if (keyBoosting) {
+        sprite_index = ship.sprites.spriteBoosting;
     } else if (moveX != 0 || moveY != 0) {
-        sprite_index = ship.spriteMoving;
+        sprite_index = ship.sprites.spriteMoving;
         image_speed = 1;
         if (moveX != 0) image_xscale = sign(moveX);
     } else {
-        sprite_index = ship.spriteStatic;
+        sprite_index = ship.sprites.spriteStatic;
         image_speed = 0;
     }
     image_xscale = 1;

@@ -5,7 +5,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 // Set up text font and color
-draw_set_font(font_arial2);
+draw_set_font(font_venite);
 draw_set_color(c_white);
 
 // Draw the title
@@ -13,36 +13,39 @@ var titleText = "Hangar Manager - Choose Your Ship";
 var titleX = room_width / 2 - string_width(titleText) / 2;
 var titleY = 20;
 draw_text(titleX, titleY, titleText);
-var shipSpacing = 150; // Vertical spacing between ships
-var textVerticalOffset = 20; // Vertical offset 
-var startY = 80; // Starting Y position for ships
-var currentY = startY;
+
+var columnCount = 2; // Number of columns
+var rowSpacing = 150; // Vertical spacing between rows
+var colSpacing = room_width / columnCount; // Horizontal spacing based on column count
+var textVerticalOffset = 20; // Vertical offset for text
+var startX = 50; // Starting X position for the first column
+var startY = 80; // Starting Y position for the first row
 
 for (var i = 0; i < array_length(global.playerShips); i++) {
-	 var ship = global.playerShips[i];
-    
+    var ship = global.playerShips[i];
+
     if (ship.isOwned) {
-		
-    
+        var col = i % columnCount; // Column index (0 or 1)
+        var row = i div columnCount; // Row index
+
+        var posX = startX + col * colSpacing;
+        var posY = startY + row * rowSpacing;
         
         // Draw ship sprite
-        draw_sprite(ship.spriteStatic, 0, 50, currentY);
+        draw_sprite(ship.sprites.spriteHangar, 0, posX, posY);
         
         // Draw ship name
-        draw_text(200, currentY, ship.shipName);
+        draw_text(posX + 150, posY, ship.shipName);
         
         // Draw ship class
-        draw_text(200, currentY + 20, "Class: " + ship.shipClass);
+        draw_text(posX + 150, posY + 20, "Class: " + ship.shipClass);
         
         // Draw ship generation
-        draw_text(200, currentY + 40, "Generation: " + ship.shipGeneration);
+        draw_text(posX + 150, posY + 40, "Generation: " + ship.shipGeneration);
         
-        // Draw the purchase button sprite
-        draw_sprite(spr_select, 0, 200, currentY + 60);
-        
-        // Increment Y position for next ship
-        currentY += shipSpacing;
-  
+        // Draw the select button sprite
+        draw_sprite(spr_select, 0, posX + 150, posY + 60);
+    }
 }
 
 // Drawing the message box (unchanged)
@@ -62,5 +65,4 @@ if (showMessage) {
     draw_text(textX, textY, messageText);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
-}
 }

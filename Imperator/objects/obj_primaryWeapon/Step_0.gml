@@ -4,6 +4,6 @@
 // Move the plasma bolt (Your existing movement code)
 
 // Destroy the plasma bolt if it has traveled the maximum distance
-if (distanceTraveled >= maxDistance) {
+if (distanceTraveled >= global.selectedShip.primaryWeapon.range) {
     instance_destroy();
 }
