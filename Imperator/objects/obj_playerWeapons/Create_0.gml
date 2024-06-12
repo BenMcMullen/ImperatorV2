@@ -6,12 +6,24 @@ y = obj_player.y;
 
 
 
+//TIME BETWEEN SHOTS
+primaryDelay = 0;
+secondaryDelay = 0;
 
-primaryDelay = global.selectedShip.primaryWeapon.delay;
-secondaryDelay = global.selectedShip.secondaryWeapon.delay;
-cooldownTimer = global.selectedShip.primaryWeapon.cooldown;
-capacity = global.selectedShip.primaryWeapon.capacity;
-object = global.selectedShip.primaryWeapon.object;
+
+//TIME BETWEEN MAGAZINES OF SHOTS
+primaryCooldownDuration = global.selectedShip.primaryWeapon.cooldown;
+secondaryCooldownDuration =  global.selectedShip.secondaryWeapon.cooldown;
+
+//CAPACITY PER MAG
+primaryCapacity = global.selectedShip.primaryWeapon.capacity;
+secondaryCapacity = global.selectedShip.secondaryWeapon.capacity;
+
+
+primaryCooldownTimer = 0;
+secondaryCooldownTimer = 0;
+primaryShotsFired = 0;
+secondaryShotsFired = 0
 
 playerDuration = 1; // This should match the player's direction initially
 recoil = 0;
@@ -19,6 +31,6 @@ facingDirection = 270;
 minAngle = 0;
 maxAngle = 0;
 
-shotsFired = 0;
 
-cooldownDuration = 40; // 2 seconds, converted to steps
+
+; // 2 seconds, converted to steps

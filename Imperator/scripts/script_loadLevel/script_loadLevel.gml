@@ -14,8 +14,7 @@ function LoadNextLevel() {
 		global.contractQuantity = currentLevel.contract;
         global.enemyTypes = currentLevel.enemyTypes;
         global.levelPoints = currentLevel.levelPoints;
-
-show_debug_message(global.currentLevelIndex);
+		
         SlideTransition(TRANS_MODE.GOTO, currentLevel.room);
     } else {
         show_debug_message("No more levels.");

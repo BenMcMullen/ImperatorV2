@@ -1,6 +1,6 @@
 function InitShips() {
 	
-	function ShieldConfig(_id, _name, _isOwned, _delay, _cooldown, _uses, _spriteStatic, _spriteActive, _shieldStatic, _shieldActive) {
+	function ShieldConfig(_id, _name, _isOwned, _delay, _cooldown, _uses, _spriteStatic, _spriteActive, _shieldStatic, _shieldStaticMax, _shieldActive) {
     return {
         id: _id,
         name: _name,
@@ -11,12 +11,13 @@ function InitShips() {
         spriteStatic: _spriteStatic,
         spriteActive: _spriteActive,
         shieldStatic: _shieldStatic,
+		shieldStaticMax: _shieldStaticMax,
         shieldActive: _shieldActive
     };
 }
 
 	
-	 function PrimaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _object) {
+	 function PrimaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite) {
         return {
             id: _id,
             name: _name,
@@ -28,12 +29,11 @@ function InitShips() {
 			shotSpeed: _shotSpeed,
 			damage: _damage,
 			audio: _audio,
-			sprite: _sprite,
-			object: _object
+			sprite: _sprite
         };
     }
 	
-	 function SecondaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _object) {
+	 function SecondaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _deployAngle) {
         return {
             id: _id,
             name: _name,
@@ -46,7 +46,7 @@ function InitShips() {
 			damage: _damage,
 			audio: _audio,
 			sprite: _sprite,
-			object: _object
+			deployAngle: _deployAngle
         };
     }
 	
@@ -121,8 +121,8 @@ global.hulls[1] = HullConfig(
     2,
     "Reinforced Hull", // Name
     false,             // Is Owned
-    13,               // HP
-    13                // Max HP
+    7,               // HP
+    7                // Max HP
 );
 
 	
@@ -136,10 +136,11 @@ global.shields[0] = ShieldConfig(
     0.25,                 // Delay
     10.0,                 // Cooldown
     50,                   // Uses
-    spr_pulseShield,    // Sprite Static (assuming spr_shieldStatic is a defined sprite resource)
-    spr_pulseShield,    // Sprite Active (assuming spr_shieldActive is a defined sprite resource)
-    13,                  // Shield Passive (e.g., passive shield strength)
-    30                   // Shield Active (e.g., active shield strength)
+    spr_pulseShield,    // Sprite Static 
+    spr_pulseShield,    // Sprite Active 
+    13,                  // Shield Static 
+	13,					// Shield Static Max
+    30                   // Shield Active 
 );
 
 global.shields[1] = ShieldConfig(
@@ -149,9 +150,10 @@ global.shields[1] = ShieldConfig(
     0,                 // Delay
     0,                 // Cooldown
     0,                   // Uses
-    spr_pulseShield, // Sprite Static (assuming spr_advancedShieldStatic is a defined sprite resource)
-    spr_pulseShield, // Sprite Active (assuming spr_advancedShieldActive is a defined sprite resource)
-    7,                  // Shield Passive
+    spr_pulseShield, // Sprite Static 
+    spr_pulseShield, // Sprite Active 
+    7,                  // Shield Static 
+	7,					// Shield Static Max
     0                   // Shield Active
 );
 
@@ -164,29 +166,27 @@ global.primaryWeapons[0] = PrimaryWeaponConfig(
     "Plasma Cannon",     // Name
     true,               // Is Owned
     5,                // Delay
-    1.0,                // Cooldown
+    80,                // Cooldown
     20,                // Capacity
     [-2,2],                // Accuracy
     25.0,               // Shot Speed
-    25,                 // Damage
+    1,                 // Damage
     snd_plasma,    // Audio 
-    spr_plasma,     // Sprite 
-	obj_plasma
+    spr_plasma
 );
 
 global.primaryWeapons[1] = PrimaryWeaponConfig(
     2,
     "Rail Gun",   // Name
     true,              // Is Owned
-    5,                // Delay
-    1.0,                // Cooldown
-    80,                 // Capacity
-    [-2,2],               // Accuracy
+    2,               // Delay
+    200.0,                // Cooldown
+    60,                 // Capacity
+    [-1,1],               // Accuracy
     40.0,               // Shot Speed
-    30,                 // Damage
+    2,                 // Damage
     snd_plasma,  // Audio 
-    spr_railGun,   // Sprite 
-	obj_railGun
+    spr_railGun
 );
 
 	
@@ -197,30 +197,30 @@ global.secondaryWeapons[0] = SecondaryWeaponConfig(
     1,
     "Missile Launcher", // Name
     true,               // Is Owned
-    1.5,                // Delay
-    3.0,                // Cooldown
-    10,                 // Capacity
-    0.75,               // Accuracy
-    8.0,                // Shot Speed
-    100,                // Damage
+    0,                // Delay
+    45,                // Cooldown
+    2,                 // Capacity
+    [-0.5, 0.5],               // Accuracy
+    10.0,                // Shot Speed
+    10,                // Damage
     snd_missile,// Audio (assuming snd_missileLauncher is a defined audio resource)
-    spr_missile1, // Sprite (assuming spr_missileLauncher is a defined sprite resource)
-	obj_missile1
+    spr_missile1,
+	0			// Deploy Angle
 );
 
 global.secondaryWeapons[1] = SecondaryWeaponConfig(
     2,
-    "EMP Grenade",      // Name
-    false,              // Is Owned
-    2.0,                // Delay
-    4.0,                // Cooldown
-    5,                  // Capacity
-    0.7,                // Accuracy
-    5.0,                // Shot Speed
-    150,                // Damage
-    snd_missile,     // Audio (assuming snd_empGrenade is a defined audio resource)
-    spr_missile1,      // Sprite (assuming spr_empGrenade is a defined sprite resource)
-	obj_missile1
+    "Pulse Bomb",      // Name
+    true,               // Is Owned
+    0,                // Delay
+    90,                // Cooldown
+    1,                 // Capacity
+    [-0.5, 0.5],               // Accuracy
+    0,                // Shot Speed
+    10,                // Damage
+    snd_missile,// Audio (assuming snd_missileLauncher is a defined audio resource)
+    spr_pulseBomb,
+	90			// Deploy Angle
 );
 
 	
@@ -318,7 +318,7 @@ global.secondaryWeapons[1] = SecondaryWeaponConfig(
         global.hulls[1],                // HP
         global.engines[1],  // Engine
          global.primaryWeapons[1],           // Primary Weapon
-        global.secondaryWeapons[0],           // Secondary Weapon
+        global.secondaryWeapons[1],           // Secondary Weapon
         true,              // Is Owned
         global.shields[0],                 // Shields
         spr_hawkStatic,   // Sprite Static
@@ -352,6 +352,6 @@ global.secondaryWeapons[1] = SecondaryWeaponConfig(
         global.sensors[0]	//Sensors
     );
 
-global.selectedShip = global.playerShips[0]
+global.selectedShip = global.playerShips[1]
   
 }

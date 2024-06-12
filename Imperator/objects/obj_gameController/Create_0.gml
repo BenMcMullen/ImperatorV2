@@ -7,6 +7,9 @@ InitShop();
 #macro RES_H 768
 display_set_gui_size(RES_W, RES_H);
 	
+	minimap_surface = -1;
+minimap_width = 200; // Adjust as needed
+minimap_height = 200; // Adjust as needed
 
 //DO NOT CHANGE THESE VALUES. THESE ARE THE DEFAULT VALUES REQUIRED FOR THE GAME 
 //TO START IN THE CORRECT PLACE AND ORDER

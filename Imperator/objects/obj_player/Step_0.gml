@@ -1,5 +1,4 @@
 // Player input
-
 if (!global.musicPlaying) {
     if (global.currentMusic != -1) {
         audio_stop_sound(global.currentMusic);
@@ -7,103 +6,100 @@ if (!global.musicPlaying) {
     global.currentMusic = audio_play_sound(snd_level1, 1, true);
     global.musicPlaying = true;
 }
-	var ship = global.selectedShip
-if (moving_to_target) {
 
-	
+var ship = global.selectedShip;
+
+if (moving_to_target) {
     // Move towards the target position
-        var move_speed = 5; // Adjust the speed as needed
+    var moveSpeed = 5; // Adjust the speed as needed
 
     // Calculate the distance to the target
     var dx = target_x - x;
     var dy = target_y - y;
     var distance = point_distance(x, y, target_x, target_y);
-    
-    if (distance > move_speed) {
+
+    if (distance > moveSpeed) {
         // Move towards the target position
-        x += move_speed * (dx / distance);
-        y += move_speed * (dy / distance);
+        x += moveSpeed * (dx / distance);
+        y += moveSpeed * (dy / distance);
     } else {
         // Snap to the target position and stop moving
         x = target_x;
         y = target_y;
         moving_to_target = false;
-		 hasControl = true; // Re-enable player control
-
+        hasControl = true; // Re-enable player control
     }
-} 
-else {
-if (hasControl) {
-    key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
-    key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-    key_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
-    key_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
-	key_boosting = keyboard_check(vk_space);
 } else {
-    key_left = 0;
-    key_right = 0;
-    key_up = 0;
-    key_down = 0;
-	key_boosting = 0;
-}
-
-// Calculate movement direction based on key input
-var move_x = key_right - key_left;
-var move_y = key_down - key_up;
-var move_speed = ship.engine.speed;
-
-
-
-if (key_boosting) {
-    // Increase movement speed when boosting
-	sprite_index = ship.spriteBoosting;
-    move_speed *= ship.engine.boostSpeed; // You can adjust the multiplier as needed
-}
-
-
-
-// Calculate horizontal and vertical speeds and movespeed
-hsp = move_x * move_speed;
-vsp = move_y * move_speed;
-
-																						
-// Calculate the angle of movement
-if (move_x != 0 || move_y != 0) {
-    image_angle = point_direction(0, 0, hsp, vsp) - 90; //subtract 90 because we pivoted all the sprites.
-}
-
-
-
-// Horizontal movement
-if (hsp != 0) {
-    if (!place_meeting(x + hsp, y, obj_wall)) {
-        x += hsp;
+    if (hasControl) {
+        keyLeft = keyboard_check(vk_left) || keyboard_check(ord("A"));
+        keyRight = keyboard_check(vk_right) || keyboard_check(ord("D"));
+        keyUp = keyboard_check(vk_up) || keyboard_check(ord("W"));
+        keyDown = keyboard_check(vk_down) || keyboard_check(ord("S"));
+        key_boosting = keyboard_check(vk_space);
     } else {
-        hsp = 0;
+        keyLeft = 0;
+        keyRight = 0;
+        keyUp = 0;
+        keyDown = 0;
+        key_boosting = 0;
     }
-}
 
-// Vertical movement
-if (vsp != 0) {
-    if (!place_meeting(x, y + vsp, obj_wall)) {
-        y += vsp;
+    // Calculate movement direction based on key input
+    var moveX = keyRight - keyLeft;
+    var moveY = keyDown - keyUp;
+    var moveSpeed = ship.engine.speed;
+
+    if (key_boosting) {
+        // Increase movement speed when boosting
+        sprite_index = ship.spriteBoosting;
+        moveSpeed *= ship.engine.boostSpeed; // You can adjust the multiplier as needed
+    }
+
+    // Calculate horizontal and vertical speeds and movespeed
+    hsp = moveX * moveSpeed;
+    vsp = moveY * moveSpeed;
+
+    // Create a target angle variable if not already created
+    if (!variable_instance_exists(id, "targetAngle")) {
+        targetAngle = image_angle;
+    }
+
+    // Calculate the target angle of movement
+    if (moveX != 0 || moveY != 0) {
+        targetAngle = point_direction(0, 0, hsp, vsp) - 90; // Subtract 90 because we pivoted all the sprites.
+    }
+
+    // Smoothly rotate towards the target angle
+    var turnSpeed = 10; // Adjust this value to control turning speed
+    image_angle = AngleLerp(image_angle, targetAngle, turnSpeed * 0.01);
+
+    // Horizontal movement
+    if (hsp != 0) {
+        if (!place_meeting(x + hsp, y, obj_wall)) {
+            x += hsp;
+        } else {
+            hsp = 0;
+        }
+    }
+
+    // Vertical movement
+    if (vsp != 0) {
+        if (!place_meeting(x, y + vsp, obj_wall)) {
+            y += vsp;
+        } else {
+            vsp = 0;
+        }
+    }
+
+    if (key_boosting) {
+        sprite_index = ship.spriteBoosting;
+    } else if (moveX != 0 || moveY != 0) {
+        sprite_index = ship.spriteMoving;
+        image_speed = 1;
+        if (moveX != 0) image_xscale = sign(moveX);
     } else {
-        vsp = 0;
+        sprite_index = ship.spriteStatic;
+        image_speed = 0;
     }
-}
-
-if (key_boosting) {
-	sprite_index = ship.spriteBoosting;
-}
-else if (move_x != 0 || move_y != 0) {
-    sprite_index = ship.spriteMoving;
-    image_speed = 1;
-    if (move_x != 0) image_xscale = sign(move_x);
-}
-else {
-    sprite_index = ship.spriteStatic;
-    image_speed = 0;
-}
-image_xscale = 1;
-
+    image_xscale = 1;
 }

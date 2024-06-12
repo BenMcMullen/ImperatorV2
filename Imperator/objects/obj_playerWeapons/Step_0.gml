@@ -5,33 +5,33 @@ y = obj_player.y;
 // Determine the player's current facing direction
 
 
-if (obj_player.key_left && obj_player.key_right) {
-    if (obj_player.key_up) {
+if (obj_player.keyLeft && obj_player.keyRight) {
+    if (obj_player.keyUp) {
         facingDirection = 315; // Up-Right
-    } else if (obj_player.key_down) {
+    } else if (obj_player.keyDown) {
         facingDirection = 45; // Down-Right
     } else {
         facingDirection = 0; // Right
     }
-} else if (obj_player.key_left) {
-    if (obj_player.key_up) {
+} else if (obj_player.keyLeft) {
+    if (obj_player.keyUp) {
         facingDirection = 225; // Up-Left
-    } else if (obj_player.key_down) {
+    } else if (obj_player.keyDown) {
         facingDirection = 135; // Down-Left
     } else {
         facingDirection = 180; // Left
     }
-} else if (obj_player.key_right) {
-    if (obj_player.key_up) {
+} else if (obj_player.keyRight) {
+    if (obj_player.keyUp) {
         facingDirection = 315; // Up-Right
-    } else if (obj_player.key_down) {
+    } else if (obj_player.keyDown) {
         facingDirection = 45; // Down-Right
     } else {
         facingDirection = 0; // Right
     }
-} else if (obj_player.key_up) {
+} else if (obj_player.keyUp) {
     facingDirection = 270; // Up
-} else if (obj_player.key_down) {
+} else if (obj_player.keyDown) {
     facingDirection = 90; // Down
 }
 	
@@ -73,7 +73,7 @@ switch (facingDirection) {
 }
 
 // Calculate the direction angle between the player and the mouse position
-var targetAngle = point_direction(x, y, mouse_x, mouse_y +90);
+var targetAngle = point_direction(x, y, mouse_x, mouse_y);
 
 // Normalize the angle to the range [0, 360)
 targetAngle = targetAngle mod 360;
@@ -105,61 +105,74 @@ if (minAngle <= maxAngle) {
 
 // Set the image_angle of the child object to the clamped targetAngle
 image_angle = targetAngle;
+// Step Event
 
-primaryDelay -= 1;
-secondaryDelay -= 1;
+// Primary Delay Adjustment
+if (primaryDelay > 0) {
+    primaryDelay -= 1;
+}
 
-
-
-
-
-
-
-
-//EVERYTHING ABOVE IS STANDARDIZED
-//EVERYTHING BELOW IS DETERMINED BY KIT
-
-
-if (mouse_check_button(mb_left)) && (primaryDelay < 0) 
-
-{
-	if (cooldownTimer > 0) {
-    cooldownTimer--;
-    if (cooldownTimer == 0) {
-        // Reset the shot count after the cooldown period
-        shotsFired = 0;
+// Cooldown Timer Adjustment
+if (primaryCooldownTimer > 0) {
+    primaryCooldownTimer -= 1;
+    if (primaryCooldownTimer <= 0) {
+        // Reset shots fired after cooldown completes
+        primaryShotsFired = 0;
+        
     }
 }
 
-if (shotsFired < capacity && cooldownTimer == 0) {
-	
-        primaryDelay = 5
-        audio_play_sound(global.selectedShip.primaryWeapon.audio, 0, false);
-		
-		
-        with (instance_create_layer(x, y, "Weapons", object)) {
-            speed = global.selectedShip.primaryWeapon.shotSpeed;
-			//These two numbers set the 2 outside ranges of accuracy for the weapon
-            direction = other.image_angle + random_range( global.selectedShip.primaryWeapon.accuracy[0],
-			global.selectedShip.primaryWeapon.accuracy[1]);
-            image_angle = direction;
-        }
-        shotsFired++;
-        if (shotsFired >= capacity) {
-            cooldownTimer = cooldownDuration;
-        }
-    }
-
-}
-
-if ((mouse_check_button(mb_right)) && global.itemMissiles) && (secondaryDelay < 0) 
-{
-    secondaryDelay = 45;
-    audio_play_sound(snd_missile,10,false);
-    with (instance_create_layer(x,y+15,"Missile",obj_missile1))
-    {
-        speed = 10;
-        direction = other.image_angle + random_range(0.5,0.5);
+// Firing Mechanism
+if (mouse_check_button(mb_left) && (primaryCooldownTimer <= 0) && (primaryDelay <= 0)) {
+    // Fire primary weapon
+    primaryDelay = global.selectedShip.primaryWeapon.delay;
+    audio_play_sound(global.selectedShip.primaryWeapon.audio, 0, false);
+    with (instance_create_layer(x, y, "Weapons", obj_primaryWeapon)) {
+        speed = global.selectedShip.primaryWeapon.shotSpeed;
+        direction = other.image_angle + random_range(global.selectedShip.primaryWeapon.accuracy[0],
+            global.selectedShip.primaryWeapon.accuracy[1]);
         image_angle = direction;
     }
+    primaryShotsFired++;
+
+    if (primaryShotsFired >= primaryCapacity) {
+        primaryCooldownTimer = primaryCooldownDuration;
+      
+    }
 }
+
+if (secondaryDelay > 0) {
+    secondaryDelay -= 1;
+}
+
+// Cooldown Timer Adjustment
+if (secondaryCooldownTimer > 0) {
+    secondaryCooldownTimer -= 1;
+    if (secondaryCooldownTimer <= 0) {
+        // Reset shots fired after cooldown completes
+        secondaryShotsFired = 0;
+        
+    }
+}
+
+// Firing Mechanism
+if (mouse_check_button_pressed(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryDelay <= 0)) {
+    // Fire Secondary weapon
+    secondaryDelay = global.selectedShip.secondaryWeapon.delay;
+    audio_play_sound(global.selectedShip.secondaryWeapon.audio, 0, false);
+    with (instance_create_layer(x, y, "Weapons", obj_secondaryWeapon)) {
+        speed = global.selectedShip.secondaryWeapon.shotSpeed;
+        direction = other.image_angle + random_range(global.selectedShip.secondaryWeapon.accuracy[0],
+            global.selectedShip.secondaryWeapon.accuracy[1]);
+        image_angle = direction;
+    }
+    secondaryShotsFired++;
+
+    if (secondaryShotsFired >= secondaryCapacity) {
+        secondaryCooldownTimer = secondaryCooldownDuration;
+      
+    }
+}
+
+
+
