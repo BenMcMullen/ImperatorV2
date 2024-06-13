@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btnBattleStatic",
-    "path":"sprites/spr_btnBattleStatic/spr_btnBattleStatic.yy",
+    "name":"spr_btnBattle",
+    "path":"sprites/spr_btnBattle/spr_btnBattle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

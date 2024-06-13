@@ -12,7 +12,7 @@ for (var i = 0; i < array_length(global.shopItems); i++) {
         // Draw the purchase box sprite
         var purchaseBox_x = item.x - 85;
         var purchaseBox_y = item.y + 120; // Positioning below the sprite, price, and name texts
-        draw_sprite(spr_select, 0, purchaseBox_x, purchaseBox_y);
+        draw_sprite(spr_purchase, 0, purchaseBox_x, purchaseBox_y);
         
         // Draw the price and name
         draw_text(item.x - 50, item.y + 82, "Price: " + string(item.price));

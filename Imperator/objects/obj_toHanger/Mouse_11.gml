@@ -1,6 +1,6 @@
 // Change state to clicked
 buttonState = "clicked";
-sprite_index = spr_btnHangarClick;
+sprite_index = spr_btnHangarStatic;
 
 // Reset the animation frame to start the clicked animation
 image_index = 0;

@@ -1,6 +1,6 @@
 // Change state to clicked
 buttonState = "clicked";
-sprite_index = spr_btnShopStatic;
+sprite_index = spr_btnShop;
 
 // Reset the animation frame to start the clicked animation
 image_index = 0;
