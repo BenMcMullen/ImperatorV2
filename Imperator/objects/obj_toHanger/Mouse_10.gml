@@ -1,3 +1,4 @@
 
-buttonState = "hover";
-sprite_index = spr_btnHangarHover;
+sprite_index = spr_btnHangar;
+image_index = 1;
+image_speed = 0;

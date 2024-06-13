@@ -1,10 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-// Initialize the button state
-buttonState = "idle";
-
-// Set the initial sprite
-sprite_index = spr_btnBattleStatic;
-
-// Animation speed control
-animationSpeed = 0.2;
+//create
+sprite_index = spr_btnBattle;
+image_index = 0;
+image_speed = 0;

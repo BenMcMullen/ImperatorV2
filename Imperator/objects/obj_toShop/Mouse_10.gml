@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-// Change state to hover
-buttonState = "hover";
-sprite_index = spr_btnShopHover;
+//mouse enter
+sprite_index = spr_btnShop;
+image_index = 1;
+image_speed = 0
