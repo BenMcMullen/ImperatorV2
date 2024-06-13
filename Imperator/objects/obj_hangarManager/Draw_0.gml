@@ -1,10 +1,10 @@
 // obj_hangarManager - Draw Event
+
 draw_self();
-// Set up text alignment
+
+// Set up text alignment and font
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-
-// Set up text font and color
 draw_set_font(font_venite);
 draw_set_color(c_white);
 
@@ -14,37 +14,45 @@ var titleX = room_width / 2 - string_width(titleText) / 2;
 var titleY = 20;
 draw_text(titleX, titleY, titleText);
 
-var columnCount = 2; // Number of columns
-var rowSpacing = 150; // Vertical spacing between rows
-var colSpacing = room_width / columnCount; // Horizontal spacing based on column count
-var textVerticalOffset = 20; // Vertical offset for text
-var startX = 50; // Starting X position for the first column
-var startY = 80; // Starting Y position for the first row
+// Constants for layout
+var columnCount = 2;
+var rowSpacing = 150;
+var colSpacing = room_width / columnCount;
+var textVerticalOffset = 20;
+var startX = 50;
+var startY = 80;
 
+// Loop through player ships
 for (var i = 0; i < array_length(global.playerShips); i++) {
     var ship = global.playerShips[i];
 
     if (ship.isOwned) {
-        var col = i % columnCount; // Column index (0 or 1)
-        var row = i div columnCount; // Row index
-
+        // Calculate position
+        var col = i % columnCount;
+        var row = i div columnCount;
         var posX = startX + col * colSpacing;
         var posY = startY + row * rowSpacing;
         
         // Draw ship sprite
         draw_sprite(ship.sprites.spriteHangar, 0, posX, posY);
         
-        // Draw ship name
+        // Draw ship details
         draw_text(posX + 150, posY, ship.shipName);
-        
-        // Draw ship class
         draw_text(posX + 150, posY + 20, "Class: " + ship.shipClass);
-        
-        // Draw ship generation
         draw_text(posX + 150, posY + 40, "Generation: " + ship.shipGeneration);
         
+        // Determine which frame of spr_select to draw based on mouse state
+        var isMouseOver = (mouse_x > posX + 150 && mouse_x < posX + 150 + sprite_get_width(spr_select) &&
+                           mouse_y > posY + 60 && mouse_y < posY + 60 + sprite_get_height(spr_select));
+        
+        var frameIndex = 0; // Default to static frame
+        
+        if (isMouseOver) {
+            frameIndex = 1; // Mouse hover frame
+        }
+        
         // Draw the select button sprite
-        draw_sprite(spr_select, 0, posX + 150, posY + 60);
+        draw_sprite(spr_select, frameIndex, posX + 150, posY + 60);
     }
 }
 
