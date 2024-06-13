@@ -62,12 +62,8 @@ if (!global.musicPlaying) {
     global.musicPlaying = true;
 }
 
+		
 
-//SAVEFILEVARIABLE
-//This is an array of structs of arrays witharrays.			
-global.saveFile = [global.kills,global.currentLevelIndex, global.totalPoints,global.selectedShip,global.shipSystemsUpgradable,global.hulls,
-global.engines,global.primaryWeapons,global.secondaryWeapons,global.shields,
-global.sprites,global.sensors ]
 
 
 

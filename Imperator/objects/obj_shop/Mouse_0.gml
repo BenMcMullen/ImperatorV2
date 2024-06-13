@@ -1,8 +1,8 @@
+// obj_shop - Step Event
 
-var currentTime = current_time / 1000
-//this is a debounce mechanism to prevent spamming multiple clicks in a few frames.
+var currentTime = current_time / 1000;
+// this is a debounce mechanism to prevent spamming multiple clicks in a few frames.
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
-	
     lastClickTime = currentTime; // Update the last click time
     
     var clickedItemIndex = -1;
@@ -26,7 +26,6 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
         }
     }
     
-	
     // If a shop item's purchase box is clicked
     if (clickedItemIndex != -1) {
         var clickedItem = global.shopItems[clickedItemIndex];
@@ -34,10 +33,10 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
         // Check if the player has enough points to purchase the item
         if (global.totalPoints >= clickedItem.price) {
             global.totalPoints -= clickedItem.price;
-            variable_global_set(clickedItem.globalVar, true);
-			showMessage = true;
+            global.shopItems[clickedItemIndex].purchased = true;
+            showMessage = true;
             messageText = clickedItem.itemName + " was purchased!"; // Success message
-            show_debug_message("Purchased " + clickedItem.globalVar);
+            
         } else {
             // Set the message variables
             showMessage = true;

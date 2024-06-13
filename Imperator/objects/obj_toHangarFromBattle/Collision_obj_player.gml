@@ -16,7 +16,7 @@ if (instance_exists(obj_player))
 					global.musicPlaying = false;
 				}
 				//send player back to hangar after successful mission
-				SaveFile(SAVEFILE)
+				//SaveFile(SAVEFILE)
 				LoadHangar();
 				global.totalPoints = global.totalPoints + global.levelPoints;
 				hasControl = false;
