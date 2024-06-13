@@ -31,7 +31,8 @@ function InitShips() {
         };
     }
 
-    function ShieldConfig(_id, _name, _isOwned, _delay, _cooldown, _uses, _spriteStatic, _spriteActive, _shieldStatic, _shieldStaticMax, _shieldActive) {
+    function ShieldConfig(_id, _name, _isOwned, _delay, _cooldown, _uses, 
+	_spriteStatic, _spriteActive, _shieldStatic, _shieldStaticMax, _shieldActive, _garageSprite, _shopSprite) {
         return {
             id: _id,
             name: _name,
@@ -43,11 +44,14 @@ function InitShips() {
             spriteActive: _spriteActive,
             shieldStatic: _shieldStatic,
             shieldStaticMax: _shieldStaticMax,
-            shieldActive: _shieldActive
+            shieldActive: _shieldActive,
+			garageSprite: _garageSprite,
+			shopSprite: _shopSprite,
         };
     }
 
-    function PrimaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range) {
+    function PrimaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown,
+	_capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range, _garageSprite, _shopSprite) {
         return {
             id: _id,
             name: _name,
@@ -60,11 +64,14 @@ function InitShips() {
             damage: _damage,
             audio: _audio,
             sprite: _sprite,
-			range: _range
+			range: _range,
+			garageSprite: _garageSprite,
+			shopSprite: _shopSprite,
         };
     }
 
-    function SecondaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _deployAngle, _range) {
+    function SecondaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity,
+	_accuracy, _shotSpeed, _damage, _audio, _sprite, _deployAngle, _range, _garageSprite, _shopSprite) {
         return {
             id: _id,
             name: _name,
@@ -78,39 +85,47 @@ function InitShips() {
             audio: _audio,
             sprite: _sprite,
             deployAngle: _deployAngle,
-			range: _range
+			range: _range,
+			garageSprite: _garageSprite,
+			shopSprite: _shopSprite,
         };
     }
 
-    function EngineConfig(_id, _name, _isOwned, _boostSpeed, _speed, _cooldown) {
+    function EngineConfig(_id, _name, _isOwned, _boostSpeed, _speed, _cooldown, _garageSprite, _shopSprite) {
         return {
             id: _id,
             name: _name,
             isOwned: _isOwned,
             boostSpeed: _boostSpeed,
             speed: _speed,
-            cooldown: _cooldown
+            cooldown: _cooldown,
+			garageSprite: _garageSprite,
+			shopSprite: _shopSprite,
         };
     }
 
-    function SensorConfig(_id, _name, _isOwned, _radius, _range, _sensitivity) {
+    function SensorConfig(_id, _name, _isOwned, _radius, _range, _sensitivity, _garageSprite, _shopSprite) {
         return {
             id: _id,
             name: _name,
             isOwned: _isOwned,
             radius: _radius,
             range: _range,
-			sensitivity: _sensitivity
+			sensitivity: _sensitivity,
+			garageSprite: _garageSprite,
+			shopSprite: _shopSprite,
         };
     }
 
-    function HullConfig(_id, _name, _isOwned, _hp, _maxHp) {
+    function HullConfig(_id, _name, _isOwned, _hp, _maxHp, _garageSprite, _shopSprite) {
         return {
             id: _id,
             name: _name,
             isOwned: _isOwned,
             hp: _hp,
-            maxHp: _maxHp
+            maxHp: _maxHp,
+			garageSprite: _garageSprite,
+			shopSprite: _shopSprite,
         };
     }
 
@@ -188,6 +203,98 @@ function InitShips() {
         return null;
     };
 
+ // Initialize the global array of engines
+    global.engines = [];
+
+    // Adding engines individually
+    global.engines[0] = EngineConfig(
+        1,
+        "Standard Engine",      // Name
+        true,                   // Is Owned
+        3.0,                    // Boost Speed
+        3.0,                    // Speed
+        0,                       // Cooldown
+		spr_basicTest,		// Garage Sprite
+		spr_basicTest		// Shop Sprite
+    );
+
+    global.engines[1] = EngineConfig(
+        2,
+        "Advanced Engine",      // Name
+        true,                  // Is Owned
+        4,                      // Boost Speed
+        5,                      // Speed
+        0,                       // Cooldown
+		spr_basicTest_1,		// Garage Sprite
+		spr_basicTest		// Shop Sprite
+    );
+
+    global.engines[2] = EngineConfig(
+        3,
+        "Frigate Engine",         // Name
+        true,                  // Is Owned
+        2.5,                    // Boost Speed
+        2.0,                    // Speed
+        0,                       // Cooldown
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	  global.engines[3] = EngineConfig(
+        3,
+        "Frigate Engine",         // Name
+        true,                  // Is Owned
+        2.5,                    // Boost Speed
+        2.0,                    // Speed
+        0,                       // Cooldown
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	  global.engines[4] = EngineConfig(
+        3,
+        "Frigate Engine",         // Name
+        true,                  // Is Owned
+        2.5,                    // Boost Speed
+        2.0,                    // Speed
+        0,                       // Cooldown
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	  global.engines[5] = EngineConfig(
+        3,
+        "Frigate Engine",         // Name
+        true,                  // Is Owned
+        2.5,                    // Boost Speed
+        2.0,                    // Speed
+        0,                       // Cooldown
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	  global.engines[6] = EngineConfig(
+        3,
+        "Frigate Engine",         // Name
+        true,                  // Is Owned
+        2.5,                    // Boost Speed
+        2.0,                    // Speed
+        0,                       // Cooldown
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+
+
+
+
+
+
+
+
+
+
+
+
     // Initialize global ship sprite configurations array
     global.sprites = [];
 
@@ -204,12 +311,12 @@ function InitShips() {
 
     global.sprites[1] = ShipSpriteConfig(
         2,
-        "HAWK",             // Ship Name
-        spr_hawkStatic,     // Static sprite
-        spr_hawkBoosting,   // Boosting sprite
-        spr_hawkMoving,     // Moving sprite
-        spr_hawkGarage,     // Garage sprite
-		spr_hawkHangar		// Hangar Sprite
+        "RAPTOR",             // Ship Name
+        spr_raptorStatic,     // Static sprite
+        spr_raptorBoosting,   // Boosting sprite
+        spr_raptorMoving,     // Moving sprite
+        spr_raptorGarage,     // Garage sprite
+		spr_raptorHangar		// Hangar Sprite
     );
 	
 	global.sprites[2] = ShipSpriteConfig(
@@ -230,7 +337,9 @@ function InitShips() {
         "Standard Hull",    // Name
         true,               // Is Owned
         3,                  // HP
-        3                   // Max HP
+        3,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 
     global.hulls[1] = HullConfig(
@@ -238,7 +347,9 @@ function InitShips() {
         "Combat Hull",  // Name
         true,              // Is Owned
         7,                  // HP
-        7                   // Max HP
+        7,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 	
 	global.hulls[2] = HullConfig(
@@ -246,7 +357,9 @@ function InitShips() {
         "Reinforced Hull",  // Name
         true,              // Is Owned
         11,                  // HP
-        11                   // Max HP
+        11,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 
     global.shields = [];
@@ -263,7 +376,9 @@ function InitShips() {
         spr_pulseShield,        // Sprite Active 
         13,                     // Shield Static 
         13,                     // Shield Static Max
-        30                      // Shield Active 
+        30,                      // Shield Active 
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 
     global.shields[1] = ShieldConfig(
@@ -277,7 +392,9 @@ function InitShips() {
         spr_pulseShield,        // Sprite Active 
         7,                      // Shield Static 
         7,                      // Shield Static Max
-        0                       // Shield Active
+        0,                       // Shield Active
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 	
 	 global.shields[2] = ShieldConfig(
@@ -291,7 +408,9 @@ function InitShips() {
         spr_pulseShield,        // Sprite Active 
         20,                      // Shield Static 
         20,                      // Shield Static Max
-        0                       // Shield Active
+        0,                       // Shield Active
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 
     global.primaryWeapons = [];
@@ -309,7 +428,9 @@ function InitShips() {
         1,                      // Damage
         snd_plasma,             // Audio 
         spr_plasma,
-		600						//Projectile Range
+		600,						//Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
 		
     );
 
@@ -325,7 +446,9 @@ function InitShips() {
         2,                      // Damage
         snd_plasma,             // Audio 
         spr_railGun,
-		750						//Projectile Range
+		750,						//Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 	
 	 global.primaryWeapons[2] = PrimaryWeaponConfig(
@@ -340,7 +463,9 @@ function InitShips() {
         .5,                      // Damage
         snd_plasma,             // Audio 
         spr_beamCannon,
-		400						//Projectile Range
+		400,						//Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 
     global.secondaryWeapons = [];
@@ -359,7 +484,9 @@ function InitShips() {
         snd_missile,            // Audio (assuming snd_missileLauncher is a defined audio resource)
         spr_missile1,
         0,                      // Deploy Angle
-		750						//Projectile Range
+		750,						//Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 
     global.secondaryWeapons[1] = SecondaryWeaponConfig(
@@ -375,7 +502,9 @@ function InitShips() {
         snd_missile,            // Audio (assuming snd_missileLauncher is a defined audio resource)
         spr_swarmBomb,          
 		180,                     // Deploy Angle
-		300						// Projectile Range
+		300,						// Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 	
 	global.secondaryWeapons[2] = SecondaryWeaponConfig(
@@ -390,40 +519,10 @@ function InitShips() {
         5,                      // Damage
         snd_missile,             // Audio 
         spr_energyCannon,
-		0,                     // Projectile Range
-		1500
-    );
-	
-
-    // Initialize the global array of engines
-    global.engines = [];
-
-    // Adding engines individually
-    global.engines[0] = EngineConfig(
-        1,
-        "Standard Engine",      // Name
-        true,                   // Is Owned
-        3.0,                    // Boost Speed
-        3.0,                    // Speed
-        0                       // Cooldown
-    );
-
-    global.engines[1] = EngineConfig(
-        2,
-        "Advanced Engine",      // Name
-        true,                  // Is Owned
-        4,                      // Boost Speed
-        5,                      // Speed
-        0                       // Cooldown
-    );
-
-    global.engines[2] = EngineConfig(
-        3,
-        "Frigate Engine",         // Name
-        true,                  // Is Owned
-        2.5,                    // Boost Speed
-        2.0,                    // Speed
-        0                       // Cooldown
+		0,  
+		1500, // Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
     );
 
     // Initialize the global array of sensors
@@ -436,7 +535,9 @@ function InitShips() {
     true,                   // Is Owned
     3.0,                    // Radius
     3.0,                    // Range
-    1                       // Sensitivity
+    1,                       // Sensitivity
+	spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
 );
 
 global.sensors[1] = SensorConfig(
@@ -445,7 +546,9 @@ global.sensors[1] = SensorConfig(
     false,                  // Is Owned
     4,                      // Radius
     5,                      // Range
-    2                       // Sensitivity
+    2,                       // Sensitivity
+	spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
 );
 
 global.sensors[2] = SensorConfig(
@@ -454,7 +557,9 @@ global.sensors[2] = SensorConfig(
     false,                  // Is Owned
     2.5,                    // Radius
     2.0,                    // Range
-    3                       // Sensitivity
+    3,                       // Sensitivity
+	spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
 );
 
 
@@ -497,7 +602,7 @@ global.sensors[2] = SensorConfig(
         global.sprites[1],                      // Sprites
         200,                                    // Hangar X position
         100,                                    // Hangar Y position
-        "Hawk",                                 // Ship Name
+        "Raptor",                                 // Ship Name
         "Interceptor",                              // Ship Class
         "Gen 5 Venuzian",                      // Ship Generation
         global.sensors[2]                       // Sensors
