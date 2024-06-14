@@ -1,30 +1,40 @@
 
-function UpgradeShip(){
+function UpgradeShip(entry, array_type){
 
 /// @description Add an item to the inventory
 /// @param item_obj_id The object ID of the item to add
 /// @param quantity The quantity of the item to add
+var entry = argument0; // Entry to be assigned to global.selectedShip
+var array_type = argument1; // String representing the array type (e.g., "primaryWeapons")
 
-var itemObjId = argument0;
-var quantity = argument1;
-
-// Check if the item already exists in the inventory
-var itemExists = false;
-
-for (var i = 0; i < array_length(global.shipUpgrades); i++) {
-    if (global.shipUpgrades[i].itemObjId == itemObjId) {
-        global.shipUpgrades[i].quantity += quantity;
-        itemExists = true;
+switch (array_type) {
+    case "primaryWeapon":
+        global.selectedShip.primaryWeapon = entry;
         break;
-    }
+        
+    case "secondaryWeapon":
+        global.selectedShip.secondaryWeapon = entry;
+        break;
+        
+    case "hull":
+        global.selectedShip.hull = entry;
+        break;
+        
+    case "engine":
+        global.selectedShip.engine = entry;
+        break;
+        
+    case "sensors":
+        global.selectedShip.sensors = entry;
+        break;
+        
+    case "shields":
+        global.selectedShip.shields = entry;
+        break;
+  
+        
+    default:
+        show_debug_message("Unknown array type: " + array_type);
+        break;
 }
-
-// If the item does not exist, add a new item to the inventory
-if (!itemExists && array_length(global.shipUpgrades) < global.maxShipUpgrades) {
-    var newItem;
-    newItem.itemObjId = itemObjId;
-    newItem.quantity = quantity;
-    array_push(global.shipUpgrades, newItem);
-}
-
 }

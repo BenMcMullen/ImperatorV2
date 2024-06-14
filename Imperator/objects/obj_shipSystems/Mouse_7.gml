@@ -1,3 +1,4 @@
+// obj_shipSystems Left Mouse Button Release Event
 if (mouse_check_button_released(mb_left)) {
     if (drag) {
         // Check if obj_shipSystems is dropped inside obj_shipSystemsLarge
@@ -17,8 +18,12 @@ if (mouse_check_button_released(mb_left)) {
                 // Update the large box to contain this new object
                 contained_object = other.id;
                 sprite_index = other.sprite_index; // Change large box sprite to the small box sprite
-                // Optionally reset the image_index if you're using animated sprites
-                image_index = 0;
+                image_index = 0; // Optionally reset the image_index if using animated sprites
+                
+                // Access `system` data from obj_shipSystemsLarge through `item_data`
+				UpgradeShip(other.item_data, other.system_type)
+               
+                // Now you can use `system_data` as needed
             }
         }
         
