@@ -210,7 +210,7 @@ function InitShips() {
     global.engines[0] = EngineConfig(
         1,
         "Standard Engine",      // Name
-        true,                   // Is Owned
+        false,                   // Is Owned
         3.0,                    // Boost Speed
         3.0,                    // Speed
         0,                       // Cooldown
@@ -232,7 +232,7 @@ function InitShips() {
     global.engines[2] = EngineConfig(
         3,
         "Frigate Engine",         // Name
-        true,                  // Is Owned
+        false,                  // Is Owned
         2.5,                    // Boost Speed
         2.0,                    // Speed
         0,                       // Cooldown
@@ -324,7 +324,7 @@ function InitShips() {
     global.hulls[0] = HullConfig(
         1,
         "Standard Hull",    // Name
-        true,               // Is Owned
+        false,               // Is Owned
         3,                  // HP
         3,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
@@ -334,7 +334,7 @@ function InitShips() {
     global.hulls[1] = HullConfig(
         2,
         "Combat Hull",  // Name
-        true,              // Is Owned
+        false,              // Is Owned
         7,                  // HP
         7,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
@@ -344,7 +344,57 @@ function InitShips() {
 	global.hulls[2] = HullConfig(
         2,
         "Reinforced Hull",  // Name
-        true,              // Is Owned
+        false,              // Is Owned
+        11,                  // HP
+        11,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	global.hulls[3] = HullConfig(
+        2,
+        "meh Hull",  // Name
+        false,              // Is Owned
+        11,                  // HP
+        11,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	global.hulls[4] = HullConfig(
+        2,
+        "heg Hull",  // Name
+        false,              // Is Owned
+        11,                  // HP
+        11,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	global.hulls[5] = HullConfig(
+        2,
+        "Rein22222222222222222222222222222forced Hull",  // Name
+        false,              // Is Owned
+        11,                  // HP
+        11,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	global.hulls[5] = HullConfig(
+        2,
+        "2222 Hull",  // Name
+        false,              // Is Owned
+        11,                  // HP
+        11,                   // Max HP
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	global.hulls[6] = HullConfig(
+        2,
+        "123 Hull",  // Name
+        false,              // Is Owned
         11,                  // HP
         11,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
@@ -357,7 +407,7 @@ function InitShips() {
     global.shields[0] = ShieldConfig(
         1,
         "Combat Shield",         // Name
-        true,                   // Is Owned
+        false,                   // Is Owned
         0.25,                   // Delay
         10.0,                   // Cooldown
         50,                     // Uses
@@ -373,7 +423,7 @@ function InitShips() {
     global.shields[1] = ShieldConfig(
         2,
         "Scout Shield",         // Name
-        true,                   // Is Owned
+        false,                   // Is Owned
         0,                      // Delay
         0,                      // Cooldown
         0,                      // Uses
@@ -401,6 +451,22 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Garage Sprite
 		spr_shipSystemsLarge		// Shop Sprite
     );
+	
+	 global.shields[3] = ShieldConfig(
+        2,
+        "New Shield",         // Name
+        false,                   // Is Owned
+        0,                      // Delay
+        0,                      // Cooldown
+        0,                      // Uses
+        spr_pulseShield,        // Sprite Static 
+        spr_pulseShield,        // Sprite Active 
+        20,                      // Shield Static 
+        20,                      // Shield Static Max
+        0,                       // Shield Active
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
 
     global.primaryWeapons = [];
 
@@ -408,7 +474,7 @@ function InitShips() {
     global.primaryWeapons[0] = PrimaryWeaponConfig(
         1,
         "Plasma Cannon",        // Name
-        true,                   // Is Owned
+        false,                   // Is Owned
         5,                      // Delay
         80,                     // Cooldown
         20,                     // Capacity
@@ -426,7 +492,7 @@ function InitShips() {
     global.primaryWeapons[1] = PrimaryWeaponConfig(
         2,
         "Rail Gun",             // Name
-        true,                   // Is Owned
+        false,                   // Is Owned
         2,                      // Delay
         200.0,                  // Cooldown
         60,                     // Capacity
@@ -443,7 +509,24 @@ function InitShips() {
 	 global.primaryWeapons[2] = PrimaryWeaponConfig(
         2,
         "Beam Cannon",             // Name
-        true,                   // Is Owned
+        false,                   // Is Owned
+        0,                      // Delay
+        400.0,                  // Cooldown
+        200,                     // Capacity
+        [-0, 0],                // Accuracy
+        60.0,                   // Shot Speed
+        .5,                      // Damage
+        snd_plasma,             // Audio 
+        spr_beamCannon,
+		400,						//Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
+	
+	 global.primaryWeapons[3] = PrimaryWeaponConfig(
+        2,
+        "New Weapon",             // Name
+        false,                   // Is Owned
         0,                      // Delay
         400.0,                  // Cooldown
         200,                     // Capacity
@@ -513,6 +596,24 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Garage Sprite
 		spr_shipSystemsLarge		// Shop Sprite
     );
+	
+	global.secondaryWeapons[3] = SecondaryWeaponConfig(
+        3,
+        "New Secondary",             // Name
+        false,                   // Is Owned
+        0,                      // Delay
+        80.0,                  // Cooldown
+        1,                     // Capacity
+        [-0, 0],                // Accuracy
+        25.0,                   // Shot Speed
+        5,                      // Damage
+        snd_missile,             // Audio 
+        spr_energyCannon,
+		0,  
+		1500, // Projectile Range
+		spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+    );
 
     // Initialize the global array of sensors
     global.sensors = [];
@@ -543,6 +644,17 @@ global.sensors[1] = SensorConfig(
 global.sensors[2] = SensorConfig(
     3,
     "Hyper Sensor",         // Name
+    false,                  // Is Owned
+    2.5,                    // Radius
+    2.0,                    // Range
+    3,                       // Sensitivity
+	spr_shipSystemsLarge,		// Garage Sprite
+		spr_shipSystemsLarge		// Shop Sprite
+);
+
+global.sensors[3] = SensorConfig(
+    3,
+    "New Sensor",         // Name
     false,                  // Is Owned
     2.5,                    // Radius
     2.0,                    // Range

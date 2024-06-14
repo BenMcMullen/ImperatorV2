@@ -2,7 +2,6 @@
 MusicConfig();
 InitLevels();
 InitShips();
-InitShop();
 #macro RES_W 1024
 #macro RES_H 768
 display_set_gui_size(RES_W, RES_H);
@@ -16,7 +15,7 @@ minimap_height = 200; // Adjust as needed
 
  //START OFF WITH THE WASP.
  global.selectedShip = global.playerShips[0];
- 
+ global.shoppingSystem = "shield";
   //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
  global.currentLevelIndex = 5;
 global.currentMusic = 0;

@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_initShop",
+  "%Name":"script_purchaseSystemUpgrade",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_initShop",
+  "name":"script_purchaseSystemUpgrade",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

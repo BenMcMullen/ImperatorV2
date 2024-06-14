@@ -19,7 +19,7 @@ for (var i = 0; i < total_items; i++) {
     var instance_y = base_y;
     
     // Create obj_shipSystems instance at calculated position
-    var instance = instance_create_layer(instance_x, instance_y, layer, obj_shipSystems);
+    var instance = instance_create_layer(instance_x, instance_y, "Systems", obj_shipSystems);
         instance.sprite_index = system.garageSprite; // Assuming items_array contains sprite_index information
 
     // Set properties or data for obj_shipSystems instance based on items_array[i]

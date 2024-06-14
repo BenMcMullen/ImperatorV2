@@ -10,7 +10,7 @@ function SaveFile(filename) {
         try {
             // Write primitive data types
 	
-          global.saveFile = {
+			global.saveFile = {
 			kills: global.kills,
 			currentLevelIndex: global.currentLevelIndex,
 			totalPoints: global.totalPoints,
@@ -22,8 +22,7 @@ function SaveFile(filename) {
 			secondaryWeapons: global.secondaryWeapons,
 			shields: global.shields,
 			sprites: global.sprites,
-			sensors: global.sensors,
-			shopItems: global.shopItems
+			sensors: global.sensors
 			};
             // Convert arrays of structs to JSON strings and write them
             file_text_write_string(file, json_stringify(global.saveFile));
@@ -70,7 +69,6 @@ function LoadFile(filename) {
     global.shields = global.saveFile.shields;
     global.sprites = global.saveFile.sprites;
     global.sensors = global.saveFile.sensors;
-	global.shopItems = global.saveFile.shopItems;
 
 	
 			LoadHangar()
