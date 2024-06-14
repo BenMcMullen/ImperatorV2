@@ -1,5 +1,5 @@
 
-function UpgradeShip(entry, array_type){
+function UpgradeShip(){
 
 /// @description Add an item to the inventory
 /// @param item_obj_id The object ID of the item to add
@@ -21,7 +21,9 @@ switch (array_type) {
         break;
         
     case "engine":
+	
         global.selectedShip.engine = entry;
+		show_debug_message(global.selectedShip);
         break;
         
     case "sensors":

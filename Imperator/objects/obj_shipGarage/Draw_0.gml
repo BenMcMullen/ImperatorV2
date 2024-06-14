@@ -23,17 +23,3 @@ var detailSpacing = room_height / 4;
 // Calculate the X position for ship details on the left side (left third of the screen)
 var leftDetailX = margin; // Align to the left
 
-// Draw ship details on the left side
-draw_text_ext(leftDetailX + margin, detailSpacing, "HP: " + string(ship.hull.hp), 10, room_width / 3 - 2 * margin);
-draw_text_ext(leftDetailX + margin, detailSpacing + detailSpacing, "Primary Weapon: " + string(ship.primaryWeapon.name), 10, room_width / 3 - 2 * margin);
-draw_text_ext(leftDetailX + margin, detailSpacing + 2 * detailSpacing, "Secondary Weapon: " + string(ship.secondaryWeapon.name), 10, room_width / 3 - 2 * margin);
-draw_text_ext(leftDetailX + margin, detailSpacing + 3 * detailSpacing, "Shields: " + string(ship.shields.shieldStatic), 10, room_width / 3 - 2 * margin);
-
-// Calculate the X position for ship details on the right side (right third of the screen)
-var rightDetailX = room_width * 2 / 3; // Align to the right
-
-// Draw ship details on the right side
-draw_text_ext(rightDetailX + margin, detailSpacing, "Ship Name: " + ship.shipName, 10, room_width / 3 - 2 * margin);
-draw_text_ext(rightDetailX + margin, detailSpacing + detailSpacing, "Ship Class: " + ship.shipClass, 10, room_width / 3 - 2 * margin);
-draw_text_ext(rightDetailX + margin, detailSpacing + 2 * detailSpacing, "Ship Generation: " + ship.shipGeneration, 10, room_width / 3 - 2 * margin);
-draw_text_ext(rightDetailX + margin, detailSpacing + 3 * detailSpacing, "Engine: " + ship.engine.name, 10, room_width / 3 - 2 * margin);

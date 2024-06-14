@@ -23,8 +23,8 @@ for (var i = 0; i < total_items; i++) {
         instance.sprite_index = system.garageSprite; // Assuming items_array contains sprite_index information
 
     // Set properties or data for obj_shipSystems instance based on items_array[i]
-    instance.item_data = target;
-	instance.system_type = "shields";
+    instance.item_data = system;
+	instance.system_type = systemType;
 	}
 	else {
 		continue;
