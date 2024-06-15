@@ -5,7 +5,7 @@ var currentTime = current_time / 1000;
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
     lastClickTime = currentTime; // Update the last click time
 
-show_debug_message(total_items);
+
 // Clear previously displayed results (if any)
 global.shoppingSystem = systemType;;
 
@@ -25,21 +25,25 @@ var count = 0; // Counter for the number of created instances
 
 for (var i = 0; i < total_items; i++) {
     var currentItem = target[i];
-     
+     show_debug_message("we get here");
     // Check if item is not owned (assuming isOwned is a boolean attribute)
     
         // Create an instance of obj_shopUpgrade in displayBox
         var shopItemInstance = instance_create_layer(displayBox.x, displayBox.y + yOffset, "Items", obj_shopUpgrade);
         
         // Set sprite index and properties for obj_shopUpgrade instance
-		if (currentItem.isOwned) {
+		if (!currentItem.unlocked) {
+			 shopItemInstance.sprite_index = spr_lockedSystemUpgrade;
+		}
+		else if (currentItem.isOwned) {
 			 shopItemInstance.sprite_index = spr_ownedSystemUpgrade;
 		}
 		else {
-        shopItemInstance.sprite_index = currentItem.garageSprite; // Assuming items_array contains sprite_index information
+			shopItemInstance.sprite_index = currentItem.garageSprite; // Assuming items_array contains sprite_index information
 		}
 		shopItemInstance.array_index = i; // Store the array index
         shopItemInstance.system_type = systemType; // Set system type
+		shopItemInstance.cost = cost;
         
         // Calculate position for obj_shopUpgrade instance within displayBox
         var col = count mod num_columns;

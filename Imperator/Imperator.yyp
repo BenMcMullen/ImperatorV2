@@ -129,6 +129,7 @@
     {"id":{"name":"spr_hangerManager","path":"sprites/spr_hangerManager/spr_hangerManager.yy",},},
     {"id":{"name":"spr_hangerOrShopTrigger","path":"sprites/spr_hangerOrShopTrigger/spr_hangerOrShopTrigger.yy",},},
     {"id":{"name":"spr_introWasp","path":"sprites/spr_introWasp/spr_introWasp.yy",},},
+    {"id":{"name":"spr_lockedSystemUpgrade","path":"sprites/spr_lockedSystemUpgrade/spr_lockedSystemUpgrade.yy",},},
     {"id":{"name":"spr_mapEdge","path":"sprites/spr_mapEdge/spr_mapEdge.yy",},},
     {"id":{"name":"spr_menuGalaxy","path":"sprites/spr_menuGalaxy/spr_menuGalaxy.yy",},},
     {"id":{"name":"spr_menuPlanet","path":"sprites/spr_menuPlanet/spr_menuPlanet.yy",},},

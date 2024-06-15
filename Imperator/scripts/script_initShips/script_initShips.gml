@@ -1,6 +1,6 @@
 function InitShips() {
 
-    function ShipConfig(_id, _hull, _engine, _primaryWeapon, _secondaryWeapon, _isOwned, _shields, _sprites, _x, _y, _shipName, _shipClass, _shipGeneration, _sensors) {
+    function ShipConfig(_id, _hull, _engine, _primaryWeapon, _secondaryWeapon, _isOwned, _shields, _sprites, _x, _y, _shipName, _shipClass, _shipGeneration, _sensors, _unlocked) {
         return {
             id: _id,
             hull: _hull,
@@ -15,7 +15,8 @@ function InitShips() {
             shipName: _shipName,
             shipClass: _shipClass,
             shipGeneration: _shipGeneration,
-            sensors: _sensors
+            sensors: _sensors,
+			unlocked: _unlocked
         };
     }
 
@@ -32,7 +33,7 @@ function InitShips() {
     }
 
     function ShieldConfig(_id, _name, _isOwned, _delay, _cooldown, _uses, 
-	_spriteStatic, _spriteActive, _shieldStatic, _shieldStaticMax, _shieldActive, _garageSprite, _shopSprite) {
+	_spriteStatic, _spriteActive, _shieldStatic, _shieldStaticMax, _shieldActive, _garageSprite, _shopSprite, _cost, _unlocked) {
         return {
             id: _id,
             name: _name,
@@ -47,13 +48,14 @@ function InitShips() {
             shieldActive: _shieldActive,
 			garageSprite: _garageSprite,
 			shopSprite: _shopSprite,
+			cost: _cost,
+			unlocked: _unlocked
         };
     }
 
-    function PrimaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown,
-	_capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range, _garageSprite, _shopSprite) {
+    function PrimaryWeaponConfig(_name, _isOwned, _delay, _cooldown,
+	_capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range, _garageSprite, _shopSprite, _cost, _unlocked) {
         return {
-            id: _id,
             name: _name,
             isOwned: _isOwned,
             delay: _delay,
@@ -67,13 +69,14 @@ function InitShips() {
 			range: _range,
 			garageSprite: _garageSprite,
 			shopSprite: _shopSprite,
+			cost: _cost,
+			unlocked: _unlocked
         };
     }
 
-    function SecondaryWeaponConfig(_id, _name, _isOwned, _delay, _cooldown, _capacity,
-	_accuracy, _shotSpeed, _damage, _audio, _sprite, _deployAngle, _range, _garageSprite, _shopSprite) {
+    function SecondaryWeaponConfig(_name, _isOwned, _delay, _cooldown, _capacity,
+	_accuracy, _shotSpeed, _damage, _audio, _sprite, _deployAngle, _range, _garageSprite, _shopSprite, _cost, _unlocked) {
         return {
-            id: _id,
             name: _name,
             isOwned: _isOwned,
             delay: _delay,
@@ -88,10 +91,12 @@ function InitShips() {
 			range: _range,
 			garageSprite: _garageSprite,
 			shopSprite: _shopSprite,
+			cost: _cost,
+			unlocked: _unlocked
         };
     }
 
-    function EngineConfig(_id, _name, _isOwned, _boostSpeed, _speed, _cooldown, _garageSprite, _shopSprite) {
+    function EngineConfig(_id, _name, _isOwned, _boostSpeed, _speed, _cooldown, _garageSprite, _shopSprite, _cost, _unlocked) {
         return {
             id: _id,
             name: _name,
@@ -101,10 +106,12 @@ function InitShips() {
             cooldown: _cooldown,
 			garageSprite: _garageSprite,
 			shopSprite: _shopSprite,
+			cost: _cost,
+			unlocked: _unlocked
         };
     }
 
-    function SensorConfig(_id, _name, _isOwned, _radius, _range, _sensitivity, _garageSprite, _shopSprite) {
+    function SensorConfig(_id, _name, _isOwned, _radius, _range, _sensitivity, _garageSprite, _shopSprite, _cost, _unlocked) {
         return {
             id: _id,
             name: _name,
@@ -114,10 +121,12 @@ function InitShips() {
 			sensitivity: _sensitivity,
 			garageSprite: _garageSprite,
 			shopSprite: _shopSprite,
+			cost: _cost,
+			unlocked: _unlocked
         };
     }
 
-    function HullConfig(_id, _name, _isOwned, _hp, _maxHp, _garageSprite, _shopSprite) {
+    function HullConfig(_id, _name, _isOwned, _hp, _maxHp, _garageSprite, _shopSprite, _cost, _unlocked) {
         return {
             id: _id,
             name: _name,
@@ -126,6 +135,8 @@ function InitShips() {
             maxHp: _maxHp,
 			garageSprite: _garageSprite,
 			shopSprite: _shopSprite,
+			cost: _cost,
+			unlocked: _unlocked
         };
     }
 
@@ -215,7 +226,9 @@ function InitShips() {
         3.0,                    // Speed
         0,                       // Cooldown
 		spr_basicTest,		// Garage Sprite
-		spr_basicTest		// Shop Sprite
+		spr_basicTest,		// Shop Sprite
+		500,						// Cost
+		true	
     );
 
     global.engines[1] = EngineConfig(
@@ -226,7 +239,9 @@ function InitShips() {
         5,                      // Speed
         0,                       // Cooldown
 		spr_basicTest_1,		// Garage Sprite
-		spr_basicTest		// Shop Sprite
+		spr_basicTest,		// Shop Sprite
+		500,						// Cost
+		true	
     );
 
     global.engines[2] = EngineConfig(
@@ -237,7 +252,9 @@ function InitShips() {
         2.0,                    // Speed
         0,                       // Cooldown
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true	
     );
 	
 	  global.engines[3] = EngineConfig(
@@ -248,7 +265,9 @@ function InitShips() {
         2.0,                    // Speed
         0,                       // Cooldown
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true	
     );
 	
 	  global.engines[4] = EngineConfig(
@@ -259,7 +278,9 @@ function InitShips() {
         2.0,                    // Speed
         0,                       // Cooldown
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		false	
     );
 	
 	  global.engines[5] = EngineConfig(
@@ -270,7 +291,9 @@ function InitShips() {
         2.0,                    // Speed
         0,                       // Cooldown
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		false	
     );
 	
 	  global.engines[6] = EngineConfig(
@@ -281,7 +304,9 @@ function InitShips() {
         2.0,                    // Speed
         0,                       // Cooldown
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		false	
     );
 
     // Initialize global ship sprite configurations array
@@ -328,7 +353,9 @@ function InitShips() {
         3,                  // HP
         3,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 
     global.hulls[1] = HullConfig(
@@ -338,7 +365,9 @@ function InitShips() {
         7,                  // HP
         7,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.hulls[2] = HullConfig(
@@ -348,7 +377,9 @@ function InitShips() {
         11,                  // HP
         11,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.hulls[3] = HullConfig(
@@ -358,7 +389,9 @@ function InitShips() {
         11,                  // HP
         11,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.hulls[4] = HullConfig(
@@ -368,7 +401,9 @@ function InitShips() {
         11,                  // HP
         11,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.hulls[5] = HullConfig(
@@ -378,7 +413,9 @@ function InitShips() {
         11,                  // HP
         11,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.hulls[5] = HullConfig(
@@ -388,7 +425,9 @@ function InitShips() {
         11,                  // HP
         11,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.hulls[6] = HullConfig(
@@ -398,7 +437,9 @@ function InitShips() {
         11,                  // HP
         11,                   // Max HP
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 
     global.shields = [];
@@ -417,7 +458,9 @@ function InitShips() {
         13,                     // Shield Static Max
         30,                      // Shield Active 
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 
     global.shields[1] = ShieldConfig(
@@ -433,7 +476,9 @@ function InitShips() {
         7,                      // Shield Static Max
         0,                       // Shield Active
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	 global.shields[2] = ShieldConfig(
@@ -449,7 +494,9 @@ function InitShips() {
         20,                      // Shield Static Max
         0,                       // Shield Active
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	 global.shields[3] = ShieldConfig(
@@ -465,14 +512,15 @@ function InitShips() {
         20,                      // Shield Static Max
         0,                       // Shield Active
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 
     global.primaryWeapons = [];
 
     // Adding primary weapons individually
     global.primaryWeapons[0] = PrimaryWeaponConfig(
-        1,
         "Plasma Cannon",        // Name
         false,                   // Is Owned
         5,                      // Delay
@@ -485,12 +533,13 @@ function InitShips() {
         spr_plasma,
 		600,						//Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
 		
     );
 
     global.primaryWeapons[1] = PrimaryWeaponConfig(
-        2,
         "Rail Gun",             // Name
         false,                   // Is Owned
         2,                      // Delay
@@ -503,11 +552,12 @@ function InitShips() {
         spr_railGun,
 		750,						//Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	 global.primaryWeapons[2] = PrimaryWeaponConfig(
-        2,
         "Beam Cannon",             // Name
         false,                   // Is Owned
         0,                      // Delay
@@ -520,11 +570,12 @@ function InitShips() {
         spr_beamCannon,
 		400,						//Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	 global.primaryWeapons[3] = PrimaryWeaponConfig(
-        2,
         "New Weapon",             // Name
         false,                   // Is Owned
         0,                      // Delay
@@ -537,14 +588,15 @@ function InitShips() {
         spr_beamCannon,
 		400,						//Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		false						// Unlocked
     );
 
     global.secondaryWeapons = [];
 
     // Adding secondary weapons individually
     global.secondaryWeapons[0] = SecondaryWeaponConfig(
-        1,
         "Missile Launcher",     // Name
         true,                   // Is Owned
         0,                      // Delay
@@ -558,11 +610,12 @@ function InitShips() {
         0,                      // Deploy Angle
 		750,						//Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,
+		true
     );
 
     global.secondaryWeapons[1] = SecondaryWeaponConfig(
-        2,
         "Swarm Bomb",           // Name
         true,                   // Is Owned
         0,                      // Delay
@@ -576,11 +629,12 @@ function InitShips() {
 		180,                     // Deploy Angle
 		300,						// Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.secondaryWeapons[2] = SecondaryWeaponConfig(
-        3,
         "Energy Cannon",             // Name
         true,                   // Is Owned
         0,                      // Delay
@@ -594,11 +648,12 @@ function InitShips() {
 		0,  
 		1500, // Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		true						// Unlocked
     );
 	
 	global.secondaryWeapons[3] = SecondaryWeaponConfig(
-        3,
         "New Secondary",             // Name
         false,                   // Is Owned
         0,                      // Delay
@@ -612,7 +667,9 @@ function InitShips() {
 		0,  
 		1500, // Projectile Range
 		spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+		spr_shipSystemsLarge,		// Shop Sprite
+		500,						// Cost
+		false						// Unlocked
     );
 
     // Initialize the global array of sensors
@@ -627,7 +684,9 @@ function InitShips() {
     3.0,                    // Range
     1,                       // Sensitivity
 	spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+	spr_shipSystemsLarge,		// Shop Sprite
+	500,						// Cost
+	true						// Unlocked
 );
 
 global.sensors[1] = SensorConfig(
@@ -638,7 +697,9 @@ global.sensors[1] = SensorConfig(
     5,                      // Range
     2,                       // Sensitivity
 	spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+	spr_shipSystemsLarge,		// Shop Sprite
+	500,						// Cost
+	true						// Unlocked
 );
 
 global.sensors[2] = SensorConfig(
@@ -649,7 +710,9 @@ global.sensors[2] = SensorConfig(
     2.0,                    // Range
     3,                       // Sensitivity
 	spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+	spr_shipSystemsLarge,		// Shop Sprite
+	500,						// Cost
+	true						// Unlocked
 );
 
 global.sensors[3] = SensorConfig(
@@ -660,7 +723,9 @@ global.sensors[3] = SensorConfig(
     2.0,                    // Range
     3,                       // Sensitivity
 	spr_shipSystemsLarge,		// Garage Sprite
-		spr_shipSystemsLarge		// Shop Sprite
+	spr_shipSystemsLarge,		// Shop Sprite
+	500,						// Cost
+	true						// Unlocked
 );
 
 
@@ -689,7 +754,8 @@ global.sensors[3] = SensorConfig(
         "Wasp",                                 // Ship Name
         "Scout",                                // Ship Class
         "Gen 4 Mercurian",                       // Ship Generation
-        global.sensors[1]                       // Sensors
+        global.sensors[1],                       // Sensors
+		true
     );
 
     global.playerShips[1] = ShipConfig(
@@ -706,7 +772,8 @@ global.sensors[3] = SensorConfig(
         "Raptor",                                 // Ship Name
         "Interceptor",                              // Ship Class
         "Gen 5 Venuzian",                      // Ship Generation
-        global.sensors[2]                       // Sensors
+        global.sensors[2],                       // Sensors
+		true
     );
 
     global.playerShips[2] = ShipConfig(
@@ -723,7 +790,8 @@ global.sensors[3] = SensorConfig(
         "Sparrow",                               // Ship Name
         "Frigate",                          // Ship Class
         "Gen 3 Venuzian",                                // Ship Generation
-        global.sensors[0]                       // Sensors
+        global.sensors[0],                       // Sensors
+		true
     );
 
 }
