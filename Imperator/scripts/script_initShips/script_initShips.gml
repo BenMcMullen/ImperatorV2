@@ -403,7 +403,7 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Garage Sprite
 		spr_shipSystemsLarge,		// Shop Sprite
 		500,						// Cost
-		true						// Unlocked
+		false						// Unlocked
     );
 	
 	global.hulls[5] = HullConfig(
@@ -415,7 +415,7 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Garage Sprite
 		spr_shipSystemsLarge,		// Shop Sprite
 		500,						// Cost
-		true						// Unlocked
+		false						// Unlocked
     );
 	
 	global.hulls[5] = HullConfig(

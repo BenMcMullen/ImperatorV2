@@ -8,4 +8,4 @@ item_spacing = 32; // Spacing between items
 margin_x = 32; // Horizontal margin
 margin_y = 32; // Vertical margin
 descriptor_height = 24; // Height of descriptor space below each item
-depth = 2;
+depth = 3;

@@ -1,5 +1,5 @@
 /// Draw Event of obj_shopDisplayBox
-
+draw_self();
 
 var num_items = 3;
 var item_width = 64; // Adjust based on your sprite size
