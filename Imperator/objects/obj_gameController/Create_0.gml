@@ -48,7 +48,9 @@ global.itemEnhancedSensors = false;
 global.itemSecondaryGunner = false;
 // Initialize more global variables as needed
 
-
+//Tracking the shop page's selected system and displayed descriptions
+global.lastClickedShopSystem = noone;
+global.displayedUpgradeDescriptions = noone;
 
 killTextScale = 1;
 loseHpScale = 1;

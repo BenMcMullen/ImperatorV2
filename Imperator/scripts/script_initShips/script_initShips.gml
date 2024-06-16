@@ -259,7 +259,7 @@ function InitShips() {
 	
 	  global.engines[3] = EngineConfig(
         3,
-        "Frigate Engine",         // Name
+        "Test ONE Engine",         // Name
         false,                  // Is Owned
         2.5,                    // Boost Speed
         2.0,                    // Speed
@@ -272,7 +272,7 @@ function InitShips() {
 	
 	  global.engines[4] = EngineConfig(
         3,
-        "Frigate Engine",         // Name
+        "TWO Engine",         // Name
         false,                  // Is Owned
         2.5,                    // Boost Speed
         2.0,                    // Speed
@@ -280,12 +280,12 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Garage Sprite
 		spr_shipSystemsLarge,		// Shop Sprite
 		500,						// Cost
-		false	
+		true	
     );
 	
 	  global.engines[5] = EngineConfig(
         3,
-        "Frigate Engine",         // Name
+        "BIG THREE",         // Name
         false,                  // Is Owned
         2.5,                    // Boost Speed
         2.0,                    // Speed
@@ -293,12 +293,12 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Garage Sprite
 		spr_shipSystemsLarge,		// Shop Sprite
 		500,						// Cost
-		false	
+		true	
     );
 	
 	  global.engines[6] = EngineConfig(
         3,
-        "Frigate Engine",         // Name
+        "ANOTHER ONE",         // Name
         false,                  // Is Owned
         2.5,                    // Boost Speed
         2.0,                    // Speed
@@ -306,7 +306,7 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Garage Sprite
 		spr_shipSystemsLarge,		// Shop Sprite
 		500,						// Cost
-		false	
+		true	
     );
 
     // Initialize global ship sprite configurations array
