@@ -13,15 +13,15 @@ if (global.contractQuantity <= global.killsThisRoom && global.hasContract == tru
 }
 
 if (keyboard_check_pressed(vk_left)) {
-    obj_shipSystemsLarge.current_group_start -= obj_shipSystemsLarge.items_per_group;
-    if (obj_shipSystemsLarge.current_group_start < 0) {
-        obj_shipSystemsLarge.current_group_start = 0;
+    obj_garageSystem.current_group_start -= obj_garageSystem.items_per_group;
+    if (obj_garageSystem.current_group_start < 0) {
+        obj_garageSystem.current_group_start = 0;
     }
 }
 
 if (keyboard_check_pressed(vk_right)) {
-    obj_shipSystemsLarge.current_group_start += obj_shipSystemsLarge.items_per_group;
-    if (obj_shipSystemsLarge.current_group_start >= obj_shipSystemsLarge.total_items) {
-        obj_shipSystemsLarge.current_group_start = max(0, obj_shipSystemsLarge.total_items - obj_shipSystemsLarge.items_per_group);
+    obj_garageSystem.current_group_start += obj_garageSystem.items_per_group;
+    if (obj_garageSystem.current_group_start >= obj_garageSystem.total_items) {
+        obj_garageSystem.current_group_start = max(0, obj_garageSystem.total_items - obj_garageSystem.items_per_group);
     }
 }

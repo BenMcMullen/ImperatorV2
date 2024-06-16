@@ -24,7 +24,7 @@ function InitLevels() {
     global.levels[1] = LevelConfig(2, [], 0, room_intro, 0);
     global.levels[2] = LevelConfig(3, [], 0, room_shop, 0);
 	global.levels[3] = LevelConfig(4, [], 0, room_hangar, 0);
-	global.levels[4] = LevelConfig(1, [], 0, room_shipGarage, 0);
+	global.levels[4] = LevelConfig(1, [], 0, room_garage, 0);
 	global.levels[5] = LevelConfig(5, [], 0, room_testFlight, 0);
 	global.levels[6] = LevelConfig(6, global.enemyTypes[0], 200, room_1, 2);
 	global.levels[7] = LevelConfig(7, global.enemyTypes[0], 300, room_2, 3);
