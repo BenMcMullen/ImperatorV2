@@ -25,6 +25,7 @@ for (var i = 0; i < total_items; i++) {
     // Set properties or data for obj_shipSystems instance based on items_array[i]
     instance.item_data = system;
 	instance.system_type = systemType;
+	instance.systemSprite = systemSprite;
 	}
 	else {
 		continue;

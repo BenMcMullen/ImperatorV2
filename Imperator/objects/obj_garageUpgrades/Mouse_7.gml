@@ -17,7 +17,7 @@ if (mouse_check_button_released(mb_left)) {
                 }
                 // Update the large box to contain this new object
                 contained_object = other.id;
-                sprite_index = other.sprite_index; // Change large box sprite to the small box sprite
+                sprite_index = other.systemSprite; // Change large box sprite to the small box sprite
                 image_index = 0; // Optionally reset the image_index if using animated sprites
                 
                 // Access `system` data from obj_shipSystemsLarge through `item_data`
