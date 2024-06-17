@@ -8,7 +8,7 @@
 		other.item.isOwned = true;
 		show_debug_message("we get here");
         
-		 var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_purchaseUpgradeMessage);
+		 var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_shopUpgradeMessage);
 		
 		sprite_index = spr_ownedSystemUpgrade; // Change large box sprite to the small box sprite
              
@@ -18,19 +18,19 @@
 			
     } else if (!other.unlocked) {
 		show_debug_message("locked");
-		var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_purchaseUpgradeMessage);
+		var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_shopUpgradeMessage);
         messageText = "You haven't unlocked this upgrade yet!";
 		shopItemInstance.messageText = messageText;
     }
 	else if (other.isOwned) {	
 			show_debug_message("owned");
-		var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_purchaseUpgradeMessage);
+		var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_shopUpgradeMessage);
         messageText = "You already own " + other.upgradeName + "!";
 		shopItemInstance.messageText = messageText;
     }
 	else {
 			show_debug_message("poor");
-		var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_purchaseUpgradeMessage);
+		var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_shopUpgradeMessage);
 
         messageText = "You haven't gathered enough contract points for " + other.upgradeName + "!";
 		shopItemInstance.messageText = messageText;

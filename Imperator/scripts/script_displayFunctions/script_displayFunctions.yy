@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_wrapText",
+  "%Name":"script_displayFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_wrapText",
+  "name":"script_displayFunctions",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

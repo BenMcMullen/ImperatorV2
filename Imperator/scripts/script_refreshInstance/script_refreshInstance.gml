@@ -6,7 +6,7 @@ function RefreshInstance(){
 		isOwned = argument2;
 		unlocked = argument3;
 		upgradeName = argument4;
-		system_type = argument5;
+		systemType = argument5;
   // Store the properties
     var x_position = instance.x;
     var y_position = instance.y;
@@ -21,7 +21,7 @@ function RefreshInstance(){
 	newInstance.isOwned = isOwned;
 	newInstance.unlocked = unlocked;
 	newInstance.upgradeName = upgradeName;
-	newInstance.system_type = system_type;
+	newInstance.systemType = systemType;
 
     // Optional: Copy other necessary properties (if any)
     // Example:

@@ -59,7 +59,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
             unlocked = currentItem.unlocked;
             
             shopItemInstance.array_index = i; // Store the array index
-            shopItemInstance.system_type = systemType; // Set system type
+            shopItemInstance.systemType = systemType; // Set system type
             shopItemInstance.cost = cost;
             shopItemInstance.upgradeName = upgradeName;
             shopItemInstance.isOwned = isOwned;

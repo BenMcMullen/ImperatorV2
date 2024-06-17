@@ -22,9 +22,10 @@ if (mouse_check_button_released(mb_left)) {
                 image_index = 0; // Optionally reset the image_index if using animated sprites
 
                 // Access `system` data from obj_shipSystemsLarge through `item_data`
-                UpgradeShip(other.item_data, other.system_type);
-
-                // Now you can use `system_data` as needed
+                UpgradeShip(other.item_data, other.systemType);
+				var shopItemInstance = instance_create_layer(x/2, y/2, "Systems", obj_garageUpgradeMessage);
+				messageText = (other.item_data.name + " installed to " + systemType + " system");
+				shopItemInstance.messageText = messageText;
             }
 			}
         }
