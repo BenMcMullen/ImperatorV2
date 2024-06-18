@@ -52,6 +52,7 @@
     {"id":{"name":"obj_gameController","path":"objects/obj_gameController/obj_gameController.yy",},},
     {"id":{"name":"obj_garage","path":"objects/obj_garage/obj_garage.yy",},},
     {"id":{"name":"obj_garageDisplayBox","path":"objects/obj_garageDisplayBox/obj_garageDisplayBox.yy",},},
+    {"id":{"name":"obj_garageShipDisplay","path":"objects/obj_garageShipDisplay/obj_garageShipDisplay.yy",},},
     {"id":{"name":"obj_garageSystem","path":"objects/obj_garageSystem/obj_garageSystem.yy",},},
     {"id":{"name":"obj_garageUpgradeDescription","path":"objects/obj_garageUpgradeDescription/obj_garageUpgradeDescription.yy",},},
     {"id":{"name":"obj_garageUpgradeMessage","path":"objects/obj_garageUpgradeMessage/obj_garageUpgradeMessage.yy",},},

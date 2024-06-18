@@ -1,4 +1,4 @@
 target = global.primaryWeapons;
 total_items = array_length(target);
 systemType = "primaryWeapon";
-systemSprite = global.selectedShip.primaryWeapon.garageSprite;
+systemSprite = global.selectedShip.primaryWeapon;

@@ -1,13 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_garageDisplayBox",
+  "%Name":"obj_garageShipDisplay",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_garageDisplayBox",
+  "name":"obj_garageShipDisplay",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_garageDisplayBox",
-    "path":"sprites/spr_garageDisplayBox/spr_garageDisplayBox.yy",
+    "name":"spr_introWasp",
+    "path":"sprites/spr_introWasp/spr_introWasp.yy",
   },
   "spriteMaskId":null,
   "visible":true,

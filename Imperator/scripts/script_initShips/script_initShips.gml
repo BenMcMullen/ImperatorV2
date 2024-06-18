@@ -214,6 +214,40 @@ function InitShips() {
         return null;
     };
 
+// Initialize global ship sprite configurations array
+    global.sprites = [];
+
+    // Adding ship sprite configurations individually
+    global.sprites[0] = ShipSpriteConfig(
+        1,
+        "WASP",             // Ship Name
+        spr_waspStatic,     // Static sprite
+        spr_waspBoosting,   // Boosting sprite
+        spr_waspMoving,     // Moving sprite
+        spr_waspGarage,     // Garage sprite
+		spr_waspHangar		// Hangar Sprite
+    );
+
+    global.sprites[1] = ShipSpriteConfig(
+        2,
+        "RAPTOR",             // Ship Name
+        spr_raptorStatic,     // Static sprite
+        spr_raptorBoosting,   // Boosting sprite
+        spr_raptorMoving,     // Moving sprite
+        spr_raptorGarage,     // Garage sprite
+		spr_raptorHangar		// Hangar Sprite
+    );
+	
+	global.sprites[2] = ShipSpriteConfig(
+        3,
+        "Sparrow",             // Ship Name
+        spr_sparrowStatic,     // Static sprite
+        spr_sparrowBoosting,   // Boosting sprite
+        spr_sparrowMoving,     // Moving sprite
+        spr_sparrowGarage,     // Garage sprite
+		spr_sparrowHangar		// Hangar Sprite
+    );
+
  // Initialize the global array of engines
     global.engines = [];
 
@@ -259,7 +293,7 @@ function InitShips() {
 	
 	  global.engines[3] = EngineConfig(
         3,
-        "Test ONE Engine",         // Name
+        "Test ONE",         // Name
         false,                  // Is Owned
         2.5,                    // Boost Speed
         2.0,                    // Speed
@@ -307,40 +341,6 @@ function InitShips() {
 		spr_shipSystemsLarge,		// Shop Sprite
 		500,						// Cost
 		true	
-    );
-
-    // Initialize global ship sprite configurations array
-    global.sprites = [];
-
-    // Adding ship sprite configurations individually
-    global.sprites[0] = ShipSpriteConfig(
-        1,
-        "WASP",             // Ship Name
-        spr_waspStatic,     // Static sprite
-        spr_waspBoosting,   // Boosting sprite
-        spr_waspMoving,     // Moving sprite
-        spr_waspGarage,     // Garage sprite
-		spr_waspHangar		// Hangar Sprite
-    );
-
-    global.sprites[1] = ShipSpriteConfig(
-        2,
-        "RAPTOR",             // Ship Name
-        spr_raptorStatic,     // Static sprite
-        spr_raptorBoosting,   // Boosting sprite
-        spr_raptorMoving,     // Moving sprite
-        spr_raptorGarage,     // Garage sprite
-		spr_raptorHangar		// Hangar Sprite
-    );
-	
-	global.sprites[2] = ShipSpriteConfig(
-        3,
-        "Sparrow",             // Ship Name
-        spr_sparrowStatic,     // Static sprite
-        spr_sparrowBoosting,   // Boosting sprite
-        spr_sparrowMoving,     // Moving sprite
-        spr_sparrowGarage,     // Garage sprite
-		spr_sparrowHangar		// Hangar Sprite
     );
 
     global.hulls = [];

@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_garageDisplayBox",
   "bboxMode":0,
-  "bbox_bottom":127,
+  "bbox_bottom":349,
   "bbox_left":0,
-  "bbox_right":255,
+  "bbox_right":479,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":128,
+  "height":350,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"079f7288-788c-4cd0-97e4-84f178153583","blendMode":0,"displayName":"default","isLocked":false,"name":"079f7288-788c-4cd0-97e4-84f178153583","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":256,
+  "width":480,
 }
