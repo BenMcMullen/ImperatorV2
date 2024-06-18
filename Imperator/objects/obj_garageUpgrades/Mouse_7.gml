@@ -1,9 +1,11 @@
-// obj_garageUpgrades Left Mouse Button Release Event
+// obj_garageUpgrades Left Mouse Button Release Event 
 if (mouse_check_button_released(mb_left)) {
+
     if (drag) {
         // Check if obj_shipSystems is dropped inside obj_garageSystem
         var target = collision_rectangle(x, y, x + sprite_width, y + sprite_height, obj_garageSystem, true, true);
-
+		// Above locvation needs to be changes
+		
         if (target != noone) {
             // Object is dropped inside the large box
             with (target) {
