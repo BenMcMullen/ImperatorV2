@@ -6,7 +6,7 @@
     if (other.cost < global.totalPoints && !other.isOwned && other.unlocked) {
 		global.totalPoints -= other.cost;
 		other.item.isOwned = true;
-		show_debug_message("we get here");
+		
         
 		 var shopItemInstance = instance_create_layer(x/2, y/2, "Items", obj_shopUpgradeMessage);
 		

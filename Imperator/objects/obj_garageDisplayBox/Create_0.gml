@@ -1,5 +1,6 @@
-// obj_garageDisplayBox Create Event
-target = []; // Initialize the target array
-itemsPerPage = 3; // Number of items to display per page
-currentIndex = 0; // Current index for pagination
+room_center_x = room_width / 2;
+room_center_y = room_height / 2;
+/// Create Event of obj_shopDisplayBox
 
+
+depth = -11;

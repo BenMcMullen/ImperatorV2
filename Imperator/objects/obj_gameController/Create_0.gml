@@ -16,7 +16,8 @@ minimap_height = 200; // Adjust as needed
 
  //START OFF WITH THE WASP.
  global.selectedShip = global.playerShips[0];
- global.shoppingSystem = "shield";
+ global.shoppingSystem = "";
+ global.garageUpgradingSystem = "";
   //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
  global.currentLevelIndex = 5;
 global.currentMusic = 0;
@@ -48,8 +49,9 @@ global.itemEnhancedSensors = false;
 global.itemSecondaryGunner = false;
 // Initialize more global variables as needed
 
-//Tracking the shop page's selected system and displayed descriptions
+//Tracking the shop/garage page's selected system and displayed descriptions
 global.lastClickedShopSystem = noone;
+global.lastClickedGarageSystem = noone;
 global.displayedUpgradeDescriptions = noone;
 
 killTextScale = 1;

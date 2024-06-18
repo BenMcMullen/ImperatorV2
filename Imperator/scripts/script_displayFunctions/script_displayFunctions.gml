@@ -3,27 +3,60 @@
 /// Wraps the given string into lines that fit within max_width.
 /// Returns an array of strings (lines).
 // Function to update the displayed items
-function UpdateDisplay() {
-   // Clear previously displayed items
+
+function ClearUpgrades(displayBox_id) {
+    // Clear previously displayed items
     with (obj_garageUpgrades) {
-        instance_destroy();
-    }
-
-    // Display new set of items
-    for (var i = 0; i < itemsPerPage; i++) {
-        var item_index = current_index + i;
-        if (item_index < array_length(target)) {
-            var system = target[item_index];
-            var instance_x = x - 96 + (i * 64); // Adjust x position within the box
-            var instance_y = y - 32; // Adjust y position within the box
-
-            // Create obj_garageUpgrades instance
-            var upgrade_instance = instance_create_layer(instance_x, instance_y, "Items", obj_garageUpgrades);
-            upgrade_instance.sprite_index = system.garageSprite;
-            upgrade_instance.item_data = system;
+        if (creator_id == displayBox_id) {
+            instance_destroy();
         }
     }
 }
+
+
+
+function PopulateDisplay(displayBox_id) {
+    var displayBox = displayBox_id;
+
+    // Clear previously displayed items
+    with (obj_garageUpgrades) {
+        if (other.creator_id == displayBox.creator_id) {
+            instance_destroy();
+        }
+    }
+
+    var spacing = 96; // Space between upgrades
+
+    // Calculate starting index for the display based on currentIndex
+    var start_index = displayBox.currentIndex;
+    if (start_index < 0) {
+        start_index = array_length(displayBox.target) + start_index; // Wrap around if index is negative
+    }
+
+    // Display new set of items (up to itemsPerPage)
+    for (var i = 0; i < displayBox.itemsPerPage; i++) {
+        var item_index = (start_index + i) % array_length(displayBox.target);
+        var system = displayBox.target[item_index];
+		show_debug_message("Populate gets here");
+        // Calculate x position for each upgrade
+        var upgrade_x = displayBox.x + i * spacing;
+
+        // Calculate y position (adjust as needed)
+        var upgrade_y = displayBox.y + 32; // Adjust vertically within the display box
+
+        // Create obj_garageUpgrades instance
+        var upgrade_instance = instance_create_layer(upgrade_x, upgrade_y, "Systems", obj_garageUpgrades);
+        upgrade_instance.sprite_index = system.garageSprite;
+        upgrade_instance.item_data = system;
+        upgrade_instance.systemType = displayBox.systemType;
+        upgrade_instance.systemSprite = displayBox.systemSprite;
+        upgrade_instance.creator_id = displayBox.creator_id; // Set creator_id to identify the display box
+
+        // Optionally, set other properties or execute additional logic here
+    }
+}
+
+
 
 
 function WrapText(str, max_width) {
