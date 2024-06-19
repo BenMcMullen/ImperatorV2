@@ -35,6 +35,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
         for (var i = 0; i < total_items; i++) {
             var currentItem = target[i];
+			if (currentItem.isOwned) {
 
             var instance_x = start_x + current_column * spacing_x;
             var instance_y = start_y + current_row * spacing_y;
@@ -42,15 +43,9 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
             var shopItemInstance = instance_create_layer(instance_x, instance_y + yOffset, "Systems", obj_garageUpgrades);
 
             // Set sprite index and properties for obj_shopUpgrade instance
-            if (!currentItem.unlocked) {
-                show_debug_message("should be black");
-                shopItemInstance.sprite_index = spr_lockedSystemUpgrade;
-            } else if (currentItem.isOwned) {
-                show_debug_message("should be gray");
-                shopItemInstance.sprite_index = spr_ownedSystemUpgrade;
-            } else {
+          
                 shopItemInstance.sprite_index = currentItem.garageSprite; // Assuming items_array contains sprite_index information
-            }
+            
 
             // Assign creator_id to match obj_garageSystem id
             shopItemInstance.creator_id = id;
@@ -79,7 +74,12 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
                 current_column = 0;
                 current_row++;
             }
-        }
+        } 
+		else {
+			continue;
+		
+		}  
+		}
     } else {
         // This object is the last clicked object
         show_debug_message("This object was already clicked. Click another object first.");

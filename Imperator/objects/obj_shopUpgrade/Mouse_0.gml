@@ -1,8 +1,10 @@
 
     
 	
-	/// we made this can purchase script. unforunately, we still need to actually get the cost and subtract it. blech.
-    // Check if the player has enough points to purchase the item
+	//There is an issue here, and that is that after we purchase something, we are still dealing
+	//with the same state of the upgrade from the array. The only way to change this is 
+	//to run some sort of script that goes and updates the global array we are modifying,
+	//That then returns the same index we are handling here, but updated.
     if (other.cost < global.totalPoints && !other.isOwned && other.unlocked) {
 		global.totalPoints -= other.cost;
 		other.item.isOwned = true;
