@@ -2,7 +2,7 @@
 
 var messageText = other.messageText;
 
-    var boxWidth = sprite_get_width(spr_shopMessage);
+    var boxWidth = sprite_get_width(spr_upgradeInfo);
     var boxHeight = sprite_get_height(spr_shopMessage);
     var boxX = (room_width - boxWidth) / 2;
     var boxY = (room_height - boxHeight) / 2;

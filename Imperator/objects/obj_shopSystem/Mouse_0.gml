@@ -1,7 +1,8 @@
 /// Mouse Left Pressed event in obj_shopSystem
 
 var currentTime = current_time / 1000;
-
+var overlay_instance = instance_find(obj_overlay, 0);
+if (!instance_exists(overlay_instance)) {
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
     lastClickTime = currentTime; // Update the last click time
 
@@ -43,17 +44,6 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
             var shopItemInstance = instance_create_layer(instance_x, instance_y + yOffset, "Items", obj_shopUpgrade);
             
-            // Set sprite index and properties for obj_shopUpgrade instance
-            if (!currentItem.unlocked) {
-                show_debug_message("should be black");
-                shopItemInstance.sprite_index = spr_lockedSystemUpgrade;
-            } else if (currentItem.isOwned) {
-                show_debug_message("should be gray");
-                shopItemInstance.sprite_index = spr_ownedSystemUpgrade;
-            } else {
-                shopItemInstance.sprite_index = currentItem.garageSprite; // Assuming items_array contains sprite_index information
-            }
-            
             upgradeName = currentItem.name;
             isOwned = currentItem.isOwned;
             unlocked = currentItem.unlocked;
@@ -86,4 +76,5 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
         show_debug_message("This object was already clicked. Click another object first.");
     
  }
+}
 }
