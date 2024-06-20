@@ -1,4 +1,5 @@
 function InitShips() {
+	
 
     function ShipConfig(_id, _hull, _engine, _primaryWeapon, _secondaryWeapon, _isOwned, _shields, _sprites, _x, _y, _shipName, _shipClass, _shipGeneration, _sensors, _unlocked) {
         return {

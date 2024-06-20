@@ -1,7 +1,10 @@
 // obj_game_controller Create event
+
+
 MusicConfig();
-InitLevels();
 InitShips();
+InitLevels();
+InitImperatorPhrases();
 #macro RES_W 1024
 #macro RES_H 768
 display_set_gui_size(RES_W, RES_H);
@@ -12,6 +15,13 @@ minimap_height = 200; // Adjust as needed
 
 //DO NOT CHANGE THESE VALUES. THESE ARE THE DEFAULT VALUES REQUIRED FOR THE GAME 
 //TO START IN THE CORRECT PLACE AND ORDER
+
+// Define the struct for playerInformation in the global scope
+global.playerInformation = {
+    totalKills: 0,   // Total kills attributed to the player
+    rank: 1,        // Player's rank (string representation)
+    currentLevel: 1  // Current level the player is at
+};
 
  //START OFF WITH THE WASP.
  global.selectedShip = global.playerShips[0];

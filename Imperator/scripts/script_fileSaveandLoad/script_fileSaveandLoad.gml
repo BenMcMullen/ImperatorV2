@@ -71,7 +71,7 @@ function LoadFile(filename) {
     global.sensors = global.saveFile.sensors;
 
 	
-			LoadBridge()()
+			LoadBridge()
 
         } catch (err) {
             show_message("Failed to load: " + err);

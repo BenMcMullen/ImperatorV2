@@ -17,7 +17,7 @@ if (instance_exists(obj_player))
 				}
 				//send player back to hangar after successful mission
 				//SaveFile(SAVEFILE)
-				LoadHangar();
+				LoadBridge();
 				global.totalPoints = global.totalPoints + global.levelPoints;
 				hasControl = false;
 			}
