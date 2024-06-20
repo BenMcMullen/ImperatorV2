@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_hangerManager",
-    "path":"sprites/spr_hangerManager/spr_hangerManager.yy",
+    "name":"spr_hangarManager",
+    "path":"sprites/spr_hangarManager/spr_hangarManager.yy",
   },
   "spriteMaskId":null,
   "visible":true,

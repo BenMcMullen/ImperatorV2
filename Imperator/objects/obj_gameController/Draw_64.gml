@@ -49,7 +49,7 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 		}
 
         // Draw the hangar
-        with (obj_toHangarFromBattle) {
+        with (obj_toBridgeFromBattle) {
             var hangerX = x / room_width * minimap_width;
             var hangerY = y / room_height * minimap_height;
             draw_sprite(spr_miniMapToHangar, 0, hangerX, hangerY); // Adjust the hangar icon sprite as needed
