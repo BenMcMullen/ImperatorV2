@@ -37,31 +37,36 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
         var current_row = 0;
 
         for (var i = 0; i < total_items; i++) {
-            var currentItem = target[i];
+            var currentUpgrade = target[i];
 			
             var instance_x = start_x + current_column * spacing_x;
             var instance_y = start_y + current_row * spacing_y;
 
-            var shopItemInstance = instance_create_layer(instance_x, instance_y + yOffset, "Items", obj_shopUpgrade);
+            var shopUpgradeInstance = instance_create_layer(instance_x, instance_y + yOffset, "Items", obj_shopUpgrade);
             
-            upgradeName = currentItem.name;
-            isOwned = currentItem.isOwned;
-            unlocked = currentItem.unlocked;
+            upgradeName = currentUpgrade.name;
+            isOwned = currentUpgrade.isOwned;
+            unlocked = currentUpgrade.unlocked;
             
-            shopItemInstance.array_index = i; // Store the array index
-            shopItemInstance.systemType = systemType; // Set system type
-            shopItemInstance.cost = cost;
-            shopItemInstance.upgradeName = upgradeName;
-            shopItemInstance.isOwned = isOwned;
-            shopItemInstance.unlocked = unlocked;
-            shopItemInstance.item = currentItem;
-            shopItemInstance.target = target;
+            shopUpgradeInstance.array_index = i; // Store the array index
+            shopUpgradeInstance.systemType = systemType; // Set system type
+            shopUpgradeInstance.cost = cost;
+            shopUpgradeInstance.upgradeName = upgradeName;
+            shopUpgradeInstance.isOwned = isOwned;
+            shopUpgradeInstance.unlocked = unlocked;
+            shopUpgradeInstance.item = currentUpgrade;
+            shopUpgradeInstance.target = target;
 			
 		    // Create obj_shopUpgradeDescription instance for the current shop item
             var descriptionText = instance_create_layer(instance_x + 32, instance_y + yOffset + 64, "Items", obj_shopUpgradeDescription);
-            descriptionText.text = currentItem.name; // Set the description text
-			descriptionText.unlocked = currentItem.unlocked;
+            descriptionText.text = currentUpgrade.name; // Set the description text
+			descriptionText.cost = currentUpgrade.cost;
+			descriptionText.unlocked = currentUpgrade.unlocked;
+			descriptionText.isOwned = currentUpgrade.isOwned;
+			descriptionText.array_index = i;
+			descriptionText.systemType = systemType;
             // Store the displayed description instance ID in an array
+			
             global.displayedUpgradeDescriptions[array_length(global.displayedUpgradeDescriptions)] = descriptionText;
 
             // Increment count for the number of created instances

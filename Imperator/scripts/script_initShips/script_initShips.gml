@@ -142,7 +142,7 @@ function InitShips() {
 
     //GETTERS BY ID
 
-    global.getShipSpriteById = function(id) {
+    global.ById = function(id) {
         for (var i = 0; i < global.shipSprites.length; i++) {
             if (global.shipSprites[i].id == id) {
                 return global.shipSprites[i];

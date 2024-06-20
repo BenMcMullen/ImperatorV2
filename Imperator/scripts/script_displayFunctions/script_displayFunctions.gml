@@ -59,7 +59,7 @@ function PopulateDisplay(displayBox_id) {
 
 
 
-function WrapText(str, max_width) {
+function WrapText(str, max_width, cost, isOwned, isShop) {
     var words = string_split(str, " ");   // Split the string into words
     var lines = [];   // Array to hold the resulting lines
     var current_line = "";   // Current line being constructed
@@ -91,6 +91,15 @@ function WrapText(str, max_width) {
         lines[array_length(lines)] = current_line;
     }
 
+    // Add the cost or "OWNED" as the last line if isOwned is true
+    if (isOwned && isShop) {
+        lines[array_length(lines)] = "OWNED";
+    } else if (isShop){
+        lines[array_length(lines)] = "Cost: " + string(cost);
+    }
+
     // Return the array of lines
     return lines;
 }
+
+

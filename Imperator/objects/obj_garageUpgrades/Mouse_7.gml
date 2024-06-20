@@ -38,8 +38,8 @@ if (mouse_check_button_released(mb_left)) {
                     UpgradeShip(upgradeData, upgradeDataType);
                     
                     // Optionally create a message instance
-                    var shopItemInstance = instance_create_layer(x / 2, y / 2, "Systems", obj_garageUpgradeMessage);
-                    shopItemInstance.messageText = (upgradeData.name + " installed to " + upgradeDataType + " system");
+                    var shopUpgradeInstance = instance_create_layer(x / 2, y / 2, "Systems", obj_garageUpgradeMessage);
+                    shopUpgradeInstance.messageText = (upgradeData.name + " installed to " + upgradeDataType + " system");
                 } else {
                     show_debug_message("creator_id mismatch: expected " + string(sourceGarageSystem.creator_id) + ", got " + string(sourceGarageSystem.id));
                 }
