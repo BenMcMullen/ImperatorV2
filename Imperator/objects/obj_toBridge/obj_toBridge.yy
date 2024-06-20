@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btnHangar",
-    "path":"sprites/spr_btnHangar/spr_btnHangar.yy",
+    "name":"spr_btnBridge",
+    "path":"sprites/spr_btnBridge/spr_btnBridge.yy",
   },
   "spriteMaskId":null,
   "visible":true,
