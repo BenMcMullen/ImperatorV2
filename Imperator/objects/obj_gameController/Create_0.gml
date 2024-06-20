@@ -18,7 +18,7 @@ minimap_height = 200; // Adjust as needed
  global.shoppingSystem = "";
  global.garageUpgradingSystem = "";
   //This is the level you are playing. Levels advance as soon as you leave the battlefield to the hangar
- global.currentLevelIndex = 5;
+ global.currentLevelIndex = 6;
 global.currentMusic = 0;
 global.musicPlaying = false;
 
