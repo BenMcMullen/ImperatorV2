@@ -5,7 +5,7 @@ if (global.currentMusic != -1) {
     global.musicPlaying = false;
     show_debug_message("Music Stopped");
 }
-global.kills =- global.killsThisRoom;
+global.playerInformation.kills =- global.killsThisRoom;
 global.selectedShip.hull.hp = global.selectedShip.hull.maxHp;
 global.selectedShip.shields.shieldStatic = global.selectedShip.shields.shieldStaticMax;
 with (obj_playerWeapons) instance_destroy();

@@ -95,9 +95,9 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 	
 	
 	DrawSetText(c_black, font_arial2, fa_left, fa_top);
-	draw_text(RES_W - RES_W + 8, 88, "Points: " + string(global.totalPoints));
+	draw_text(RES_W - RES_W + 8, 88, "Points: " + string(global.playerInformation.points));
 	draw_set_colour(c_yellow);
-	draw_text(RES_W - RES_W + 10, 86, "Points: " + string(global.totalPoints));	
+	draw_text(RES_W - RES_W + 10, 86, "Points: " + string(global.playerInformation.points));	
 
 }
 

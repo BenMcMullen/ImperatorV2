@@ -13,7 +13,7 @@ function SaveFile(filename) {
 			global.saveFile = {
 			kills: global.kills,
 			currentLevelIndex: global.currentLevelIndex,
-			totalPoints: global.totalPoints,
+			totalPoints: global.playerInformation.points,
 			selectedShip: global.selectedShip,
 			shipSystemsUpgradable: global.shipSystemsUpgradable,
 			hulls: global.hulls,
@@ -60,7 +60,7 @@ function LoadFile(filename) {
  global.selectedShip = global.saveFile.selectedShip;
     global.kills = global.saveFile.kills;
     global.currentLevelIndex = global.saveFile.currentLevelIndex;
-    global.totalPoints = global.saveFile.totalPoints;
+    global.playerInformation.points = global.saveFile.totalPoints;
     global.shipSystemsUpgradable = global.saveFile.shipSystemsUpgradable;
     global.hulls = global.saveFile.hulls;
     global.engines = global.saveFile.engines;

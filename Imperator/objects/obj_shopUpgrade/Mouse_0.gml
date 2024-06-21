@@ -8,8 +8,8 @@ if (!instance_exists(overlay_instance)) {
 	var shop_y_coordinates = room_height;
 	
 	
-    if (upgrade.cost < global.totalPoints && !upgrade.isOwned && upgrade.unlocked) {
-		global.totalPoints -= upgrade.cost;
+    if (upgrade.cost < global.playerInformation.points && !upgrade.isOwned && upgrade.unlocked) {
+		global.playerInformation.points -= upgrade.cost;
 		
 			
 		

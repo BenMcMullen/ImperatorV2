@@ -3,9 +3,8 @@
 // scr_load_next_level
 
 function LoadBridge() {
-  
-        var currentLevel = global.levels[6];
-		SlideTransition(TRANS_MODE.GOTO, currentLevel.room);
+
+		SlideTransition(TRANS_MODE.GOTO, room_bridge);
 
     
 }

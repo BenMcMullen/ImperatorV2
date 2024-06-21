@@ -4,8 +4,6 @@
 
 function LoadHangar() {
   
-        var currentLevel = global.levels[3];
-		SlideTransition(TRANS_MODE.GOTO, currentLevel.room);
+		SlideTransition(TRANS_MODE.GOTO, room_hangar);
 
-    
 }

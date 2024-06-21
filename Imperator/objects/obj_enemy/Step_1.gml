@@ -13,7 +13,7 @@ if (hp <= 0)
 	instance_destroy();
 	if (instance_exists(obj_player)) 
 	{
-	global.kills++;
+	global.playerInformation.kills++;
 	global.killsThisRoom++;
 	with (obj_gameController) killTextScale = 2;
 	}

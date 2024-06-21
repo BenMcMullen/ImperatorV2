@@ -111,6 +111,7 @@
     {"id":{"name":"script_imperatorDebrief","path":"scripts/script_imperatorDebrief/script_imperatorDebrief.yy",},},
     {"id":{"name":"script_imperatorDialogue","path":"scripts/script_imperatorDialogue/script_imperatorDialogue.yy",},},
     {"id":{"name":"script_initLevels","path":"scripts/script_initLevels/script_initLevels.yy",},},
+    {"id":{"name":"script_initPlayer","path":"scripts/script_initPlayer/script_initPlayer.yy",},},
     {"id":{"name":"script_initShips","path":"scripts/script_initShips/script_initShips.yy",},},
     {"id":{"name":"script_loadBridge","path":"scripts/script_loadBridge/script_loadBridge.yy",},},
     {"id":{"name":"script_loadHangar","path":"scripts/script_loadHangar/script_loadHangar.yy",},},

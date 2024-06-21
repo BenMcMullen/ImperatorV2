@@ -6,8 +6,8 @@ function LoadNextLevel() {
     global.currentLevelIndex++;
     global.totalCompletedContracts ++;
 	
-    if (global.currentLevelIndex < array_length(global.levels)) {
-        var currentLevel = global.levels[global.currentLevelIndex];
+    if (global.playerInformation.progress[global.playerInformation.currentMissionTree].missionLevel < array_length(global.playerInformation.progress[global.playerInformation.currentMissionTree])) {
+        var currentLevel = global.playerInformation.progress[global.playerInformation.currentMissionTree].missionLevel;
 		
 		global.contractType = currentLevel.enemyTypes;
         // Example: Set up the level using the currentLevelIndex data
