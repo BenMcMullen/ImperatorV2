@@ -6,356 +6,374 @@
 DisplaySentence(exampleIndices); */
 // Define the phrase categories for each rank
 function InitImperatorPhrases() {
-global.phrasesLieutenant = {
-    welcome: [
-        "Hey, you're back.",
-        "Oh, it's you again.",
-        "Didn't think you'd make it.",
-        "Back already?",
-        "What do you want?",
-        "Well, look who's back.",
-        "You're late, again.",
-        "Surprised you made it.",
-        "Didn't expect to see you.",
-        "You actually survived."
-    ],
-    performance: [
-        "You survived, somehow.",
-        "Don't screw up next time.",
-        "You're still alive, I see.",
-        "Barely made it back, huh?",
-        "You need more practice.",
-        "That was rough to watch.",
-        "Could have been better.",
-        "You call that flying?",
-        "Not your worst, I guess.",
-        "You did... okay."
-    ],
-    growth: [
-        "You're not the worst we've got.",
-        "Still got a long way to go.",
-        "You'll get there, maybe.",
-        "Keep trying, I guess.",
-        "You're improving, slowly.",
-        "Don't get cocky now.",
-        "Mediocrity suits you.",
-        "You're still a rookie.",
-        "Barely a pilot.",
-        "Just stay alive."
-    ],
-    question: [
-        "Did you forget how to fly?",
-        "Feeling lucky?",
-        "Why do you keep coming back?",
-        "Can you do better?",
-        "Lost out there?",
-        "Need a map?",
-        "Got a death wish?",
-        "Think you can improve?",
-        "Why so slow?",
-        "Not scared, are you?"
-    ]
-};
+    global.phrasesLieutenant = {
+        welcome: [],
+        performance: [],
+        growth: [],
+        question: []
+    };
 
-global.phrasesCaptain = {
-    welcome: [
-        "Welcome back, Captain.",
-        "Good to see you again.",
-        "Back in one piece, I see.",
-        "You made it back.",
-        "Greetings, Captain.",
-        "Glad you're here.",
-        "You return once more.",
-        "Safe and sound, Captain.",
-        "Reporting back, I see.",
-        "Hello, Captain."
-    ],
-    performance: [
-        "Good job out there.",
-        "You did well.",
-        "Nice flying.",
-        "Impressive work.",
-        "You handled it well.",
-        "Smooth operation.",
-        "Efficient as always.",
-        "You excelled today.",
-        "Mission accomplished.",
-        "Well done."
-    ],
-    growth: [
-        "Your skills are growing.",
-        "You're becoming a top pilot.",
-        "You show great potential.",
-        "The fleet depends on you.",
-        "You're making us proud.",
-        "You lead by example.",
-        "Your progress is noted.",
-        "You're vital to our success.",
-        "You're a true asset.",
-        "Keep up the good work."
-    ],
-    question: [
-        "Ready for another?",
-        "Think you can top that?",
-        "Can you keep it up?",
-        "How do you feel?",
-        "What do you need?",
-        "Ready for more action?",
-        "How's the ship holding?",
-        "Up for a challenge?",
-        "Can you lead the next?",
-        "How was the mission?"
-    ]
-};
+    global.phrasesLieutenant.welcome[0] = "Hey, you're back.";
+    global.phrasesLieutenant.welcome[1] = "Oh, it's you again.";
+    global.phrasesLieutenant.welcome[2] = "Didn't think you'd make it.";
+    global.phrasesLieutenant.welcome[3] = "Back already?";
+    global.phrasesLieutenant.welcome[4] = "What do you want?";
+    global.phrasesLieutenant.welcome[5] = "Well, look who's back.";
+    global.phrasesLieutenant.welcome[6] = "You're late, again.";
+    global.phrasesLieutenant.welcome[7] = "Surprised you made it.";
+    global.phrasesLieutenant.welcome[8] = "Didn't expect to see you.";
+    global.phrasesLieutenant.welcome[9] = "You actually survived.";
 
-global.phrasesMajor = {
-    welcome: [
-        "Welcome back, Major.",
-        "Good to see you, Major.",
-        "You've returned, Major.",
-        "Major, you're back.",
-        "Greetings, Major.",
-        "Well done, Major.",
-        "Welcome, Major.",
-        "Back safe, Major.",
-        "Reporting in, Major?",
-        "Hello, Major."
-    ],
-    performance: [
-        "Excellent work, Major.",
-        "Well executed, Major.",
-        "You did great, Major.",
-        "Outstanding performance.",
-        "Flawless operation.",
-        "Top-notch flying.",
-        "You're a natural.",
-        "Exceptional skill.",
-        "Mission complete, Major.",
-        "You nailed it."
-    ],
-    growth: [
-        "You're a seasoned pilot.",
-        "Your expertise is showing.",
-        "You're a key player.",
-        "Major, you're invaluable.",
-        "Leading by example.",
-        "An asset to the fleet.",
-        "You're indispensable.",
-        "Major, you're elite.",
-        "You've come a long way.",
-        "Proud to have you."
-    ],
-    question: [
-        "Ready for the next challenge?",
-        "Can you maintain this level?",
-        "What's your assessment?",
-        "Feel confident, Major?",
-        "What are your thoughts?",
-        "Prepared for more?",
-        "How can we support you?",
-        "Ready to excel further?",
-        "What's your plan, Major?",
-        "How do you keep improving?"
-    ]
-};
+    global.phrasesLieutenant.performance[0] = "You survived, somehow.";
+    global.phrasesLieutenant.performance[1] = "Don't screw up next time.";
+    global.phrasesLieutenant.performance[2] = "You're still alive, I see.";
+    global.phrasesLieutenant.performance[3] = "Barely made it back, huh?";
+    global.phrasesLieutenant.performance[4] = "You need more practice.";
+    global.phrasesLieutenant.performance[5] = "That was rough to watch.";
+    global.phrasesLieutenant.performance[6] = "Could have been better.";
+    global.phrasesLieutenant.performance[7] = "You call that flying?";
+    global.phrasesLieutenant.performance[8] = "Not your worst, I guess.";
+    global.phrasesLieutenant.performance[9] = "You did... okay.";
 
-global.phrasesColonel = {
-    welcome: [
-        "Welcome back, Colonel.",
-        "Good to see you, Colonel.",
-        "You've returned, Colonel.",
-        "Colonel, you're back.",
-        "Greetings, Colonel.",
-        "Well done, Colonel.",
-        "Welcome, Colonel.",
-        "Back safe, Colonel.",
-        "Reporting in, Colonel?",
-        "Hello, Colonel."
-    ],
-    performance: [
-        "Excellent work, Colonel.",
-        "Well executed, Colonel.",
-        "You did great, Colonel.",
-        "Outstanding performance.",
-        "Flawless operation.",
-        "Top-notch flying.",
-        "You're a natural.",
-        "Exceptional skill.",
-        "Mission complete, Colonel.",
-        "You nailed it."
-    ],
-    growth: [
-        "You're a seasoned pilot.",
-        "Your expertise is showing.",
-        "You're a key player.",
-        "Colonel, you're invaluable.",
-        "Leading by example.",
-        "An asset to the fleet.",
-        "You're indispensable.",
-        "Colonel, you're elite.",
-        "You've come a long way.",
-        "Proud to have you."
-    ],
-    question: [
-        "Ready for the next challenge?",
-        "Can you maintain this level?",
-        "What's your assessment?",
-        "Feel confident, Colonel?",
-        "What are your thoughts?",
-        "Prepared for more?",
-        "How can we support you?",
-        "Ready to excel further?",
-        "What's your plan, Colonel?",
-        "How do you keep improving?"
-    ]
-};
+    global.phrasesLieutenant.growth[0] = "You're not the worst we've got.";
+    global.phrasesLieutenant.growth[1] = "Still got a long way to go.";
+    global.phrasesLieutenant.growth[2] = "You'll get there, maybe.";
+    global.phrasesLieutenant.growth[3] = "Keep trying, I guess.";
+    global.phrasesLieutenant.growth[4] = "You're improving, slowly.";
+    global.phrasesLieutenant.growth[5] = "Don't get cocky now.";
+    global.phrasesLieutenant.growth[6] = "Mediocrity suits you.";
+    global.phrasesLieutenant.growth[7] = "You're still a rookie.";
+    global.phrasesLieutenant.growth[8] = "Barely a pilot.";
+    global.phrasesLieutenant.growth[9] = "Just stay alive.";
 
-global.phrasesGeneral = {
-    welcome: [
-        "Welcome back, General.",
-        "Good to see you, General.",
-        "You've returned, General.",
-        "General, you're back.",
-        "Greetings, General.",
-        "Well done, General.",
-        "Welcome, General.",
-        "Back safe, General.",
-        "Reporting in, General?",
-        "Hello, General."
-    ],
-    performance: [
-        "Superb performance, General.",
-        "You exceeded expectations.",
-        "Impeccable work, General.",
-        "Flawless execution.",
-        "Remarkable flying.",
-        "A master at work.",
-        "You're extraordinary.",
-        "Mission perfection.",
-        "Unparalleled skill.",
-        "Outstanding result."
-    ],
-    growth: [
-        "You're at the pinnacle.",
-        "A paragon of excellence.",
-        "Your leadership shines.",
-        "The fleet's finest.",
-        "General, you're unmatched.",
-        "Your legacy grows.",
-        "Exemplary service.",
-        "You're a living legend.",
-        "A beacon of prowess.",
-        "General, you're peerless."
-    ],
-    question: [
-        "What's next, General?",
-        "How do you achieve this?",
-        "What's your secret, General?",
-        "Your thoughts on this mission?",
-        "How do you stay so sharp?",
-        "What motivates you, General?",
-        "Can we follow your lead?",
-        "How do you inspire excellence?",
-        "What's your next move?",
-        "How do you plan to top this?"
-    ]
-};
+    global.phrasesLieutenant.question[0] = "Did you forget how to fly?";
+    global.phrasesLieutenant.question[1] = "Feeling lucky?";
+    global.phrasesLieutenant.question[2] = "Why do you keep coming back?";
+    global.phrasesLieutenant.question[3] = "Can you do better?";
+    global.phrasesLieutenant.question[4] = "Lost out there?";
+    global.phrasesLieutenant.question[5] = "Need a map?";
+    global.phrasesLieutenant.question[6] = "Got a death wish?";
+    global.phrasesLieutenant.question[7] = "Think you can improve?";
+    global.phrasesLieutenant.question[8] = "Why so slow?";
+    global.phrasesLieutenant.question[9] = "Not scared, are you?";
 
-global.phrasesVenator = {
-    welcome: [
-        "Welcome back, Venator.",
-        "Good to see you, Venator.",
-        "You've returned, Venator.",
-        "Venator, you're back.",
-        "Greetings, Venator.",
-        "Well done, Venator.",
-        "Welcome, Venator.",
-        "Back safe, Venator.",
-        "Reporting in, Venator?",
-        "Hello, Venator."
-    ],
-    performance: [
-        "Legendary work, Venator.",
-        "You surpassed all expectations.",
-        "Peerless performance, Venator.",
-        "Absolute mastery.",
-        "Flying perfection.",
-        "A class of your own.",
-        "You're a living legend.",
-        "Mission flawless.",
-        "Incomparable skill.",
-        "Exceptional outcome."
-    ],
-    growth: [
-        "You're the ultimate pilot.",
-        "An icon of excellence.",
-        "Your legend continues.",
-        "The fleet's hero.",
-        "Venator, you're unrivaled.",
-        "Your legacy is eternal.",
-        "Ultimate mastery.",
-        "A symbol of greatness.",
-        "Venator, you're a paragon.",
-        "The epitome of skill."
-    ],
-    question: [
-        "How do you keep evolving?",
-        "What's the secret to your success?",
-        "How do you feel about the mission?",
-        "What's your next conquest?",
-        "How do you achieve perfection?",
-        "What's your strategy, Venator?",
-        "Can you share your wisdom?",
-        "How do you stay ahead?",
-        "What's your next challenge?",
-        "How do you define excellence?"
-    ]
-};
+    global.phrasesCaptain = {
+        welcome: [],
+        performance: [],
+        growth: [],
+        question: []
+    };
+
+    global.phrasesCaptain.welcome[0] = "Welcome back, Captain.";
+    global.phrasesCaptain.welcome[1] = "Good to see you again.";
+    global.phrasesCaptain.welcome[2] = "Back in one piece, I see.";
+    global.phrasesCaptain.welcome[3] = "You made it back.";
+    global.phrasesCaptain.welcome[4] = "Greetings, Captain.";
+    global.phrasesCaptain.welcome[5] = "Glad you're here.";
+    global.phrasesCaptain.welcome[6] = "You return once more.";
+    global.phrasesCaptain.welcome[7] = "Safe and sound, Captain.";
+    global.phrasesCaptain.welcome[8] = "Reporting back, I see.";
+    global.phrasesCaptain.welcome[9] = "Hello, Captain.";
+
+    global.phrasesCaptain.performance[0] = "Good job out there.";
+    global.phrasesCaptain.performance[1] = "You did well.";
+    global.phrasesCaptain.performance[2] = "Nice flying.";
+    global.phrasesCaptain.performance[3] = "Impressive work.";
+    global.phrasesCaptain.performance[4] = "You handled it well.";
+    global.phrasesCaptain.performance[5] = "Smooth operation.";
+    global.phrasesCaptain.performance[6] = "Efficient as always.";
+    global.phrasesCaptain.performance[7] = "You excelled today.";
+    global.phrasesCaptain.performance[8] = "Mission accomplished.";
+    global.phrasesCaptain.performance[9] = "Well done.";
+
+    global.phrasesCaptain.growth[0] = "Your skills are growing.";
+    global.phrasesCaptain.growth[1] = "You're becoming a top pilot.";
+    global.phrasesCaptain.growth[2] = "You show great potential.";
+    global.phrasesCaptain.growth[3] = "The fleet depends on you.";
+    global.phrasesCaptain.growth[4] = "You're making us proud.";
+    global.phrasesCaptain.growth[5] = "You lead by example.";
+    global.phrasesCaptain.growth[6] = "Your progress is noted.";
+    global.phrasesCaptain.growth[7] = "You're vital to our success.";
+    global.phrasesCaptain.growth[8] = "You're a true asset.";
+    global.phrasesCaptain.growth[9] = "Keep up the good work.";
+
+    global.phrasesCaptain.question[0] = "Ready for another?";
+    global.phrasesCaptain.question[1] = "Think you can top that?";
+    global.phrasesCaptain.question[2] = "Can you keep it up?";
+    global.phrasesCaptain.question[3] = "How do you feel?";
+    global.phrasesCaptain.question[4] = "What do you need?";
+    global.phrasesCaptain.question[5] = "Ready for more action?";
+    global.phrasesCaptain.question[6] = "How's the ship holding?";
+    global.phrasesCaptain.question[7] = "Up for a challenge?";
+    global.phrasesCaptain.question[8] = "Can you lead the next?";
+    global.phrasesCaptain.question[9] = "How was the mission?";
+
+    global.phrasesMajor = {
+        welcome: [],
+        performance: [],
+        growth: [],
+        question: []
+    };
+
+    global.phrasesMajor.welcome[0] = "Welcome back, Major.";
+    global.phrasesMajor.welcome[1] = "Good to see you, Major.";
+    global.phrasesMajor.welcome[2] = "You've returned, Major.";
+    global.phrasesMajor.welcome[3] = "Major, you're back.";
+    global.phrasesMajor.welcome[4] = "Greetings, Major.";
+    global.phrasesMajor.welcome[5] = "Well done, Major.";
+    global.phrasesMajor.welcome[6] = "Welcome, Major.";
+    global.phrasesMajor.welcome[7] = "Back safe, Major.";
+    global.phrasesMajor.welcome[8] = "Reporting in, Major?";
+    global.phrasesMajor.welcome[9] = "Hello, Major.";
+
+    global.phrasesMajor.performance[0] = "Excellent work, Major.";
+    global.phrasesMajor.performance[1] = "Well executed, Major.";
+    global.phrasesMajor.performance[2] = "You did great, Major.";
+    global.phrasesMajor.performance[3] = "Outstanding performance.";
+    global.phrasesMajor.performance[4] = "Flawless operation.";
+    global.phrasesMajor.performance[5] = "Top-notch flying.";
+    global.phrasesMajor.performance[6] = "You're a natural.";
+    global.phrasesMajor.performance[7] = "Exceptional skill.";
+    global.phrasesMajor.performance[8] = "Mission complete, Major.";
+    global.phrasesMajor.performance[9] = "You nailed it.";
+
+    global.phrasesMajor.growth[0] = "You're a seasoned pilot.";
+    global.phrasesMajor.growth[1] = "Your expertise is showing.";
+    global.phrasesMajor.growth[2] = "You're a key player.";
+    global.phrasesMajor.growth[3] = "Major, you're invaluable.";
+    global.phrasesMajor.growth[4] = "Leading by example.";
+    global.phrasesMajor.growth[5] = "An asset to the fleet.";
+    global.phrasesMajor.growth[6] = "You're indispensable.";
+    global.phrasesMajor.growth[7] = "A model pilot.";
+    global.phrasesMajor.growth[8] = "The fleet relies on you.";
+    global.phrasesMajor.growth[9] = "You set the standard.";
+
+    global.phrasesMajor.question[0] = "Ready for the next mission?";
+    global.phrasesMajor.question[1] = "What's next, Major?";
+    global.phrasesMajor.question[2] = "What's your plan, Major?";
+    global.phrasesMajor.question[3] = "Can you handle more?";
+    global.phrasesMajor.question[4] = "What are your orders?";
+    global.phrasesMajor.question[5] = "What's your next move?";
+    global.phrasesMajor.question[6] = "Ready for deployment?";
+    global.phrasesMajor.question[7] = "Next mission details?";
+    global.phrasesMajor.question[8] = "What's your status?";
+    global.phrasesMajor.question[9] = "What's the objective?";
+
+    global.phrasesColonel = {
+        welcome: [],
+        performance: [],
+        growth: [],
+        question: []
+    };
+
+    global.phrasesColonel.welcome[0] = "Welcome back, Colonel.";
+    global.phrasesColonel.welcome[1] = "Good to see you, Colonel.";
+    global.phrasesColonel.welcome[2] = "You've returned, Colonel.";
+    global.phrasesColonel.welcome[3] = "Colonel, you're back.";
+    global.phrasesColonel.welcome[4] = "Greetings, Colonel.";
+    global.phrasesColonel.welcome[5] = "Well done, Colonel.";
+    global.phrasesColonel.welcome[6] = "Welcome, Colonel.";
+    global.phrasesColonel.welcome[7] = "Back safe, Colonel.";
+    global.phrasesColonel.welcome[8] = "Reporting in, Colonel?";
+    global.phrasesColonel.welcome[9] = "Hello, Colonel.";
+
+    global.phrasesColonel.performance[0] = "Excellent work, Colonel.";
+    global.phrasesColonel.performance[1] = "Well executed, Colonel.";
+    global.phrasesColonel.performance[2] = "You did great, Colonel.";
+    global.phrasesColonel.performance[3] = "Outstanding performance.";
+    global.phrasesColonel.performance[4] = "Flawless operation.";
+    global.phrasesColonel.performance[5] = "Top-notch flying.";
+    global.phrasesColonel.performance[6] = "You're a natural.";
+    global.phrasesColonel.performance[7] = "Exceptional skill.";
+    global.phrasesColonel.performance[8] = "Mission complete, Colonel.";
+    global.phrasesColonel.performance[9] = "You nailed it.";
+
+    global.phrasesColonel.growth[0] = "You're a seasoned pilot.";
+    global.phrasesColonel.growth[1] = "Your expertise is showing.";
+    global.phrasesColonel.growth[2] = "You're a key player.";
+    global.phrasesColonel.growth[3] = "Colonel, you're invaluable.";
+    global.phrasesColonel.growth[4] = "Leading by example.";
+    global.phrasesColonel.growth[5] = "An asset to the fleet.";
+    global.phrasesColonel.growth[6] = "You're indispensable.";
+    global.phrasesColonel.growth[7] = "A model pilot.";
+    global.phrasesColonel.growth[8] = "The fleet relies on you.";
+    global.phrasesColonel.growth[9] = "You set the standard.";
+
+    global.phrasesColonel.question[0] = "Ready for the next mission?";
+    global.phrasesColonel.question[1] = "What's next, Colonel?";
+    global.phrasesColonel.question[2] = "What's your plan, Colonel?";
+    global.phrasesColonel.question[3] = "Can you handle more?";
+    global.phrasesColonel.question[4] = "What are your orders?";
+    global.phrasesColonel.question[5] = "What's your next move?";
+    global.phrasesColonel.question[6] = "Ready for deployment?";
+    global.phrasesColonel.question[7] = "Next mission details?";
+    global.phrasesColonel.question[8] = "What's your status?";
+    global.phrasesColonel.question[9] = "What's the objective?";
+
+    global.phrasesGeneral = {
+        welcome: [],
+        performance: [],
+        growth: [],
+        question: []
+    };
+
+    global.phrasesGeneral.welcome[0] = "Welcome back, General.";
+    global.phrasesGeneral.welcome[1] = "Good to see you, General.";
+    global.phrasesGeneral.welcome[2] = "You've returned, General.";
+    global.phrasesGeneral.welcome[3] = "General, you're back.";
+    global.phrasesGeneral.welcome[4] = "Greetings, General.";
+    global.phrasesGeneral.welcome[5] = "Well done, General.";
+    global.phrasesGeneral.welcome[6] = "Welcome, General.";
+    global.phrasesGeneral.welcome[7] = "Back safe, General.";
+    global.phrasesGeneral.welcome[8] = "Reporting in, General?";
+    global.phrasesGeneral.welcome[9] = "Hello, General.";
+
+    global.phrasesGeneral.performance[0] = "Excellent work, General.";
+    global.phrasesGeneral.performance[1] = "Well executed, General.";
+    global.phrasesGeneral.performance[2] = "You did great, General.";
+    global.phrasesGeneral.performance[3] = "Outstanding performance.";
+    global.phrasesGeneral.performance[4] = "Flawless operation.";
+    global.phrasesGeneral.performance[5] = "Top-notch flying.";
+    global.phrasesGeneral.performance[6] = "You're a natural.";
+    global.phrasesGeneral.performance[7] = "Exceptional skill.";
+    global.phrasesGeneral.performance[8] = "Mission complete, General.";
+    global.phrasesGeneral.performance[9] = "You nailed it.";
+
+    global.phrasesGeneral.growth[0] = "You're a seasoned pilot.";
+    global.phrasesGeneral.growth[1] = "Your expertise is showing.";
+    global.phrasesGeneral.growth[2] = "You're a key player.";
+    global.phrasesGeneral.growth[3] = "General, you're invaluable.";
+    global.phrasesGeneral.growth[4] = "Leading by example.";
+    global.phrasesGeneral.growth[5] = "An asset to the fleet.";
+    global.phrasesGeneral.growth[6] = "You're indispensable.";
+    global.phrasesGeneral.growth[7] = "A model pilot.";
+    global.phrasesGeneral.growth[8] = "The fleet relies on you.";
+    global.phrasesGeneral.growth[9] = "You set the standard.";
+
+    global.phrasesGeneral.question[0] = "Ready for the next mission?";
+    global.phrasesGeneral.question[1] = "What's next, General?";
+    global.phrasesGeneral.question[2] = "What's your plan, General?";
+    global.phrasesGeneral.question[3] = "Can you handle more?";
+    global.phrasesGeneral.question[4] = "What are your orders?";
+    global.phrasesGeneral.question[5] = "What's your next move?";
+    global.phrasesGeneral.question[6] = "Ready for deployment?";
+    global.phrasesGeneral.question[7] = "Next mission details?";
+    global.phrasesGeneral.question[8] = "What's your status?";
+    global.phrasesGeneral.question[9] = "What's the objective?";
+
+    global.phrasesVenator = {
+        welcome: [],
+        performance: [],
+        growth: [],
+        question: []
+    };
+
+    global.phrasesVenator.welcome[0] = "Welcome back, Venator.";
+    global.phrasesVenator.welcome[1] = "Good to see you, Venator.";
+    global.phrasesVenator.welcome[2] = "You've returned, Venator.";
+    global.phrasesVenator.welcome[3] = "Venator, you're back.";
+    global.phrasesVenator.welcome[4] = "Greetings, Venator.";
+    global.phrasesVenator.welcome[5] = "Well done, Venator.";
+    global.phrasesVenator.welcome[6] = "Welcome, Venator.";
+    global.phrasesVenator.welcome[7] = "Back safe, Venator.";
+    global.phrasesVenator.welcome[8] = "Reporting in, Venator?";
+    global.phrasesVenator.welcome[9] = "Hello, Venator.";
+
+    global.phrasesVenator.performance[0] = "Excellent work, Venator.";
+    global.phrasesVenator.performance[1] = "Well executed, Venator.";
+    global.phrasesVenator.performance[2] = "You did great, Venator.";
+    global.phrasesVenator.performance[3] = "Outstanding performance.";
+    global.phrasesVenator.performance[4] = "Flawless operation.";
+    global.phrasesVenator.performance[5] = "Top-notch flying.";
+    global.phrasesVenator.performance[6] = "You're a natural.";
+    global.phrasesVenator.performance[7] = "Exceptional skill.";
+    global.phrasesVenator.performance[8] = "Mission complete, Venator.";
+    global.phrasesVenator.performance[9] = "You nailed it.";
+
+    global.phrasesVenator.growth[0] = "You're a seasoned pilot.";
+    global.phrasesVenator.growth[1] = "Your expertise is showing.";
+    global.phrasesVenator.growth[2] = "You're a key player.";
+    global.phrasesVenator.growth[3] = "Venator, you're invaluable.";
+    global.phrasesVenator.growth[4] = "Leading by example.";
+    global.phrasesVenator.growth[5] = "An asset to the fleet.";
+    global.phrasesVenator.growth[6] = "You're indispensable.";
+    global.phrasesVenator.growth[7] = "A model pilot.";
+    global.phrasesVenator.growth[8] = "The fleet relies on you.";
+    global.phrasesVenator.growth[9] = "You set the standard.";
+
+    global.phrasesVenator.question[0] = "Ready for the next mission?";
+    global.phrasesVenator.question[1] = "What's next, Venator?";
+    global.phrasesVenator.question[2] = "What's your plan, Venator?";
+    global.phrasesVenator.question[3] = "Can you handle more?";
+    global.phrasesVenator.question[4] = "What are your orders?";
+    global.phrasesVenator.question[5] = "What's your next move?";
+    global.phrasesVenator.question[6] = "Ready for deployment?";
+    global.phrasesVenator.question[7] = "Next mission details?";
+    global.phrasesVenator.question[8] = "What's your status?";
+    global.phrasesVenator.question[9] = "What's the objective?";
+
 }
+   
+
 // Function to get a phrase based on rank and category
 // Function to get a phrase based on rank and category
 // Function to get a phrase based on rank and index
-function GetPhrase(rank, index) {
-    var phrasesArray;
-
-    switch(rank) {
-        case 1: phrasesArray = global.phrasesLieutenant; break;
-        case 2: phrasesArray = global.phrasesCaptain; break;
-        case 3: phrasesArray = global.phrasesMajor; break;
-        case 4: phrasesArray = global.phrasesColonel; break;
-        case 5: phrasesArray = global.phrasesGeneral; break;
-        case 6: phrasesArray = global.phrasesVenator; break;
-        default: return "";
-    }
-
-    // Check if the index is within bounds of the phrasesArray
-    if (index >= 0 && index < array_length(phrasesArray)) {
-        return phrasesArray[index];
-    } else {
-        return "";
-    }
-}
-
-
-
-// Function to display the sentence based on provided indices
-// Function to display the sentence based on provided rank
-function DisplaySentence(rank) {
+function GetPhrase(phraseRank, category) {
+    var phraseIndex = irandom_range(0, 9);
 	
-    var welcomeIndex = irandom_range(0, 9);
-    var performanceIndex = irandom_range(0, 9);
-    var growthIndex = irandom_range(0, 9);
-    var questionIndex = irandom_range(0, 9);
-    
-    var sentence = "";
-    sentence += GetPhrase(rank, welcomeIndex) + " ";
-    sentence += GetPhrase(rank, performanceIndex) + " ";
-    sentence += GetPhrase(rank, growthIndex) + " ";
-    sentence += GetPhrase(rank, questionIndex);
-    
-    show_message(string_trim(sentence));
+    switch (category) {
+        case "welcome":
+            return phraseRank.welcome[phraseIndex];
+        case "performance":
+            return phraseRank.performance[phraseIndex];;
+        case "growth":
+            return phraseRank.growth[phraseIndex];;
+			case "question":
+			return phraseRank.question[phraseIndex]
+        default: 
+            return "Unknown rank.";
+    }
 }
 
+// Function to display a sentence using the GetPhrase function
+
+function DisplaySentence(rank) {
+    var sentence = "";
+    
+    // Always include "welcome" and "performance"
+    sentence += GetPhrase(GetPhrasesByRank(rank), "welcome") + " ";
+    sentence += GetPhrase(GetPhrasesByRank(rank), "performance") + " ";
+    
+    // Randomly choose between "growth" and "question"
+    var randomNumber = irandom_range(0, 1); // Random number 0 or 1
+    
+    if (randomNumber == 0) {
+        sentence += GetPhrase(GetPhrasesByRank(rank), "growth");
+    } else {
+        sentence += GetPhrase(GetPhrasesByRank(rank), "question");
+    }
+    
+    return string_trim(sentence);
+}
+
+function GetPhrasesByRank(rank) {
+    switch (rank) {
+        case 1: // Lieutenant
+            return global.phrasesLieutenant;
+        case 2: // Captain
+            return global.phrasesCaptain;
+        case 3: // Major
+            return global.phrasesMajor;
+        case 4: // Colonel
+            return global.phrasesColonel;
+        case 5: // General
+            return global.phrasesGeneral;
+        case 6: // Imperator
+            return global.phrasesVenator;
+        default:
+            return []; // Return an empty array or handle error as needed
+    }
+}
 
 
 

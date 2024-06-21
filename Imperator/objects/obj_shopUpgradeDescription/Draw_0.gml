@@ -18,7 +18,7 @@ var text_y = y + sprite_height / 2 + 4; // Position just below the sprite, adjus
 
 var isShop = true;
 // Wrap the text using the custom function WrapText
-var words = WrapText(string(text), max_width, upgrade.cost, upgrade.isOwned, isShop);
+var words = WrapUpgradeText(string(text), max_width, upgrade.cost, upgrade.isOwned, isShop);
 if (!upgrade.unlocked) {
 	words = ["locked!"];
 }
