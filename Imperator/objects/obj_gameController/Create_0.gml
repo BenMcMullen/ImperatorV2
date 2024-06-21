@@ -63,6 +63,8 @@ global.lastClickedShopSystem = noone;
 global.lastClickedGarageSystem = noone;
 global.displayedUpgradeDescriptions = noone;
 
+
+
 killTextScale = 1;
 loseHpScale = 1;
 loseShieldsScale = 1;

@@ -16,3 +16,4 @@ current_column = 0;
 current_row = 0;
 obj_width = 64; // Width of each object
 obj_height = 64; // Height of each object
+global.lastClickedShopSystem = 0;

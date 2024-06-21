@@ -29,3 +29,4 @@ current_row = 0;
 obj_width = 64; // Width of each object
 obj_height = 64; // Height of each object
 global.garageUpgradingSystem = "";
+global.lastClickedGarageSystem = 0;
