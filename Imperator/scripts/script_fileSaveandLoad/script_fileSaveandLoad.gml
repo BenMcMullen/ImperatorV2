@@ -11,11 +11,9 @@ function SaveFile(filename) {
             // Write primitive data types
 	
 			global.saveFile = {
-			kills: global.kills,
-			currentLevelIndex: global.currentLevelIndex,
-			totalPoints: global.playerInformation.points,
-			selectedShip: global.selectedShip,
-			shipSystemsUpgradable: global.shipSystemsUpgradable,
+			ships: global.playerShips,
+			playerMissionProgress: global.playerMissionProgress,
+			playerInformation: global.playerInformation,
 			hulls: global.hulls,
 			engines: global.engines,
 			primaryWeapons: global.primaryWeapons,
@@ -56,12 +54,9 @@ function LoadFile(filename) {
 
             // Parse JSON strings into JavaScript objects or arrays
             global.saveFile = json_parse(saveFileJson);
-           
- global.selectedShip = global.saveFile.selectedShip;
-    global.kills = global.saveFile.kills;
-    global.currentLevelIndex = global.saveFile.currentLevelIndex;
-    global.playerInformation.points = global.saveFile.totalPoints;
-    global.shipSystemsUpgradable = global.saveFile.shipSystemsUpgradable;
+	global.playerShips = global.saveFile.ships;
+    global.playerMissionProgress = global.saveFile.playerMissionProgress;
+    global.playerInformation = global.saveFile.playerInformation;
     global.hulls = global.saveFile.hulls;
     global.engines = global.saveFile.engines;
     global.primaryWeapons = global.saveFile.primaryWeapons;

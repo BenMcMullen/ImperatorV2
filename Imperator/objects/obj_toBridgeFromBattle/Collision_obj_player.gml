@@ -7,7 +7,7 @@ if (instance_exists(obj_player))
 		if (hasControl) //This prevents us from incrementing the current level 40 times, since GM2 tracks one collision per step before the transition is done. 
 		{
 
-			if (global.contractCompleted || instance_exists(obj_introInstructions)) 
+			if (global.contractCompleted)
 			{
 				if (global.currentMusic != -1) 
 				{
@@ -19,11 +19,18 @@ if (instance_exists(obj_player))
 				//SaveFile(SAVEFILE)
 				LoadBridge();
 				global.playerInformation.points = global.playerInformation.points + global.levelPoints;
+<<<<<<< HEAD
 				global.playerInformation.currentMissionIndex ++;
 				
+=======
+				global.playerMissionProgress[global.playerInformation.currentTreeIndex].missionLevelIndex ++;
+>>>>>>> origin/master
 				hasControl = false;
 			}
+			else if (instance_exists(obj_introInstructions)){
+				LoadBridge();
 		}
 	}
 
+}
 }

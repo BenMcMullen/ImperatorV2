@@ -3,33 +3,33 @@
 function InitPlayer(){
 	
 	// Define the LevelConfig struct with missionTree[]
-    function PlayerMissionProgress(_missionName , _missionLevel, _missionDifficulty) {
+    function PlayerMissionProgress(_missionName,_missionLevelIndex, _missionTree, _missionDifficulty, _unlocked) {
         return {
 			missionName: _missionName,
-            missionLevel: _missionLevel,
-			missionDifficulty: _missionDifficulty
+			missionLevelIndex: _missionLevelIndex,
+            missionTree: _missionTree,
+			missionDifficulty: _missionDifficulty,
+			unlocked: _unlocked
 			
         };
     }
 	
-	global.playerMissionProgress = [];
+	global.playerMissionProgress = []
 	
-	global.playerMissionProgress[0] = PlayerMissionProgress("Mars", global.martianTreeLevels[0], global.difficulties[0]);
-	global.playerMissionProgress[1] = PlayerMissionProgress("Venus", global.venusianTreeLevels[0], global.difficulties[0]);
-	global.playerMissionProgress[2] = PlayerMissionProgress("Titan", global.titanTreeLevels[0], global.difficulties[0]);
-	global.playerMissionProgress[3] = PlayerMissionProgress("Asteroid Belt", global.asteroidBeltLevels[0], global.difficulties[0]);
+	global.playerMissionProgress[0] = PlayerMissionProgress("Mars", 0, global.martianTreeLevels, 0, true);
+	global.playerMissionProgress[1] = PlayerMissionProgress("Venus", 0, global.venusianTreeLevels, 0, true);
+	global.playerMissionProgress[2] = PlayerMissionProgress("Titan", 0, global.titanTreeLevels, 0, true);
+	global.playerMissionProgress[3] = PlayerMissionProgress("Asteroid Belt", 0, global.asteroidBeltLevels, 0, false);
 			
 			
 	// Define the struct for playerInformation. in the global scope
 global.playerInformation = {
-	currentMissionIndex: 0,
-	currentMission: global.playerMissionProgress,
+	currentTreeIndex: 0,
     kills: 0,   // Total kills attributed to the player
     rank: 1,        // Player's rank (string representation)
     deaths: 0,
 	points: 0,
-	 progress: global.playerMissionProgress,
-	 achievements: 0
+	achievements: 0
 	
 };
 

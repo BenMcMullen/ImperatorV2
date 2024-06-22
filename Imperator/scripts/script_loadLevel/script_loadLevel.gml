@@ -1,35 +1,22 @@
 
 
-function GetIndex () {
-var target_value = global.playerInformation.currentMission.missionLevel;
-var target_index = -1; // Default to -1 in case the value is not found
-
-// Loop through the array to find the index of target_value
-for (var i = 0; i < array_length(target_value); i++) {
-    if (target_value[i] == target_value) {
-        target_index = i;
-        break;
-    }
-	return target_index;
-}	
-}
-
 function LoadNextLevel() {
 	
-	var index = global.playerInformation.currentMissionIndex;
-	
-    if (index < array_length(global.playerInformation.currentMission)) {
-        var missionCurrentLevel = global.playerInformation.currentMission[index].missionLevel;
-		global.contractType = missionCurrentLevel.enemyTypes;
+	var treeIndex = global.playerInformation.currentTreeIndex;
+	var levelIndex =global.playerMissionProgress[treeIndex].missionLevelIndex;
+	var level = global.playerMissionProgress[treeIndex].missionTree[levelIndex];
+	var tree = global.playerMissionProgress[treeIndex].missionTree;
+	show_debug_message(array_length(tree))
+	show_debug_message(levelIndex)
+    if (levelIndex < array_length(tree)) {
+		global.contractType = level.enemyTypes;
         // Example: Set up the level using the currentLevelIndex data
-		global.contractQuantity = missionCurrentLevel.contract;
-        global.enemyTypes = missionCurrentLevel.enemyTypes;
-        global.levelPoints = missionCurrentLevel.levelPoints;
+		global.contractQuantity = level.contract;
+        global.enemyTypes = level.enemyTypes;
+        global.levelPoints = level.levelPoints;
 		
-        SlideTransition(TRANS_MODE.GOTO, missionCurrentLevel.room);
+        SlideTransition(TRANS_MODE.GOTO, level.room);
     } else {
-		
-        show_debug_message(GetIndex());
-		show_debug_message(missionTreeSize);
+		show_debug_message(tree)
     }
 }

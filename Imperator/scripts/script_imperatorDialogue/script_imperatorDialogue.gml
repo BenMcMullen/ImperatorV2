@@ -1,16 +1,12 @@
-// Example array storing parts of phrases
-// HERE IS WHAT I WANT TO DO. INTAKE A FEW THINGS- 
-//LEVEL TREE, LEVEL, DIFFICULTY, DEATHS DURING THE LAST MISSION,A RANDOM ELEMENT,
-// Example usage:
-/* var exampleIndices = [0, 4, 9]; // "Hello friend How are you?"
-DisplaySentence(exampleIndices); */
+
 // Define the phrase categories for each rank
 function InitImperatorPhrases() {
     global.phrasesLieutenant = {
         welcome: [],
         performance: [],
         growth: [],
-        question: []
+        question: [],
+		missionBriefs: [],
     };
 
     global.phrasesLieutenant.welcome[0] = "Hey, you're back.";
@@ -56,12 +52,25 @@ function InitImperatorPhrases() {
     global.phrasesLieutenant.question[7] = "Think you can improve?";
     global.phrasesLieutenant.question[8] = "Why so slow?";
     global.phrasesLieutenant.question[9] = "Not scared, are you?";
+	
+	global.phrasesLieutenant.missionBriefs[0] = "Go pick a mission, if you think you can handle it.";
+    global.phrasesLieutenant.missionBriefs[1] = "Choose your next mission, try not to mess up.";
+    global.phrasesLieutenant.missionBriefs[2] = "Mission briefs are ready, don't waste time.";
+    global.phrasesLieutenant.missionBriefs[3] = "Select your mission, hope you do better.";
+    global.phrasesLieutenant.missionBriefs[4] = "Next mission is waiting, don't disappoint.";
+    global.phrasesLieutenant.missionBriefs[5] = "Briefs are ready, pick your mission.";
+    global.phrasesLieutenant.missionBriefs[6] = "Grab a mission brief, try not to fail.";
+    global.phrasesLieutenant.missionBriefs[7] = "Choose a mission, luck won't always save you.";
+    global.phrasesLieutenant.missionBriefs[8] = "Mission briefs are waiting, go on.";
+    global.phrasesLieutenant.missionBriefs[9] = "Next mission's ready, let's see if you make it.";
+
 
     global.phrasesCaptain = {
         welcome: [],
         performance: [],
         growth: [],
-        question: []
+        question: [],
+		missionBriefs: [],
     };
 
     global.phrasesCaptain.welcome[0] = "Welcome back, Captain.";
@@ -107,12 +116,25 @@ function InitImperatorPhrases() {
     global.phrasesCaptain.question[7] = "Up for a challenge?";
     global.phrasesCaptain.question[8] = "Can you lead the next?";
     global.phrasesCaptain.question[9] = "How was the mission?";
+	
+	global.phrasesCaptain.missionBriefs[0] = "Captain, the mission briefs are ready for your review.";
+    global.phrasesCaptain.missionBriefs[1] = "Your next mission awaits, Captain.";
+    global.phrasesCaptain.missionBriefs[2] = "Captain, please select your next mission.";
+    global.phrasesCaptain.missionBriefs[3] = "The mission briefs are prepared, Captain.";
+    global.phrasesCaptain.missionBriefs[4] = "Captain, choose your mission wisely.";
+    global.phrasesCaptain.missionBriefs[5] = "Proceed to the mission briefs, Captain.";
+    global.phrasesCaptain.missionBriefs[6] = "Captain, your expertise is needed for the next mission.";
+    global.phrasesCaptain.missionBriefs[7] = "The next mission awaits your command, Captain.";
+    global.phrasesCaptain.missionBriefs[8] = "Captain, your mission options are ready.";
+    global.phrasesCaptain.missionBriefs[9] = "Review and select your mission, Captain.";
+
 
     global.phrasesMajor = {
         welcome: [],
         performance: [],
         growth: [],
-        question: []
+        question: [],
+		missionBriefs: [],
     };
 
     global.phrasesMajor.welcome[0] = "Welcome back, Major.";
@@ -158,12 +180,25 @@ function InitImperatorPhrases() {
     global.phrasesMajor.question[7] = "Next mission details?";
     global.phrasesMajor.question[8] = "What's your status?";
     global.phrasesMajor.question[9] = "What's the objective?";
+	
+	   global.phrasesMajor.missionBriefs[0] = "Major, the mission briefs are at your disposal.";
+    global.phrasesMajor.missionBriefs[1] = "Your next mission is ready for selection, Major.";
+    global.phrasesMajor.missionBriefs[2] = "Major, please review the mission briefs.";
+    global.phrasesMajor.missionBriefs[3] = "The mission briefs are ready, Major.";
+    global.phrasesMajor.missionBriefs[4] = "Major, your insight is required for the next mission.";
+    global.phrasesMajor.missionBriefs[5] = "Proceed to the mission briefs, Major.";
+    global.phrasesMajor.missionBriefs[6] = "Major, your next mission awaits your decision.";
+    global.phrasesMajor.missionBriefs[7] = "Select your mission, Major.";
+    global.phrasesMajor.missionBriefs[8] = "Major, your mission options are prepared.";
+    global.phrasesMajor.missionBriefs[9] = "Review and choose your mission, Major.";
+
 
     global.phrasesColonel = {
         welcome: [],
         performance: [],
         growth: [],
-        question: []
+        question: [],
+		missionBriefs: [],
     };
 
     global.phrasesColonel.welcome[0] = "Welcome back, Colonel.";
@@ -210,11 +245,23 @@ function InitImperatorPhrases() {
     global.phrasesColonel.question[8] = "What's your status?";
     global.phrasesColonel.question[9] = "What's the objective?";
 
+    global.phrasesColonel.missionBriefs[0] = "Colonel, the mission briefs are ready for your review.";
+    global.phrasesColonel.missionBriefs[1] = "Your next mission is prepared, Colonel.";
+    global.phrasesColonel.missionBriefs[2] = "Colonel, please select your next mission.";
+    global.phrasesColonel.missionBriefs[3] = "The mission briefs await your decision, Colonel.";
+    global.phrasesColonel.missionBriefs[4] = "Colonel, your expertise is required for the next mission.";
+    global.phrasesColonel.missionBriefs[5] = "Proceed to the mission briefs, Colonel.";
+    global.phrasesColonel.missionBriefs[6] = "Colonel, your next mission is ready for selection.";
+    global.phrasesColonel.missionBriefs[7] = "Select your mission, Colonel.";
+    global.phrasesColonel.missionBriefs[8] = "Colonel, your mission options are ready.";
+    global.phrasesColonel.missionBriefs[9] = "Review and choose your mission, Colonel.";
+
     global.phrasesGeneral = {
         welcome: [],
         performance: [],
         growth: [],
-        question: []
+        question: [],
+		missionBriefs: [],
     };
 
     global.phrasesGeneral.welcome[0] = "Welcome back, General.";
@@ -260,12 +307,25 @@ function InitImperatorPhrases() {
     global.phrasesGeneral.question[7] = "Next mission details?";
     global.phrasesGeneral.question[8] = "What's your status?";
     global.phrasesGeneral.question[9] = "What's the objective?";
+	
+	    global.phrasesGeneral.missionBriefs[0] = "General, the mission briefs are at your disposal.";
+    global.phrasesGeneral.missionBriefs[1] = "Your next mission awaits, General.";
+    global.phrasesGeneral.missionBriefs[2] = "General, please review the mission briefs.";
+    global.phrasesGeneral.missionBriefs[3] = "The mission briefs are ready for your selection, General.";
+    global.phrasesGeneral.missionBriefs[4] = "General, your leadership is required for the next mission.";
+    global.phrasesGeneral.missionBriefs[5] = "Proceed to the mission briefs, General.";
+    global.phrasesGeneral.missionBriefs[6] = "General, your next mission is ready.";
+    global.phrasesGeneral.missionBriefs[7] = "Select your mission, General.";
+    global.phrasesGeneral.missionBriefs[8] = "General, your mission options are prepared.";
+    global.phrasesGeneral.missionBriefs[9] = "Review and choose your mission, General.";
+
 
     global.phrasesVenator = {
         welcome: [],
         performance: [],
         growth: [],
-        question: []
+        question: [],
+		missionBriefs: [],
     };
 
     global.phrasesVenator.welcome[0] = "Welcome back, Venator.";
@@ -281,7 +341,7 @@ function InitImperatorPhrases() {
 
     global.phrasesVenator.performance[0] = "Excellent work, Venator.";
     global.phrasesVenator.performance[1] = "Well executed, Venator.";
-    global.phrasesVenator.performance[2] = "You did great, Venator.";
+    global.phrasesVenator.performance[2] = "You are almost too good to be in the field!";
     global.phrasesVenator.performance[3] = "Outstanding performance.";
     global.phrasesVenator.performance[4] = "Flawless operation.";
     global.phrasesVenator.performance[5] = "Top-notch flying.";
@@ -294,7 +354,7 @@ function InitImperatorPhrases() {
     global.phrasesVenator.growth[1] = "Your expertise is showing.";
     global.phrasesVenator.growth[2] = "You're a key player.";
     global.phrasesVenator.growth[3] = "Venator, you're invaluable.";
-    global.phrasesVenator.growth[4] = "Leading by example.";
+    global.phrasesVenator.growth[4] = "Leading by example, as always.";
     global.phrasesVenator.growth[5] = "An asset to the fleet.";
     global.phrasesVenator.growth[6] = "You're indispensable.";
     global.phrasesVenator.growth[7] = "A model pilot.";
@@ -312,6 +372,16 @@ function InitImperatorPhrases() {
     global.phrasesVenator.question[8] = "What's your status?";
     global.phrasesVenator.question[9] = "What's the objective?";
 
+	global.phrasesVenator.missionBriefs[0] = "Venator, the mission briefs are at your command.";
+    global.phrasesVenator.missionBriefs[1] = "Your next mission awaits your selection, Venator.";
+    global.phrasesVenator.missionBriefs[2] = "Venator, please review and choose your mission.";
+    global.phrasesVenator.missionBriefs[3] = "The mission briefs are ready for you, Venator.";
+    global.phrasesVenator.missionBriefs[4] = "Venator, your expertise is required for the next mission.";
+    global.phrasesVenator.missionBriefs[5] = "Proceed to the mission briefs, Venator.";
+    global.phrasesVenator.missionBriefs[6] = "Venator, your next mission awaits.";
+    global.phrasesVenator.missionBriefs[7] = "Select your mission, Venator.";
+    global.phrasesVenator.missionBriefs[8] = "Venator, your mission options are prepared.";
+    global.phrasesVenator.missionBriefs[9] = "Review and choose your mission, Venator.";
 }
    
 
@@ -325,11 +395,13 @@ function GetPhrase(phraseRank, category) {
         case "welcome":
             return phraseRank.welcome[phraseIndex];
         case "performance":
-            return phraseRank.performance[phraseIndex];;
+            return phraseRank.performance[phraseIndex];
         case "growth":
-            return phraseRank.growth[phraseIndex];;
-			case "question":
+            return phraseRank.growth[phraseIndex];
+		case "question":
 			return phraseRank.question[phraseIndex]
+		case "missionBriefs":
+			return phraseRank.missionBriefs[phraseIndex]
         default: 
             return "Unknown rank.";
     }
@@ -337,7 +409,7 @@ function GetPhrase(phraseRank, category) {
 
 // Function to display a sentence using the GetPhrase function
 
-function DisplaySentence(rank) {
+function DisplayGreeting(rank) {
     var sentence = "";
     
     // Always include "welcome" and "performance"
@@ -348,11 +420,13 @@ function DisplaySentence(rank) {
     var randomNumber = irandom_range(0, 1); // Random number 0 or 1
     
     if (randomNumber == 0) {
-        sentence += GetPhrase(GetPhrasesByRank(rank), "growth");
+        sentence += GetPhrase(GetPhrasesByRank(rank), "growth") + " ";
     } else {
-        sentence += GetPhrase(GetPhrasesByRank(rank), "question");
+        sentence += GetPhrase(GetPhrasesByRank(rank), "question") + " ";
     }
     
+	sentence += GetPhrase(GetPhrasesByRank(rank), "missionBriefs")
+	
     return string_trim(sentence);
 }
 
@@ -360,13 +434,16 @@ function DisplayOneLiner(rank) {
     var sentence = "";
     
     // Randomly choose between "growth" and "question"
-    var randomNumber = irandom_range(0, 1); // Random number 0 or 1
+    var randomNumber = irandom_range(0, 2); // Random number between 0 and 2
     
     if (randomNumber == 0) {
         sentence += GetPhrase(GetPhrasesByRank(rank), "growth");
-    } else {
+    } else if (randomNumber == 1){
         sentence += GetPhrase(GetPhrasesByRank(rank), "question");
     }
+	else {
+		sentence += GetPhrase(GetPhrasesByRank(rank), "missionBriefs");
+	}
     
     return string_trim(sentence);
 }

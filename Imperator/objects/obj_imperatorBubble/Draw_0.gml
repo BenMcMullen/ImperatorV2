@@ -11,18 +11,16 @@ draw_set_color(c_yellow)
 var max_width = 350; // Maximum width before wrapping
 var line_height = 32; // Height of each line, adjust as needed
 // Adjust the position as needed to position text below the sprite
-var text_x = other.x_coordinate + 20; // Adjust if needed
+var text_x = other.x_coordinate + 10; // Adjust if needed
 var text_y = other.y_coordinate -50; // Position just below the sprite, adjust 4 as needed
 
 if (!other.longDialogue) {
-	show_debug_message("oneLiner")
 	//realign with smaller text box
 	text_y += 10
 image_index = 1;
 var words = WrapImperatorDialogue(string(oneLiner), max_width);
 }
 else  {
-	show_debug_message("dialogue longDialogue")
 	image_index = 0;
 	var words = WrapImperatorDialogue(string(dialogue), max_width);
 }
