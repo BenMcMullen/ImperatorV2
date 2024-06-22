@@ -32,7 +32,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"Imperator",
   "resources":[
@@ -61,7 +61,6 @@
     {"id":{"name":"obj_hangarManager","path":"objects/obj_hangarManager/obj_hangarManager.yy",},},
     {"id":{"name":"obj_imperator","path":"objects/obj_imperator/obj_imperator.yy",},},
     {"id":{"name":"obj_imperatorBubble","path":"objects/obj_imperatorBubble/obj_imperatorBubble.yy",},},
-    {"id":{"name":"obj_imperatorMissionDebrief","path":"objects/obj_imperatorMissionDebrief/obj_imperatorMissionDebrief.yy",},},
     {"id":{"name":"obj_intro","path":"objects/obj_intro/obj_intro.yy",},},
     {"id":{"name":"obj_introInstructions","path":"objects/obj_introInstructions/obj_introInstructions.yy",},},
     {"id":{"name":"obj_mapEdge","path":"objects/obj_mapEdge/obj_mapEdge.yy",},},
@@ -108,7 +107,6 @@
     {"id":{"name":"script_displayFunctions","path":"scripts/script_displayFunctions/script_displayFunctions.yy",},},
     {"id":{"name":"script_drawSetText","path":"scripts/script_drawSetText/script_drawSetText.yy",},},
     {"id":{"name":"script_fileSaveandLoad","path":"scripts/script_fileSaveandLoad/script_fileSaveandLoad.yy",},},
-    {"id":{"name":"script_imperatorDebrief","path":"scripts/script_imperatorDebrief/script_imperatorDebrief.yy",},},
     {"id":{"name":"script_imperatorDialogue","path":"scripts/script_imperatorDialogue/script_imperatorDialogue.yy",},},
     {"id":{"name":"script_initLevels","path":"scripts/script_initLevels/script_initLevels.yy",},},
     {"id":{"name":"script_initPlayer","path":"scripts/script_initPlayer/script_initPlayer.yy",},},

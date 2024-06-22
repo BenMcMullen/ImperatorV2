@@ -13,7 +13,7 @@ if ((currentTime - lastClickTime > debounceTime)) {
 imperatorBubble.x_coordinate = x_coordinate;
 imperatorBubble.y_coordinate = y_coordinate;
 imperatorBubble.longDialogue = longDialogue;
-debrief = false;
+longDialogue = false;
 lastClickTime = currentTime; // Update the last click time
 }
 }
