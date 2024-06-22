@@ -20,6 +20,7 @@ if (instance_exists(obj_player))
 				LoadBridge();
 				global.playerInformation.points = global.playerInformation.points + global.levelPoints;
 				global.playerInformation.currentMissionIndex ++;
+				
 				hasControl = false;
 			}
 		}
