@@ -19,6 +19,7 @@ if (instance_exists(obj_player))
 				//SaveFile(SAVEFILE)
 				LoadBridge();
 				global.playerInformation.points = global.playerInformation.points + global.levelPoints;
+				global.playerInformation.currentMissionIndex ++;
 				hasControl = false;
 			}
 		}
