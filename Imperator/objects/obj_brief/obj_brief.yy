@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_brief",
-    "path":"sprites/spr_brief/spr_brief.yy",
+    "name":"spr_briefSystem",
+    "path":"sprites/spr_briefSystem/spr_briefSystem.yy",
   },
   "spriteMaskId":null,
   "visible":true,

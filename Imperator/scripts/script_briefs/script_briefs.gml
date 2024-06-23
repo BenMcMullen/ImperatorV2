@@ -1,14 +1,46 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function GetMissionBriefs(){
-	var briefs = [];
-	var levels = global.playerMissionProgress[global.playerInformation.currentTreeIndex].missionTree
-	 for (var i = 0; i < levels; i++) {
-		  var level = levels[i];
-		 if (level.difficulty = global.playerInformation.difficulty) {
-			 briefs.add()
-		 }
-		 show_debug_message("Outside difficulty")
-	 }
+function GetMissionBriefs() {
+    var currentTreeIndex = global.playerInformation.currentTreeIndex;
+    var currentDifficulty = global.playerInformation.difficulty;
+    var levels;
 
+    // Select the appropriate level tree based on the current tree index
+    switch (currentTreeIndex) {
+        case 0:
+            levels = global.martianTreeLevels;
+            return global.getMartianLevelsByDifficulty(currentDifficulty)
+        case 1:
+            levels = global.venusianTreeLevels;
+               return global.getVenusianLevelsByDifficulty(currentDifficulty);
+        case 2:
+            levels = global.titanTreeLevels;
+               return global.getTitanLevelsByDifficulty(currentDifficulty);
+        case 3:
+            levels = global.asteroidBeltLevels;
+               return global.getAsteroidBeltLevelsByDifficulty(currentDifficulty);
+        default:
+          
+            return briefs;
+    }
+
+}
+
+function SelectMission() {
+	var levelIndex = argument0;
+    var currentTreeIndex = global.playerInformation.currentTreeIndex;
+    var currentDifficulty = global.playerInformation.difficulty;
+    var levels;
+
+    // These cases HAVE to be in this order, because that is how they are organized 
+	// in the playerMissionProgress array.
+    switch (currentTreeIndex) {
+        case 0:
+            global.playerMissionProgress[0].missionLevelIndex = levelIndex;
+        case 1:
+			global.playerMissionProgress[1].missionLevelIndex = levelIndex;
+        case 2:
+			global.playerMissionProgress[2].missionLevelIndex = levelIndex;
+        case 3:
+			global.playerMissionProgress[3].missionLevelIndex = levelIndex;
+    }
+	
 }

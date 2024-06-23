@@ -1,5 +1,13 @@
-var overlay_instance = instance_find(obj_overlay, 0);
+var overlay_instance = instance_find(obj_overlayConfirmation, 0);
 if (!instance_exists(overlay_instance)) {
+	var currentTime = current_time / 1000;
+
+if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
+    lastClickTime = currentTime; // Update the last click time
+
+	if(!instance_exists(obj_briefSystem)) {
+		instance_create_layer(x_coordinate, y_coordinate, "Briefs", obj_briefSystem);
+	}
  var currentTime = current_time / 1000;
 if ((currentTime - lastClickTime > debounceTime)) {
 	lastClickTime = currentTime; // Update the last click time
@@ -15,5 +23,6 @@ imperatorBubble.y_coordinate = y_coordinate;
 imperatorBubble.longDialogue = longDialogue;
 longDialogue = false;
 lastClickTime = currentTime; // Update the last click time
+}
 }
 }

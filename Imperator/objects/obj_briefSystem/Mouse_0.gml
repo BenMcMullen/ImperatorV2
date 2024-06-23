@@ -1,21 +1,20 @@
 /// Mouse Left Pressed event in obj_shopSystem
 
 var currentTime = current_time / 1000;
-var overlay_instance = instance_find(obj_overlay, 0);
+var overlay_instance = instance_find(obj_overlayConfirmation, 0);
 if (!instance_exists(overlay_instance)) {
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
     lastClickTime = currentTime; // Update the last click time
 
  if (obj_brief) {
-instance_destroy()	 
+instance_destroy(); 
  }
-	 
-   
-	
-          
+ if (obj_briefDisplayBox) {
+instance_destroy();	 
+ }
 
         // Create a display box object in the middle of the room
-        var displayBox = instance_create_layer(room_width / 2, room_height / 2, "Items", obj_briefDisplayBox);
+        var displayBox = instance_create_layer(room_width / 2, room_height / 2, "Briefs", obj_briefDisplayBox);
 
         // Define grid layout parameters
     
@@ -29,35 +28,27 @@ instance_destroy()
         var count = 0; // Counter for the number of created instances
         var current_column = 0;
         var current_row = 0;
-
-        for (var i = 0; i < GetMissionBriefs(); i++) {
-            var brief = target[i];
-			
+		var briefs = GetMissionBriefs();
+        for (var i = 0; i < array_length(briefs); i++) {
+            var brief = briefs[i];
             var instance_x = start_x + current_column * spacing_x;
             var instance_y = start_y + current_row * spacing_y;
 
             var briefInstance = instance_create_layer(instance_x, instance_y + yOffset, "Briefs", obj_brief);
-            
+            show_debug_message(brief.operationName)
 			//DONT FORGET TO ADD A OPERATION NAME TO EACH LEVEL. 
 			//DONT FORGET TO ADD A SPRITE FOR EACH MISSION TYPE. SPRITES SHOULD BE UNIFORM EXCEPT FOR SPECIAL MISSIONS
 			//MAKE SPECIAL MISSIONS RANDOM FOR EACH RUN?MAKE SDIFFERENT RUNS INTERESTING!!!!!
-            
-            briefInstance.operation = brief.operation; // Store the array index
-            briefInstance.missionSprite = brief.missionSprite; // Set system type
+            briefInstance.brief = brief;
+			briefInstance.levelIndex = i;
+            briefInstance.operationName = brief.operationName; 
+            briefInstance.sprite = brief.sprite;
             briefInstance.missionType = brief.levelType;
             
 		    // Create obj_shopUpgradeDescription instance for the current shop item
-            var descriptionText = instance_create_layer(instance_x + 32, instance_y + yOffset + 64, "Items", obj_shopUpgradeDescription);
-            descriptionText.text = currentUpgrade.name; // Set the description text
-			descriptionText.cost = currentUpgrade.cost;
-			descriptionText.unlocked = currentUpgrade.unlocked;
-			descriptionText.isOwned = currentUpgrade.isOwned;
-			descriptionText.array_index = i;
-			descriptionText.systemType = systemType;
-            // Store the displayed description instance ID in an array
-			
-            global.displayedUpgradeDescriptions[array_length(global.displayedUpgradeDescriptions)] = descriptionText;
-
+            var descriptionText = instance_create_layer(instance_x + 32, instance_y + yOffset + 64, "Briefs", obj_briefLabel);
+            descriptionText.operationName = brief.operationName; // Set the description text
+		
             // Increment count for the number of created instances
             current_column++;
             if (current_column >= columns) {
@@ -70,4 +61,4 @@ instance_destroy()
         show_debug_message("This object was already clicked. Click another object first.");
     
  }
-
+}

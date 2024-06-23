@@ -30,7 +30,8 @@ global.playerInformation = {
     deaths: 0,
 	points: 0,
 	achievements: 0,
-	difficulty: 1
+	difficulty: 1,
+	name: "Fuzzalitious"
 };
 
 
