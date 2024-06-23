@@ -260,8 +260,8 @@ function InitShips() {
         3.0,                    // Boost Speed
         3.0,                    // Speed
         0,                       // Cooldown
-		spr_basicTest,		// Garage Sprite
-		spr_basicTest,		// Shop Sprite
+		spr_shopUpgrade,		// Garage Sprite
+		spr_shopUpgrade,		// Shop Sprite
 		500,						// Cost
 		true	
     );
@@ -274,7 +274,7 @@ function InitShips() {
         5,                      // Speed
         0,                       // Cooldown
 		spr_basicTest_1,		// Garage Sprite
-		spr_basicTest,		// Shop Sprite
+		spr_shopUpgrade,		// Shop Sprite
 		500,						// Cost
 		true	
     );
