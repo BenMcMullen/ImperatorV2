@@ -8,14 +8,11 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 if (!displaying) {
 		displaying = true;
         // Create a display box object in the middle of the room
-        var displayBox = instance_create_layer(room_width / 4.5, room_height / 2.5, "Briefs", obj_briefDisplayBox);
+        var displayBox = instance_create_layer(room_width / 2.75, room_height / 1.25, "Briefs", obj_briefDisplayBox);
 
-        // Define grid layout parameters
-    
-        
         // Calculate the starting position at the top middle of obj_shopDisplayBox. the +64 helps to complensate for sprite size
         var start_x = displayBox.x - (columns / 2 * spacing_x) + 64;
-        var start_y = displayBox.y - 175; // Adjust as needed for vertical position
+        var start_y = displayBox.y - 150 // Adjust as needed for vertical position
 
         // Iterate through currentArray (replace with your actual array variable)
         var yOffset = 0;

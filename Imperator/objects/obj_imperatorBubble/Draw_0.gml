@@ -12,15 +12,17 @@ var max_width = 350; // Maximum width before wrapping
 var line_height = 32; // Height of each line, adjust as needed
 // Adjust the position as needed to position text below the sprite
 var text_x = other.x_coordinate + 10; // Adjust if needed
-var text_y = other.y_coordinate -50; // Position just below the sprite, adjust 4 as needed
-
+var text_y = other.y_coordinate -60; // Position just below the sprite, adjust 4 as needed
+show_debug_message("Step 1");
 if (!other.longDialogue) {
 	//realign with smaller text box
 	text_y += 10
 image_index = 1;
+show_debug_message("Step 2");
 var words = WrapImperatorDialogue(string(oneLiner), max_width);
 }
 else  {
+	show_debug_message("Step 3");
 	image_index = 0;
 	var words = WrapImperatorDialogue(string(dialogue), max_width);
 }
