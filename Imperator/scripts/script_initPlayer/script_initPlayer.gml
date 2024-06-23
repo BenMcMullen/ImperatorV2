@@ -29,8 +29,8 @@ global.playerInformation = {
     rank: 1,        // Player's rank (string representation)
     deaths: 0,
 	points: 0,
-	achievements: 0
-	
+	achievements: 0,
+	difficulty: 1
 };
 
 
