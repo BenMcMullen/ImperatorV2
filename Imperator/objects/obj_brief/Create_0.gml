@@ -9,4 +9,4 @@ messageTimer = 0;
 messageBoxSprite = spr_shopMessage;
 purchaseBoxHeight = 20; // Height of the purchase box
 purchaseBoxWidth = 100; // Width of the purchase box
-depth = -52;
+depth = -49;

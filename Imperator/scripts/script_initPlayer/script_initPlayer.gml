@@ -28,7 +28,7 @@ global.playerInformation = {
     kills: 0,   // Total kills attributed to the player
     rank: 1,        // Player's rank (string representation)
     deaths: 0,
-	points: 0,
+	points: 10000,
 	achievements: 0,
 	difficulty: 1,
 	name: "Fuzzalitious"

@@ -7,12 +7,12 @@ var messageText = other.messageText
 		
 SelectMission(other.levelIndex)
 with (obj_briefConfirmationScreen) {
-    instance_destroy();
+    instance_destroy(obj_briefConfirmationScreen);
 }
 with (obj_briefNoButton) {
-    instance_destroy();
+    instance_destroy(obj_briefNoButton);
 }
 with (obj_overlayConfirmation) {
-    instance_destroy();
+    instance_destroy(obj_overlayConfirmation);
 }
 instance_destroy();

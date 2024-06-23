@@ -20,6 +20,7 @@ if (instance_exists(obj_player))
 				LoadBridge();
 				
 				global.playerInformation.points = global.playerInformation.points + global.levelPoints;
+				show_debug_message("Triggers here")
 				CompleteMission();
 				hasControl = false;
 			}

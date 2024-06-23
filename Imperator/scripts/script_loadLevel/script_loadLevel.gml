@@ -3,7 +3,7 @@
 function LoadNextLevel() {
 	
 	var treeIndex = global.playerInformation.currentTreeIndex;
-	var levelIndex =global.playerMissionProgress[treeIndex].missionLevelIndex;
+	var levelIndex = global.playerMissionProgress[treeIndex].missionLevelIndex;
 	var level = global.playerMissionProgress[treeIndex].missionTree[levelIndex];
 	var tree = global.playerMissionProgress[treeIndex].missionTree;
 	show_debug_message(array_length(tree))

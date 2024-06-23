@@ -44,26 +44,13 @@ function SelectMission() {
 	
 }
 
+
 function CompleteMission() {
-	var levelIndex = -1;
-    var currentTreeIndex = global.playerInformation.currentTreeIndex;
-    
-    // These cases HAVE to be in this order, because that is how they are organized 
-	// in the playerMissionProgress array.
-    switch (currentTreeIndex) {
-        case 0:
-            levelIndex = global.playerMissionProgress[0].missionLevelIndex;
-        case 1:
-			levelIndex = global.playerMissionProgress[1].missionLevelIndex;
-        case 2:
-			levelIndex = global.playerMissionProgress[2].missionLevelIndex;
-        case 3:
-			levelIndex = global.playerMissionProgress[3].missionLevelIndex;
-    }
-	show_debug_message(string(global.playerMissionProgress[currentTreeIndex].missionTree[levelIndex].completed) + "before")
-	global.playerMissionProgress[currentTreeIndex].missionTree[levelIndex].completed = true;
-	show_debug_message(string(global.playerMissionProgress[currentTreeIndex].missionTree[levelIndex].completed) + "after")
+	var treeIndex = global.playerInformation.currentTreeIndex;
+	var levelIndex = global.playerMissionProgress[treeIndex].missionLevelIndex;
+	var level = global.playerMissionProgress[treeIndex].missionTree[levelIndex];
 	
+	level.completed = true;
 	
 	
 }
