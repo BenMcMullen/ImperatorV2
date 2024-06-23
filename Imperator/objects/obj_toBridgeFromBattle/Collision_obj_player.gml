@@ -18,8 +18,9 @@ if (instance_exists(obj_player))
 				//send player back to hangar after successful mission
 				//SaveFile(SAVEFILE)
 				LoadBridge();
+				
 				global.playerInformation.points = global.playerInformation.points + global.levelPoints;
-				global.playerMissionProgress[global.playerInformation.currentTreeIndex].missionLevelIndex ++;
+				CompleteMission();
 				hasControl = false;
 			}
 			else if (instance_exists(obj_introInstructions)){

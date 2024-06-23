@@ -3,6 +3,7 @@
 var messageText = other.messageText
 	var briefsMessage = instance_create_layer(x/2, y/2, "Briefs", obj_briefMessage);
 		briefsMessage.messageText = messageText;
+		briefsMessage.goHanger = true;
 		
 SelectMission(other.levelIndex)
 with (obj_briefConfirmationScreen) {

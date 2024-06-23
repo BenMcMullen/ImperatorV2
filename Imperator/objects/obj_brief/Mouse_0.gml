@@ -22,6 +22,7 @@
 	
 		yesButton.messageText = "You have selected " + level.operationName + ", good luck " + GetRankById(global.playerInformation.rank) ;
 		yesButton.levelIndex = other.levelIndex;
+		
 		var noButton = instance_create_layer(shop_x_coordinates -675 , shop_y_coordinates - 330, "Briefs", obj_briefNoButton); // Adjust positions as needed
 		
 	}

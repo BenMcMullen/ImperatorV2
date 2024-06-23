@@ -32,7 +32,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"Imperator",
   "resources":[
@@ -40,6 +40,7 @@
     {"id":{"name":"font_arial2","path":"fonts/font_arial2/font_arial2.yy",},},
     {"id":{"name":"font_buttons","path":"fonts/font_buttons/font_buttons.yy",},},
     {"id":{"name":"font_venite","path":"fonts/font_venite/font_venite.yy",},},
+    {"id":{"name":"font_veniteLarge","path":"fonts/font_veniteLarge/font_veniteLarge.yy",},},
     {"id":{"name":"obj_asteroid","path":"objects/obj_asteroid/obj_asteroid.yy",},},
     {"id":{"name":"obj_asteroidExplosion","path":"objects/obj_asteroidExplosion/obj_asteroidExplosion.yy",},},
     {"id":{"name":"obj_bridge","path":"objects/obj_bridge/obj_bridge.yy",},},
@@ -150,6 +151,9 @@
     {"id":{"name":"spr_bigGalaxy","path":"sprites/spr_bigGalaxy/spr_bigGalaxy.yy",},},
     {"id":{"name":"spr_bridge","path":"sprites/spr_bridge/spr_bridge.yy",},},
     {"id":{"name":"spr_brief","path":"sprites/spr_brief/spr_brief.yy",},},
+    {"id":{"name":"spr_brief2","path":"sprites/spr_brief2/spr_brief2.yy",},},
+    {"id":{"name":"spr_brief3","path":"sprites/spr_brief3/spr_brief3.yy",},},
+    {"id":{"name":"spr_briefCompleted","path":"sprites/spr_briefCompleted/spr_briefCompleted.yy",},},
     {"id":{"name":"spr_briefDisplayBox","path":"sprites/spr_briefDisplayBox/spr_briefDisplayBox.yy",},},
     {"id":{"name":"spr_briefInfo","path":"sprites/spr_briefInfo/spr_briefInfo.yy",},},
     {"id":{"name":"spr_briefMessage","path":"sprites/spr_briefMessage/spr_briefMessage.yy",},},

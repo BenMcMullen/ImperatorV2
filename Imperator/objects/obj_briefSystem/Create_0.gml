@@ -3,9 +3,9 @@ lastClickTime = -1;
 cost = 0;
 
 depth = 1;
-
+displaying = false;
 // Define the number of columns and spacing
-columns = 4; // Number of columns per row
+columns = 3; // Number of columns per row
 spacing_x = 175; // Horizontal spacing between objects
 spacing_y = 175; // Vertical spacing between objects
 start_x = 50; // Starting X position

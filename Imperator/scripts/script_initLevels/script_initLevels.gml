@@ -131,15 +131,16 @@ function InitLevels() {
     global.martianTreeLevels[1] = LevelConfigMartian(2, global.enemyTypes[0], 300, room_2, 3, "levelType", 2, false, "Operation Desert Siege", spr_brief);
     global.martianTreeLevels[2] = LevelConfigMartian(3, global.enemyTypes[0], 500, room_3, 5, "levelType", 3, false, "Operation Iron Fist", spr_brief);
     global.martianTreeLevels[3] = LevelConfigMartian(4, global.enemyTypes[0], 800, room_3, 6, "levelType", 4, false, "Operation Twin Blades", spr_brief);
-	global.martianTreeLevels[3] = LevelConfigMartian(5, global.enemyTypes[0], 800, room_3, 6, "levelType", 1, false, "Operation Valkyrie", spr_brief);
-	global.martianTreeLevels[3] = LevelConfigMartian(6, global.enemyTypes[0], 800, room_4, 6, "levelType", 1, false, "Operation BigDaddy", spr_brief);
+	global.martianTreeLevels[4] = LevelConfigMartian(5, global.enemyTypes[0], 800, room_3, 6, "levelType", 1, false, "Operation Valkyrie", spr_brief2);
+	global.martianTreeLevels[5] = LevelConfigMartian(6, global.enemyTypes[0], 800, room_4, 6, "levelType", 1, false, "Operation BigDaddy", spr_brief3);
+	global.martianTreeLevels[6] = LevelConfigMartian(7, global.enemyTypes[0], 800, room_2, 6, "levelType", 1, true, "Operation FuzzyBoi", spr_brief3);
 
     // Venusian Levels
 	 global.venusianTreeLevels[0] = LevelConfigVenusian(7, global.enemyTypes[0], 200, room_1, 2, "levelType", 1, false, "Operation Vortex", spr_brief);
-    global.venusianTreeLevels[0] = LevelConfigVenusian(8, global.enemyTypes[0], 200, room_1, 2, "levelType", 1, false, "Operation Vortex", spr_brief);
-    global.venusianTreeLevels[1] = LevelConfigVenusian(9, global.enemyTypes[0], 300, room_2, 3, "levelType", 2, false, "Operation Thunderbolt", spr_brief);
-    global.venusianTreeLevels[2] = LevelConfigVenusian(10, global.enemyTypes[0], 500, room_3, 5, "levelType", 3, false, "Operation Solar Flare", spr_brief);
-    global.venusianTreeLevels[3] = LevelConfigVenusian(11, [global.enemyTypes[0], global.enemyTypes[1]], 800, room_4, 6, "levelType", 4, false, "Operation Double Helix", spr_brief);
+    global.venusianTreeLevels[1] = LevelConfigVenusian(8, global.enemyTypes[0], 200, room_1, 2, "levelType", 1, false, "Operation Vortex", spr_brief);
+    global.venusianTreeLevels[2] = LevelConfigVenusian(9, global.enemyTypes[0], 300, room_2, 3, "levelType", 2, false, "Operation Thunderbolt", spr_brief);
+    global.venusianTreeLevels[3] = LevelConfigVenusian(10, global.enemyTypes[0], 500, room_3, 5, "levelType", 3, false, "Operation Solar Flare", spr_brief);
+    global.venusianTreeLevels[4] = LevelConfigVenusian(11, [global.enemyTypes[0], global.enemyTypes[1]], 800, room_4, 6, "levelType", 4, false, "Operation Double Helix", spr_brief);
 
     // Titan Levels
     global.titanTreeLevels[0] = LevelConfigTitan(12, global.enemyTypes[0], 200, room_1, 2, "levelType", 1, false, "Operation Frostbite", spr_brief);

@@ -5,16 +5,10 @@ var overlay_instance = instance_find(obj_overlayConfirmation, 0);
 if (!instance_exists(overlay_instance)) {
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
     lastClickTime = currentTime; // Update the last click time
-
- if (obj_brief) {
-instance_destroy(); 
- }
- if (obj_briefDisplayBox) {
-instance_destroy();	 
- }
-
+if (!displaying) {
+		displaying = true;
         // Create a display box object in the middle of the room
-        var displayBox = instance_create_layer(room_width / 2, room_height / 2, "Briefs", obj_briefDisplayBox);
+        var displayBox = instance_create_layer(room_width / 4.5, room_height / 2.5, "Briefs", obj_briefDisplayBox);
 
         // Define grid layout parameters
     
@@ -36,8 +30,7 @@ instance_destroy();
 
             var briefInstance = instance_create_layer(instance_x, instance_y + yOffset, "Briefs", obj_brief);
             show_debug_message(brief.operationName)
-			//DONT FORGET TO ADD A OPERATION NAME TO EACH LEVEL. 
-			//DONT FORGET TO ADD A SPRITE FOR EACH MISSION TYPE. SPRITES SHOULD BE UNIFORM EXCEPT FOR SPECIAL MISSIONS
+			
 			//MAKE SPECIAL MISSIONS RANDOM FOR EACH RUN?MAKE SDIFFERENT RUNS INTERESTING!!!!!
             briefInstance.brief = brief;
 			briefInstance.levelIndex = i;
@@ -56,9 +49,15 @@ instance_destroy();
                 current_row++; // Move to the next row
             }
         }
-    } else {
-        // This object is the last clicked object
-        show_debug_message("This object was already clicked. Click another object first.");
-    
- }
+    }
+	else {
+		displaying = false;
+		with (obj_brief) {
+		instance_destroy(obj_brief)	
+		}
+		with (obj_briefDisplayBox) {
+		instance_destroy(obj_briefDisplayBox)	
+		}
+	}
+}
 }
