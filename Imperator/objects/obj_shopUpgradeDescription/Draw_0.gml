@@ -2,7 +2,7 @@
  var upgrade = GetUpgrade(array_index, systemType);
 
 
-
+	 if (draw_delayed) {
 // Set alignment and font properties
 draw_set_halign(fa_center); // Center align text horizontally
 draw_set_valign(fa_top); // Align text to the top
@@ -32,3 +32,4 @@ for (var i = 0; i < num_lines; i++) {
 
 /// obj_shopUpgradeDescription Draw Event
 draw_self(); // Draw the object itself
+	 }

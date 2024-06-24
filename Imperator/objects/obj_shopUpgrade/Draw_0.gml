@@ -1,4 +1,5 @@
- 
+if (draw_delayed) {
+		
  var upgrade = GetUpgrade(array_index, systemType);
  if (!upgrade.unlocked) {
                 sprite_index = spr_lockedSystemUpgrade;
@@ -8,4 +9,5 @@
             } else {
                 sprite_index = upgrade.shopSprite; // Assuming items_array contains sprite_index information
             }
-draw_self()
+			draw_self();
+	 }

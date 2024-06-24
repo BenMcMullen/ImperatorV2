@@ -10,3 +10,6 @@ messageBoxSprite = spr_shopMessage;
 purchaseBoxHeight = 20; // Height of the purchase box
 purchaseBoxWidth = 100; // Width of the purchase box
 depth = -49;
+
+delay_timer = 30; // 1 second delay (assuming room_speed is 60)
+draw_delayed = false;

@@ -59,6 +59,12 @@ global.lastClickedGarageSystem = noone;
 global.displayedUpgradeDescriptions = noone;
 
 
+//For shop door animations
+global.shopFirstClick = true;
+
+// For data pad animations
+global.dataPadOpen = false;
+
 
 killTextScale = 1;
 loseHpScale = 1;

@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_shopDisplayBox",
   "bboxMode":0,
-  "bbox_bottom":499,
+  "bbox_bottom":0,
   "bbox_left":0,
-  "bbox_right":1199,
+  "bbox_right":0,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,11 +12,11 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"88cf4609-1217-4590-8b88-89c5e1b05376","name":"88cf4609-1217-4590-8b88-89c5e1b05376","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"cdbb3488-02c5-4afe-aea1-49c0766b71eb","name":"cdbb3488-02c5-4afe-aea1-49c0766b71eb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":500,
+  "height":375,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"079f7288-788c-4cd0-97e4-84f178153583","blendMode":0,"displayName":"default","isLocked":false,"name":"079f7288-788c-4cd0-97e4-84f178153583","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"88cf4609-1217-4590-8b88-89c5e1b05376","path":"sprites/spr_shopDisplayBox/spr_shopDisplayBox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c78f179b-d980-46eb-866d-d464619b989c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cdbb3488-02c5-4afe-aea1-49c0766b71eb","path":"sprites/spr_shopDisplayBox/spr_shopDisplayBox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2cfdfe55-d666-4578-a478-cc6a56085d05","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1200,
+  "width":900,
 }
