@@ -24,33 +24,76 @@ function GetMissionBriefs() {
 
 }
 
-function SelectMission() {
-	var levelIndex = argument0;
-    var currentTreeIndex = global.playerInformation.currentTreeIndex;
-    var currentDifficulty = global.playerInformation.difficulty;
 
-    // These cases HAVE to be in this order, because that is how they are organized 
-	// in the playerMissionProgress array.
+function SelectMission() {
+    var levelIndex = argument0;
+    var currentTreeIndex = global.playerInformation.currentTreeIndex;
+    var currentMissionProgress = global.playerMissionProgress[currentTreeIndex];
+
+    // Determine which tree of levels to use based on the current tree index
+    var levelTree;
     switch (currentTreeIndex) {
         case 0:
-            global.playerMissionProgress[0].missionLevelIndex = levelIndex;
+            levelTree = global.martianTreeLevels;
+            break;
         case 1:
-			global.playerMissionProgress[1].missionLevelIndex = levelIndex;
+            levelTree = global.venusianTreeLevels;
+            break;
         case 2:
-			global.playerMissionProgress[2].missionLevelIndex = levelIndex;
+            levelTree = global.titanTreeLevels;
+            break;
         case 3:
-			global.playerMissionProgress[3].missionLevelIndex = levelIndex;
+            levelTree = global.asteroidBeltLevels;
+            break;
+        default:
+            show_message("Error: Invalid tree index.");
+            return; // Exit the function if the tree index is invalid
     }
-	
+
+    // Check if the provided level index is within valid range
+    if (levelIndex >= 0 && levelIndex < array_length(levelTree)) {
+        // Update the missionLevelIndex to the new level index
+        currentMissionProgress.missionLevelIndex = levelIndex;
+    } else {
+        show_message("Error: Invalid level index.");
+    }
 }
+
+
 
 
 function CompleteMission() {
-	var treeIndex = global.playerInformation.currentTreeIndex;
-	var levelIndex = global.playerMissionProgress[treeIndex].missionLevelIndex;
-	var level = global.playerMissionProgress[treeIndex].missionTree[levelIndex];
-	
-	level.completed = true;
-	
-	
+    // Get the player's current mission progress
+    var currentTreeIndex = global.playerInformation.currentTreeIndex;
+    var currentMissionProgress = global.playerMissionProgress[currentTreeIndex];
+    var currentLevelIndex = currentMissionProgress.missionLevelIndex;
+
+    // Determine which tree of levels to use based on the current tree index
+    var levelTree;
+    switch (currentTreeIndex) {
+        case 0:
+            levelTree = global.martianTreeLevels;
+            break;
+        case 1:
+            levelTree = global.venusianTreeLevels;
+            break;
+        case 2:
+            levelTree = global.titanTreeLevels;
+            break;
+        case 3:
+            levelTree = global.asteroidBeltLevels;
+            break;
+        default:
+            return; // Invalid tree index, exit the function
+    }
+
+    // Set the completed attribute of the current level to true
+    if (currentLevelIndex >= 0 && currentLevelIndex < array_length(levelTree)) {
+		show_debug_message(string(levelTree[currentLevelIndex].completed) + "before")
+        levelTree[currentLevelIndex].completed = true;
+		show_debug_message(string(levelTree[currentLevelIndex].completed) + "after")
+    } else {
+        show_message("Error: Invalid level index.");
+    }
 }
+

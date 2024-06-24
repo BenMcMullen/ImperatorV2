@@ -510,22 +510,22 @@ function WrapImperatorDialogue(str, max_width) {
 function GetRankById(rank) {
     switch (rank) {
         case 1: // Lieutenant
-            return ("Lieutenant" + global.playerInformation.name);
+            return ("Lieutenant " + global.playerInformation.name);
         case 2: // Captain
             
-			return ("Captain" + global.playerInformation.name);
+			return ("Captain " + global.playerInformation.name);
         case 3: // Major
             
-			return ("sMajor" + global.playerInformation.name);
+			return ("Major " + global.playerInformation.name);
         case 4: // Colonel
             
-			return ("Colonel" + global.playerInformation.name);
+			return ("Colonel " + global.playerInformation.name);
         case 5: // General
             
-			return ("General" + global.playerInformation.name);
+			return ("General " + global.playerInformation.name);
         case 6: // Imperator
             
-			return ("Venator" + global.playerInformation.name);
+			return ("Venator " + global.playerInformation.name);
         default:
             return []; // Return an empty array or handle error as needed
     }

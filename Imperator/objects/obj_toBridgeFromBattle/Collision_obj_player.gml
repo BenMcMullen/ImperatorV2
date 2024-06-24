@@ -17,12 +17,13 @@ if (instance_exists(obj_player))
 				}
 				//send player back to hangar after successful mission
 				//SaveFile(SAVEFILE)
-				LoadBridge();
+				
 				
 				global.playerInformation.points = global.playerInformation.points + global.levelPoints;
 				show_debug_message("Triggers here")
 				CompleteMission();
 				hasControl = false;
+				LoadBridge();
 			}
 			else if (instance_exists(obj_introInstructions)){
 				LoadBridge();

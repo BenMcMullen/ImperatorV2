@@ -101,4 +101,22 @@ function WrapUpgradeText(str, max_width, cost, isOwned, isShop) {
     // Return the array of lines
     return lines;
 }
+function WrapTextOnPeriods(str) {
+    var sentences = string_split(str, ".");   // Split the string into sentences using periods
+    var lines = [];   // Array to hold the resulting lines
+
+    // Iterate through each sentence in the array
+    for (var i = 0; i < array_length(sentences); i++) {
+        var sentence = string_trim(sentences[i]);  // Trim any leading/trailing whitespace
+
+        // Check if the sentence is not empty before adding it to the lines array
+        if (sentence != "") {
+            lines[array_length(lines)] = sentence + ".";  // Add the period back to the sentence
+        }
+    }
+
+    // Return the array of lines
+    return lines;
+}
+
 
