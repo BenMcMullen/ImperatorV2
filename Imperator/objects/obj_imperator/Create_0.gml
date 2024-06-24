@@ -1,6 +1,7 @@
 debounceTime = 0.2;
 lastClickTime = -1;
 longDialogue = true;
+//SOMEWHERE HERE WE NEED TO RESET LONGDIALOGUE so it doesn't break afteer a mission win.
 
 
 depth = -49;
