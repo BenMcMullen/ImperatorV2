@@ -30,7 +30,7 @@ if (!displaying) {
 			
 			//MAKE SPECIAL MISSIONS RANDOM FOR EACH RUN?MAKE SDIFFERENT RUNS INTERESTING!!!!!
             briefInstance.brief = brief;
-			briefInstance.levelIndex = i;
+			briefInstance.levelIndex = brief.parentIndex;
             briefInstance.operationName = brief.operationName; 
             briefInstance.sprite = brief.sprite;
             briefInstance.missionType = brief.levelType;

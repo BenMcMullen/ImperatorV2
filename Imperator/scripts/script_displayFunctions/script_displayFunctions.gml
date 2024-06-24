@@ -101,6 +101,7 @@ function WrapUpgradeText(str, max_width, cost, isOwned, isShop) {
     // Return the array of lines
     return lines;
 }
+
 function WrapTextOnPeriods(str) {
     var sentences = string_split(str, ".");   // Split the string into sentences using periods
     var lines = [];   // Array to hold the resulting lines

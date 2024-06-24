@@ -154,55 +154,5 @@ function InitLevels() {
     global.asteroidBeltLevels[2] = LevelConfigAsteroidBelt(18, global.enemyTypes[0], 500, room_3, 5, "levelType", 3, false, "Operation Comet", spr_brief);
     global.asteroidBeltLevels[3] = LevelConfigAsteroidBelt(19, [global.enemyTypes[0], global.enemyTypes[1]], 800, room_4, 6, "levelType", 4, false, "Operation Nebula", spr_brief);
 
-
-	  // Function to get levels by difficulty for Martian levels
-    global.getMartianLevelsByDifficulty = function(difficulty) {
-        var filteredLevels = [];
-        for (var i = 0; i < array_length(global.martianTreeLevels); i++) {
-            var level = global.martianTreeLevels[i];
-            if (level.difficulty == difficulty) {
-                array_push(filteredLevels, level);
-            }
-        }
-        return filteredLevels;
-    };
-
-    // Function to get levels by difficulty for Venusian levels
-    global.getVenusianLevelsByDifficulty = function(difficulty) {
-        var filteredLevels = [];
-        for (var i = 0; i < array_length(global.venusianTreeLevels); i++) {
-            var level = global.venusianTreeLevels[i];
-            if (level.difficulty == difficulty) {
-                array_push(filteredLevels, level);
-            }
-        }
-        return filteredLevels;
-    };
-
-    // Function to get levels by difficulty for Titan levels
-    global.getTitanLevelsByDifficulty = function(difficulty) {
-        var filteredLevels = [];
-        for (var i = 0; i < array_length(global.titanTreeLevels); i++) {
-            var level = global.titanTreeLevels[i];
-            if (level.difficulty == difficulty) {
-                array_push(filteredLevels, level);
-            }
-        }
-        return filteredLevels;
-    };
-
-    // Function to get levels by difficulty for Asteroid Belt levels
-    global.getAsteroidBeltLevelsByDifficulty = function(difficulty) {
-        var filteredLevels = [];
-        for (var i = 0; i < array_length(global.asteroidBeltLevels); i++) {
-            var level = global.asteroidBeltLevels[i];
-            if (level.difficulty == difficulty) {
-                array_push(filteredLevels, level);
-            }
-        }
-        return filteredLevels;
-    };
-
-
     global.contractType = global.enemyTypes[0];
 }
