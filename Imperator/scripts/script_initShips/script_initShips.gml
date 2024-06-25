@@ -1,9 +1,8 @@
 function InitShips() {
 	
 
-    function ShipConfig(_id, _hull, _engine, _primaryWeapon, _secondaryWeapon, _isOwned, _shields, _sprites, _x, _y, _shipName, _shipClass, _shipGeneration, _sensors, _unlocked) {
+    function ShipConfig(_hull, _engine, _primaryWeapon, _secondaryWeapon, _isOwned, _shields, _sprites, _x, _y, _shipName, _shipClass, _shipGeneration, _sensors, _unlocked, _destroyed) {
         return {
-            id: _id,
             hull: _hull,
             engine: _engine,
             primaryWeapon: _primaryWeapon,
@@ -17,7 +16,8 @@ function InitShips() {
             shipClass: _shipClass,
             shipGeneration: _shipGeneration,
             sensors: _sensors,
-			unlocked: _unlocked
+			unlocked: _unlocked,
+			destroyed: _destroyed
         };
     }
 
@@ -730,9 +730,6 @@ global.sensors[3] = SensorConfig(
 );
 
 
-    // Initialize the global array of player ships
-    global.playerShips = [];
-
     // Define upgradeable systems for each ship. The first item is the ship ID, the rest are the different upgradable ship systems. 
     // These systems are to be determined later. Possibly even update if we unlock new upgrade slots?
     global.shipSystemsUpgradable = [];
@@ -740,9 +737,11 @@ global.sensors[3] = SensorConfig(
     global.shipSystemsUpgradable[1] = [2, true, false, true, true, true, true, true, false];
     global.shipSystemsUpgradable[2] = [3, true, true, false, true, true, true, true, false];
 
+    // Initialize the global array of player ships
+    global.playerShips = [];
+
     // Adding ships individually and assigning engines
     global.playerShips[0] = ShipConfig(
-        1,
         global.hulls[0],                        // Hull
         global.engines[0],                      // Engine
         global.primaryWeapons[0],               // Primary Weapon
@@ -756,11 +755,11 @@ global.sensors[3] = SensorConfig(
         "Scout",                                // Ship Class
         "Gen 4 Mercurian",                       // Ship Generation
         global.sensors[1],                       // Sensors
-		true
+		true,									// Unlocked
+		false									// Destroyed
     );
 
     global.playerShips[1] = ShipConfig(
-        2,
         global.hulls[1],                        // Hull
         global.engines[1],                      // Engine
         global.primaryWeapons[1],               // Primary Weapon
@@ -774,11 +773,11 @@ global.sensors[3] = SensorConfig(
         "Interceptor",                              // Ship Class
         "Gen 5 Venuzian",                      // Ship Generation
         global.sensors[2],                       // Sensors
-		true
+		true,									// Unlocked
+		false									// Destroyed
     );
 
     global.playerShips[2] = ShipConfig(
-        3,
         global.hulls[2],                        // Hull
         global.engines[2],                      // Engine
         global.primaryWeapons[2],               // Primary Weapon
@@ -792,7 +791,8 @@ global.sensors[3] = SensorConfig(
         "Frigate",                          // Ship Class
         "Gen 3 Venuzian",                                // Ship Generation
         global.sensors[0],                       // Sensors
-		true
+		true,									// Unlocked
+		false									// Destroyed
     );
 
 }

@@ -76,3 +76,15 @@ function LoadFile(filename) {
         show_message("Failed to open save file!");
     }
 }
+
+function DeleteFile(filename) {
+    if (file_exists(filename)) {
+        if (!file_delete(filename)) {
+            show_debug_message("Failed to delete save file!");
+        } else {
+            show_debug_message("Save file deleted successfully.");
+        }
+    } else {
+        show_debug_message("Save file does not exist!");
+    }
+}

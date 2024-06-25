@@ -1,6 +1,6 @@
 function GetMissionBriefs() {
     var currentTreeIndex = global.playerInformation.currentTreeIndex;
-    var currentDifficulty = global.playerInformation.difficulty;
+    var currentDifficulty = global.playerInformation.rank;
     var levels;
     var briefs = [];
 
@@ -24,7 +24,7 @@ function GetMissionBriefs() {
 
     // Filter the levels based on the current difficulty
    for (var i = 0; i < array_length(levels); i++) {
-        if (levels[i].difficulty == currentDifficulty) {
+        if (levels[i].difficulty.difficulty == currentDifficulty) {
             var brief = levels[i];
             brief.parentIndex = i; // Add the parent index to the brief
             briefs[array_length(briefs)] = brief;

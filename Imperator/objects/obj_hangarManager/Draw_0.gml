@@ -26,7 +26,7 @@ var startY = 80;
 for (var i = 0; i < array_length(global.playerShips); i++) {
     var ship = global.playerShips[i];
 
-    if (ship.isOwned) {
+    if (ship.isOwned && ship.destroyed == false) {
         // Calculate position
         var col = i % columnCount;
         var row = i div columnCount;
