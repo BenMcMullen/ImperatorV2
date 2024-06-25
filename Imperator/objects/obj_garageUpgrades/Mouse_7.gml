@@ -2,7 +2,7 @@
 if (mouse_check_button_released(mb_left)) {
     if (drag) {
         // Define the collision rectangle
-       
+      
         var left = obj_garageShipDisplay.x;
         var right =  obj_garageShipDisplay.x + sprite_get_width(global.selectedShip.sprites.spriteGarage); // Get the width of obj_garageShipDisplay sprite
         var top =  obj_garageShipDisplay.y;

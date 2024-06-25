@@ -23,13 +23,8 @@ minimap_height = 200; // Adjust as needed
  global.garageUpgradingSystem = "";
 
 
- global.currentLevelIndex = 0;
 global.currentMusic = 0;
 global.musicPlaying = false;
-
-
-global.shipUpgrades = [];
-global.maxshipUpgrades = 20; //Maximum ship upgrades
 
 
 global.hasContract = true;
@@ -41,17 +36,6 @@ global.totalCompletedContracts = 0;
 global.killsThisRoom = 0;
 global.levelPoints = 0;
 
-global.isDead = false
-
-// Initialize the global variables to track purchased items
-
-global.itemPulseShield = false;
-global.itemBoostBooster = false;
-global.itemRailGun = false;
-global.itemRecoilArmour = false;
-global.itemEnhancedSensors = false;
-global.itemSecondaryGunner = false;
-// Initialize more global variables as needed
 
 //Tracking the shop/garage page's selected system and displayed descriptions
 global.lastClickedShopSystem = noone;

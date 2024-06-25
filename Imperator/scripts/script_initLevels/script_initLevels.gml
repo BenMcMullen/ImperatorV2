@@ -127,7 +127,7 @@ function InitLevels() {
     global.asteroidBeltLevels = [];
 
     // Martian Levels
-    global.martianTreeLevels[0] = LevelConfigMartian(1, global.enemyTypes[0], 200, room_1, 2, "levelType", 1, false, "Operation Red Storm", spr_brief);
+    global.martianTreeLevels[0] = LevelConfigMartian(1, global.enemyTypes[0], 200, room_1, 2, "levelType", 1, true, "Operation Red Storm", spr_brief);
     global.martianTreeLevels[1] = LevelConfigMartian(2, global.enemyTypes[0], 300, room_2, 3, "levelType", 2, false, "Operation Desert Siege", spr_brief);
     global.martianTreeLevels[2] = LevelConfigMartian(3, global.enemyTypes[0], 500, room_3, 5, "levelType", 3, false, "Operation Iron Fist", spr_brief);
     global.martianTreeLevels[3] = LevelConfigMartian(4, global.enemyTypes[0], 800, room_3, 6, "levelType", 4, false, "Operation Twin Blades", spr_brief);

@@ -27,3 +27,12 @@ function LoadNextLevel() {
         show_debug_message("Invalid level index: " + string(levelIndex));
     }
 }
+
+function GetCurrentLevel() {  
+    // Retrieve the current tree and level index
+    var treeIndex = global.playerInformation.currentTreeIndex;
+    var levelIndex = global.playerMissionProgress[treeIndex].missionLevelIndex;
+    var tree = global.playerMissionProgress[treeIndex].missionTree;
+	var level = tree[levelIndex];
+	return level;
+}
