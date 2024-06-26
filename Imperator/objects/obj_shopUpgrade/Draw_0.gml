@@ -7,7 +7,7 @@ if (draw_delayed) {
                
                sprite_index = spr_ownedSystemUpgrade;
             } else {
-                sprite_index = upgrade.shopSprite; // Assuming items_array contains sprite_index information
+                sprite_index = upgrade.systemSprite; // Assuming items_array contains sprite_index information
             }
 			draw_self();
 	 }

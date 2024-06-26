@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_shipGarage",
   "bboxMode":0,
-  "bbox_bottom":707,
+  "bbox_bottom":767,
   "bbox_left":0,
-  "bbox_right":1299,
+  "bbox_right":1535,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":708,
+  "height":768,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"70f2cf25-c767-4474-ab7e-ec1baf8eabef","blendMode":0,"displayName":"default","isLocked":false,"name":"70f2cf25-c767-4474-ab7e-ec1baf8eabef","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1300,
+  "width":1536,
 }

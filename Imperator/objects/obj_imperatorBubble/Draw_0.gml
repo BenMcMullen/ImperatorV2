@@ -15,8 +15,7 @@ var text_x = other.x_coordinate + 10; // Adjust if needed
 var text_y = other.y_coordinate -60; // Position just below the sprite, adjust 4 as needed
 
 if (!other.longDialogue) {
-	//realign with smaller text box
-	text_y += 10
+	//realign with smaller text bo
 image_index = 1;
 
 var words = WrapImperatorDialogue(string(oneLiner), max_width);

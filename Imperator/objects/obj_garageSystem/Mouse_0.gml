@@ -43,7 +43,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
             // Set sprite index and properties for obj_shopUpgrade instance
           
-                shopUpgradeInstance.sprite_index = currentUpgrade.garageSprite; // Assuming items_array contains sprite_index information
+                shopUpgradeInstance.sprite_index = currentUpgrade.systemSprite; // Assuming items_array contains sprite_index information
             
 
             // Assign creator_id to match obj_garageSystem id

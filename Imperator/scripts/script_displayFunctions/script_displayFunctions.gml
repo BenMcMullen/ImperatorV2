@@ -46,7 +46,7 @@ function PopulateDisplay(displayBox_id) {
 
         // Create obj_garageUpgrades instance
         var upgrade_instance = instance_create_layer(upgrade_x, upgrade_y, "Systems", obj_garageUpgrades);
-        upgrade_instance.sprite_index = system.garageSprite;
+        upgrade_instance.sprite_index = system.systemSprite;
         upgrade_instance.item_data = system;
         upgrade_instance.systemType = displayBox.systemType;
         upgrade_instance.systemSprite = displayBox.systemSprite;

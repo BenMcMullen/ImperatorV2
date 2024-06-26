@@ -6,7 +6,7 @@ lastClickTime = -1; // Initialize to an invalid time
 alarm[0] = 180; // Set timout on message for 3 seconds (30 step/second)
 alarm[1] = 320;
 image_index = 1;
-oneLiner = DisplayOneLiner(global.playerInformation.rank)
-dialogue = DisplayGreeting(global.playerInformation.rank);
+oneLiner = DisplayOneLiner(global.playerInformation.rank.rank)
+dialogue = DisplayGreeting(global.playerInformation.rank.rank);
 
 

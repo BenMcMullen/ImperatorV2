@@ -16,7 +16,7 @@ if (!instance_exists(overlay_instance)) {
 
             
             var yesButton = instance_create_layer(confirmationWidth + 130, confirmationHeight + 55, "Briefs", obj_briefYesButton); // Adjust positions as needed
-            yesButton.messageText = "You have selected " + level.operationName + ". good luck " + GetRankById(global.playerInformation.rank);
+            yesButton.messageText = "You have selected " + level.operationName + ". good luck " + GetRankById(global.playerInformation.rank.rank);
             yesButton.levelIndex = other.levelIndex;
 
             var noButton = instance_create_layer(confirmationWidth - 180, confirmationHeight  + 55, "Briefs", obj_briefNoButton); // Adjust positions as needed

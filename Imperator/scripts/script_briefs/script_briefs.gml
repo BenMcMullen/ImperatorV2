@@ -1,6 +1,6 @@
 function GetMissionBriefs() {
     var currentTreeIndex = global.playerInformation.currentTreeIndex;
-    var currentDifficulty = global.playerInformation.rank;
+    var currentDifficulty = global.playerInformation.rank.rank;
     var levels;
     var briefs = [];
 

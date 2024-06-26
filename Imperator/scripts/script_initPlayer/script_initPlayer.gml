@@ -13,6 +13,14 @@ function InitPlayer(){
 			
         };
     }
+	 function PlayerRank(_title, _rank, _commendationTarget) {
+        return {
+			title: _title,
+			rank: _rank,
+			commendationTarget: _commendationTarget,
+			
+        };
+    }
 	
 	global.playerMissionProgress = []
 	
@@ -22,15 +30,28 @@ function InitPlayer(){
 	global.playerMissionProgress[3] = PlayerMissionProgress("Asteroid Belt", 0, global.asteroidBeltLevels, 0, false);
 			
 			
+			// Initialize the global array of player ranks
+global.playerRanks = [];
+			
+// Adding player ranks individually
+global.playerRanks[0] = PlayerRank("Lieutenant", 1, 21);
+global.playerRanks[1] = PlayerRank("Captain", 2, 25);
+global.playerRanks[2] = PlayerRank("Major", 3, 31);
+global.playerRanks[3] = PlayerRank("Colonel", 4, 40);
+global.playerRanks[4] = PlayerRank("General", 5, 51);
+global.playerRanks[5] = PlayerRank("Venator", 6, 60);
+
+			
 	// Define the struct for playerInformation. in the global scope
 global.playerInformation = {
 	currentTreeIndex: 0,
     kills: 0,   // Total kills attributed to the player
-    rank: 1,
-	commendations:0,// Player's rank (string representation)
+    rank: global.playerRanks[0],
+	commendations: 0,
     deaths: 0,
 	points: 10000,
 	achievements: 0,
 	name: "Fuzzalitious"
 };
+
 }

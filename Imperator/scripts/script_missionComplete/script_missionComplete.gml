@@ -4,6 +4,7 @@ function MissionEnd(){
 	var currentLevel = GetCurrentLevel();
 if (LevelRequirementsMet()) {
 global.playerInformation.points += currentLevel.levelPoints;
+global.playerInformation.commendations += currentLevel.commendations;
 show_debug_message("Mission End here")
 CompleteMission();
 LoadBridge();

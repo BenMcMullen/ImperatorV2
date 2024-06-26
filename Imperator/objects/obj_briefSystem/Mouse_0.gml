@@ -15,7 +15,7 @@ if (!instance_exists(overlay_instance)) {
             var displayBox = instance_create_layer(room_width / 2.5, room_height / 1.4, "Briefs", obj_briefDisplayBox);
 
             // Calculate the starting position at the top middle of obj_shopDisplayBox. the +64 helps to compensate for sprite size
-            var start_x = displayBox.x - (columns / 2 * spacing_x) + 64;
+            var start_x = displayBox.x - (columns / 2 * spacing_x);
             var start_y = displayBox.y - 150 // Adjust as needed for vertical position
 
             var dataPad = instance_create_layer(room_width / 10, room_height / 2, "Briefs", obj_briefDataPad);

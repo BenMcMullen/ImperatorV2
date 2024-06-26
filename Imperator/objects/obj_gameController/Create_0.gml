@@ -50,6 +50,7 @@ global.shopFirstClick = true;
 global.dataPadOpen = false;
 
 
+
 killTextScale = 1;
 loseHpScale = 1;
 loseShieldsScale = 1;

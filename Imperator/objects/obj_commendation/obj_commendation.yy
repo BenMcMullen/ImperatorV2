@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bridge",
+  "%Name":"obj_commendation",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bridge",
+  "name":"obj_commendation",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_commendations",
+    "path":"sprites/spr_commendations/spr_commendations.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

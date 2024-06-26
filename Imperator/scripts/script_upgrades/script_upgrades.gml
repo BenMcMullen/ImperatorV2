@@ -102,29 +102,29 @@ var array_type = argument0; // String representing the array type (e.g., "primar
 
 switch (array_type) {
     case "primaryWeapon":
-        return global.selectedShip.primaryWeapon.garageSprite;
+        return global.selectedShip.primaryWeapon.systemSprite;
      
         
     case "secondaryWeapon":
-     return   global.selectedShip.secondaryWeapon.garageSprite;
+     return   global.selectedShip.secondaryWeapon.systemSprite;
 
         
     case "hull":
-      return  global.selectedShip.hull.garageSprite;
+      return  global.selectedShip.hull.systemSprite;
 
         
     case "engine":
 	
-     return   global.selectedShip.engine.garageSprite;
+     return   global.selectedShip.engine.systemSprite;
 		show_debug_message(global.selectedShip);
 
         
     case "sensors":
-      return  global.selectedShip.sensors.garageSprite;
+      return  global.selectedShip.sensors.systemSprite;
     
         
     case "shields":
-       return global.selectedShip.shields.garageSprite;
+       return global.selectedShip.shields.systemSprite;
   
   
         
