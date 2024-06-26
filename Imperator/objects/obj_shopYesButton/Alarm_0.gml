@@ -4,7 +4,7 @@ var messageText = other.messageText
 	var shopMessageInstance = instance_create_layer(x/2, y/2, "Items", obj_shopUpgradeMessage);
 		shopMessageInstance.messageText = messageText;
 		
-PurchaseUpgrade(other.array_index,other.systemType)
+PurchaseUpgrade(other.array_index,other.systemType, other.cost)
 with (obj_shopConfirmationScreen) {
     instance_destroy();
 }

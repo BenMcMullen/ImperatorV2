@@ -37,13 +37,19 @@ if (!instance_exists(overlay_instance)) {
                 // MAKE SPECIAL MISSIONS RANDOM FOR EACH RUN?MAKE SDIFFERENT RUNS INTERESTING!!!!!
                 briefInstance.brief = brief;
                 briefInstance.levelIndex = brief.parentIndex;
-                briefInstance.operationName = brief.operationName;
                 briefInstance.sprite = brief.sprite;
                 briefInstance.missionType = brief.levelType;
+				briefInstance.operationName = brief.operationName;
+				briefInstance.levelType = brief.levelType.type;
+				briefInstance.commendations = brief.commendations;
+				briefInstance.levelPoints = brief.levelPoints;
+
 
                 // Create obj_shopUpgradeDescription instance for the current shop item
                 var descriptionText = instance_create_layer(instance_x + 32, instance_y + yOffset + 64, "Briefs", obj_briefLabel);
                 descriptionText.operationName = brief.operationName; // Set the description text
+
+				
 
                 // Increment count for the number of created instances
                 current_column++;

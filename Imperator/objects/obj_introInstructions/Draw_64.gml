@@ -14,5 +14,5 @@ DrawSetText(c_black, font_arial2, fa_center, fa_top);
 
 // Draw text with shadow
 draw_text(textX + 2, textY + 2, text);
-draw_set_color(c_yellow);
+draw_set_color(c_white);
 draw_text(textX, textY, text);

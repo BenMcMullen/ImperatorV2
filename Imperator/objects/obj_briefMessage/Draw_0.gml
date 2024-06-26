@@ -10,6 +10,7 @@ var boxY = (room_height - boxHeight) / 2;
 draw_set_halign(fa_center); // Center align text horizontally
 draw_set_valign(fa_top); // Align text to the top
 draw_set_font(font_venite); // Replace with your desired font
+draw_set_color(c_white)
 
 // Text wrapping parameters
 var line_height = 70; // Height of each line, adjust as needed

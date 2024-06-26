@@ -2,7 +2,7 @@
 depth = -100;
 with (obj_commendation) {
 	
-var commendationsRemaining = GetCommendations();
+var commendationsRemaining = GetRemainingCommendations();
 
 
 // Set alignment and font properties
@@ -17,6 +17,10 @@ draw_set_font(font_venite); // Replace with your desired font
 // Adjust the position as needed to position text within the sprite
 draw_text(x + sprite_width /2 , y + sprite_height /3, commendationsRemaining);
 // Reset alignment to default
+draw_text(x + sprite_width/2, y +sprite_height, global.playerInformation.rank.title)
+draw_set_color(c_black)
+draw_text(x + sprite_width/2, y +sprite_height - 2, global.playerInformation.rank.title)
+draw_set_color(c_white)
 
 }
 draw_self();

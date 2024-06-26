@@ -17,4 +17,4 @@ var messageText = other.messageText;
     draw_text(textX, textY, messageText);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
-	draw_set_color(c_yellow);
+	draw_set_color(c_white);

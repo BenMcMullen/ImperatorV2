@@ -9,7 +9,7 @@ if (!instance_exists(overlay_instance)) {
 	
 	
     if (upgrade.cost < global.playerInformation.points && !upgrade.isOwned && upgrade.unlocked) {
-		global.playerInformation.points -= upgrade.cost;
+		
 		
 			
 		
@@ -27,7 +27,9 @@ if (!instance_exists(overlay_instance)) {
 		var yesButton = instance_create_layer(confirmationWidth + 130, confirmationHeight + 55, "Items", obj_shopYesButton); // Adjust positions as needed
 		yesButton.array_index = array_index;
 		yesButton.systemType = systemType;
+		yesButton.cost = upgrade.cost;
 		yesButton.messageText = "You have purchased the " + upgrade.name + "!";
+		
 		
 		var noButton = instance_create_layer(confirmationWidth - 180, confirmationHeight + 55, "Items", obj_shopNoButton); // Adjust positions as needed
 		

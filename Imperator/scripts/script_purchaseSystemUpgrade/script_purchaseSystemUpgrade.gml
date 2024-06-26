@@ -2,8 +2,11 @@ function PurchaseUpgrade(){
 
 var array_index = argument0; // Entry to be updated
 var array_type = argument1; // String representing the array type (e.g., "primaryWeapons")
-
+var cost = argument2;
+	global.playerInformation.points -= cost;
+	
 switch (array_type) {
+	
     case "primaryWeapon":
         global.primaryWeapons[array_index].isOwned = true;
 		show_debug_message(global.primaryWeapons);

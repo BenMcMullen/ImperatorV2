@@ -4,7 +4,7 @@
 
 
 var messageText = other.missionName;
-
+	draw_set_color(c_white); // Set text color to yellow
     var boxWidth = sprite_get_width(spr_briefMessage);
     var boxHeight = sprite_get_height(spr_briefMessage);
     var boxX = (room_width - boxWidth) / 2;
