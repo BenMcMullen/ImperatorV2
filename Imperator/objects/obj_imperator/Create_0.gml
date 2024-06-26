@@ -2,8 +2,6 @@ debounceTime = 0.2;
 lastClickTime = -1;
 longDialogue = true;
 
-
-
 depth = -49;
 alarm[1] = 40;
 
