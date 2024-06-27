@@ -40,8 +40,11 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
     if (clickedShipIndex != -1) {
         var clickedShip = global.playerShips[clickedShipIndex];
         
+        if (array_length(clickedShip.shields) > 0) {
+            clickedShip.shields.shieldStatic = clickedShip.shields.shieldStaticMax;
+        }
+        
         global.selectedShip = clickedShip;
-        global.selectedShip.shields.shieldStatic = global.selectedShip.shields.shieldStaticMax;
         show_debug_message(clickedShip.shipName + " was selected.");
         LoadShipGarage();
     }

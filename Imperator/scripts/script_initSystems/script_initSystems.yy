@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_briefs",
+  "%Name":"script_initSystems",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_briefs",
+  "name":"script_initSystems",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -93,46 +93,57 @@ switch (array_type) {
         break;
 }
 }
+
+function IsSystemMissing(systemArray) {
+	if (systemArray == noone) {
+		return true;
+	} else {
+	return false;
+}
+}
+
 function GetShipSprite(){
 
 /// @description Add an item to the inventory
 /// @param item_obj_id The object ID of the item to add
 /// @param quantity The quantity of the item to add
 var array_type = argument0; // String representing the array type (e.g., "primaryWeapons")
+    var systemSprite;
 
-switch (array_type) {
-    case "primaryWeapon":
-        return global.selectedShip.primaryWeapon.systemSprite;
-     
-        
-    case "secondaryWeapon":
-     return   global.selectedShip.secondaryWeapon.systemSprite;
+    switch (array_type) {
+        case "primaryWeapon":
+            systemSprite = IsSystemMissing(global.selectedShip.primaryWeapon) ? spr_noUpgrade : global.selectedShip.primaryWeapon.systemSprite;
+            break;
 
-        
-    case "hull":
-      return  global.selectedShip.hull.systemSprite;
+        case "secondaryWeapon":
+            systemSprite = IsSystemMissing(global.selectedShip.secondaryWeapon) ? spr_noUpgrade : global.selectedShip.secondaryWeapon.systemSprite;
+            break;
 
-        
-    case "engine":
-	
-     return   global.selectedShip.engine.systemSprite;
-		show_debug_message(global.selectedShip);
+        case "hull":
+            systemSprite = IsSystemMissing(global.selectedShip.hull) ? spr_noUpgrade : global.selectedShip.hull.systemSprite;
+            break;
 
-        
-    case "sensors":
-      return  global.selectedShip.sensors.systemSprite;
-    
-        
-    case "shields":
-       return global.selectedShip.shields.systemSprite;
-  
-  
-        
-    default:
-        show_debug_message("Unknown array type: " + array_type);
-        break;
+        case "engine":
+            systemSprite = IsSystemMissing(global.selectedShip.engine) ? spr_noUpgrade : global.selectedShip.engine.systemSprite;
+            break;
+
+        case "sensors":
+            systemSprite = IsSystemMissing(global.selectedShip.sensors) ? spr_noUpgrade : global.selectedShip.sensors.systemSprite;
+            break;
+
+        case "shields":
+            systemSprite = IsSystemMissing(global.selectedShip.shields) ? spr_noUpgrade : global.selectedShip.shields.systemSprite;
+            break;
+
+        default:
+            show_debug_message("Unknown array type: " + array_type);
+            systemSprite = spr_noUpgrade;
+            break;
+    }
+
+    return systemSprite;
 }
-}
+
 
 
 function GetShipUpgrade(){
@@ -141,37 +152,36 @@ function GetShipUpgrade(){
 /// @param item_obj_id The object ID of the item to add
 /// @param quantity The quantity of the item to add
 var array_type = argument0; // String representing the array type (e.g., "primaryWeapons")
+ var upgradeName;
 
-switch (array_type) {
-    case "primaryWeapon":
-        return global.selectedShip.primaryWeapon.name;
-     
-        
-    case "secondaryWeapon":
-     return   global.selectedShip.secondaryWeapon.name;
+ switch (array_type) {
+        case "primaryWeapon":
+            upgradeName = IsSystemMissing(global.selectedShip.primaryWeapon) ? "No Primary Weapon" : global.selectedShip.primaryWeapon.name;
+            break;
 
-        
-    case "hull":
-      return  global.selectedShip.hull.name;
+        case "secondaryWeapon":
+            upgradeName = IsSystemMissing(global.selectedShip.secondaryWeapon) ? "No Secondary Weapon" : global.selectedShip.secondaryWeapon.name;
+            break;
 
-        
-    case "engine":
-	
-     return   global.selectedShip.engine.name;
-		show_debug_message(global.selectedShip);
+        case "hull":
+            upgradeName = IsSystemMissing(global.selectedShip.hull) ? "No Hull" : global.selectedShip.hull.name;
+            break;
 
-        
-    case "sensors":
-      return  global.selectedShip.sensors.name;
-    
-        
-    case "shields":
-       return global.selectedShip.shields.name;
-  
-  
-        
+        case "engine":
+            upgradeName = IsSystemMissing(global.selectedShip.engine) ? "No Engine" : global.selectedShip.engine.name;
+            break;
+
+        case "sensors":
+            upgradeName = IsSystemMissing(global.selectedShip.sensors) ? "No Sensors" : global.selectedShip.sensors.name;
+            break;
+
+        case "shields":
+            upgradeName = IsSystemMissing(global.selectedShip.shields) ? "No Shields" : global.selectedShip.shields.name;
+            break;
+			
     default:
         show_debug_message("Unknown array type: " + array_type);
         break;
 }
+	return upgradeName;
 }

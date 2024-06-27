@@ -1,9 +1,9 @@
 if (draw_delayed) {
 		
  var upgrade = GetUpgrade(array_index, systemType);
- if (!upgrade.unlocked) {
+ if (!upgrade.systemStatus.unlocked) {
                 sprite_index = spr_lockedSystemUpgrade;
-            } else if (upgrade.isOwned) {
+            } else if (upgrade.systemStatus.isOwned) {
                
                sprite_index = spr_ownedSystemUpgrade;
             } else {

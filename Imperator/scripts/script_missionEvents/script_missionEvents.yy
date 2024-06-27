@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_asteroidExplosion",
+  "%Name":"script_missionEvents",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_asteroidExplosion",
+  "name":"script_missionEvents",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -34,7 +34,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
         for (var i = 0; i < total_items; i++) {
             var currentUpgrade = target[i];
-			if (currentUpgrade.isOwned) {
+			if (currentUpgrade.systemStatus.isOwned && !currentUpgrade.systemStatus.destroyed) {
 
             var instance_x = start_x + current_column * spacing_x;
             var instance_y = start_y + current_row * spacing_y;
@@ -54,17 +54,17 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
             // Assign other properties as needed
             shopUpgradeInstance.array_index = i;
-            shopUpgradeInstance.cost = cost;
+            shopUpgradeInstance.cost = currentUpgrade.systemStatus.cost;
             shopUpgradeInstance.upgradeName = currentUpgrade.name;
-            shopUpgradeInstance.isOwned = currentUpgrade.isOwned;
-            shopUpgradeInstance.unlocked = currentUpgrade.unlocked;
+            shopUpgradeInstance.isOwned = currentUpgrade.systemStatus.isOwned;
+            shopUpgradeInstance.unlocked = currentUpgrade.systemStatus.unlocked;
             shopUpgradeInstance.item_data = currentUpgrade;
             shopUpgradeInstance.target = target;
 
             // Create and store upgrade description instances
             var descriptionText = instance_create_layer(instance_x + 32, instance_y + yOffset + 64, "Systems", obj_garageUpgradeDescription);
             descriptionText.text = currentUpgrade.name;
-            descriptionText.unlocked = currentUpgrade.unlocked;
+            descriptionText.unlocked = currentUpgrade.systemStatus.unlocked;
 			descriptionText.array_index = i;
 			descriptionText.systemType = systemType;
             global.displayedUpgradeDescriptions[array_length(global.displayedUpgradeDescriptions)] = descriptionText;

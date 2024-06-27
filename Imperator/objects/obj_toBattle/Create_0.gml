@@ -1,4 +1,5 @@
 //create
+readyToGo = false;
 currentLevel = GetCurrentLevel();
 show_debug_message(currentLevel)
 if (currentLevel.completed) {

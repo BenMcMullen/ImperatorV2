@@ -8,3 +8,30 @@ function LoadShipGarage() {
 
     
 }
+
+function AllSystemsInstalled() {
+    var selectedShip = global.selectedShip;
+
+    // Check each system in the selected ship
+    if (selectedShip.hull == noone) {
+        return false;
+    }
+    if (selectedShip.engine == noone) {
+        return false;
+    }
+    if (selectedShip.primaryWeapon == noone) {
+        return false;
+    }
+    if (selectedShip.secondaryWeapon == noone) {
+        return false;
+    }
+    if (selectedShip.shields == noone) {
+        return false;
+    }
+    if (selectedShip.sensors == noone) {
+        return false;
+    }
+
+    // If all systems are present, return true
+    return true;
+}

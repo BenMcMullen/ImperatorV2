@@ -2,8 +2,9 @@
 
 
 MusicConfig();
-InitShips();
+InitSystems();
 InitLevels();
+InitShips();
 InitImperatorPhrases();
 InitPlayer();
 #macro RES_W 1024

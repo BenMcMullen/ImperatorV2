@@ -8,7 +8,7 @@ if (!instance_exists(overlay_instance)) {
 	var confirmationHeight = room_height/2;
 	
 	
-    if (upgrade.cost < global.playerInformation.points && !upgrade.isOwned && upgrade.unlocked) {
+    if (upgrade.systemStatus.cost < global.playerInformation.points && !upgrade.systemStatus.isOwned && upgrade.systemStatus.unlocked) {
 		
 		
 			
@@ -27,20 +27,20 @@ if (!instance_exists(overlay_instance)) {
 		var yesButton = instance_create_layer(confirmationWidth + 130, confirmationHeight + 55, "Items", obj_shopYesButton); // Adjust positions as needed
 		yesButton.array_index = array_index;
 		yesButton.systemType = systemType;
-		yesButton.cost = upgrade.cost;
+		yesButton.cost = upgrade.systemStatus.cost;
 		yesButton.messageText = "You have purchased the " + upgrade.name + "!";
 		
 		
 		var noButton = instance_create_layer(confirmationWidth - 180, confirmationHeight + 55, "Items", obj_shopNoButton); // Adjust positions as needed
 		
 			
-    } else if (!upgrade.unlocked) {
+    } else if (!upgrade.systemStatus.unlocked) {
 		show_debug_message("locked");
 		var shopUpgradeInstance = instance_create_layer(confirmationWidth, confirmationHeight, "Items", obj_shopUpgradeMessage);
         messageText = "You haven't unlocked this upgrade yet!";
 		shopUpgradeInstance.messageText = messageText;
     }
-	else if (upgrade.isOwned) {	
+	else if (upgrade.systemStatus.isOwned) {	
 			show_debug_message("owned");
 		var shopUpgradeInstance = instance_create_layer(confirmationWidth, confirmationHeight, "Items", obj_shopUpgradeMessage);
         messageText = "You already own " + upgrade.name + "!";

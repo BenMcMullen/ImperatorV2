@@ -46,6 +46,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
         for (var i = 0; i < total_items; i++) {
             var currentUpgrade = target[i];
+			if (!currentUpgrade.systemStatus.destroyed) {
 			
             var instance_x = start_x + current_column * spacing_x;
             var instance_y = start_y + current_row * spacing_y;
@@ -53,12 +54,12 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
             var shopUpgradeInstance = instance_create_layer(instance_x, instance_y + yOffset, "Items", obj_shopUpgrade);
             
             upgradeName = currentUpgrade.name;
-            isOwned = currentUpgrade.isOwned;
-            unlocked = currentUpgrade.unlocked;
+            isOwned = currentUpgrade.systemStatus.isOwned;
+            unlocked = currentUpgrade.systemStatus.unlocked;
             
             shopUpgradeInstance.array_index = i; // Store the array index
             shopUpgradeInstance.systemType = systemType; // Set system type
-            shopUpgradeInstance.cost = cost;
+            shopUpgradeInstance.cost = currentUpgrade.systemStatus.cost;
             shopUpgradeInstance.upgradeName = upgradeName;
             shopUpgradeInstance.isOwned = isOwned;
             shopUpgradeInstance.unlocked = unlocked;
@@ -68,9 +69,9 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 		    // Create obj_shopUpgradeDescription instance for the current shop item
             var descriptionText = instance_create_layer(instance_x + 32, instance_y + yOffset + 64, "Items", obj_shopUpgradeDescription);
             descriptionText.text = currentUpgrade.name; // Set the description text
-			descriptionText.cost = currentUpgrade.cost;
-			descriptionText.unlocked = currentUpgrade.unlocked;
-			descriptionText.isOwned = currentUpgrade.isOwned;
+			descriptionText.cost = currentUpgrade.systemStatus.cost;
+			descriptionText.unlocked = unlocked
+			descriptionText.isOwned = isOwned
 			descriptionText.array_index = i;
 			descriptionText.systemType = systemType;
             // Store the displayed description instance ID in an array
@@ -83,6 +84,10 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
                 current_column = 0; // Reset the column count
                 current_row++; // Move to the next row
             }
+			}
+			else {
+				continue;
+			}
         }
     } else {
         // This object is the last clicked object

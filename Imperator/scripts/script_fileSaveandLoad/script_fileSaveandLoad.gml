@@ -14,6 +14,7 @@ function SaveFile(filename) {
 			ships: global.playerShips,
 			playerMissionProgress: global.playerMissionProgress,
 			playerInformation: global.playerInformation,
+			systemStatus: global.systemStatus,
 			hulls: global.hulls,
 			engines: global.engines,
 			primaryWeapons: global.primaryWeapons,
@@ -54,16 +55,17 @@ function LoadFile(filename) {
 
             // Parse JSON strings into JavaScript objects or arrays
             global.saveFile = json_parse(saveFileJson);
-	global.playerShips = global.saveFile.ships;
-    global.playerMissionProgress = global.saveFile.playerMissionProgress;
-    global.playerInformation = global.saveFile.playerInformation;
-    global.hulls = global.saveFile.hulls;
-    global.engines = global.saveFile.engines;
-    global.primaryWeapons = global.saveFile.primaryWeapons;
-    global.secondaryWeapons = global.saveFile.secondaryWeapons;
-    global.shields = global.saveFile.shields;
-    global.sprites = global.saveFile.sprites;
-    global.sensors = global.saveFile.sensors;
+			global.playerShips = global.saveFile.ships;
+			global.playerMissionProgress = global.saveFile.playerMissionProgress;
+			global.playerInformation = global.saveFile.playerInformation;
+			global.systemStatus = global.saveFile.systemStatus;
+			global.hulls = global.saveFile.hulls;
+			global.engines = global.saveFile.engines;
+			global.primaryWeapons = global.saveFile.primaryWeapons;
+			global.secondaryWeapons = global.saveFile.secondaryWeapons;
+			global.shields = global.saveFile.shields;
+			global.sprites = global.saveFile.sprites;
+			global.sensors = global.saveFile.sensors;
 
 	
 			LoadBridge()
