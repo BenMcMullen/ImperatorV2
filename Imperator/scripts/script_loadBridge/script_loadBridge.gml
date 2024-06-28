@@ -8,3 +8,10 @@ function LoadBridge() {
 
     
 }
+
+function LoadBridgeSetPlanet() {
+	var planet = argument0;
+	global.playerInformation.currentTreeIndex = planet;
+	SlideTransition(TRANS_MODE.GOTO, room_bridge);
+    
+}
