@@ -13,12 +13,14 @@
     {"name":"inst_74AC5C4E","path":"rooms/room_bridge/room_bridge.yy",},
     {"name":"inst_3F2274C","path":"rooms/room_bridge/room_bridge.yy",},
     {"name":"inst_26A72C12","path":"rooms/room_bridge/room_bridge.yy",},
+    {"name":"inst_5702E413","path":"rooms/room_bridge/room_bridge.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Briefs","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_74AC5C4E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_74AC5C4E","objectId":{"name":"obj_briefSystem","path":"objects/obj_briefSystem/obj_briefSystem.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":640.0,},
         {"$GMRInstance":"","%Name":"inst_3F2274C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3F2274C","objectId":{"name":"obj_commendation","path":"objects/obj_commendation/obj_commendation.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1344.0,"y":32.0,},
+        {"$GMRInstance":"","%Name":"inst_5702E413","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5702E413","objectId":{"name":"obj_toGalaxyMap","path":"objects/obj_toGalaxyMap/obj_toGalaxyMap.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1376.0,"y":704.0,},
       ],"layers":[],"name":"Briefs","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Imperator","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_5322E78B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5322E78B","objectId":{"name":"obj_imperator","path":"objects/obj_imperator/obj_imperator.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.73443985,"x":992.0,"y":288.0,},
