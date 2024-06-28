@@ -23,11 +23,11 @@ function InitPlayer(){
     }
 	
 	global.playerMissionProgress = []
-	
-	global.playerMissionProgress[0] = PlayerMissionProgress("Mars", 0, global.martianTreeLevels, 0, true);
-	global.playerMissionProgress[1] = PlayerMissionProgress("Venus", 0, global.venusianTreeLevels, 0, true);
-	global.playerMissionProgress[2] = PlayerMissionProgress("Titan", 0, global.titanTreeLevels, 0, true);
-	global.playerMissionProgress[3] = PlayerMissionProgress("Asteroid Belt", 0, global.asteroidBeltLevels, 0, false);
+	global.playerMissionProgress[0] = PlayerMissionProgress("Mercury", 0, global.mercurianTreeLevels, 0, true);
+	global.playerMissionProgress[1] = PlayerMissionProgress("Venus", 0, global.venusianTreeLevels, 0, false);
+	global.playerMissionProgress[2] = PlayerMissionProgress("Earth", 0, global.earthTreeLevels, 0, true);
+	global.playerMissionProgress[3] = PlayerMissionProgress("Mars", 0, global.martianTreeLevels, 0, true);
+
 			
 			
 			// Initialize the global array of player ranks
@@ -44,7 +44,7 @@ global.playerRanks[5] = PlayerRank("Venator", 6, 60);
 			
 	// Define the struct for playerInformation. in the global scope
 global.playerInformation = {
-	currentTreeIndex: 0,
+	currentTreeIndex:2,
     kills: 0,   // Total kills attributed to the player
     rank: global.playerRanks[0],
 	commendations: 0,

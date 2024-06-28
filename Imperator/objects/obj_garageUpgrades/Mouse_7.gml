@@ -7,7 +7,7 @@ if (mouse_check_button_released(mb_left)) {
         var right =  obj_garageShipDisplay.x + sprite_get_width(global.selectedShip.sprites.spriteGarage); // Get the width of obj_garageShipDisplay sprite
         var top =  obj_garageShipDisplay.y;
         var bottom =  obj_garageShipDisplay.y + sprite_get_height(global.selectedShip.sprites.spriteGarage); // Get the height of obj_garageShipDisplay sprite
-        show_debug_message(bottom);
+
         // Store upgrade data locally
         var upgradeData = item_data;
         var upgradeDataType = systemType;

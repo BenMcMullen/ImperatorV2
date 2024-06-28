@@ -34,7 +34,7 @@ function InitLevels() {
         };
     }
 
-    function LevelConfigTitan(_enemyTypes, _levelPoints, _room, _contract, _levelType, _rank, _completed, _operationName, _sprite, _unlocks, _commendations, _difficulty) {
+    function LevelConfigEarth(_enemyTypes, _levelPoints, _room, _contract, _levelType, _rank, _completed, _operationName, _sprite, _unlocks, _commendations, _difficulty) {
         return {
             enemyTypes: _enemyTypes,
             levelPoints: _levelPoints,
@@ -51,7 +51,7 @@ function InitLevels() {
         };
     }
 
-    function LevelConfigAsteroidBelt(_enemyTypes, _levelPoints, _room, _contract, _levelType, _rank, _completed, _operationName, _sprite, _unlocks, _commendations, _difficulty) {
+    function LevelConfigMercury(_enemyTypes, _levelPoints, _room, _contract, _levelType, _rank, _completed, _operationName, _sprite, _unlocks, _commendations, _difficulty) {
         return {
             enemyTypes: _enemyTypes,
             levelPoints: _levelPoints,
@@ -141,8 +141,8 @@ function InitLevels() {
     // Define trees
     global.martianTreeLevels = [];
     global.venusianTreeLevels = [];
-    global.titanTreeLevels = [];
-    global.asteroidBeltLevels = [];
+    global.earthTreeLevels = [];
+    global.mercurianTreeLevels = [];
 
     // Martian Levels
     global.martianTreeLevels[0] = LevelConfigMartian(global.enemyTypes[0], 201, room_1, 2, global.levelTypeHunting[0], 1, false, "Operation: Red Storm", spr_brief, [0], 5, global.difficulties[0]);
@@ -160,7 +160,13 @@ function InitLevels() {
     global.venusianTreeLevels[3] = LevelConfigVenusian(global.enemyTypes[0], 500, room_3, 5, global.levelTypeHunting[1], 3, false, "Operation: Solar Flare", spr_brief, [5], 20, global.difficulties[0]);
     global.venusianTreeLevels[4] = LevelConfigVenusian([global.enemyTypes[0], global.enemyTypes[1]], 800, room_4, 6, global.levelTypeProtecting[0], 4, false, "Operation: Double Helix", spr_brief, [6], 25, global.difficulties[0]);
 
-    // Titan Levels
-    global.titanTreeLevels[0] = LevelConfigTitan(global.enemyTypes[0], 200, room_1, 2, global.levelTypeHunting[0], 1, false, "Operation: Frostbite", spr_brief, [0], 5, global.difficulties[0]);
-    global.titanTreeLevels[1] = LevelConfigTitan(global.enemyTypes[0], 300, room_2, 3, global.levelTypeProtecting[1], 2, false, "Operation: Glacier", spr_brief, [0], 5, global.difficulties[0]);
+    // Earth Levels
+    global.earthTreeLevels[0] = LevelConfigEarth(global.enemyTypes[0], 200, room_1, 2, global.levelTypeHunting[0], 1, false, "Operation: Frostbite", spr_brief, [0], 5, global.difficulties[0]);
+    global.earthTreeLevels[1] = LevelConfigEarth(global.enemyTypes[0], 300, room_2, 3, global.levelTypeProtecting[1], 2, false, "Operation: Glacier", spr_brief, [0], 5, global.difficulties[0]);
+
+	// Mercury Levels
+	global.mercurianTreeLevels[0] = LevelConfigEarth(global.enemyTypes[0], 200, room_1, 2, global.levelTypeHunting[0], 1, false, "Operation: Ladon", spr_brief, [0], 5, global.difficulties[0]);
+    global.mercurianTreeLevels[1] = LevelConfigEarth(global.enemyTypes[0], 300, room_2, 3, global.levelTypeProtecting[1], 2, false, "Operation: Fear", spr_brief, [0], 5, global.difficulties[0]);
+
+
 }

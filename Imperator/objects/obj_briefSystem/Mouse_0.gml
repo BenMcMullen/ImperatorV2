@@ -32,7 +32,7 @@ if (!instance_exists(overlay_instance)) {
                 var instance_y = start_y + current_row * spacing_y;
 
                 var briefInstance = instance_create_layer(instance_x, instance_y + yOffset, "Briefs", obj_brief);
-                show_debug_message(brief.operationName)
+                
 
                 // MAKE SPECIAL MISSIONS RANDOM FOR EACH RUN?MAKE SDIFFERENT RUNS INTERESTING!!!!!
                 briefInstance.brief = brief;
@@ -65,7 +65,7 @@ if (!instance_exists(overlay_instance)) {
             with (obj_briefDataPad) {
                instance_destroy(obj_briefDataPad)
             }
-			show_debug_message("Triggering  briefs closing animaton")
+	
 			var dataPad = instance_create_layer(room_width / 10, room_height / 2, "Briefs", obj_briefDataPad);
 			
             with (obj_brief) {

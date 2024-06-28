@@ -21,7 +21,6 @@ if (!instance_exists(overlay_instance)) {
 
             var noButton = instance_create_layer(confirmationWidth - 180, confirmationHeight  + 55, "Briefs", obj_briefNoButton); // Adjust positions as needed
         } else {
-            show_debug_message("alreadycompleted");
 			var briefsMessage = instance_create_layer(confirmationWidth, confirmationWidth, "Briefs", obj_briefMessage);
 			messageText = "You have already completed " + level.operationName + "!";
 			briefsMessage.messageText = messageText;

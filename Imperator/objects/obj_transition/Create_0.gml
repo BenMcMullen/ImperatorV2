@@ -12,3 +12,4 @@ target = room;
 tSpeed = 1.1;
 centerX = window_get_width() / 2;
 centerY = window_get_height() / 2;
+depth = -1000;
