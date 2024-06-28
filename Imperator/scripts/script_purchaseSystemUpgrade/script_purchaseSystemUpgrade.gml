@@ -8,22 +8,22 @@ var cost = argument2;
 switch (array_type) {
 	
     case "primaryWeapon":
-        global.primaryWeapons[array_index].isOwned = true;
+        global.primaryWeapons[array_index].systemStatus.isOwned = true;
 		show_debug_message(global.primaryWeapons);
         break;
         
     case "secondaryWeapon":
-       global.secondaryWeapons[array_index].isOwned = true;
+       global.secondaryWeapons[array_index].systemStatus.isOwned = true;
 	   show_debug_message(global.secondaryWeapons);
         break;
         
     case "hull":
-        global.hulls[array_index].isOwned = true;
+        global.hulls[array_index].systemStatus.isOwned = true;
 		show_debug_message(global.hulls);
         break;
         
     case "engine":
-        global.engines[array_index].isOwned = true;
+        global.engines[array_index].systemStatus.isOwned = true;
 		show_debug_message(global.engines);
         break;
         
@@ -33,7 +33,7 @@ switch (array_type) {
         break;
         
     case "shields":
-        global.shields[array_index].isOwned = true;
+        global.shields[array_index].systemStatus.isOwned = true;
 		show_debug_message(global.shields);
         break;
   

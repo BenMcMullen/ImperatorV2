@@ -117,7 +117,7 @@ function InitSystems() {
         true,    // unlocked
         false,   // destroyed
         true,    // basic
-        true,    // isOwned
+        false,    // isOwned
         1
     );
 
@@ -128,7 +128,7 @@ function InitSystems() {
         true,    // unlocked
         false,   // destroyed
         true,    // basic
-        true,    // isOwned
+        false,    // isOwned
         1
     );
 
@@ -139,7 +139,7 @@ function InitSystems() {
         true,    // unlocked
         false,   // destroyed
         true,    // basic
-        true,    // isOwned
+        false,    // isOwned
         1
     );
 
@@ -227,7 +227,7 @@ function InitSystems() {
         true,    // unlocked
         false,   // destroyed
         true,    // basic
-        true,    // isOwned
+        false,    // isOwned
         1
     );
 
@@ -238,7 +238,7 @@ function InitSystems() {
         true,    // unlocked
         false,   // destroyed
         true,    // basic
-        true,    // isOwned
+        false,    // isOwned
         1
     );
 
@@ -249,7 +249,7 @@ function InitSystems() {
         true,    // unlocked
         false,   // destroyed
         true,    // basic
-        true,    // isOwned
+        false,    // isOwned
         1
     );
 
@@ -310,7 +310,7 @@ global.systemStatus[26] = SystemStatusConfig(
     true,    // unlocked
     false,   // destroyed
     true,    // basic
-    true,    // isOwned
+    false,    // isOwned
     1
 );
 
@@ -321,7 +321,7 @@ global.systemStatus[27] = SystemStatusConfig(
     true,    // unlocked
     false,   // destroyed
     false,    // basic
-    true,    // isOwned
+    false,    // isOwned
     1
 );
 
@@ -332,7 +332,7 @@ global.systemStatus[28] = SystemStatusConfig(
    true,    // unlocked
     false,   // destroyed
     true,    // basic
-    true,    // isOwned
+    false,    // isOwned
     1
 );
 
@@ -444,7 +444,7 @@ global.systemStatus[22] = SystemStatusConfig(
    true,    // unlocked
     false,   // destroyed
     true,    // basic
-    true,    // isOwned
+    false,    // isOwned
     1
 );
 
@@ -455,7 +455,7 @@ global.systemStatus[23] = SystemStatusConfig(
    true,    // unlocked
     false,   // destroyed
     true,    // basic
-    true,    // isOwned
+    false,    // isOwned
     1
 );
 
@@ -466,7 +466,7 @@ global.systemStatus[24] = SystemStatusConfig(
     true,    // unlocked
     false,   // destroyed
     true,    // basic
-    true,    // isOwned
+    false,    // isOwned
     1
 );
 
@@ -474,7 +474,7 @@ global.systemStatus[25] = SystemStatusConfig(
     "secondaryWeapons",
     "New Secondary",
     500,
-    true,    // unlocked
+    false,    // unlocked
     false,   // destroyed
     true,    // basic
     false,    // isOwned

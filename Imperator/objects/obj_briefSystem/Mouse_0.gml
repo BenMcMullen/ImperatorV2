@@ -65,7 +65,7 @@ if (!instance_exists(overlay_instance)) {
             with (obj_briefDataPad) {
                instance_destroy(obj_briefDataPad)
             }
-			
+			show_debug_message("Triggering  briefs closing animaton")
 			var dataPad = instance_create_layer(room_width / 10, room_height / 2, "Briefs", obj_briefDataPad);
 			
             with (obj_brief) {

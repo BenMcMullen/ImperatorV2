@@ -3,14 +3,13 @@
 // scr_load_next_level
 
 function LoadBridge() {
-
+		global.dataPadOpen = false;
 		SlideTransition(TRANS_MODE.GOTO, room_bridge);
-
-    
 }
 
 function LoadBridgeSetPlanet() {
 	var planet = argument0;
+	global.dataPadOpen = false;
 	global.playerInformation.currentTreeIndex = planet;
 	SlideTransition(TRANS_MODE.GOTO, room_bridge);
     

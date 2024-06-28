@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btnBridge",
-    "path":"sprites/spr_btnBridge/spr_btnBridge.yy",
+    "name":"spr_btnGalaxyMap",
+    "path":"sprites/spr_btnGalaxyMap/spr_btnGalaxyMap.yy",
   },
   "spriteMaskId":null,
   "visible":true,
