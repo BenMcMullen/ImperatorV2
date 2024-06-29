@@ -581,9 +581,9 @@ global.systemStatus[21] = SystemStatusConfig(
 
 global.systemStatus[22] = SystemStatusConfig(
     "sensors",
-    "Hyper Sensor",
+    "Integrated Sensor",
     500,
-    true,    // unlocked
+    false,    // unlocked
     false,   // destroyed
     true,    // basic
     false,    // isOwned

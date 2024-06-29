@@ -23,7 +23,6 @@ switch (array_type) {
     case "engine":
 	
         global.selectedShip.engine = entry;
-		show_debug_message(global.selectedShip);
         break;
         
     case "sensors":

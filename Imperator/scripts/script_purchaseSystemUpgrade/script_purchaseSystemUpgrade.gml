@@ -9,32 +9,26 @@ switch (array_type) {
 	
     case "primaryWeapon":
         global.primaryWeapons[array_index].systemStatus.isOwned = true;
-		show_debug_message(global.primaryWeapons);
         break;
         
     case "secondaryWeapon":
        global.secondaryWeapons[array_index].systemStatus.isOwned = true;
-	   show_debug_message(global.secondaryWeapons);
         break;
         
     case "hull":
         global.hulls[array_index].systemStatus.isOwned = true;
-		show_debug_message(global.hulls);
         break;
         
     case "engine":
         global.engines[array_index].systemStatus.isOwned = true;
-		show_debug_message(global.engines);
         break;
         
     case "sensors":
        global.sensors[array_index].isOwned = true;
-	   show_debug_message(global.sensors);
         break;
         
     case "shields":
         global.shields[array_index].systemStatus.isOwned = true;
-		show_debug_message(global.shields);
         break;
   
         
