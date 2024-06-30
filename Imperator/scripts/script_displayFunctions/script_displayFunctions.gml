@@ -37,7 +37,6 @@ function PopulateDisplay(displayBox_id) {
     for (var i = 0; i < displayBox.itemsPerPage; i++) {
         var item_index = (start_index + i) % array_length(displayBox.target);
         var system = displayBox.target[item_index];
-		show_debug_message("Populate gets here");
         // Calculate x position for each upgrade
         var upgrade_x = displayBox.x + i * spacing;
 

@@ -1,7 +1,6 @@
 //create
 readyToGo = false;
 currentLevel = GetCurrentLevel();
-show_debug_message(currentLevel)
 if (currentLevel.completed) {
 sprite_index = spr_btnBattle;
 image_index = 3;

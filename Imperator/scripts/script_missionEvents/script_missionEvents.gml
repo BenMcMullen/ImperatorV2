@@ -7,7 +7,7 @@ function GetMissionBriefs() {
     // Select the appropriate level tree based on the current tree index
     switch (currentTreeIndex) {
         case 0:
-            levels = global.martianTreeLevels;
+            levels = global.mercurianLevels;
             break;
         case 1:
             levels = global.venusianTreeLevels;
@@ -16,7 +16,7 @@ function GetMissionBriefs() {
             levels = global.earthTreeLevels;
             break;
         case 3:
-            levels = global.mercurianLevels;
+            levels = global.martianTreeLevels;
             break;
         default:
             return briefs; // Return empty if the tree index is invalid
@@ -65,7 +65,6 @@ function DestroyShip() {
     // Helper function to check and set destroyed if not basic
     function SetDestroyedIfNonBasic(system) {
         if (!system.systemStatus.basic) {
-			show_debug_message(system)
             system.systemStatus.destroyed = true;
         }
     }

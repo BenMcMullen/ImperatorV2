@@ -6,7 +6,6 @@ function GetUpgradeInfo(){
     switch (array_type) {
         case "primaryWeapon":
             var upgrade = global.primaryWeapons[array_index];
-            show_debug_message(upgrade.damage);
             info = string(upgrade.name) + "\n" +
                    "Damage: " + string(upgrade.damage) + "\n" +
                    "Range: " + string(upgrade.range) + "\n" +

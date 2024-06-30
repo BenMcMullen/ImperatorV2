@@ -10,10 +10,7 @@ function LoadNextLevel() {
     if (levelIndex < array_length(tree)) {
         var level = tree[levelIndex];
 
-        // Log debug messages for troubleshooting
-        show_debug_message("Tree Length: " + string(array_length(tree)));
-        show_debug_message("Current Level Index: " + string(levelIndex));
-        show_debug_message("Loading Room: " + string(level.room));
+      
 
         // Set up global variables for the level
         global.contractType = level.enemyTypes;

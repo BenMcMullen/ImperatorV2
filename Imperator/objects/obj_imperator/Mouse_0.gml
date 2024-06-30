@@ -5,7 +5,6 @@ if (!instance_exists(overlay_instance)) {
     if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
         lastClickTime = currentTime; // Update the last click time
 
-        show_debug_message("Clicked on");
         with (obj_imperatorBubble) {
             instance_destroy();
         }

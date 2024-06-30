@@ -5,14 +5,22 @@ function MissionEnd(){
 if (LevelRequirementsMet()) {
 global.playerInformation.points += currentLevel.levelPoints;
 global.playerInformation.commendations += currentLevel.commendations;
-show_debug_message("Mission End here")
+
+
+for (var i = 0; i < array_length(currentLevel.unlocks); i++) {
+
+	if (currentLevel.unlocks[i].systemStatus.unlocked == false) {
+		
+    currentLevel.unlocks[i].systemStatus.unlocked = true;
+	
+}
+
+
+}
 CompleteMission();
 LoadBridge();
 }
-
 }
-
-	
 
 
 
@@ -64,7 +72,7 @@ function CompleteMission() {
     switch (currentTreeIndex) {
         case 0:
 		
-            global.martianTreeLevels[currentLevelIndex].completed = true;
+            global.mercurianLevels[currentLevelIndex].completed = true;
             break;
         case 1:
              global.venusianTreeLevels[currentLevelIndex].completed = true;
@@ -73,7 +81,7 @@ function CompleteMission() {
             global.earthTreeLevels[currentLevelIndex].completed = true;
             break;
         case 3:
-            global.mercurianLevels[currentLevelIndex].completed = true;
+            global.martianTreeLevels[currentLevelIndex].completed = true;
             break;
         default:
             return; // Invalid tree index, exit the function
