@@ -44,7 +44,7 @@ global.playerRanks[5] = PlayerRank("Venator", 6, 60);
 			
 	// Define the struct for playerInformation. in the global scope
 global.playerInformation = {
-	currentTreeIndex:2,
+	currentTreeIndex:3,
     kills: 0,   // Total kills attributed to the player
     rank: global.playerRanks[0],
 	commendations: 0,
