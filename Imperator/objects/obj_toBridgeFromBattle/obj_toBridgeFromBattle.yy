@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_toHangarFromBattle",
-    "path":"sprites/spr_toHangarFromBattle/spr_toHangarFromBattle.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

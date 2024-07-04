@@ -31,6 +31,8 @@ global.musicPlaying = false;
 global.hasContract = true;
 global.contractCompleted = true;
 global.contractQuantity = 1;
+global.escortWarpReached = false;
+global.factoryDestroyed = false;
 
 global.totalCompletedContracts = 0;
 

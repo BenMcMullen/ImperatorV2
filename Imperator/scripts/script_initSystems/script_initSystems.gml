@@ -45,7 +45,7 @@ function InitSystems() {
     }
 
     // Function to define secondary weapon configurations
-    function SecondaryWeaponConfig(_name, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range, _systemSprite, _systemStatus) {
+    function SecondaryWeaponConfig(_name, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range, _damageType, _systemSprite, _systemStatus) {
         return {
             name: _name,
             delay: _delay,
@@ -57,13 +57,14 @@ function InitSystems() {
             audio: _audio,
             sprite: _sprite,
             range: _range,
+			damageType: _damageType,
             systemSprite: _systemSprite,
             systemStatus: _systemStatus
         };
     }
 
     // Function to define primary weapon configurations
-    function PrimaryWeaponConfig(_name, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range, _systemSprite, _systemStatus) {
+    function PrimaryWeaponConfig(_name, _delay, _cooldown, _capacity, _accuracy, _shotSpeed, _damage, _audio, _sprite, _range, _damageType, _systemSprite, _systemStatus) {
         return {
             name: _name,
             delay: _delay,
@@ -75,6 +76,7 @@ function InitSystems() {
             audio: _audio,
             sprite: _sprite,
             range: _range,
+			damageType: _damageType,
             systemSprite: _systemSprite,
             systemStatus: _systemStatus
         };
@@ -166,6 +168,7 @@ function InitSystems() {
         snd_plasma,
         spr_plasma,
         600,     // range
+		"Energy",
         spr_shipSystemsLarge,
         global.systemStatus[0]
     );
@@ -181,6 +184,7 @@ function InitSystems() {
         snd_plasma,
         spr_railGun,
         750,     // range
+		"Kinetic",
         spr_shipSystemsLarge,
         global.systemStatus[1]
     );
@@ -196,6 +200,7 @@ function InitSystems() {
         snd_plasma,
         spr_beamCannon,
         401,     // range
+		"Energy",
         spr_shipSystemsLarge,
         global.systemStatus[2]
     );
@@ -211,6 +216,7 @@ function InitSystems() {
         snd_plasma,
         spr_beamCannon,
         401,     // range
+		"Kinetic",
         spr_shipSystemsLarge,
         global.systemStatus[3]
     );
@@ -493,6 +499,7 @@ global.secondaryWeapons[0] = SecondaryWeaponConfig(
     snd_missile,            // Audio
     spr_missile1,           // Deploy Angle
     750,                    // Projectile Range
+	"Kinetic",
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[22] // System Status
 );
@@ -508,6 +515,7 @@ global.secondaryWeapons[1] = SecondaryWeaponConfig(
     snd_missile,            // Audio
     spr_swarmBomb,          // Deploy Angle
     300,                    // Projectile Range
+	"Kinetic",
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[23] // System Status
 );
@@ -523,6 +531,7 @@ global.secondaryWeapons[2] = SecondaryWeaponConfig(
     snd_missile,            // Audio
     spr_energyCannon,       // Deploy Angle
     1500,                   // Projectile Range
+	"Energy",
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[24] // System Status
 );
@@ -538,6 +547,7 @@ global.secondaryWeapons[3] = SecondaryWeaponConfig(
     snd_missile,            // Audio
     spr_energyCannon,       // Deploy Angle
     1500,                   // Projectile Range
+	"Kinetic",
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[25] // System Status
 );

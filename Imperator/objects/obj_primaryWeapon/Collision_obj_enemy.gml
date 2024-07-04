@@ -1,6 +1,5 @@
 with (other) {
-	hp--;
-	flash = 3;
+	hp -= global.selectedShip.primaryWeapon.damage;
+	flash = 5;
+	ScreenShake(2,10);
 }
-
-instance_destroy();

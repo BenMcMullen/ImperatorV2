@@ -40,6 +40,13 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             var playerY = y / room_height * minimap_height;
             draw_sprite(spr_miniMapPlayer, 0, playerX, playerY); // Adjust the player icon sprite as needed
         }
+		
+		with (obj_escortShip) {
+            var escortX = x / room_width * minimap_width;
+            var escortY = y / room_height * minimap_height;
+            draw_sprite(spr_miniMapEscort, 0, escortX, escortY); // Adjust the enemy icon sprite as needed	
+	   }
+		
 		 with (obj_asteroid) {
 			 if (sensorSensitivity >= 2) {
             var asteroidX = x / room_width * minimap_width;
@@ -47,12 +54,13 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             draw_sprite(spr_miniMapAsteroid, 0, asteroidX, asteroidY); // Adjust the player icon sprite as needed
 			 }
 		}
+		
 
-        // Draw the hangar
-        with (obj_toBridgeFromBattle) {
-            var hangerX = x / room_width * minimap_width;
-            var hangerY = y / room_height * minimap_height;
-            draw_sprite(spr_miniMapToHangar, 0, hangerX, hangerY); // Adjust the hangar icon sprite as needed
+        // Draw the warp
+        with (obj_escortWarp) {
+            var warpX = x / room_width * minimap_width;
+            var warpY = y / room_height * minimap_height;
+            draw_sprite(spr_miniMapEscortWarp, 0, warpX + 12, warpY); // Adjust the hangar icon sprite as needed
         }
         // (Your minimap drawing code here)
 

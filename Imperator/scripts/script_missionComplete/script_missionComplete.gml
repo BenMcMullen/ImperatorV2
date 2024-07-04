@@ -34,8 +34,12 @@ switch (levelType) {
         triggerEnd = HuntingMissionRequirementsMet();
         break;
         
-    case "Protection Detail":
+    case "Escort Detail":
         triggerEnd = ProtectionMissionRequirementsMet();
+        break;
+		
+	case "Shield Beacons":
+        triggerEnd = BeaconsMissionRequirementsMet();
         break;
     
     default:
@@ -53,12 +57,26 @@ return triggerEnd;
 	
 		return true;
 		//go to hangar after each level
-		} else {
-		return false;
 		}
+		return false;
 	}
 	
 	function ProtectionMissionRequirementsMet(){
+		if (global.escortWarpReached == true) {
+			return true;	
+		}
+			return false;
+	}
+	
+	function BeaconMissionRequirementsMet(){
+		var currentLevel = GetCurrentLevel();
+		var quantity = currentLevel.levelType.quantity;
+		if (quantity <= global.beacons) {
+	
+		return true;
+		//go to hangar after each level
+		}
+		return false;
 	}
 	
 	

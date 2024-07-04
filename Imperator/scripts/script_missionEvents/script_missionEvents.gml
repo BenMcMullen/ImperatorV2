@@ -24,7 +24,7 @@ function GetMissionBriefs() {
 
     // Filter the levels based on the current difficulty
    for (var i = 0; i < array_length(levels); i++) {
-        if (levels[i].difficulty.difficulty == currentDifficulty) {
+        if (levels[i].rank == currentDifficulty) {
             var brief = levels[i];
             brief.parentIndex = i; // Add the parent index to the brief
             briefs[array_length(briefs)] = brief;
@@ -108,5 +108,61 @@ function CheckAndRemoveDestroyedSystems() {
         
         // Update the ship in the global array
         global.playerShips[i] = ship;
+    }
+}
+
+function WeakenNextBeacon() {
+    // Deactivate the current active beacon if any
+    if (activeBeacon != -1) {
+        with (beaconList[activeBeacon]) {
+            isActive = false;
+        }
+    }
+
+    // Find a new active beacon
+    var found = false;
+    for (var i = 0; i < array_length(beaconList); i++) {
+        if (!beaconList[i].destroyed) {
+            activeBeacon = i;
+            beaconList[i].isActive = true;
+            found = true;
+            break;
+        }
+    }
+
+    // If no active beacon is found, handle the case (e.g., end game, all beacons destroyed, etc.)
+    if (!found) {
+        // All beacons destroyed
+        show_debug_message("All beacons destroyed!");
+        // Handle game over or any other logic here
+    }
+}
+
+
+function GetWeaponDamage(weaponType, isBeacon) {
+    // Get the beacon type from the current level
+	level = GetCurrentLevel();
+    var beaconType = level.levelType.beaconType;
+    
+    // Get the selected ship's weapon information
+    var primaryWeapon = global.selectedShip.primaryWeapon;
+    var secondaryWeapon = global.selectedShip.secondaryWeapon;
+    
+    // Check the weapon type and calculate damage accordingly
+    if (weaponType == "primary") {
+        if (primaryWeapon.damageType == beaconType && isBeacon) {
+            return primaryWeapon.damage * 4;
+        } else {
+            return primaryWeapon.damage;
+        }
+    } else if (weaponType == "secondary") {
+        if (secondaryWeapon.damageType == beaconType & isBeacon) {
+            return secondaryWeapon.damage * 4;
+        } else {
+            return secondaryWeapon.damage;
+        }
+    } else {
+        // Invalid weapon type, return 0 or handle error
+        return 0;
     }
 }

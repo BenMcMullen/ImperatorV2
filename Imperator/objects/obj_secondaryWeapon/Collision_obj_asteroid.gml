@@ -1,5 +1,5 @@
 with (other) {
-	hp -= global.selectedShip.secondaryWeapon.damage;
+	hp -= GetWeaponDamage("secondary", true);
 	flash = 17;
 	ScreenShake(2,10);
 }

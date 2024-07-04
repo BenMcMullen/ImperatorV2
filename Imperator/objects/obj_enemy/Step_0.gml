@@ -36,21 +36,56 @@ y += vsp;
 if (hsp != 0) image_xscale = sign(hsp) * size;
 if (vsp != 0) image_yscale = sign(vsp) * size;
 
+
 if (instance_exists(obj_player)) {
-    // Detect the player's position
-    var playerX = obj_player.x;
-    var playery = obj_player.y;
+// Player and escortShip detection and shooting
+var targetX, targetY, targetDistance;
 
-    // Calculate direction towards the player
-    var directionToPlayer = point_direction(x, y, playerX, playery);
+// Determine which target (obj_player or obj_escortShip) is closer
+var player = instance_find(obj_player, 0);
+    var playerX = player.x;
+    var playerY = player.y;
+    var distToPlayer = point_distance(x, y, playerX, playerY);
 
-    // Determine if the player is within range or angle to shoot plasma
-    var distanceToPlayer = distance_to_point(playerX, playery);
-    var angleToPlayer = abs(angle_difference(image_angle, directionToPlayer));
+if (instance_exists(obj_escortShip)) {
+var escort = instance_find(obj_escortShip, 0);
+    var escortX = escort.x;
+    var escortY = escort.y;
+    var distToEscort = point_distance(x, y, escortX, escortY);
+
+
+        if (distToPlayer < distToEscort) {
+            targetX = playerX;
+            targetY = playerY;
+            targetDistance = distToPlayer;
+        } else {
+            targetX = escortX;
+            targetY = escortY;
+            targetDistance = distToEscort;
+        }
+}
+else {
+	 targetX = playerX;
+     targetY = playerY;
+     targetDistance = distToPlayer;
+}
+
+// Calculate direction towards the target
+var directionToTarget = point_direction(x, y, targetX, targetY);
+
+// Determine if the target is within shooting range and angle
+var angleToTarget = abs(angle_difference(image_angle, directionToTarget));
+
+    // Calculate direction towards the target
+    var directionToTarget = point_direction(x, y, targetX, targetY);
+
+    // Determine if the target is within range and angle to shoot plasma
+    var distanceToTarget = distance_to_point(targetX, targetY);
+    var angleToTarget = abs(angle_difference(image_angle, directionToTarget));
 
     primaryDelay -= 1;
 
-    if (distanceToPlayer < shootRange && angleToPlayer < shootAngle && primaryDelay < 0) {
+    if (distanceToTarget < shootRange && angleToTarget < shootAngle && primaryDelay < 0) {
         primaryDelay = fireRate;
 
         if (cooldownTimer > 0) {
@@ -65,7 +100,7 @@ if (instance_exists(obj_player)) {
             audio_play_sound(snd_plasma, 10, false);
             with (instance_create_layer(x, y, "Enemy", obj_enemyPlasma)) {
                 speed = 25;
-                direction = directionToPlayer + random_range(-2, 2);
+                direction = directionToTarget + random_range(-2, 2);
                 image_angle = direction;
             }
             shotsFired++;
