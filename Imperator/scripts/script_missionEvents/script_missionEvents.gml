@@ -115,7 +115,7 @@ function WeakenNextBeacon() {
     // Deactivate the current active beacon if any
     if (activeBeacon != -1) {
         with (beaconList[activeBeacon]) {
-            isActive = false;
+             shieldDown = false;
         }
     }
 
@@ -124,7 +124,7 @@ function WeakenNextBeacon() {
     for (var i = 0; i < array_length(beaconList); i++) {
         if (!beaconList[i].destroyed) {
             activeBeacon = i;
-            beaconList[i].isActive = true;
+            beaconList[i].shieldDown = true;
             found = true;
             break;
         }

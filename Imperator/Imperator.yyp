@@ -251,6 +251,7 @@
     {"id":{"name":"spr_menuPlanet","path":"sprites/spr_menuPlanet/spr_menuPlanet.yy",},},
     {"id":{"name":"spr_miniMapAsteroid","path":"sprites/spr_miniMapAsteroid/spr_miniMapAsteroid.yy",},},
     {"id":{"name":"spr_miniMapBackground","path":"sprites/spr_miniMapBackground/spr_miniMapBackground.yy",},},
+    {"id":{"name":"spr_miniMapBeacon","path":"sprites/spr_miniMapBeacon/spr_miniMapBeacon.yy",},},
     {"id":{"name":"spr_miniMapenemy","path":"sprites/spr_miniMapenemy/spr_miniMapenemy.yy",},},
     {"id":{"name":"spr_miniMapEscort","path":"sprites/spr_miniMapEscort/spr_miniMapEscort.yy",},},
     {"id":{"name":"spr_miniMapEscortWarp","path":"sprites/spr_miniMapEscortWarp/spr_miniMapEscortWarp.yy",},},

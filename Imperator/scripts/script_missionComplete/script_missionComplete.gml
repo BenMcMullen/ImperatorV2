@@ -39,7 +39,7 @@ switch (levelType) {
         break;
 		
 	case "Shield Beacons":
-        triggerEnd = BeaconsMissionRequirementsMet();
+        triggerEnd = BeaconMissionRequirementsMet();
         break;
     
     default:
@@ -69,14 +69,10 @@ return triggerEnd;
 	}
 	
 	function BeaconMissionRequirementsMet(){
-		var currentLevel = GetCurrentLevel();
-		var quantity = currentLevel.levelType.quantity;
-		if (quantity <= global.beacons) {
-	
-		return true;
-		//go to hangar after each level
+		if (global.factoryDestroyed == true) {
+			return true;	
 		}
-		return false;
+			return false;
 	}
 	
 	

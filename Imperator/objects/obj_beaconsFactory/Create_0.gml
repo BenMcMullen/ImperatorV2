@@ -1,9 +1,3 @@
-// Initialize beacon state
-isActive = false;
-destroyed = false;
-health = 100; // Example health value
-
-// Reference to the manager object
-manager = obj_beacons;
-level = GetCurrentLevel();
-hp = level.levelType.factoryHp
+// Create Event of obj_beaconsFactory
+immune = true; // Factory starts immune
+activeBeacons = instance_number(obj_beaconsBeacon); // Count the active beacons

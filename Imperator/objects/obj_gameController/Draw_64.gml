@@ -46,6 +46,11 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             var escortY = y / room_height * minimap_height;
             draw_sprite(spr_miniMapEscort, 0, escortX, escortY); // Adjust the enemy icon sprite as needed	
 	   }
+	   with (obj_beaconsBeacon) {
+            var beaconX = x / room_width * minimap_width;
+            var beaconY = y / room_height * minimap_height;
+            draw_sprite(spr_miniMapBeacon, 0, beaconX, beaconY); // Adjust the enemy icon sprite as needed	
+	   }
 		
 		 with (obj_asteroid) {
 			 if (sensorSensitivity >= 2) {
