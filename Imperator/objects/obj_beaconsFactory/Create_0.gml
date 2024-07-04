@@ -1,0 +1,1 @@
+hp = GetCurrentLevel().levelType.factoryHp;

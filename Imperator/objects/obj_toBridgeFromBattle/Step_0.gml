@@ -5,11 +5,12 @@ if (instance_exists(obj_player))
 		{
 		 if (missionEnd && LevelRequirementsMet()) {
 				 missionEnd = false;
+				 MissionEnd();	
 				 global.escortWarpReached = false;
 				 global.beaconFactoryDestroyed = false;
 				 global.activeBeacon = -1;
 				 global.beaconFactoryImmune = true;
-				 MissionEnd();	
+				 global.beaconsOverloaded = 0;
 			}
 		}
 	}

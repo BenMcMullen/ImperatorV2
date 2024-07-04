@@ -149,7 +149,7 @@ function GetWeaponDamage(weaponType, isBeacon) {
             return primaryWeapon.damage;
         }
     } else if (weaponType == "secondary") {
-        if (string(secondaryWeapon.damageType) == beaconType & isBeacon) {
+        if ((string(secondaryWeapon.damageType) == beaconType) & isBeacon) {
             return secondaryWeapon.damage * 4;
         } else {
             return secondaryWeapon.damage;

@@ -1,7 +1,5 @@
 // Initialize beacons and states
-beaconList = [];
-beaconsOverloaded = 0;
-maxActiveDestructions = 4; // Number of beacons that need to be destroyed in active state
+beaconList = [];// Number of beacons that need to be destroyed in active state
 
 // Get the room width and height
 var roomWidth = room_width;

@@ -1,3 +1,4 @@
+
 if (shieldDown == true) {
 	hp -= GetWeaponDamage("secondary", true);
 	

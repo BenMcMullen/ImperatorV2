@@ -35,6 +35,7 @@ global.escortWarpReached = false;
 global.beaconFactoryDestroyed = false;
 global.activeBeacon = -1;
 global.beaconFactoryImmune = true;
+global.beaconsOverloaded = 0;
 
 global.totalCompletedContracts = 0;
 

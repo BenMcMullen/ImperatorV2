@@ -136,7 +136,7 @@ function InitLevels() {
 	
     global.levelTypeBeacon[0] = BeaconLevelTypeConfig(
         "Shield Beacons",
-		4,
+		2,
 		"Kinetic",
 		100,
 		500

@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_objectExplosion",
+  "%Name":"obj_asteroidExplosion",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_objectExplosion",
+  "name":"obj_asteroidExplosion",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_explosionPlayer",
-    "path":"sprites/spr_explosionPlayer/spr_explosionPlayer.yy",
+    "name":"spr_astroidExplosion",
+    "path":"sprites/spr_astroidExplosion/spr_astroidExplosion.yy",
   },
   "spriteMaskId":null,
   "visible":true,
