@@ -60,7 +60,12 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 			 }
 		}
 		
-
+		// Draw the factory
+		with (obj_beaconsFactory) {
+            var factoryX = x / room_width * minimap_width;
+            var factoryY = y / room_height * minimap_height;
+            draw_sprite(spr_miniMapBeaconsFactory, 0, factoryX, factoryY); // Adjust the enemy icon sprite as needed	
+	   }
         // Draw the warp
         with (obj_escortWarp) {
             var warpX = x / room_width * minimap_width;

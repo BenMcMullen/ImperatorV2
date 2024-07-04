@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_enemyFactory",
+  "%Name":"spr_beaconsFactory",
   "bboxMode":0,
-  "bbox_bottom":493,
-  "bbox_left":126,
-  "bbox_right":405,
-  "bbox_top":226,
+  "bbox_bottom":382,
+  "bbox_left":0,
+  "bbox_right":399,
+  "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -19,12 +19,12 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":712,
+  "height":383,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"386b31f2-c678-40ac-8d00-dac0efbe883a","blendMode":0,"displayName":"default","isLocked":false,"name":"386b31f2-c678-40ac-8d00-dac0efbe883a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_enemyFactory",
+  "name":"spr_beaconsFactory",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -36,7 +36,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_enemyFactory",
+    "%Name":"spr_beaconsFactory",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -60,7 +60,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_enemyFactory",
+    "name":"spr_beaconsFactory",
     "playback":1,
     "playbackSpeed":14.0,
     "playbackSpeedType":0,
@@ -72,16 +72,16 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"24e95936-3d78-4a07-991a-57692b1b05ea","path":"sprites/spr_enemyFactory/spr_enemyFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"24e95936-3d78-4a07-991a-57692b1b05ea","path":"sprites/spr_beaconsFactory/spr_beaconsFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"9b63f767-3860-44c8-b19a-da4ac25dc3b6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ac66b164-811b-4c35-9754-5b59b7180ff9","path":"sprites/spr_enemyFactory/spr_enemyFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ac66b164-811b-4c35-9754-5b59b7180ff9","path":"sprites/spr_beaconsFactory/spr_beaconsFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e2fd1626-421a-40b6-9c28-d8b26bbf4a56","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2c52c3e2-1f32-4f2a-af33-e1d1c4959c48","path":"sprites/spr_enemyFactory/spr_enemyFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2c52c3e2-1f32-4f2a-af33-e1d1c4959c48","path":"sprites/spr_beaconsFactory/spr_beaconsFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"306b7a63-9db4-4966-89ad-f91b625f5b5a","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"79523de0-d9e7-42c8-99ce-08496f1f0929","path":"sprites/spr_enemyFactory/spr_enemyFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"79523de0-d9e7-42c8-99ce-08496f1f0929","path":"sprites/spr_beaconsFactory/spr_beaconsFactory.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"1cef66a5-f443-4002-911b-ff217e5184ed","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
@@ -98,5 +98,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":569,
+  "width":400,
 }

@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_levels",
+  "%Name":"script_levelEvents",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_levels",
+  "name":"script_levelEvents",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

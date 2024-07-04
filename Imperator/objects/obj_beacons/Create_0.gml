@@ -1,15 +1,14 @@
 // Initialize beacons and states
 beaconList = [];
-activeBeacon = -1; // No active beacon initially
-beaconsDestroyed = 0;
-maxActiveDestructions = 3; // Number of beacons that need to be destroyed in active state
+beaconsOverloaded = 0;
+maxActiveDestructions = 4; // Number of beacons that need to be destroyed in active state
 
 // Get the room width and height
 var roomWidth = room_width;
 var roomHeight = room_height;
 
 // Calculate the coordinates for the four corners
-var offset = 700;
+var offset = 1100;
 
 // Create the beacons
 beaconList[0] = instance_create_layer(offset, offset, "Beacons", obj_beaconsBeacon);
