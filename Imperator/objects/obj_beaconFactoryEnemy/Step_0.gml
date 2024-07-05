@@ -1,27 +1,28 @@
 // Step event of obj_enemy
 if (instance_exists(obj_player)) {
-	
-var player = instance_find(obj_player, 0); // Reference to the player object
-	
-var player_x = player.x;
-var player_y = player.y;
+    var player = instance_find(obj_player, 0); // Reference to the player object
+    var player_x = player.x;
+    var player_y = player.y;
 
-var dist_to_player = point_distance(x, y, player_x, player_y);
+    var dist_to_player = point_distance(x, y, player_x, player_y);
 
-if (dist_to_player < detection_range) {
-    if (dist_to_player > attack_range) {
-        // Move towards the player
-        var enemyDirection = point_direction(x, y, player_x, player_y);
-        x += lengthdir_x(speed, enemyDirection);
-        y += lengthdir_y(speed, enemyDirection);
-    } else {
-		// HERE IS THE ATTACKING LOGIC
-        if (instance_exists(obj_player)) {
+    if (dist_to_player < detection_range) {
+		
+        if (dist_to_player > attack_range) {
+            // Move towards the player
+            var enemyDirection = point_direction(x, y, player_x, player_y);
+            var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
+            var move_y = lengthdir_y(other.enemySpeed, enemyDirection);
+
+            // Update position
+            x += move_x;
+            y += move_y;
+        } else {
+            // ATTACKING LOGIC
             // Player and escortShip detection and shooting
             var targetX, targetY, targetDistance;
 
             // Determine which target (obj_player or obj_escortShip) is closer
-            var player = instance_find(obj_player, 0);
             var playerX = player.x;
             var playerY = player.y;
             var distToPlayer = point_distance(x, y, playerX, playerY);
@@ -80,21 +81,24 @@ if (dist_to_player < detection_range) {
                 }
             }
         }
-    }
-} else {
-    // Patrol between waypoints
-    var target_x = waypoints[current_waypoint][0];
-    var target_y = waypoints[current_waypoint][1];
-    var dist_to_waypoint = point_distance(x, y, target_x, target_y);
-
-    if (dist_to_waypoint < speed) {
-        // Move to the next waypoint
-        current_waypoint = (current_waypoint + 1) % array_length(waypoints);
     } else {
-        // Move towards the current waypoint
-        var enemyDirection = point_direction(x, y, target_x, target_y);
-        x += lengthdir_x(speed, enemyDirection);
-        y += lengthdir_y(speed, enemyDirection);
+        // Patrol between waypoints
+        var target_x = waypoints[current_waypoint][0];
+        var target_y = waypoints[current_waypoint][1];
+        var dist_to_waypoint = point_distance(x, y, target_x, target_y);
+
+        if (dist_to_waypoint < 8) {
+            // Move to the next waypoint
+            current_waypoint = (current_waypoint + 1) % array_length(waypoints);
+        } else {
+            // Move towards the current waypoint
+            var enemyDirection = point_direction(x, y, target_x, target_y);
+            var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
+            var move_y = lengthdir_y(other.enemySpeed, enemyDirection);
+
+            // Update position
+            x += move_x;
+            y += move_y;
+        }
     }
-}
 }

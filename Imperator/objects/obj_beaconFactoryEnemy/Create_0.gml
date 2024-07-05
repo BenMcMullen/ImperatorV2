@@ -3,7 +3,7 @@
 // Variables for AI behavior
 detection_range = 6000; // Detection range
 attack_range = 450; // Attack range
-speed = 10; // Movement speed
+
 
 // Waypoints for patrolling
 waypoints = [

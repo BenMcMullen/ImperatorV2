@@ -94,14 +94,15 @@ function InitLevels() {
         };
     }
 	
-	function BeaconLevelTypeConfig(_type, _quantity, _beaconType, _beaconHp, _factoryHp,  _factoryResponseQuantity) {
+	function BeaconLevelTypeConfig(_type, _quantity, _beaconType, _beaconHp, _factoryHp,  _factoryResponseQuantity, _enemySpeed) {
         return {
             type: _type,
 			quantity: _quantity,
 			beaconType: _beaconType,
 			beaconHp: _beaconHp,
 			factoryHp: _factoryHp,
-			factoryResponseQuantity: _factoryResponseQuantity
+			factoryResponseQuantity: _factoryResponseQuantity,
+			enemySpeed: _enemySpeed
         };
     }
 
@@ -141,7 +142,8 @@ function InitLevels() {
 		"Kinetic",
 		100,
 		500,
-		10
+		10,
+		8
 		
     );
 
@@ -151,7 +153,8 @@ function InitLevels() {
 		"Kinetic",
 		200,
 		700,
-		20
+		20,
+		11
     );
 	
 	

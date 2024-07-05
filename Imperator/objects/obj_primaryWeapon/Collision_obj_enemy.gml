@@ -3,3 +3,4 @@ with (other) {
 	flash = 5;
 	ScreenShake(2,10);
 }
+instance_destroy();

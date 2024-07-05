@@ -1,7 +1,8 @@
 // Step Event of obj_beaconsFactory
 
 
-if (global.beaconsOverloaded >= GetCurrentLevel().levelType.quantity){
+if (global.beaconsOverloaded >= GetCurrentLevel().levelType.quantity && global.beaconFactoryImmune){
+	alarm[0] = 10;
 global.beaconFactoryImmune = false;
 }
 

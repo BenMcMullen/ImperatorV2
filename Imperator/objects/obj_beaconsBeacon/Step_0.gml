@@ -1,6 +1,7 @@
 // Check if the beacon is active and has taken damage
 if (shieldDown && hp <= 0) {
     shieldDown = false;
+	hp = level.levelType.beaconHp
 	alarm[0] = 10;
     // Increment the count of destroyed active beacons
    with (manager){
