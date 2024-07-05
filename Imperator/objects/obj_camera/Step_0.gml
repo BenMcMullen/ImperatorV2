@@ -10,7 +10,7 @@ if (instance_exists(follow)) {
 xTo = follow.x;
 yTo = follow.y;
 
-	if ((follow).object_index == obj_explosionPlayer)
+	if ((follow).object_index == obj_playerExplosion)
 	{
 		x = xTo
 		y = yTo

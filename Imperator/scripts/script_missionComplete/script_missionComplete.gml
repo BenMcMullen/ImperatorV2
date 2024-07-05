@@ -69,7 +69,7 @@ return triggerEnd;
 	}
 	
 	function BeaconMissionRequirementsMet(){
-		if (global.factoryDestroyed == true) {
+		if (global.beaconFactoryDestroyed == true) {
 			return true;	
 		}
 			return false;

@@ -32,7 +32,10 @@ global.hasContract = true;
 global.contractCompleted = true;
 global.contractQuantity = 1;
 global.escortWarpReached = false;
-global.factoryDestroyed = false;
+global.beaconFactoryDestroyed = false;
+global.activeBeacon = -1;
+global.beaconFactoryImmune = true;
+global.beaconsOverloaded = 0;
 
 global.totalCompletedContracts = 0;
 

@@ -1,6 +1,6 @@
 // Collision Event with obj_primaryWeapon
 
-if (!immune) {
+if (!global.beaconFactoryImmune) {
 	hp -= GetWeaponDamage("primary", false);
 	flash = 5;
 	ScreenShake(2,10);

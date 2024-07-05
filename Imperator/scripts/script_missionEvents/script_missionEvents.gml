@@ -113,36 +113,29 @@ function CheckAndRemoveDestroyedSystems() {
 
 function WeakenNextBeacon() {
     // Deactivate the current active beacon if any
-    if (activeBeacon != -1) {
-        with (beaconList[activeBeacon]) {
+    if (global.activeBeacon != -1) {
+        with (beaconList[global.activeBeacon]) {
              shieldDown = false;
         }
     }
 
     // Find a new active beacon
-    var found = false;
-    for (var i = 0; i < array_length(beaconList); i++) {
-        if (!beaconList[i].destroyed) {
-            activeBeacon = i;
-            beaconList[i].shieldDown = true;
-            found = true;
-            break;
-        }
-    }
-
-    // If no active beacon is found, handle the case (e.g., end game, all beacons destroyed, etc.)
-    if (!found) {
-        // All beacons destroyed
-        show_debug_message("All beacons destroyed!");
-        // Handle game over or any other logic here
-    }
+	
+   if (array_length(beaconList) > 0) {
+    // Generate a random index
+    var random_index = irandom(array_length(beaconList) - 1);
+    
+    // Isolate the random instance
+    var newShieldedBeacon = beaconList[random_index];
+	newShieldedBeacon.shieldDown = true;
+	global.activeBeacon = random_index;
 }
-
+}
 
 function GetWeaponDamage(weaponType, isBeacon) {
     // Get the beacon type from the current level
 	level = GetCurrentLevel();
-    var beaconType = level.levelType.beaconType;
+    var beaconType = string(level.levelType.beaconType);
     
     // Get the selected ship's weapon information
     var primaryWeapon = global.selectedShip.primaryWeapon;
@@ -150,13 +143,13 @@ function GetWeaponDamage(weaponType, isBeacon) {
     
     // Check the weapon type and calculate damage accordingly
     if (weaponType == "primary") {
-        if (primaryWeapon.damageType == beaconType && isBeacon) {
+        if (string(primaryWeapon.damageType) == beaconType && isBeacon) {
             return primaryWeapon.damage * 4;
         } else {
             return primaryWeapon.damage;
         }
     } else if (weaponType == "secondary") {
-        if (secondaryWeapon.damageType == beaconType & isBeacon) {
+        if ((string(secondaryWeapon.damageType) == beaconType) & isBeacon) {
             return secondaryWeapon.damage * 4;
         } else {
             return secondaryWeapon.damage;

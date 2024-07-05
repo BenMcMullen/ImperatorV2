@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_astroidExplosion",
-    "path":"sprites/spr_astroidExplosion/spr_astroidExplosion.yy",
+    "name":"spr_explosionPlayer",
+    "path":"sprites/spr_explosionPlayer/spr_explosionPlayer.yy",
   },
   "spriteMaskId":null,
   "visible":true,
