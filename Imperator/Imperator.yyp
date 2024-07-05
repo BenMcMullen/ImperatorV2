@@ -43,6 +43,7 @@
     {"id":{"name":"font_veniteLarge","path":"fonts/font_veniteLarge/font_veniteLarge.yy",},},
     {"id":{"name":"obj_asteroid","path":"objects/obj_asteroid/obj_asteroid.yy",},},
     {"id":{"name":"obj_asteroidExplosion","path":"objects/obj_asteroidExplosion/obj_asteroidExplosion.yy",},},
+    {"id":{"name":"obj_beaconFactoryEnemy","path":"objects/obj_beaconFactoryEnemy/obj_beaconFactoryEnemy.yy",},},
     {"id":{"name":"obj_beacons","path":"objects/obj_beacons/obj_beacons.yy",},},
     {"id":{"name":"obj_beaconsBeacon","path":"objects/obj_beaconsBeacon/obj_beaconsBeacon.yy",},},
     {"id":{"name":"obj_beaconsFactory","path":"objects/obj_beaconsFactory/obj_beaconsFactory.yy",},},

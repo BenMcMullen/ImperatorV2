@@ -14,7 +14,7 @@ beaconList[1] = instance_create_layer(roomWidth - offset, offset, "Beacons", obj
 beaconList[2] = instance_create_layer(offset, roomHeight - offset, "Beacons", obj_beaconsBeacon);
 beaconList[3] = instance_create_layer(roomWidth - offset, roomHeight - offset, "Beacons", obj_beaconsBeacon);
 
-instance_create_layer(roomWidth / 2, roomHeight /2, "Beacons", obj_beaconsFactory);
+instance_create_layer(roomWidth / 2, roomHeight /2, "Factory", obj_beaconsFactory);
 
 // Set the first beacon as active
 WeakenNextBeacon();

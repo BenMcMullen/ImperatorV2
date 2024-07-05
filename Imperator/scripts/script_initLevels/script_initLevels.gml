@@ -94,13 +94,14 @@ function InitLevels() {
         };
     }
 	
-	function BeaconLevelTypeConfig(_type, _quantity, _beaconType, _beaconHp, _factoryHp) {
+	function BeaconLevelTypeConfig(_type, _quantity, _beaconType, _beaconHp, _factoryHp,  _factoryResponseQuantity) {
         return {
             type: _type,
 			quantity: _quantity,
 			beaconType: _beaconType,
 			beaconHp: _beaconHp,
-			factoryHp: _factoryHp
+			factoryHp: _factoryHp,
+			factoryResponseQuantity: _factoryResponseQuantity
         };
     }
 
@@ -139,7 +140,9 @@ function InitLevels() {
 		2,
 		"Kinetic",
 		100,
-		500
+		500,
+		10
+		
     );
 
     global.levelTypeBeacon[1] = BeaconLevelTypeConfig(
@@ -147,8 +150,11 @@ function InitLevels() {
 		6,
 		"Kinetic",
 		200,
-		700
+		700,
+		20
     );
+	
+	
     // Example of initializing the global difficulties array
     global.difficulties = [];
     // Adding sample difficulties
