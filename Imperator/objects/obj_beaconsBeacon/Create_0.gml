@@ -7,16 +7,7 @@ manager = obj_beacons;
 level = GetCurrentLevel();
 hp = level.levelType.beaconHp
 
-var explosion = instance_create_layer(x, y, layer, obj_objectExplosion);
-	
-    explosion.size = 8;
-	audio_play_sound(snd_explosion1,10,false);
-	
-	
-	with (explosion) {
-    size = size;
-}
-
+instance_create_layer(x, y, "Enemy", obj_beaconFactoryEnemy);
 
 // Current instance index
 current_instance = 0;

@@ -35,6 +35,13 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
+	   with (obj_beaconFactoryEnemy) {
+			if (sensorSensitivity >= 3) {
+            var enemy_x = x / room_width * minimap_width;
+            var enemy_y = y / room_height * minimap_height;
+            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+			}
+	   }
         with (obj_player) {
             var playerX = x / room_width * minimap_width;
             var playerY = y / room_height * minimap_height;

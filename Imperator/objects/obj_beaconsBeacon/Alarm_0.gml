@@ -3,7 +3,7 @@ if (current_instance <= GetCurrentLevel().levelType.factoryResponseQuantity) {
 	
     // Create the object instance
 	with (obj_beaconsFactory) {
-    instance_create_layer(x + 300, y + 300, "Factory", obj_enemy);
+    instance_create_layer(x + 300, y + 300, "Factory", obj_beaconFactoryEnemy);
 	}
 
     // Increment the current instance index

@@ -70,15 +70,9 @@ else {
      targetDistance = distToPlayer;
 }
 
-// Calculate direction towards the target
-var directionToTarget = point_direction(x, y, targetX, targetY);
-
-// Determine if the target is within shooting range and angle
-var angleToTarget = abs(angle_difference(image_angle, directionToTarget));
 
     // Calculate direction towards the target
     var directionToTarget = point_direction(x, y, targetX, targetY);
-
     // Determine if the target is within range and angle to shoot plasma
     var distanceToTarget = distance_to_point(targetX, targetY);
     var angleToTarget = abs(angle_difference(image_angle, directionToTarget));

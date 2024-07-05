@@ -148,6 +148,7 @@
     {"id":{"name":"script_commendations","path":"scripts/script_commendations/script_commendations.yy",},},
     {"id":{"name":"script_displayFunctions","path":"scripts/script_displayFunctions/script_displayFunctions.yy",},},
     {"id":{"name":"script_drawSetText","path":"scripts/script_drawSetText/script_drawSetText.yy",},},
+    {"id":{"name":"script_enemyEvents","path":"scripts/script_enemyEvents/script_enemyEvents.yy",},},
     {"id":{"name":"script_escortShip","path":"scripts/script_escortShip/script_escortShip.yy",},},
     {"id":{"name":"script_fileSaveandLoad","path":"scripts/script_fileSaveandLoad/script_fileSaveandLoad.yy",},},
     {"id":{"name":"script_gameStates","path":"scripts/script_gameStates/script_gameStates.yy",},},
