@@ -1,4 +1,16 @@
 // Check if the beacon is active and has taken damage
+if (initialDeployment) {
+	initialDeployment = false;
+enemy = instance_create_layer(x, y, "Beacons", obj_beaconGuardEnemy);
+enemy.enemySpeed = (GetCurrentLevel().levelType.enemySpeed * 2)
+enemy.beaconIndex = other.beaconIndex;
+enemy.enemySpeed = 30
+show_debug_message("index below")
+show_debug_message(0)
+}
+
+
+
 if (shieldDown && hp <= 0) {
     shieldDown = false;
 	hp = level.levelType.beaconHp

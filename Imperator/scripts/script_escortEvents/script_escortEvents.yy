@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_escortShip",
+  "%Name":"script_escortEvents",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_escortShip",
+  "name":"script_escortEvents",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

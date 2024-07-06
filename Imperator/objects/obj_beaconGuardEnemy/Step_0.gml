@@ -1,4 +1,7 @@
 // Step event of obj_enemy
+if (getWayPoints) {
+waypoints = GetWaypoints(other.beaconIndex);
+}
 if (instance_exists(obj_player)) {
     var player = instance_find(obj_player, 0); // Reference to the player object
     var player_x = player.x;
@@ -81,7 +84,7 @@ if (instance_exists(obj_player)) {
                 }
             }
         }
-    } else {
+   } else {
         // Patrol between waypoints
         var target_x = waypoints[current_waypoint][0];
         var target_y = waypoints[current_waypoint][1];

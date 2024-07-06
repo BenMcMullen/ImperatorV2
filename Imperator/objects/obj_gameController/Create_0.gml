@@ -36,6 +36,7 @@ global.beaconFactoryDestroyed = false;
 global.activeBeacon = -1;
 global.beaconFactoryImmune = true;
 global.beaconsOverloaded = 0;
+global.beaconList = [];
 
 global.totalCompletedContracts = 0;
 

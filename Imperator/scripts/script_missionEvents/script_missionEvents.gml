@@ -121,12 +121,12 @@ function WeakenNextBeacon() {
 
     // Find a new active beacon
 	
-   if (array_length(beaconList) > 0) {
+   if (array_length(global.beaconList) > 0) {
     // Generate a random index
-    var random_index = irandom(array_length(beaconList) - 1);
+    var random_index = irandom(array_length(global.beaconList) - 1);
     
     // Isolate the random instance
-    var newShieldedBeacon = beaconList[random_index];
+    var newShieldedBeacon = global.beaconList[random_index];
 	newShieldedBeacon.shieldDown = true;
 	global.activeBeacon = random_index;
 }

@@ -1,4 +1,4 @@
-// Collision Event with obj_primaryWeapon
+
 with (other) {
 if (!global.beaconFactoryImmune) {
 	hp -= GetWeaponDamage("primary", false);

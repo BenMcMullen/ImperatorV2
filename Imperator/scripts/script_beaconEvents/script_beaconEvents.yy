@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"script_enemyEvents",
+  "%Name":"script_beaconEvents",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"script_enemyEvents",
+  "name":"script_beaconEvents",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

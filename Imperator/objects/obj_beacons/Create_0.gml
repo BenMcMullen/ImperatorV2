@@ -7,12 +7,24 @@ var roomHeight = room_height;
 
 // Calculate the coordinates for the four corners
 var offset = 1100;
+beaconIndex0 = 0;
+beaconIndex1 = 1;
+beaconIndex2 = 2;
+beaconIndex3 = 3;
 
 // Create the beacons
-beaconList[0] = instance_create_layer(offset, offset, "Beacons", obj_beaconsBeacon);
-beaconList[1] = instance_create_layer(roomWidth - offset, offset, "Beacons", obj_beaconsBeacon);
-beaconList[2] = instance_create_layer(offset, roomHeight - offset, "Beacons", obj_beaconsBeacon);
-beaconList[3] = instance_create_layer(roomWidth - offset, roomHeight - offset, "Beacons", obj_beaconsBeacon);
+beacon1 = instance_create_layer(offset, offset, "Beacons", obj_beaconsBeacon);
+beacon1.beaconIndex = beaconIndex0;
+
+beacon2 = instance_create_layer(roomWidth - offset, offset, "Beacons", obj_beaconsBeacon);
+beacon2.beaconIndex = beaconIndex1;
+
+beacon3 = instance_create_layer(offset, roomHeight - offset, "Beacons", obj_beaconsBeacon);
+beacon3.beaconIndex = beaconIndex2;
+
+beacon4 = instance_create_layer(roomWidth - offset, roomHeight - offset, "Beacons", obj_beaconsBeacon);
+beacon4.beaconIndex = beaconIndex3;
+
 
 instance_create_layer(roomWidth / 2, roomHeight /2, "Factory", obj_beaconsFactory);
 
