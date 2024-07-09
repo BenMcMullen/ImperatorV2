@@ -114,7 +114,7 @@ function CheckAndRemoveDestroyedSystems() {
 function WeakenNextBeacon() {
     // Deactivate the current active beacon if any
     if (global.activeBeacon != -1) {
-        with (beaconList[global.activeBeacon]) {
+        with (global.beaconList[global.activeBeacon]) {
              shieldDown = false;
         }
     }
@@ -129,6 +129,10 @@ function WeakenNextBeacon() {
     var newShieldedBeacon = global.beaconList[random_index];
 	newShieldedBeacon.shieldDown = true;
 	global.activeBeacon = random_index;
+	var enemy = instance_create_layer(x, y, "Beacons", obj_beaconGuardEnemy);
+	enemy.enemySpeed = (GetCurrentLevel().levelType.enemySpeed * 2)
+	enemy.beaconIndex = global.activeBeacon;
+	enemy.enemySpeed = 15
 }
 }
 

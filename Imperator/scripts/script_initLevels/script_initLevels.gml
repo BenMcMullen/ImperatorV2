@@ -211,8 +211,8 @@ function InitLevels() {
     global.earthTreeLevels[1] = LevelConfigEarth(global.enemyTypes[0], 300, room_hunt2, 3, global.levelTypeEscort[1], 2, false, "Operation: Glacier", spr_brief, [global.sensors[2]], 5, global.difficulties[0]);
 
 	// Mercury Levels
-	global.mercurianTreeLevels[0] = LevelConfigEarth(global.enemyTypes[0], 200, room_hunt1, 2, global.levelTypeHunting[0], 1, false, "Operation: Ladon", spr_brief, [global.secondaryWeapons[3]], 5, global.difficulties[0]);
-    global.mercurianTreeLevels[1] = LevelConfigEarth(global.enemyTypes[0], 300, room_hunt2, 3, global.levelTypeEscort[1], 2, false, "Operation: Fear", spr_brief, [global.secondaryWeapons[3]], 5, global.difficulties[0]);
+	global.mercurianTreeLevels[0] = LevelConfigMercury(global.enemyTypes[0], 200, room_hunt1, 2, global.levelTypeHunting[0], 1, false, "Operation: Ladon", spr_brief, [global.secondaryWeapons[3]], 5, global.difficulties[0]);
+    global.mercurianTreeLevels[1] = LevelConfigMercury(global.enemyTypes[0], 300, room_hunt2, 3, global.levelTypeEscort[1], 2, false, "Operation: Fear", spr_brief, [global.secondaryWeapons[3]], 5, global.difficulties[0]);
 
 
 }

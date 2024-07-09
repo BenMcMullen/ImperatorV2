@@ -90,7 +90,13 @@ if (moving_to_target) {
             vsp = 0;
         }
     }
-
+	if (global.isCloaked) {
+		sprite_index = ship.sprites.spriteCloaked;
+		if (mouse_check_button_pressed(mb_any) || keyboard_check_pressed(vk_space))	{
+	global.isCloaked = false;
+	}
+	}
+	else {
     if (keyBoosting) {
         sprite_index = ship.sprites.spriteBoosting;
     } else if (moveX != 0 || moveY != 0) {
@@ -101,5 +107,7 @@ if (moving_to_target) {
         sprite_index = ship.sprites.spriteStatic;
         image_speed = 0;
     }
+	}
     image_xscale = 1;
 }
+

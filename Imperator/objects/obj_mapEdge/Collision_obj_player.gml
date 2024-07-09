@@ -10,7 +10,8 @@ with (obj_player) {
 
         // Move the player 10 tiles (10 * tile size) in the reversed direction
         var tile_size = 32; // Assuming each tile is 32x32 pixels
-        var distance = 10 * tile_size;
+       
+        var distance = (10 - global.selectedShip.passives.aiReflex) * tile_size;
 
         // Calculate new position based on the reversed direction
         target_x = x + distance * cos(degtorad(image_angle + 90));

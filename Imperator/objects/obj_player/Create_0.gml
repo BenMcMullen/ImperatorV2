@@ -3,4 +3,6 @@
 audio_sound_pitch(snd_plasma, 0.5)
 target_x = x;
 target_y = y;
+canCloak = true;
+canAsteroidBreak = true;
 

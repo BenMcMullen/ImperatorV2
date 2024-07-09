@@ -1,7 +1,9 @@
 // Create event of obj_enemy
-
+hp = 1;
+cooldownTimer = 0;
 // Variables for AI behavior
-detection_range = 6000; // Detection range
+
+detection_range = 6000 * global.selectedShip.passives.distortion; // Detection range
 attack_range = 450; // Attack range
 
 

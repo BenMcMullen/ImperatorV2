@@ -1,16 +1,19 @@
-//die
-if (global.currentMusic != -1) {
-    audio_stop_sound(global.currentMusic);
-    global.currentMusic = -1;
-    global.musicPlaying = false;
-    show_debug_message("Music Stopped");
+//collision
+with (other) {
+	if (global.asteroidBreaker) {
+		ScreenShake(50,25)
+		hp = 0;
+	}
+	else {
+	if (global.selectedShip.hull.hp > global.selectedShip.passives.bumper) {
+		global.selectedShip.hull.hp = global.selectedShip.passives.bumper;
+		ScreenShake(200,100);
+	}
+	else {
+		global.selectedShip.hull.hp = 0;
+	}
+	hp = 0;
+	}
 }
-global.playerInformation.kills =- global.killsThisRoom;
-global.selectedShip.hull.hp = global.selectedShip.hull.maxHp;
-global.selectedShip.shields.shieldStatic = global.selectedShip.shields.shieldStaticMax;
-with (obj_playerWeapons) instance_destroy();
-instance_change(obj_playerExplosion,true);
-
-
 
 

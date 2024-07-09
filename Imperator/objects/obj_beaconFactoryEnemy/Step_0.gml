@@ -1,5 +1,9 @@
 // Step event of obj_enemy
 if (instance_exists(obj_player)) {
+	detection_range = 2000 * global.selectedShip.passives.distortion; // Detection range
+	if (global.isCloaked) {
+		detection_range = 0;
+	}
     var player = instance_find(obj_player, 0); // Reference to the player object
     var player_x = player.x;
     var player_y = player.y;
@@ -18,6 +22,15 @@ if (instance_exists(obj_player)) {
             x += move_x;
             y += move_y;
         } else {
+			if (dist_to_player > 200) {
+			  var enemyDirection = point_direction(x, y, player_x, player_y);
+            var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
+            var move_y = lengthdir_y(other.enemySpeed, enemyDirection);
+
+            // Update position
+            x += move_x;
+            y += move_y;
+			}
             // ATTACKING LOGIC
             // Player and escortShip detection and shooting
             var targetX, targetY, targetDistance;

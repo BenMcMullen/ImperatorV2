@@ -4,9 +4,8 @@ if (initialDeployment) {
 enemy = instance_create_layer(x, y, "Beacons", obj_beaconGuardEnemy);
 enemy.enemySpeed = (GetCurrentLevel().levelType.enemySpeed * 2)
 enemy.beaconIndex = other.beaconIndex;
-enemy.enemySpeed = 30
-show_debug_message("index below")
-show_debug_message(0)
+enemy.enemySpeed = 15
+
 }
 
 

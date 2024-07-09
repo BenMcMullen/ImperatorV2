@@ -266,8 +266,8 @@ function InitSystems() {
         0.5,      // delay
         1.0,      // cooldown
         1,        // uses
-        spr_basicTest_1,
-        spr_shopUpgrade,
+        spr_raptorActiveShield,
+        spr_raptorActiveShield,
         10,       // static shield
         10,       // max static shield
         20,       // active shield
@@ -281,8 +281,8 @@ function InitSystems() {
         0.3,      // delay
         1.5,      // cooldown
         2,        // uses
-        spr_basicTest_1,
-        spr_shopUpgrade,
+        spr_raptorActiveShield,
+        spr_raptorActiveShield,
         20,       // static shield
         20,       // max static shield
         40,       // active shield
@@ -295,8 +295,8 @@ function InitSystems() {
         0.2,                    // Delay
         2.0,                    // Cooldown
         3,                      // Uses
-        spr_basicTest_1,        // Static sprite
-        spr_shopUpgrade,        // Active sprite
+        spr_raptorActiveShield,        // Static sprite
+        spr_raptorActiveShield,        // Active sprite
         30,                     // Static shield
         30,                     // Max static shield
         60,                     // Active shield

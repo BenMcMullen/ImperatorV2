@@ -25,6 +25,10 @@ beacon3.beaconIndex = beaconIndex2;
 beacon4 = instance_create_layer(roomWidth - offset, roomHeight - offset, "Beacons", obj_beaconsBeacon);
 beacon4.beaconIndex = beaconIndex3;
 
+global.beaconList[0] = beacon1;
+global.beaconList[1] = beacon2;
+global.beaconList[2] = beacon3;
+global.beaconList[3] = beacon4;
 
 instance_create_layer(roomWidth / 2, roomHeight /2, "Factory", obj_beaconsFactory);
 

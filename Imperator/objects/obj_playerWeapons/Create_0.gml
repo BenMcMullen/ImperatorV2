@@ -12,11 +12,11 @@ secondaryDelay = 0;
 
 
 //TIME BETWEEN MAGAZINES OF SHOTS
-primaryCooldownDuration = global.selectedShip.primaryWeapon.cooldown;
-secondaryCooldownDuration =  global.selectedShip.secondaryWeapon.cooldown;
+primaryCooldownDuration = global.selectedShip.primaryWeapon.cooldown * global.selectedShip.passives.veteranCrew;
+secondaryCooldownDuration =  global.selectedShip.secondaryWeapon.cooldown * global.selectedShip.passives.veteranCrew;
 
 //CAPACITY PER MAG
-primaryCapacity = global.selectedShip.primaryWeapon.capacity;
+primaryCapacity = global.selectedShip.primaryWeapon.capacity * global.selectedShip.passives.enhancedArmory;
 secondaryCapacity = global.selectedShip.secondaryWeapon.capacity;
 
 

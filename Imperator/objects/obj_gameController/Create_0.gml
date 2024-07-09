@@ -1,6 +1,5 @@
 // obj_game_controller Create event
 
-
 MusicConfig();
 InitSystems();
 InitLevels();
@@ -11,7 +10,7 @@ InitPlayer();
 #macro RES_H 768
 display_set_gui_size(RES_W, RES_H);
 	
-	minimap_surface = -1;
+minimap_surface = -1;
 minimap_width = 200; // Adjust as needed
 minimap_height = 200; // Adjust as needed
 
@@ -22,7 +21,8 @@ minimap_height = 200; // Adjust as needed
  global.selectedShip = global.playerShips[0];
  global.shoppingSystem = "";
  global.garageUpgradingSystem = "";
-
+// SCREENSCALE DETERMINES SCREEN SIZE
+global.screenScale = 2;
 
 global.currentMusic = 0;
 global.musicPlaying = false;
@@ -42,13 +42,13 @@ global.totalCompletedContracts = 0;
 
 global.killsThisRoom = 0;
 global.levelPoints = 0;
-
+global.isCloaked = false;
+global.asteroidBreaker = false;
 
 //Tracking the shop/garage page's selected system and displayed descriptions
 global.lastClickedShopSystem = noone;
 global.lastClickedGarageSystem = noone;
 global.displayedUpgradeDescriptions = noone;
-
 
 //For shop door animations
 global.shopFirstClick = true;

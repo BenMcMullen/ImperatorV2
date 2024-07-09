@@ -1,0 +1,1 @@
+global.asteroidBreaker = false;

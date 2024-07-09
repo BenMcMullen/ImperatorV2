@@ -5,7 +5,7 @@
 getWayPoints = true;
 waypoints = [];
 current_waypoint = 0;
-
+hp = 1;
+cooldownTimer = 0;
 // Variables for AI behavior
-detection_range = 2000; // Detection range
-attack_range = 1000; // Attack range
+attack_range = 900; // Attack range

@@ -2,7 +2,13 @@
 if (getWayPoints) {
 waypoints = GetWaypoints(other.beaconIndex);
 }
+
+detection_range = 2000 * global.selectedShip.passives.distortion; // Detection range
+if (global.isCloaked) {
+	detection_range = 0;
+}
 if (instance_exists(obj_player)) {
+	
     var player = instance_find(obj_player, 0); // Reference to the player object
     var player_x = player.x;
     var player_y = player.y;
@@ -21,6 +27,15 @@ if (instance_exists(obj_player)) {
             x += move_x;
             y += move_y;
         } else {
+			if (dist_to_player > 200) {
+			  var enemyDirection = point_direction(x, y, player_x, player_y);
+            var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
+            var move_y = lengthdir_y(other.enemySpeed, enemyDirection);
+
+            // Update position
+            x += move_x;
+            y += move_y;
+			}
             // ATTACKING LOGIC
             // Player and escortShip detection and shooting
             var targetX, targetY, targetDistance;
@@ -30,26 +45,11 @@ if (instance_exists(obj_player)) {
             var playerY = player.y;
             var distToPlayer = point_distance(x, y, playerX, playerY);
 
-            if (instance_exists(obj_escortShip)) {
-                var escort = instance_find(obj_escortShip, 0);
-                var escortX = escort.x;
-                var escortY = escort.y;
-                var distToEscort = point_distance(x, y, escortX, escortY);
-
-                if (distToPlayer < distToEscort) {
-                    targetX = playerX;
-                    targetY = playerY;
-                    targetDistance = distToPlayer;
-                } else {
-                    targetX = escortX;
-                    targetY = escortY;
-                    targetDistance = distToEscort;
-                }
-            } else {
-                targetX = playerX;
-                targetY = playerY;
-                targetDistance = distToPlayer;
-            }
+           
+            targetX = playerX;
+            targetY = playerY;
+            targetDistance = distToPlayer;
+            
 
             // Calculate direction towards the target
             var directionToTarget = point_direction(x, y, targetX, targetY);
@@ -59,7 +59,7 @@ if (instance_exists(obj_player)) {
 
             primaryDelay -= 1;
 
-            if (distanceToTarget < shootRange && angleToTarget < shootAngle && primaryDelay < 0) {
+            if (distanceToTarget <= shootRange && angleToTarget < shootAngle && primaryDelay < 0) {
                 primaryDelay = fireRate;
 
                 if (cooldownTimer > 0) {
@@ -73,7 +73,7 @@ if (instance_exists(obj_player)) {
                 if (shotsFired < capacity && cooldownTimer == 0) {
                     audio_play_sound(snd_plasma, 10, false);
                     with (instance_create_layer(x, y, "Enemy", obj_enemyPlasma)) {
-                        speed = 25;
+                        speed = 80;
                         direction = directionToTarget + random_range(-2, 2);
                         image_angle = direction;
                     }

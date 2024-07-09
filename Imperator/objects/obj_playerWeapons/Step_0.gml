@@ -1,10 +1,10 @@
 // Set the position of the child object to the player object's position
-x = obj_player.x;
-y = obj_player.y;
 
 // Determine the player's current facing direction
 
-
+if (instance_find(obj_player, 0)){
+	x = obj_player.x;
+y = obj_player.y;
 if (obj_player.keyLeft && obj_player.keyRight) {
     if (obj_player.keyUp) {
         facingDirection = 315; // Up-Right
@@ -130,7 +130,7 @@ if (mouse_check_button(mb_left) && (primaryCooldownTimer <= 0) && (primaryDelay 
     with (instance_create_layer(x, y, "Weapons", obj_primaryWeapon)) {
         speed = global.selectedShip.primaryWeapon.shotSpeed;
         direction = other.image_angle + random_range(global.selectedShip.primaryWeapon.accuracy[0],
-            global.selectedShip.primaryWeapon.accuracy[1]);
+            global.selectedShip.primaryWeapon.accuracy[1] * global.selectedShip.passives.hotShot);
         image_angle = direction;
     }
     primaryShotsFired++;
@@ -162,8 +162,8 @@ if (mouse_check_button(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryD
     audio_play_sound(global.selectedShip.secondaryWeapon.audio, 0, false);
     with (instance_create_layer(x, y, "Weapons", obj_secondaryWeapon)) {
         speed = global.selectedShip.secondaryWeapon.shotSpeed;
-        direction = other.image_angle + random_range(global.selectedShip.secondaryWeapon.accuracy[0],
-            global.selectedShip.secondaryWeapon.accuracy[1]);
+        direction = other.image_angle + random_range(global.selectedShip.secondaryWeapon.accuracy[0] * global.selectedShip.passives.hotShot,
+            global.selectedShip.secondaryWeapon.accuracy[1] * global.selectedShip.passives.hotShot);
         image_angle = direction;
     }
     secondaryShotsFired++;
@@ -173,6 +173,6 @@ if (mouse_check_button(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryD
       
     }
 }
-
+}
 
 
