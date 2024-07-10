@@ -263,14 +263,14 @@ function InitSystems() {
     global.shields[0] = ShieldConfig(
         1,
         "Basic Shields",
-        0.5,      // delay
-        1.0,      // cooldown
+        10,      // delay
+        2000,      // cooldown
         1,        // uses
         spr_raptorActiveShield,
         spr_raptorActiveShield,
-        10,       // static shield
+        2000,       // static shield
         10,       // max static shield
-        20,       // active shield
+        1000,       // active shield
         spr_shopUpgrade,
         global.systemStatus[6]
     );
@@ -278,28 +278,28 @@ function InitSystems() {
     global.shields[1] = ShieldConfig(
         2,
         "Advanced Shields",
-        0.3,      // delay
-        1.5,      // cooldown
+        10,      // delay
+        2000,      // cooldown
         2,        // uses
         spr_raptorActiveShield,
         spr_raptorActiveShield,
         20,       // static shield
         20,       // max static shield
-        40,       // active shield
+        1000,       // active shield
         spr_shopUpgrade,
         global.systemStatus[6]
     );
     global.shields[2] = ShieldConfig(
         3,
         "Elite Shields",       // Name
-        0.2,                    // Delay
-        2.0,                    // Cooldown
+        10,                    // Delay
+        2000,                    // Cooldown
         3,                      // Uses
         spr_raptorActiveShield,        // Static sprite
         spr_raptorActiveShield,        // Active sprite
         30,                     // Static shield
         30,                     // Max static shield
-        60,                     // Active shield
+        1000,                     // Active shield
         spr_shopUpgrade,        // System sprite
 		global.systemStatus[6] // System Status
     );
