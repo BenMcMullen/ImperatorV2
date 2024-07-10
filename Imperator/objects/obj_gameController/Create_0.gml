@@ -44,6 +44,7 @@ global.killsThisRoom = 0;
 global.levelPoints = 0;
 global.isCloaked = false;
 global.asteroidBreaker = false;
+global.shieldActive = false;
 
 //Tracking the shop/garage page's selected system and displayed descriptions
 global.lastClickedShopSystem = noone;

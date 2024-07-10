@@ -5,4 +5,5 @@ target_x = x;
 target_y = y;
 canCloak = true;
 canAsteroidBreak = true;
+canShield = true;
 

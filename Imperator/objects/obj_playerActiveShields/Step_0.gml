@@ -1,13 +1,19 @@
 // Follow the player object
 if (instance_exists(obj_player)) {
-    x = obj_player.x;
-    y = obj_player.y;
+    var player = instance_find(obj_player, 0);
+    x = player.x;
+    y = player.y;
+    image_angle = player.image_angle;
+    image_xscale = player.image_xscale;
+    image_yscale = player.image_yscale;
 }
 
 // Decrease lifespan
-lifespan -= 1;
+delay -= 1;
+duration -= 1;
 
 // Destroy the object when lifespan is over
-if (lifespan <= 0) {
+if (duration <= 0) {
     instance_destroy();
+	global.shieldActive = false;
 }
