@@ -27,7 +27,7 @@ if (instance_exists(obj_player)) {
             x += move_x;
             y += move_y;
         } else {
-			if (dist_to_player > 200) {
+			if (dist_to_player > 300) {
 			  var enemyDirection = point_direction(x, y, player_x, player_y);
             var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
             var move_y = lengthdir_y(other.enemySpeed, enemyDirection);

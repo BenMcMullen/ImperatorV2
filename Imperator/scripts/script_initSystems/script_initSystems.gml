@@ -15,18 +15,19 @@ function InitSystems() {
     }
 
     // Function to define shield configurations
-    function ShieldConfig(_id, _name, _delay, _cooldown, _uses, _spriteStatic, _spriteActive, _shieldStatic, _shieldStaticMax, _shieldActive, _systemSprite, _systemStatus) {
+    function ShieldConfig(_id, _name, _overloadRestoreTime, _restoreRate, _uses, _spriteStatic, _spriteActive, _shieldStatic, _shieldStaticReduction, _shieldActive, _shieldActiveConsume, _systemSprite, _systemStatus) {
         return {
             id: _id,
             name: _name,
-            delay: _delay,
-            cooldown: _cooldown,
+            overloadRestoreTime: _overloadRestoreTime,
+            restoreRate: _restoreRate,
             uses: _uses,
             spriteStatic: _spriteStatic,
             spriteActive: _spriteActive,
             shieldStatic: _shieldStatic,
-            shieldStaticMax: _shieldStaticMax,
+            shieldStaticReduction: _shieldStaticReduction,
             shieldActive: _shieldActive,
+            shieldActiveConsume: _shieldActiveConsume,
             systemSprite: _systemSprite,
             systemStatus: _systemStatus
         };
@@ -260,49 +261,53 @@ function InitSystems() {
     );
 
     // Adding shields individually
-    global.shields[0] = ShieldConfig(
-        1,
-        "Basic Shields",
-        10,      // delay
-        2000,      // cooldown
-        1,        // uses
-        spr_raptorActiveShield,
-        spr_raptorActiveShield,
-        2000,       // static shield
-        10,       // max static shield
-        1000,       // active shield
-        spr_shopUpgrade,
-        global.systemStatus[6]
-    );
+global.shields[0] = ShieldConfig(
+    1,
+    "Basic Shields",
+    2500,        // delay
+    2,      // restoreRate
+    1,         // uses
+    spr_raptorShield,
+    spr_raptorShield,
+    2000,      // static shield
+    1,        // static reduction
+    2000,      // active shield
+    10,         // active shield consume
+    spr_shopUpgrade,
+    global.systemStatus[6]
+);
+		
+global.shields[1] = ShieldConfig(
+    2,
+    "Advanced Shields",
+    10,        // delay
+    2,      // restoreRate
+    2,         // uses
+    spr_raptorShield,
+    spr_raptorShield,
+    20,        // static shield
+    1,        // static reduction
+    2000,      // active shield
+    10,         // active shield consume
+    spr_shopUpgrade,
+    global.systemStatus[6]
+);
 
-    global.shields[1] = ShieldConfig(
-        2,
-        "Advanced Shields",
-        10,      // delay
-        2000,      // cooldown
-        2,        // uses
-        spr_raptorActiveShield,
-        spr_raptorActiveShield,
-        20,       // static shield
-        20,       // max static shield
-        1000,       // active shield
-        spr_shopUpgrade,
-        global.systemStatus[6]
-    );
-    global.shields[2] = ShieldConfig(
-        3,
-        "Elite Shields",       // Name
-        10,                    // Delay
-        2000,                    // Cooldown
-        3,                      // Uses
-        spr_raptorActiveShield,        // Static sprite
-        spr_raptorActiveShield,        // Active sprite
-        30,                     // Static shield
-        30,                     // Max static shield
-        1000,                     // Active shield
-        spr_shopUpgrade,        // System sprite
-		global.systemStatus[6] // System Status
-    );
+global.shields[2] = ShieldConfig(
+    3,
+    "Elite Shields",
+    2,      // restoreRate
+    2000,      // cooldown
+    3,         // uses
+    spr_raptorShield,
+    spr_raptorShield,
+    30,        // static shield
+    1,        // static reduction
+    2000,      // active shield
+    10,         // active shield consume
+    spr_shopUpgrade,
+    global.systemStatus[6]
+);
 
 
     // Initialize the global array of hulls

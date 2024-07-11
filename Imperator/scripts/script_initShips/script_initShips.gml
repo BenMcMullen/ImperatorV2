@@ -37,7 +37,7 @@ function InitShips() {
 	
 
 	
-	function passivesConfig(_class, _tier, _distortion, _evasion, _hotShot, _fov, _bumper, _cloaking, _enhancedArmory, _asteroidBreaker, _veteranCrew) {
+	function passivesConfig(_class, _tier, _distortion, _evasion, _hotShot, _fov, _bumper, _cloaking, _enhancedArmory, _asteroidBreaker, _veteranCrew, _enhancedCoolingUnit, _activeEnergyDispersionUnit, _passiveEnergyDispersionUnit) {
    
         return {
 			//the class of ship this passive can be applied to
@@ -61,7 +61,13 @@ function InitShips() {
 			//Punches through asteroids or weakened enemies
 			asteroidBreaker: _asteroidBreaker,
 			//reduces cooldown
-			veteranCrew: _veteranCrew
+			veteranCrew: _veteranCrew,
+			//increases shield recharge time
+			enhancedCoolingUnit: _enhancedCoolingUnit,
+			//increased damage soak on active shields
+			activeEnergyDispersionUnit: _activeEnergyDispersionUnit,
+			//increased damage soak on passive shields
+			passiveEnergyDispersionUnit: _passiveEnergyDispersionUnit,
 			
            
         };
@@ -83,7 +89,10 @@ function InitShips() {
     300,            // _cloaking (negates enemy sensors for 300 frames)
     1.5,           // _enhancedArmory (50% increase in primary capacity)
     .2,            // asteroidBreaker (breaks enemy ships at 20% enemy hp cost)
-    0.5            // _veteranCrew (50% reduction in weapons cooldown)
+    0.5,            // _veteranCrew (50% reduction in weapons cooldown)
+	1,				//_enhancedCoolingUnit (+1 shield restore per step)
+	1,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
+	1				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
 );
 
  global.passives[1] = passivesConfig(
@@ -97,7 +106,10 @@ function InitShips() {
     0.0,            // _cloaking (negates enemy sensors for 0 frames)
     1.0,           // _enhancedArmory (0% increase in primary capacity)
     .2,            // asteroidBreaker (breaks enemy ships at 100% enemy hp cost)
-    1.0            // _veteranCrew (0% reduction in cooldown)
+    1.0,            // _veteranCrew (0% reduction in cooldown)
+	1,				//_enhancedCoolingUnit (+1 shield restore per step)
+	1,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
+	1				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
 );
 	
     global.sprites = [];

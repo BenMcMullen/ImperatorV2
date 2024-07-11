@@ -1,1 +1,0 @@
-canShield = true;

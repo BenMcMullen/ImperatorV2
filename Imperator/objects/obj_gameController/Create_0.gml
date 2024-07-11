@@ -45,6 +45,8 @@ global.levelPoints = 0;
 global.isCloaked = false;
 global.asteroidBreaker = false;
 global.shieldActive = false;
+global.shieldGeneratorOverloaded = false;
+global.shieldActiveCharge = 0;
 
 //Tracking the shop/garage page's selected system and displayed descriptions
 global.lastClickedShopSystem = noone;

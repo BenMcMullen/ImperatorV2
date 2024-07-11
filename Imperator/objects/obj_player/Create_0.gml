@@ -5,5 +5,6 @@ target_x = x;
 target_y = y;
 canCloak = true;
 canAsteroidBreak = true;
-canShield = true;
-
+global.shieldActiveCharge = global.selectedShip.shields.shieldActive;
+depth = -1;
+instance_create_layer(x, y, "Player", obj_playerActiveShields);

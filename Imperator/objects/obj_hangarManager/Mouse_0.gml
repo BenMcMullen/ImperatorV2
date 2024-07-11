@@ -41,7 +41,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
         var clickedShip = global.playerShips[clickedShipIndex];
         
         if (array_length(clickedShip.shields) > 0) {
-            clickedShip.shields.shieldStatic = clickedShip.shields.shieldStaticMax;
+            clickedShip.shields.shieldStatic = clickedShip.shields.shieldActiveConsume;
         }
         
         global.selectedShip = clickedShip;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"TODOMVP",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TODOMVP",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

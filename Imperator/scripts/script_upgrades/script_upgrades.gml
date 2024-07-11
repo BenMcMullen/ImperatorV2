@@ -47,7 +47,7 @@ function GetUpgradeInfo(){
         case "shields":
             var upgrade = global.shields[array_index];
             info = string(upgrade.name) + "\n" +
-                   "Shield Strength: " + string(upgrade.shieldStaticMax) + "\n" +
+                   "Shield Strength: " + string(upgrade.shieldActiveConsume) + "\n" +
                    "Pulse Strength: " + string(upgrade.shieldActive) + "\n" +
                    "Pulse Delay: " + string(upgrade.delay) + "\n" +
                    "Pulse Cooldown: " + string(upgrade.cooldown) + "\n" +
