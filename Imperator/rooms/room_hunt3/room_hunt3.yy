@@ -281,6 +281,7 @@
     {"name":"inst_4C1423C7_1","path":"rooms/room_hunt3/room_hunt3.yy",},
     {"name":"inst_501BDDE8_1","path":"rooms/room_hunt3/room_hunt3.yy",},
     {"name":"inst_59094958","path":"rooms/room_hunt3/room_hunt3.yy",},
+    {"name":"inst_6D3F64BF","path":"rooms/room_hunt3/room_hunt3.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -310,6 +311,7 @@
         {"$GMRInstance":"","%Name":"inst_41167B90_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_41167B90_1_1","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":416.0,},
         {"$GMRInstance":"","%Name":"inst_78619B2C_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_78619B2C_1_1","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":480.0,},
         {"$GMRInstance":"","%Name":"inst_59094958","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_59094958","objectId":{"name":"obj_toBridgeFromBattle","path":"objects/obj_toBridgeFromBattle/obj_toBridgeFromBattle.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":8.677449,"scaleX":1.5,"scaleY":2.488372,"x":1890.3578,"y":2127.449,},
+        {"$GMRInstance":"","%Name":"inst_6D3F64BF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6D3F64BF","objectId":{"name":"obj_zzzHUD","path":"objects/obj_zzzHUD/obj_zzzHUD.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":1728.0,},
       ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Weapons","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Weapons","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enemy","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

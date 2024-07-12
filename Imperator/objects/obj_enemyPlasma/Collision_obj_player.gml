@@ -7,7 +7,7 @@ if (random(1) < global.selectedShip.passives.evasion && collision == false) {
     // Evasion failed, proceed with collision handling
 	collision = true;
     with (other) {
-        with (obj_gameController) {
+        with (obj_zzzHUD) {
             if (global.shieldGeneratorOverloaded) {
                global.selectedShip.hull.hp -= enemyDamage;
 			   loseHpScale = 2;

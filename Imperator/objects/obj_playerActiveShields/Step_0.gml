@@ -1,9 +1,8 @@
 var ship = global.selectedShip;
-if (global.shieldGeneratorOverloaded && restoring = false) {
+if (global.shieldGeneratorOverloaded && !restoring) {
 	restoring = true
 	show_debug_message("Shield restoring")
 alarm[0] = ship.shields.overloadRestoreTime;	
-show_debug_message( ship.shields.overloadRestoreTime)
 }
 
 if (!global.shieldActive && global.shieldActiveCharge < ship.shields.shieldActive) { 

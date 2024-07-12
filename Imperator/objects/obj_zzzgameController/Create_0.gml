@@ -60,11 +60,6 @@ global.shopFirstClick = true;
 global.dataPadOpen = false;
 
 
-
-killTextScale = 1;
-loseHpScale = 1;
-loseShieldsScale = 1;
-
 if (!global.musicPlaying) {
     if (global.currentMusic != -1) {
         audio_stop_sound(global.currentMusic);

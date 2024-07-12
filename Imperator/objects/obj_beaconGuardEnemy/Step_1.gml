@@ -15,6 +15,6 @@ if (hp <= 0)
 	{
 	global.playerInformation.kills++;
 	global.killsThisRoom++;
-	with (obj_gameController) killTextScale = 2;
+	with (obj_zzzHUD) killTextScale = 2;
 	}
 }
