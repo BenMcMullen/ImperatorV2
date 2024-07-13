@@ -3,7 +3,7 @@ if (getWayPoints) {
 waypoints = GetWaypoints(other.beaconIndex);
 }
 
-detection_range = 2000 * global.selectedShip.passives.distortion; // Detection range
+detection_range = 2000 / global.selectedShip.passives.distortion; // Detection range
 if (global.isCloaked) {
 	detection_range = 0;
 }

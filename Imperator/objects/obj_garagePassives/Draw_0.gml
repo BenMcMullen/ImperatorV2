@@ -1,0 +1,1 @@
+DrawPassivesInGarage(room_width / 3, y / 2.5);

@@ -14,14 +14,17 @@ var line_height = 20; // Height of each line, adjust as needed
 var text_x = x + 32; // Adjust if needed
 var text_y = y + sprite_height; // Position just below the sprite, adjust as needed
 
-draw_set_color(c_white); // Set the default color to white for safety
-
+draw_set_color(c_black); // Set the default color to white for safety
 // First draw_text (not colored)
 draw_text(text_x, text_y + line_height, systemType);
-
-// Set color to yellow for the second draw_text
 draw_set_color(c_white);
+draw_text(text_x +2, text_y - 2 + line_height, systemType);
+
+// Set color to white for the second draw_text
+draw_set_color(c_black);
 draw_text(text_x, text_y + line_height * 2, GetShipUpgrade(systemType));
+draw_set_color(c_white);
+draw_text(text_x +2, text_y + line_height * 2 -2, GetShipUpgrade(systemType));
 
 // Reset color to default (optional but good practice)
 draw_set_color(c_white);

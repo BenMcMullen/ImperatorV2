@@ -1,6 +1,6 @@
 //collision
 with (other) {
-	if (global.asteroidBreaker) {
+	if (global.shieldActive) {
 		ScreenShake(50,25)
 		hp = 0;
 	}

@@ -127,23 +127,28 @@ if (mouse_check_button(mb_left) && (primaryCooldownTimer <= 0) && (primaryDelay 
     // Fire primary weapon
     primaryDelay = global.selectedShip.primaryWeapon.delay;
     audio_play_sound(global.selectedShip.primaryWeapon.audio, 0, false);
+    
     with (instance_create_layer(x, y, "Weapons", obj_primaryWeapon)) {
         speed = global.selectedShip.primaryWeapon.shotSpeed;
-        direction = other.image_angle + random_range(global.selectedShip.primaryWeapon.accuracy[0],
-            global.selectedShip.primaryWeapon.accuracy[1] * global.selectedShip.passives.hotShot);
+        
+        var accuracy_min = global.selectedShip.primaryWeapon.accuracy[0] / global.selectedShip.passives.hotShot;
+        var accuracy_max = global.selectedShip.primaryWeapon.accuracy[1] / global.selectedShip.passives.hotShot;
+    
+        direction = other.image_angle + random_range(accuracy_min, accuracy_max);
         image_angle = direction;
     }
+    
     primaryShotsFired++;
 
     if (primaryShotsFired >= primaryCapacity) {
         primaryCooldownTimer = primaryCooldownDuration;
-      
     }
 }
 
 if (secondaryDelay > 0) {
     secondaryDelay -= 1;
 }
+
 
 // Cooldown Timer Adjustment
 if (secondaryCooldownTimer > 0) {

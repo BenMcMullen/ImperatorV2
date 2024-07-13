@@ -37,7 +37,7 @@ function InitShips() {
 	
 
 	
-	function passivesConfig(_class, _tier, _distortion, _evasion, _hotShot, _fov, _bumper, _cloaking, _enhancedArmory, _asteroidBreaker, _veteranCrew, _enhancedCoolingUnit, _activeEnergyDispersionUnit, _passiveEnergyDispersionUnit) {
+	function passivesConfig(_class, _tier, _distortion, _evasion, _hotShot, _fov, _bumper, _cloaking, _enhancedArmory, _veteranCrew, _enhancedCoolingUnit, _activeEnergyDispersionUnit, _passiveEnergyDispersionUnit) {
    
         return {
 			//the class of ship this passive can be applied to
@@ -58,8 +58,6 @@ function InitShips() {
 			cloaking: _cloaking,
 			//increases hp by a percentage
 			enhancedArmory: _enhancedArmory,
-			//Punches through asteroids or weakened enemies
-			asteroidBreaker: _asteroidBreaker,
 			//reduces cooldown
 			veteranCrew: _veteranCrew,
 			//increases shield recharge time
@@ -81,15 +79,14 @@ function InitShips() {
 	 global.passives[0] = passivesConfig(
     "Interceptor",      // _class
     "A",            // _tier
-    0.5,            // _distortion (50% reduces range of enemy detection)
-    0.1,           // _evasion (15% chance to evade attacks)
-    .9,            // _hotShot (90% more accurate fire)
-    1,            // _fov (90% wider field of view) 1 is base.
-    20,             // _bumper (reduces HP to 20 on collision)
-    300,            // _cloaking (negates enemy sensors for 300 frames)
-    1.5,           // _enhancedArmory (50% increase in primary capacity)
-    .2,            // asteroidBreaker (breaks enemy ships at 20% enemy hp cost)
-    0.5,            // _veteranCrew (50% reduction in weapons cooldown)
+    2,            // _distortion (50% reduces range of enemy detection) 1-2
+    2,           // _evasion (15% chance to evade attacks) 1-2
+    2,            // _hotShot (90% more accurate fire) 1-2
+    1,            // _fov (90% wider field of view) 1 is base. 1-2
+    20,             // _bumper (reduces HP to 20 on collision) 20-100
+    300,            // _cloaking (negates enemy sensors for 300 frames) 0 - 1000
+    1.5,           // _enhancedArmory (50% increase in primary capacity) 1-2
+    1.5,            // _veteranCrew (50% reduction in weapons cooldown)
 	1,				//_enhancedCoolingUnit (+1 shield restore per step)
 	1,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
 	1				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
@@ -98,18 +95,17 @@ function InitShips() {
  global.passives[1] = passivesConfig(
     "Frigate",      // _class
     "B",            // _tier
-    0.0,            // _distortion (reduces range of enemy detection)
-    0.0,           // _evasion (0% chance to evade attacks)
-    0.0,            // _hotShot (0% more accurate fire)
-    1.2,            // _fov (20% wider field of view)
-    0.0,             // _bumper (reduces HP to 0 on collision)
-    0.0,            // _cloaking (negates enemy sensors for 0 frames)
+    1.45,            // _distortion (reduces range of enemy detection)
+    1.35,           // _evasion (0% chance to evade attacks)
+    1.2,            // _hotShot (0% more accurate fire)
+    1.75,            // _fov (20% wider field of view)
+    80,             // _bumper (reduces HP to 0 on collision)
+    850,            // _cloaking (negates enemy sensors for 0 frames)
     1.0,           // _enhancedArmory (0% increase in primary capacity)
-    .2,            // asteroidBreaker (breaks enemy ships at 100% enemy hp cost)
-    1.0,            // _veteranCrew (0% reduction in cooldown)
-	1,				//_enhancedCoolingUnit (+1 shield restore per step)
-	1,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
-	1				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+    1.0,            // _veteranCrew (0% reduction in cooldown) 1-2
+	11,				//_enhancedCoolingUnit (+1 shield restore per step)
+	17,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
+	4				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
 );
 	
     global.sprites = [];
@@ -186,7 +182,7 @@ function InitShips() {
         100,                                    // Hangar Y position
         "Raptor",                               // Ship Name
         "Interceptor",                          // Ship Class
-		global.passives[0],					// Ship Passives
+		global.passives[1],					// Ship Passives
         "Gen 5 Venuzian",                       // Ship Generation
 		true,									// Unlocked
 		false									// Destroyed

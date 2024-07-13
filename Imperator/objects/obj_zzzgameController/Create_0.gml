@@ -43,7 +43,6 @@ global.totalCompletedContracts = 0;
 global.killsThisRoom = 0;
 global.levelPoints = 0;
 global.isCloaked = false;
-global.asteroidBreaker = false;
 global.shieldActive = false;
 global.shieldGeneratorOverloaded = false;
 global.shieldActiveCharge = 0;
