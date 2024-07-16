@@ -3,9 +3,9 @@ if (getWayPoints) {
 waypoints = GetWaypoints(other.beaconIndex);
 }
 
-detection_range = 2000 / global.selectedShip.passives.distortion; // Detection range
+detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range
 if (global.isCloaked) {
-	detection_range = 0;
+	detectionRange = 0;
 }
 if (instance_exists(obj_player)) {
 	
@@ -15,7 +15,7 @@ if (instance_exists(obj_player)) {
 
     var dist_to_player = point_distance(x, y, player_x, player_y);
 
-    if (dist_to_player < detection_range) {
+    if (dist_to_player < detectionRange) {
 		
         if (dist_to_player > attack_range) {
             // Move towards the player
