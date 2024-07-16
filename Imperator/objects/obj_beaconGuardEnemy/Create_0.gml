@@ -8,4 +8,8 @@ current_waypoint = 0;
 hp = 1;
 cooldownTimer = 0;
 // Variables for AI behavior
-attack_range = 900; // Attack range
+attackRange = 900; // Attack range
+capacity = 40;
+plasmaSpeed = 80;
+fireRate = 2;
+detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range

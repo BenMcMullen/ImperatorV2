@@ -1,11 +1,14 @@
 // Create event of obj_enemy
-hp = 1;
+
 cooldownTimer = 0;
 
 // Variables for AI behavior
-detectionRange = 6000 / global.selectedShip.passives.distortion; // Detection range
-attack_range = 450; // Attack range
-
+detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range
+attackRange = 450; // Attack range
+capacity = 20;
+plasmaSpeed = 25;
+capacity = 20;
+fireRate = 5;
 // Calculate center of the map
 center_x = room_width / 2;
 center_y = room_height / 2;

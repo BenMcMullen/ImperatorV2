@@ -1,6 +1,5 @@
 // Step event of obj_enemy
 if (instance_exists(obj_player)) {
-	detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range
 	if (global.isCloaked) {
 		detectionRange = 0;
 	}
@@ -12,7 +11,7 @@ if (instance_exists(obj_player)) {
 
     if (dist_to_player < detectionRange) {
 		
-        if (dist_to_player > attack_range) {
+        if (dist_to_player > attackRange) {
             // Move towards the player
             var enemyDirection = point_direction(x, y, player_x, player_y);
             var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
@@ -69,7 +68,7 @@ if (instance_exists(obj_player)) {
 
             primaryDelay -= 1;
 
-            if (distanceToTarget < shootRange && angleToTarget < shootAngle && primaryDelay < 0) {
+            if (distanceToTarget < attackRange && angleToTarget < shootAngle && primaryDelay < 0) {
                 primaryDelay = fireRate;
 
                 if (cooldownTimer > 0) {
@@ -83,7 +82,7 @@ if (instance_exists(obj_player)) {
                 if (shotsFired < capacity && cooldownTimer == 0) {
                     audio_play_sound(snd_plasma, 10, false);
                     with (instance_create_layer(x, y, "Enemy", obj_enemyPlasma)) {
-                        speed = 25;
+                 
                         direction = directionToTarget + random_range(-2, 2);
                         image_angle = direction;
                     }

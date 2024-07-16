@@ -181,8 +181,10 @@ function InitLevels() {
 
     global.enemyTypes = [];
     global.enemyTypes[0] = "Rip Wing";
-    global.enemyTypes[1] = "Razer Claw";
-    global.enemyTypes[2] = "Eminator";
+	global.enemyTypes[1] = "Factory Rip Wing";
+    global.enemyTypes[2] = "Razer Claw";
+    global.enemyTypes[3] = "Eminator";
+	global.enemyTypes[4] = "Beacon Guard";
 
     // Define trees
     global.martianTreeLevels = [];

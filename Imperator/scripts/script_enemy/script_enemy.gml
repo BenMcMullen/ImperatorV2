@@ -2,47 +2,45 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 
-function GetEnemy(difficulty, playerRank, enemyType, planet, scale) {
+function GetEnemyStats(enemyType) {
+	
+	var rankDifficulty = global.playerInformation.rank.rankDifficulty;
+	var planetIndex = global.playerInformation.currentTreeIndex
+	var levelDifficulty = GetCurrentLevel().difficulty
 	
     var enemy = {
         shootRange: 0,
         plasmaSpeed: 0,
         capacity: 0,
         cooldownDuration: 0,
-        fireRate: 0,
         detectionRange: 0,
         hp: 0
     };
 
     // Assign values to the fields based on the parameters
     switch (enemyType) {
-        case "type1":
+        case "Rip Wing":
             enemy.shootRange = difficulty * scale;
             enemy.plasmaSpeed = playerRank * scale;
             enemy.capacity = 10 * scale;
             enemy.cooldownDuration = difficulty * 2;
-            enemy.fireRate = 5 / playerRank;
             enemy.detectionRange = 100 + (planet * scale);
             enemy.hp = 50 * difficulty;
             break;
-        case "type2":
-            enemy.shootRange = difficulty * scale * 1.5;
-            enemy.plasmaSpeed = playerRank * scale * 1.2;
-            enemy.capacity = 15 * scale;
-            enemy.cooldownDuration = difficulty * 1.5;
-            enemy.fireRate = 4 / playerRank;
-            enemy.detectionRange = 150 + (planet * scale);
-            enemy.hp = 70 * difficulty;
+		case "Factory Rip Wing":
+      
             break;
-        // Add more cases for different enemy types as needed
+        case "Razer Claw":
+        
+            break;
+         case "Eminator":
+          
+            break;
+		case "Beacon Guard":
+     
+            break;
         default:
-            enemy.shootRange = difficulty;
-            enemy.plasmaSpeed = playerRank;
-            enemy.capacity = 10;
-            enemy.cooldownDuration = 2;
-            enemy.fireRate = 1;
-            enemy.detectionRange = 100;
-            enemy.hp = 50;
+      
             break;
     }
 

@@ -13,11 +13,12 @@ function InitPlayer(){
 			
         };
     }
-	 function PlayerRank(_title, _rank, _commendationTarget) {
+	 function PlayerRank(_title, _rank, _commendationTarget, _rankDifficulty) {
         return {
 			title: _title,
 			rank: _rank,
 			commendationTarget: _commendationTarget,
+			rankDifficulty: _rankDifficulty
 			
         };
     }
@@ -34,12 +35,12 @@ function InitPlayer(){
 global.playerRanks = [];
 			
 // Adding player ranks individually
-global.playerRanks[0] = PlayerRank("Lieutenant", 1, 21);
-global.playerRanks[1] = PlayerRank("Captain", 2, 25);
-global.playerRanks[2] = PlayerRank("Major", 3, 31);
-global.playerRanks[3] = PlayerRank("Colonel", 4, 40);
-global.playerRanks[4] = PlayerRank("General", 5, 51);
-global.playerRanks[5] = PlayerRank("Venator", 6, 60);
+global.playerRanks[0] = PlayerRank("Lieutenant", 1, 21, 1);
+global.playerRanks[1] = PlayerRank("Captain", 2, 25, 1.2);
+global.playerRanks[2] = PlayerRank("Major", 3, 31, 1.4);
+global.playerRanks[3] = PlayerRank("Colonel", 4, 40, 1.7);
+global.playerRanks[4] = PlayerRank("General", 5, 51, 2.1);
+global.playerRanks[5] = PlayerRank("Venator", 6, 60, 2.5);
 
 			
 	// Define the struct for playerInformation. in the global scope

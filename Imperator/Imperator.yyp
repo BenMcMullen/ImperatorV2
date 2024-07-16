@@ -32,7 +32,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"Imperator",
   "resources":[
@@ -67,6 +67,7 @@
     {"id":{"name":"obj_debris","path":"objects/obj_debris/obj_debris.yy",},},
     {"id":{"name":"obj_endScreen","path":"objects/obj_endScreen/obj_endScreen.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
+    {"id":{"name":"obj_enemyGuardPlasma","path":"objects/obj_enemyGuardPlasma/obj_enemyGuardPlasma.yy",},},
     {"id":{"name":"obj_enemyPlasma","path":"objects/obj_enemyPlasma/obj_enemyPlasma.yy",},},
     {"id":{"name":"obj_escort","path":"objects/obj_escort/obj_escort.yy",},},
     {"id":{"name":"obj_escortExplosion","path":"objects/obj_escortExplosion/obj_escortExplosion.yy",},},

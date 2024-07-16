@@ -36,6 +36,7 @@ SCALE DAMAGE, SENSOR RANGE, FIRE RANGE, SPEED, QUANTITY, ENEMYTYPE BASED ON CURR
 MAYBE WHAT WE DO IS THIS- THERE ARE 4-5 SHIP CLASSES, WITH 3-6 SHIPS PER CLASS. SEVERAL POSSIBLE PASSIVE SETS, LETS SAY 10, BUT THEY ARE FAIRLY CLOSE TO EACH OTHER SO THAT THE SHIPS DON'T VARY TOO WILDLY
 SHIPS HAVE AN UPGRADE POINT LIMIT. LIMIT DEPENDS ON CLASS. CLASS SET BY RANK UNLOCKED AT.
 EACH UPGRADE HAS ASSIGNED UPGRADE POINTS.
+ENEMY TYPES ARE ASSIGNED TO A LEVEL SOMETIMES RANDOMLY, SOMETIMES PURPOSEFULLY. JUST DEPENDS ON THE LEVEL, SOME LEVELS HAVE SPECIFIC TYPERS
 
 
 STEALTH MISSION, COMPLETE WITH LIMITED # OF KILLS, PERHAPS EVEN DETECTION. 
@@ -43,6 +44,7 @@ COMPLWTING SOME MISSIONS WITHOUT POINT REWARDS?
 
 
 LEVE TYPE IDEAS: 
+hunting: AFter certain time/number of kills new spawns. 
 Timed challenge, destroy objects within time frame. No enemies neccesarily, at least at the lower elvels. 
 Points are awareded based on speed.
 
@@ -58,4 +60,5 @@ Mission type: Timed kill challenge
 	diffuclty scaling time
 	difficulty scaling enemy weapons and armor
 	difficulty scaling enemy quantity?
-
+	
+ I should probably only have 8 rooms per planet, or however many level types there are. these can be easily re-used per level once i procedurally generate enemies and other objects.

@@ -80,7 +80,7 @@ function InitShips() {
     "Interceptor",      // _class
     "A",            // _tier
     2,            // _distortion (50% reduces range of enemy detection) 1-2
-    2,           // _evasion (15% chance to evade attacks) 1-2
+    1.15,           // _evasion (15% chance to evade attacks) 1-2
     2,            // _hotShot (90% more accurate fire) 1-2
     1,            // _fov (90% wider field of view) 1 is base. 1-2
     20,             // _bumper (reduces HP to 20 on collision) 20-100
