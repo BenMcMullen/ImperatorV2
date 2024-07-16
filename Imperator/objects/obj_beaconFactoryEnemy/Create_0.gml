@@ -3,7 +3,7 @@ hp = 1;
 cooldownTimer = 0;
 
 // Variables for AI behavior
-detection_range = 6000 / global.selectedShip.passives.distortion; // Detection range
+detectionRange = 6000 / global.selectedShip.passives.distortion; // Detection range
 attack_range = 450; // Attack range
 
 // Calculate center of the map

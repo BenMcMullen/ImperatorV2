@@ -1,8 +1,8 @@
 // Step event of obj_enemy
 if (instance_exists(obj_player)) {
-	detection_range = 2000 / global.selectedShip.passives.distortion; // Detection range
+	detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range
 	if (global.isCloaked) {
-		detection_range = 0;
+		detectionRange = 0;
 	}
     var player = instance_find(obj_player, 0); // Reference to the player object
     var player_x = player.x;
@@ -10,7 +10,7 @@ if (instance_exists(obj_player)) {
 
     var dist_to_player = point_distance(x, y, player_x, player_y);
 
-    if (dist_to_player < detection_range) {
+    if (dist_to_player < detectionRange) {
 		
         if (dist_to_player > attack_range) {
             // Move towards the player
