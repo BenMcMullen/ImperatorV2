@@ -68,14 +68,9 @@ function InitLevels() {
         };
     }
 
-    function DifficultyConfig(_difficulty, _hull, _engine, _primaryWeapon, _shields, _sensors) {
+    function DifficultyConfig(_difficultyModifier) {
         return {
-            difficulty: _difficulty,
-            hull: _hull,
-            engine: _engine,
-            primaryWeapon: _primaryWeapon,
-            shields: _shields,
-            sensors: _sensors
+            difficultyModifier: _difficultyModifier
         };
     }
     
@@ -94,15 +89,14 @@ function InitLevels() {
         };
     }
 	
-	function BeaconLevelTypeConfig(_type, _quantity, _beaconType, _beaconHp, _factoryHp,  _factoryResponseQuantity, _enemySpeed) {
+	function BeaconLevelTypeConfig(_type, _quantity, _beaconType, _beaconHp, _factoryHp,  _factoryResponseQuantity) {
         return {
             type: _type,
 			quantity: _quantity,
 			beaconType: _beaconType,
 			beaconHp: _beaconHp,
 			factoryHp: _factoryHp,
-			factoryResponseQuantity: _factoryResponseQuantity,
-			enemySpeed: _enemySpeed
+			factoryResponseQuantity: _factoryResponseQuantity
         };
     }
 
@@ -142,8 +136,7 @@ function InitLevels() {
 		"Kinetic",
 		100,
 		500,
-		10,
-		8
+		10
 		
     );
 
@@ -153,8 +146,7 @@ function InitLevels() {
 		"Kinetic",
 		200,
 		700,
-		20,
-		11
+		20
     );
 	
 	
@@ -162,21 +154,19 @@ function InitLevels() {
     global.difficulties = [];
     // Adding sample difficulties
     global.difficulties[0] = DifficultyConfig(
-        1, // Easy
-        global.hulls[0], 
-        global.engines[0], 
-        global.primaryWeapons[0], 
-        global.shields[0], 
-        global.sensors[0]
+        1
     );
 
     global.difficulties[1] = DifficultyConfig(
-        2, // Medium
-        global.hulls[0], 
-        global.engines[0], 
-        global.primaryWeapons[0], 
-        global.shields[0], 
-        global.sensors[0]
+        1.2
+    );
+	
+	global.difficulties[2] = DifficultyConfig(
+        1.4
+    );
+	
+	global.difficulties[3] = DifficultyConfig(
+        1.8
     );
 
     global.enemyTypes = [];

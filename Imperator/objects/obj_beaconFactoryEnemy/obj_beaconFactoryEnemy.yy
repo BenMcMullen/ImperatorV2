@@ -40,7 +40,6 @@
     {"$GMObjectProperty":"v1","%Name":"debris","filters":[],"listItems":[],"multiselect":false,"name":"debris","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"movingToTarget","filters":[],"listItems":[],"multiselect":false,"name":"movingToTarget","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"shotsFired","filters":[],"listItems":[],"multiselect":false,"name":"shotsFired","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"cooldownDuration","filters":[],"listItems":[],"multiselect":false,"name":"cooldownDuration","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"30","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"shootAngle","filters":[],"listItems":[],"multiselect":false,"name":"shootAngle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"360","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"primaryDelay","filters":[],"listItems":[],"multiselect":false,"name":"primaryDelay","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
