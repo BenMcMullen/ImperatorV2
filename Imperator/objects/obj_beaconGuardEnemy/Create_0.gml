@@ -5,11 +5,15 @@
 getWayPoints = true;
 waypoints = [];
 current_waypoint = 0;
-hp = 1;
 cooldownTimer = 0;
+
 // Variables for AI behavior
-attackRange = 900; // Attack range
-capacity = 40;
-plasmaSpeed = 80;
-fireRate = 2;
-detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range
+
+enemy = "Beacon Guard";
+attackRange = GetEnemyStats(enemy).shootRange; // Attack range
+hp = GetEnemyStats(enemy).hp;
+capacity = GetEnemyStats(enemy).capacity;
+fireRate = GetEnemyStats(enemy).fireRate;
+enemySpeed = 80;
+cooldownDuration = GetEnemyStats(enemy).cooldownDuration;
+detectionRange = GetEnemyStats(enemy).detectionRange / global.selectedShip.passives.distortion; // Detection range

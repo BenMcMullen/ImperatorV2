@@ -130,9 +130,7 @@ function WeakenNextBeacon() {
 	newShieldedBeacon.shieldDown = true;
 	global.activeBeacon = random_index;
 	var enemy = instance_create_layer(x, y, "Beacons", obj_beaconGuardEnemy);
-	enemy.enemySpeed = (GetCurrentLevel().levelType.enemySpeed * 2)
 	enemy.beaconIndex = global.activeBeacon;
-	enemy.enemySpeed = 15
 }
 }
 

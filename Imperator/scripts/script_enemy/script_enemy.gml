@@ -6,39 +6,55 @@ function GetEnemyStats(enemyType) {
 	
 	var rankDifficulty = global.playerInformation.rank.rankDifficulty;
 	var planetIndex = global.playerInformation.currentTreeIndex
-	var levelDifficulty = GetCurrentLevel().difficulty
+	var levelDifficulty = GetCurrentLevel().difficulty.difficultyModifier
 	
+	detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range
+attackRange = 450; // Attack range
+capacity = 20;
+capacity = 20;
+fireRate = 5;
     var enemy = {
         shootRange: 0,
-        plasmaSpeed: 0,
+        fireRate: 0,
         capacity: 0,
         cooldownDuration: 0,
         detectionRange: 0,
         hp: 0
     };
+	
 
     // Assign values to the fields based on the parameters
     switch (enemyType) {
         case "Rip Wing":
-            enemy.shootRange = difficulty * scale;
-            enemy.plasmaSpeed = playerRank * scale;
-            enemy.capacity = 10 * scale;
-            enemy.cooldownDuration = difficulty * 2;
-            enemy.detectionRange = 100 + (planet * scale);
-            enemy.hp = 50 * difficulty;
+         
             break;
+			
 		case "Factory Rip Wing":
-      
+			enemy.shootRange = (450 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 6 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((20 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = 30 / (rankDifficulty * levelDifficulty);
+            enemy.detectionRange = 2000 + ((1000 * rankDifficulty) * levelDifficulty);
+            enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
             break;
+			
         case "Razer Claw":
         
             break;
+			
          case "Eminator":
           
             break;
+			
 		case "Beacon Guard":
-     
+     		enemy.shootRange = (900 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 3 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((40 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = 15 / (rankDifficulty * levelDifficulty);
+            enemy.detectionRange = 2000 + ((500 * rankDifficulty) * levelDifficulty);
+            enemy.hp = round((10 * rankDifficulty) * levelDifficulty)
             break;
+			
         default:
       
             break;

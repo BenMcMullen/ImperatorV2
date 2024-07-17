@@ -19,8 +19,8 @@ if (instance_exists(obj_player)) {
         if (dist_to_player > attackRange) {
             // Move towards the player
             var enemyDirection = point_direction(x, y, player_x, player_y);
-            var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
-            var move_y = lengthdir_y(other.enemySpeed, enemyDirection);
+            var move_x = lengthdir_x(enemySpeed, enemyDirection);
+            var move_y = lengthdir_y(enemySpeed, enemyDirection);
 
             // Update position
             x += move_x;
@@ -28,8 +28,8 @@ if (instance_exists(obj_player)) {
         } else {
 			if (dist_to_player > 300) {
 			  var enemyDirection = point_direction(x, y, player_x, player_y);
-            var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
-            var move_y = lengthdir_y(other.enemySpeed, enemyDirection);
+            var move_x = lengthdir_x(enemySpeed, enemyDirection);
+            var move_y = lengthdir_y(enemySpeed, enemyDirection);
 
             // Update position
             x += move_x;
@@ -88,14 +88,14 @@ if (instance_exists(obj_player)) {
         var target_y = waypoints[current_waypoint][1];
         var dist_to_waypoint = point_distance(x, y, target_x, target_y);
 
-        if (dist_to_waypoint < other.enemySpeed) {
+        if (dist_to_waypoint < enemySpeed) {
             // Move to the next waypoint
             current_waypoint = (current_waypoint + 1) % array_length(waypoints);
         } else {
             // Move towards the current waypoint
             var enemyDirection = point_direction(x, y, target_x, target_y);
-            var move_x = lengthdir_x(other.enemySpeed, enemyDirection);
-            var move_y = lengthdir_y(other.enemySpeed, enemyDirection);
+            var move_x = lengthdir_x(enemySpeed, enemyDirection);
+            var move_y = lengthdir_y(enemySpeed, enemyDirection);
 
             // Update position
             x += move_x;
