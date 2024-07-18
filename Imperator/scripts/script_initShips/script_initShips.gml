@@ -163,7 +163,7 @@ function InitShips() {
         100,                                    // Hangar Y position
         "Wasp",                                 // Ship Name
         "Scout",                                // Ship Class
-		global.passives[0],					// Ship Passives
+		global.passives[0],						// Ship Passives
         "Gen 4 Mercurian",                      // Ship Generation
 		true,									// Unlocked
 		false									// Destroyed
@@ -173,7 +173,7 @@ function InitShips() {
         global.hulls[1],                        // Hull
         global.engines[1],                      // Engine
         global.primaryWeapons[1],               // Primary Weapon
-        global.secondaryWeapons[0],									// Secondary Weapon
+        global.secondaryWeapons[0],				// Secondary Weapon
 		global.shields[0],                      // Shields
 		global.sensors[2],                      // Sensors
         true,                                   // Is Owned
@@ -182,26 +182,26 @@ function InitShips() {
         100,                                    // Hangar Y position
         "Raptor",                               // Ship Name
         "Interceptor",                          // Ship Class
-		global.passives[1],					// Ship Passives
+		global.passives[1],						// Ship Passives
         "Gen 5 Venuzian",                       // Ship Generation
 		true,									// Unlocked
 		false									// Destroyed
     );
 
     global.playerShips[2] = ShipConfig(
-        noone,										// Hull
-        noone,										// Engine
-        noone,										// Primary Weapon
-        noone,										// Secondary Weapon
-		noone,										// Shields
-		noone,										// Sensors
+        noone,									// Hull
+        noone,									// Engine
+        noone,									// Primary Weapon
+        noone,									// Secondary Weapon
+		noone,									// Shields
+		noone,									// Sensors
         true,                                   // Is Owned
         global.sprites[2],						// Sprites
         300,                                    // Hangar X position
         100,                                    // Hangar Y position
         "Sparrow",                              // Ship Name
         "Frigate",								// Ship Class
-		global.passives[0],					// Ship Passives
+		global.passives[0],						// Ship Passives
         "Gen 3 Venuzian",                       // Ship Generation
 		true,									// Unlocked
 		false									// Destroyed

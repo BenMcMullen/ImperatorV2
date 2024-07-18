@@ -1,8 +1,9 @@
 function InitSystems() {
     
     // Function to define system status configurations
-    function SystemStatusConfig(_system, _name, _cost, _unlocked, _destroyed, _basic, _isOwned, _quantity) {
+    function SystemStatusConfig( _class, _system, _name, _cost, _unlocked, _destroyed, _basic, _isOwned, _quantity) {
         return {
+			class: _class, 
             system: _system,
             name: _name,
             cost: _cost,
@@ -113,7 +114,8 @@ function InitSystems() {
     global.primaryWeapons = [];
 
     // Primary Weapons System Status
-    global.systemStatus[0] = SystemStatusConfig(
+    global.systemStatus[0] = SystemStatusConfig( 
+		"Any",	// ship class
         "primaryWeapons",
         "Plasma Cannon",
         500,
@@ -124,7 +126,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[1] = SystemStatusConfig(
+    global.systemStatus[1] = SystemStatusConfig( 
+		"Any",	// ship class
         "primaryWeapons",
         "Rail Gun",
         750,
@@ -135,7 +138,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[2] = SystemStatusConfig(
+    global.systemStatus[2] = SystemStatusConfig( 
+		"Any",	// ship class
         "primaryWeapons",
         "Beam Cannon",
         401,
@@ -146,7 +150,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[3] = SystemStatusConfig(
+    global.systemStatus[3] = SystemStatusConfig( 
+		"Any",	// ship class
         "primaryWeapons",
         "New Weapon",
         401,
@@ -227,7 +232,8 @@ function InitSystems() {
     global.shields = [];
 
     // Shields System Status
-    global.systemStatus[4] = SystemStatusConfig(
+    global.systemStatus[4] = SystemStatusConfig( 
+		"Any",	// ship class
         "shields",
         "Basic Shields",
         500,
@@ -238,7 +244,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[5] = SystemStatusConfig(
+    global.systemStatus[5] = SystemStatusConfig( 
+		"Any",	// ship class
         "shields",
         "Advanced Shields",
         750,
@@ -249,7 +256,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[6] = SystemStatusConfig(
+    global.systemStatus[6] = SystemStatusConfig( 
+		"Any",	// ship class
         "shields",
         "Elite Shields",
         1000,
@@ -314,7 +322,8 @@ global.shields[2] = ShieldConfig(
     global.hulls = [];
 
 // Adding system status configurations for hulls
-global.systemStatus[26] = SystemStatusConfig(
+global.systemStatus[26] = SystemStatusConfig( 
+	"Any",	// ship class
     "hulls",
     "Standard Hull",
     500,
@@ -325,7 +334,8 @@ global.systemStatus[26] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[27] = SystemStatusConfig(
+global.systemStatus[27] = SystemStatusConfig( 
+	"Any",	// ship class
     "hulls",
     "Advanced Hull",
     500,
@@ -336,7 +346,8 @@ global.systemStatus[27] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[28] = SystemStatusConfig(
+global.systemStatus[28] = SystemStatusConfig( 
+	"Any",	// ship class
     "hulls",
     "Frigate Hull",
     500,
@@ -380,7 +391,8 @@ global.hulls[2] = HullConfig(
 global.engines = [];
 
 // Adding system status configurations for engines
-global.systemStatus[0] = SystemStatusConfig(
+global.systemStatus[0] = SystemStatusConfig(	
+	"Any",	// ship class
     "engines",
     "Standard Engine",
     500,
@@ -391,7 +403,8 @@ global.systemStatus[0] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[29] = SystemStatusConfig(
+global.systemStatus[29] = SystemStatusConfig( 
+	"Any",	// ship class
     "engines",
     "Advanced Engine",
     500,
@@ -402,7 +415,8 @@ global.systemStatus[29] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[30] = SystemStatusConfig(
+global.systemStatus[30] = SystemStatusConfig( 
+	"Any",	// ship class
     "engines",
     "Frigate Engine",
     500,
@@ -448,7 +462,8 @@ global.engines[2] = EngineConfig(
 global.secondaryWeapons = [];
 
 // Adding system status configurations for secondary weapons
-global.systemStatus[22] = SystemStatusConfig(
+global.systemStatus[22] = SystemStatusConfig( 
+	"Any",	// ship class
     "secondaryWeapons",
     "Missile Launcher",
     500,
@@ -459,7 +474,8 @@ global.systemStatus[22] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[23] = SystemStatusConfig(
+global.systemStatus[23] = SystemStatusConfig( 
+	"Any",	// ship class
     "secondaryWeapons",
     "Swarm Bomb",
     500,
@@ -470,7 +486,8 @@ global.systemStatus[23] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[24] = SystemStatusConfig(
+global.systemStatus[24] = SystemStatusConfig( 
+	"Any",	// ship class
     "secondaryWeapons",
     "Energy Cannon",
     500,
@@ -481,7 +498,8 @@ global.systemStatus[24] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[25] = SystemStatusConfig(
+global.systemStatus[25] = SystemStatusConfig( 
+	"Any",	// ship class
     "secondaryWeapons",
     "New Secondary",
     500,
@@ -561,7 +579,8 @@ global.secondaryWeapons[3] = SecondaryWeaponConfig(
 global.sensors = [];
 
 // Adding system status configurations for sensors
-global.systemStatus[19] = SystemStatusConfig(
+global.systemStatus[19] = SystemStatusConfig( 
+	"Any",	// ship class
     "sensors",
     "Standard Sensor",
     500,
@@ -572,7 +591,8 @@ global.systemStatus[19] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[20] = SystemStatusConfig(
+global.systemStatus[20] = SystemStatusConfig( 
+	"Any",	// ship class
     "sensors",
     "Advanced Sensor",
     500,
@@ -583,7 +603,8 @@ global.systemStatus[20] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[21] = SystemStatusConfig(
+global.systemStatus[21] = SystemStatusConfig( 
+	"Any",	// ship class
     "sensors",
     "Hyper Sensor",
     500,
@@ -594,14 +615,15 @@ global.systemStatus[21] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[22] = SystemStatusConfig(
+global.systemStatus[22] = SystemStatusConfig( 
+	"Interceptor",	// ship class
     "sensors",
     "Integrated Sensor",
     500,
-    false,    // unlocked
+    true,    // unlocked
     false,   // destroyed
     true,    // basic
-    false,    // isOwned
+    true,    // isOwned
     1
 );
 

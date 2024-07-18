@@ -154,3 +154,15 @@ function GetPassiveValue(passiveName) {
             return 0; // Return a default value or handle the error accordingly
     }
 }
+
+function DisplayGarageSystem(systemToDisplay) {
+	//this checks that the class of the system matches the class of the ship, or the class is any
+	var display = false;
+	if ((string(systemToDisplay.systemStatus.class) == string(global.selectedShip.shipClass)) || string(systemToDisplay.systemStatus.class) == "Any") {
+		display = true;	
+	}
+	
+	
+	return display;
+	
+}

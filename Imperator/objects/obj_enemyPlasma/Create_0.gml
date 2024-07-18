@@ -1,4 +1,4 @@
 //create step of obj_enemyPlasma
-damage = 5;
+damage =  round((5 * rankDifficulty) * levelDifficulty);;
 collision = false;
 speed = 25;

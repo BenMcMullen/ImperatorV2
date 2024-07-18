@@ -1,4 +1,4 @@
 //create step of obj_enemyGuardPlasma
-damage = 5;
+damage =  round((10 * rankDifficulty) * levelDifficulty);;
 collision = false;
-speed = 280;
+speed = 50;
