@@ -1,1 +1,1 @@
-global.isCloaked = false;
+global.playerCloaked = false;

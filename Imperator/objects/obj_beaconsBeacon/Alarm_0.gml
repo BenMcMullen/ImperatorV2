@@ -4,7 +4,6 @@ if (current_instance <= GetCurrentLevel().levelType.factoryResponseQuantity) {
     // Create the object instance
 	with (obj_beaconsFactory) {
 	var factoryEnemy =  instance_create_layer(x + 300, y + 300, "Factory", obj_beaconFactoryEnemy);
-	factoryEnemy.enemySpeed = GetCurrentLevel().levelType.enemySpeed
 	}
 
     // Increment the current instance index

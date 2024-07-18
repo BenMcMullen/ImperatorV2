@@ -6,6 +6,10 @@ if (!global.musicPlaying) {
     global.currentMusic = audio_play_sound(snd_level1, 1, true);
     global.musicPlaying = true;
 }
+if (canBoost && global.playerEngineBoostCharge == 0) {
+canBoost = false;
+alarm[2] = 30
+}
 
 var ship = global.selectedShip;
 
@@ -49,11 +53,15 @@ if (moving_to_target) {
     var moveY = keyDown - keyUp;
     var moveSpeed = ship.engine.speed;
 
-    if (keyBoosting) {
+    if (keyBoosting && global.playerEngineBoostCharge > 0 && canBoost) {
+		global.playerEngineBoosting = true;
         // Increase movement speed when boosting
         sprite_index = ship.sprites.spriteBoosting;
         moveSpeed *= ship.engine.boostSpeed; // You can adjust the multiplier as needed
     }
+	else {
+		global.playerEngineBoosting = false;	
+	}
 
     // Calculate horizontal and vertical speeds and movespeed
     hsp = moveX * moveSpeed;
@@ -90,14 +98,14 @@ if (moving_to_target) {
             vsp = 0;
         }
     }
-	if (global.isCloaked) {
+	if (global.playerCloaked) {
 		sprite_index = ship.sprites.spriteCloaked;
 		if (mouse_check_button_pressed(mb_any) || keyboard_check_pressed(vk_space))	{
-	global.isCloaked = false;
+	global.playerCloaked = false;
 	}
 	}
 	else {
-    if (keyBoosting) {
+    if (keyBoosting && global.playerEngineBoostCharge > 0 && canBoost) {
         sprite_index = ship.sprites.spriteBoosting;
     } else if (moveX != 0 || moveY != 0) {
         sprite_index = ship.sprites.spriteMoving;

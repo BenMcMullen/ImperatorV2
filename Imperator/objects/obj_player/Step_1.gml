@@ -12,8 +12,10 @@ if (global.selectedShip.hull.hp <= 0)
 	global.kills =- global.killsThisRoom;
 	global.selectedShip.hull.hp = global.selectedShip.hull.maxHp;
 	global.selectedShip.shields.shieldStatic = global.selectedShip.shields.shieldActiveConsume;
-	instance_destroy(obj_playerActiveShields)
+	instance_destroy(obj_playerShields);
 	instance_change(obj_playerExplosion,true);
+	instance_destroy(obj_playerEngines);
+	instance_destroy(obj_playerWeapons);
 	
 	
 }

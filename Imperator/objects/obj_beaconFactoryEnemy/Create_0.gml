@@ -3,13 +3,14 @@
 cooldownTimer = 0;
 
 // Variables for AI behavior
-detectionRange = 2000 / global.selectedShip.passives.distortion; // Detection range
-attackRange = 450; // Attack range
-capacity = 20;
-plasmaSpeed = 25;
-capacity = 20;
-fireRate = 5;
-cooldownDuration = 30;
+enemy = "Factory Wasp";
+attackRange = GetEnemyStats(enemy).shootRange; // Attack range
+hp = GetEnemyStats(enemy).hp;
+capacity = GetEnemyStats(enemy).capacity;
+fireRate = GetEnemyStats(enemy).fireRate;
+enemySpeed = GetEnemyStats(enemy).enemySpeed;
+cooldownDuration = GetEnemyStats(enemy).cooldownDuration;
+
 // Calculate center of the map
 center_x = room_width / 2;
 center_y = room_height / 2;

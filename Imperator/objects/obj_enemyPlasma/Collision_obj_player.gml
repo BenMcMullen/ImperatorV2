@@ -12,15 +12,15 @@ if (random(1) < evasionProbability && collision == false) {
 	collision = true;
     with (other) {
         with (obj_zzzHUD) {
-            if (global.shieldGeneratorOverloaded) {
+            if (global.playerShieldGeneratorOverloaded) {
                global.selectedShip.hull.hp -= enemyDamage;
 			   loseHpScale = 2;
 				flash = 5;
 			}
-			else if (global.shieldActive) {
-				show_debug_message(global.shieldActiveCharge)
-				global.shieldActiveCharge -= (enemyDamage - global.selectedShip.passives.activeEnergyDispersionUnit)
-				show_debug_message(global.shieldActiveCharge)
+			else if (global.playerShieldActive) {
+				show_debug_message(global.playerShieldActiveCharge)
+				global.playerShieldActiveCharge -= (enemyDamage - global.selectedShip.passives.activeEnergyDispersionUnit)
+				show_debug_message(global.playerShieldActiveCharge)
 			}
 			else {
 				global.selectedShip.hull.hp -= (enemyDamage - global.selectedShip.shields.shieldStaticReduction)

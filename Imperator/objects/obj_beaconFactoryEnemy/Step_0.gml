@@ -1,6 +1,7 @@
 // Step event of obj_enemy
 if (instance_exists(obj_player)) {
-	if (global.isCloaked) {
+	var detectionRange = GetEnemyStats(enemy).detectionRange / global.selectedShip.passives.distortion; // Detection range
+	if (global.playerCloaked) {
 		detectionRange = 0;
 	}
     var player = instance_find(obj_player, 0); // Reference to the player object

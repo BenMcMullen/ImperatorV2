@@ -17,7 +17,7 @@ minimap_height = 200; // Adjust as needed
 //DO NOT CHANGE THESE VALUES. THESE ARE THE DEFAULT VALUES REQUIRED FOR THE GAME 
 //TO START IN THE CORRECT PLACE AND ORDER
 
- //START OFF WITH THE WASP.
+ //START OFF WITH THE FINCH.
  global.selectedShip = global.playerShips[0];
  global.shoppingSystem = "";
  global.garageUpgradingSystem = "";
@@ -42,10 +42,12 @@ global.totalCompletedContracts = 0;
 
 global.killsThisRoom = 0;
 global.levelPoints = 0;
-global.isCloaked = false;
-global.shieldActive = false;
-global.shieldGeneratorOverloaded = false;
-global.shieldActiveCharge = 0;
+global.playerCloaked = false;
+global.playerShieldActive = false;
+global.playerShieldGeneratorOverloaded = false;
+global.playerShieldActiveCharge = 0;
+global.playerEngineBoosting = false;
+global.playerEngineBoostCharge = 0;
 
 //Tracking the shop/garage page's selected system and displayed descriptions
 global.lastClickedShopSystem = noone;

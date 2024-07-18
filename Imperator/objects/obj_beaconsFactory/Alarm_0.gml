@@ -2,10 +2,7 @@
 if (current_instance <= (GetCurrentLevel().levelType.factoryResponseQuantity * 4)) {
 	
     // Create the object instance
-var boostedSpeed = (GetCurrentLevel().levelType.enemySpeed * 2)
-show_debug_message(boostedSpeed);
    var factory = instance_create_layer(x + 300, y + 300, "Factory", obj_beaconFactoryEnemy);
-	factory.enemySpeed = boostedSpeed
     // Increment the current instance index
     current_instance += 1;
 	

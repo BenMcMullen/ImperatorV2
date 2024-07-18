@@ -98,13 +98,15 @@ function InitSystems() {
     }
 
     // Function to define engine configurations
-    function EngineConfig(_id, _name, _boostSpeed, _speed, _cooldown, _systemSprite, _systemStatus) {
+    function EngineConfig(_id, _name, _boostSpeed, _speed, _cooldown, _burnup, _capacity, _systemSprite, _systemStatus) {
         return {
             id: _id,
             name: _name,
             boostSpeed: _boostSpeed,
             speed: _speed,
             cooldown: _cooldown,
+			burnup: _burnup,
+			capacity: _capacity,
             systemSprite: _systemSprite,
             systemStatus: _systemStatus
         };
@@ -434,6 +436,8 @@ global.engines[0] = EngineConfig(
     3.0,                    // Boost Speed
     3.0,                    // Speed
     0,                      // Cooldown
+	2,						// Burnup
+	1500,					// Fuel Capacity
     spr_shopUpgrade,        // Shop Sprite
     global.systemStatus[0]  // System Status
 );
@@ -443,7 +447,9 @@ global.engines[1] = EngineConfig(
     "Advanced Engine",      // Name
     4.0,                    // Boost Speed
     5.0,                    // Speed
-    0,                      // Cooldown
+    1,                      // Cooldown
+	2,						// Burnup
+	1500,					// Fuel Capacity
     spr_basicTest_1,        // Shop Sprite
     global.systemStatus[29] // System Status
 );
@@ -453,7 +459,9 @@ global.engines[2] = EngineConfig(
     "Frigate Engine",       // Name
     2.5,                    // Boost Speed
     2.0,                    // Speed
-    0,                      // Cooldown
+    1,                      // Cooldown
+	2,						// Burnup
+	1500,					// Fuel Capacity
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[30] // System Status
 );

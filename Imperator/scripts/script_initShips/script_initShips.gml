@@ -113,18 +113,18 @@ function InitShips() {
     // Adding ship sprite configurations individually
     global.sprites[0] = ShipSpriteConfig(
         1,
-        "WASP",             // Ship Name
-        spr_waspStatic,     // Static sprite
-        spr_waspBoosting,   // Boosting sprite
-        spr_waspMoving,     // Moving sprite
-		spr_waspCloaked,	// Cloaked sprite
-        spr_waspGarage,     // Garage sprite
-        spr_waspHangar      // Hangar Sprite
+        "Finch",             // Ship Name
+        spr_finchStatic,     // Static sprite
+        spr_finchBoosting,   // Boosting sprite
+        spr_finMoving,     // Moving sprite
+		spr_finchCloaked,	// Cloaked sprite
+        spr_finchGarage,     // Garage sprite
+        spr_finchHangar      // Hangar Sprite
     );
 
     global.sprites[1] = ShipSpriteConfig(
         2,
-        "RAPTOR",             // Ship Name
+        "Raptor",             // Ship Name
         spr_raptorStatic,     // Static sprite
         spr_raptorBoosting,   // Boosting sprite
         spr_raptorMoving,     // Moving sprite
@@ -139,7 +139,7 @@ function InitShips() {
         spr_sparrowStatic,     // Static sprite
         spr_sparrowBoosting,   // Boosting sprite
         spr_sparrowMoving,     // Moving sprite
-		spr_waspCloaked,	// Cloaked sprite
+		spr_finchCloaked,	// Cloaked sprite
         spr_sparrowGarage,     // Garage sprite
         spr_sparrowHangar      // Hangar Sprite
     );
@@ -161,7 +161,7 @@ function InitShips() {
         global.sprites[0],                      // Sprites
         100,                                    // Hangar X position
         100,                                    // Hangar Y position
-        "Wasp",                                 // Ship Name
+        "Finch",                                 // Ship Name
         "Scout",                                // Ship Class
 		global.passives[0],						// Ship Passives
         "Gen 4 Mercurian",                      // Ship Generation

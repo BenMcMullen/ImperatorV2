@@ -128,7 +128,7 @@ if (mouse_check_button(mb_left) && (primaryCooldownTimer <= 0) && (primaryDelay 
     primaryDelay = global.selectedShip.primaryWeapon.delay;
     audio_play_sound(global.selectedShip.primaryWeapon.audio, 0, false);
     
-    with (instance_create_layer(x, y, "Weapons", obj_primaryWeapon)) {
+    with (instance_create_layer(x, y, "Player", obj_primaryWeapon)) {
         speed = global.selectedShip.primaryWeapon.shotSpeed;
         
         var accuracy_min = global.selectedShip.primaryWeapon.accuracy[0] / global.selectedShip.passives.hotShot;
@@ -165,7 +165,7 @@ if (mouse_check_button(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryD
     // Fire Secondary weapon
     secondaryDelay = global.selectedShip.secondaryWeapon.delay;
     audio_play_sound(global.selectedShip.secondaryWeapon.audio, 0, false);
-    with (instance_create_layer(x, y, "Weapons", obj_secondaryWeapon)) {
+    with (instance_create_layer(x, y, "Player", obj_secondaryWeapon)) {
         speed = global.selectedShip.secondaryWeapon.shotSpeed;
         direction = other.image_angle + random_range(global.selectedShip.secondaryWeapon.accuracy[0] * global.selectedShip.passives.hotShot,
             global.selectedShip.secondaryWeapon.accuracy[1] * global.selectedShip.passives.hotShot);

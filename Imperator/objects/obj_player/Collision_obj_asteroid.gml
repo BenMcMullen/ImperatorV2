@@ -1,6 +1,6 @@
 //collision
 with (other) {
-	if (global.shieldActive) {
+	if (global.playerShieldActive) {
 		ScreenShake(50,25)
 		hp = 0;
 	}

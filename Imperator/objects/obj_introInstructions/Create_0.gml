@@ -1,9 +1,9 @@
 // Constants for text box dimensions
-shipSprite = layer_sprite_get_id("IntroAssets", "spr_waspStatic");
+shipSprite = layer_sprite_get_id("IntroAssets", "spr_finchStatic");
 endtext[0] = "Hello there! I'm Nebula, your on-board flight computer. ";
 endtext[1] = "Please allow me to share the details of your spacecraft.";
 endtext[2] = "For now, don't worry about running out of fuel or cooking your engines.";
-endtext[3] = "Imperator Blackthorne has given you Venuzian 4th generation Acus Wasp!";
+endtext[3] = "Imperator Blackthorne has given you Venuzian 4th generation Acus Finch!";
 endtext[4] = "If you need to squeeze a little extra speed out of this archaic beauty,";
 endtext[5] = "you can hold down on your booster throttle. [SPACEBAR] ";
 endtext[6] = "Your primary weapon is concentrated plasma.";

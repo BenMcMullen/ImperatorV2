@@ -2,8 +2,9 @@
 if (getWayPoints) {
 waypoints = GetWaypoints(other.beaconIndex);
 }
-
-if (global.isCloaked) {
+var detectionRange = GetEnemyStats(enemy).detectionRange / global.selectedShip.passives.distortion; // Detection range
+	
+if (global.playerCloaked) {
 	detectionRange = 0;
 }
 if (instance_exists(obj_player)) {
