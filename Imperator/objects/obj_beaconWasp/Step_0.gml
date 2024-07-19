@@ -40,26 +40,11 @@ if (instance_exists(obj_player)) {
             var playerY = player.y;
             var distToPlayer = point_distance(x, y, playerX, playerY);
 
-            if (instance_exists(obj_escortShip)) {
-                var escort = instance_find(obj_escortShip, 0);
-                var escortX = escort.x;
-                var escortY = escort.y;
-                var distToEscort = point_distance(x, y, escortX, escortY);
-
-                if (distToPlayer < distToEscort) {
-                    targetX = playerX;
-                    targetY = playerY;
-                    targetDistance = distToPlayer;
-                } else {
-                    targetX = escortX;
-                    targetY = escortY;
-                    targetDistance = distToEscort;
-                }
-            } else {
+          
                 targetX = playerX;
                 targetY = playerY;
                 targetDistance = distToPlayer;
-            }
+            
 
             // Calculate direction towards the target
             var directionToTarget = point_direction(x, y, targetX, targetY);
@@ -82,7 +67,7 @@ if (instance_exists(obj_player)) {
 
                 if (shotsFired < capacity && cooldownTimer == 0) {
                     audio_play_sound(snd_plasma, 10, false);
-                    with (instance_create_layer(x, y, "Enemy", obj_enemyPlasma)) {
+                    with (instance_create_layer(x, y, "Enemy", obj_enemyWaspPlasma)) {
                  
                         direction = directionToTarget + random_range(-2, 2);
                         image_angle = direction;

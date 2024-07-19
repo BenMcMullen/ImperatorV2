@@ -13,9 +13,7 @@ function LoadNextLevel() {
       
 
         // Set up global variables for the level
-        global.contractType = level.enemyTypes;
         global.contractQuantity = level.contract;
-        global.enemyTypes = level.enemyTypes;
         global.levelPoints = level.levelPoints;
 
         // Transition to the room of the current level

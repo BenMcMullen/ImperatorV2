@@ -9,7 +9,7 @@ cooldownTimer = 0;
 
 // Variables for AI behavior
 
-enemy = "Beacon Guard Hornet";
+enemy = "Beacon Hornet";
 attackRange = GetEnemyStats(enemy).shootRange; // Attack range
 hp = GetEnemyStats(enemy).hp;
 capacity = GetEnemyStats(enemy).capacity;

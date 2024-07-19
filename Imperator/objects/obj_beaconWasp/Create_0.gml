@@ -3,7 +3,7 @@
 cooldownTimer = 0;
 
 // Variables for AI behavior
-enemy = "Factory Wasp";
+enemy = "Beacon Wasp";
 attackRange = GetEnemyStats(enemy).shootRange; // Attack range
 hp = GetEnemyStats(enemy).hp;
 capacity = GetEnemyStats(enemy).capacity;

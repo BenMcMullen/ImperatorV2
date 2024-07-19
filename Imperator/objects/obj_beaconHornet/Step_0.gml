@@ -1,57 +1,14 @@
 // Step event of obj_enemy
-// Create event of obj_enemy
-if (!initialized) {
-cooldownTimer = 0;
-
-// Variables for AI behavior
- enemy = enemyType;
- attackRange = GetEnemyStats(enemy).shootRange; // Attack range
- hp = GetEnemyStats(enemy).hp;
- capacity = GetEnemyStats(enemy).capacity;
- fireRate = GetEnemyStats(enemy).fireRate;
- enemySpeed = GetEnemyStats(enemy).enemySpeed;
- cooldownDuration = GetEnemyStats(enemy).cooldownDuration;
-
-
-// Calculate the size of each grid cell
-var gridRows = roomRows;
-var gridCols = roomColumns;
-var cellWidth = room_width / gridCols;
-var cellHeight = room_height / gridRows;
-
-// Create the 4x4 grid of patrol points
- waypoints = [];
-for (var row = 0; row < gridRows; row++) {
-    for (var col = 0; col < gridCols; col++) {
-        var xCoor = (col + 0.5) * cellWidth;
-        var yCoor = (row + 0.5) * cellHeight;
-        array_push(waypoints, [xCoor, yCoor]);
-    }
-}
- 
-// Shuffle the patrol points to randomize the order
-var shuffledWaypoints = [];
-while (array_length(waypoints) > 0) {
-    var index = irandom(array_length(waypoints) - 1);
-    array_push(shuffledWaypoints, waypoints[index]);
-    array_delete(waypoints, index, 1);
+if (getWayPoints) {
+waypoints = GetWaypoints(other.beaconIndex);
 }
 
-// Assign the shuffled waypoints to the enemy's patrol path
-waypoints = shuffledWaypoints;
-
-// Initialize the current waypoint
-current_waypoint = 0;
-
- initialized = true;
-    
+if (instance_exists(obj_player)) {
+	var detectionRange = GetEnemyStats(enemy).detectionRange / global.selectedShip.passives.distortion; // Detection range
+	
+if (global.playerCloaked) {
+	detectionRange = 0;
 }
-
-if (instance_exists(obj_player) && initialized) {
-	var detectionRange = GetEnemyStats(enemyType).detectionRange / global.selectedShip.passives.distortion; // Detection range
-	if (global.playerCloaked) {
-		detectionRange = 0;
-	}
     var player = instance_find(obj_player, 0); // Reference to the player object
     var player_x = player.x;
     var player_y = player.y;
@@ -70,7 +27,7 @@ if (instance_exists(obj_player) && initialized) {
             x += move_x;
             y += move_y;
         } else {
-			if (dist_to_player > 200) {
+			if (dist_to_player > 300) {
 			  var enemyDirection = point_direction(x, y, player_x, player_y);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
             var move_y = lengthdir_y(enemySpeed, enemyDirection);
@@ -88,7 +45,7 @@ if (instance_exists(obj_player) && initialized) {
             var playerY = player.y;
             var distToPlayer = point_distance(x, y, playerX, playerY);
 
-            
+           
             targetX = playerX;
             targetY = playerY;
             targetDistance = distToPlayer;
@@ -102,7 +59,7 @@ if (instance_exists(obj_player) && initialized) {
 
             primaryDelay -= 1;
 
-            if (distanceToTarget < attackRange && angleToTarget < shootAngle && primaryDelay < 0) {
+            if (distanceToTarget <= attackRange && angleToTarget < shootAngle && primaryDelay < 0) {
                 primaryDelay = fireRate;
 
                 if (cooldownTimer > 0) {
@@ -115,8 +72,7 @@ if (instance_exists(obj_player) && initialized) {
 
                 if (shotsFired < capacity && cooldownTimer == 0) {
                     audio_play_sound(snd_plasma, 10, false);
-                    with (instance_create_layer(x, y, "Enemy", enemyProjectile)) {
-                 
+                    with (instance_create_layer(x, y, "Enemy", obj_enemyHornetPlasma)) {
                         direction = directionToTarget + random_range(-2, 2);
                         image_angle = direction;
                     }
@@ -127,7 +83,7 @@ if (instance_exists(obj_player) && initialized) {
                 }
             }
         }
-    } else {
+   } else {
         // Patrol between waypoints
         var target_x = waypoints[current_waypoint][0];
         var target_y = waypoints[current_waypoint][1];
@@ -147,24 +103,4 @@ if (instance_exists(obj_player) && initialized) {
             y += move_y;
         }
     }
-	if (hp <= 0){
-	var explosion = instance_create_layer(x, y, layer, obj_explosion);
-	
-    explosion.size = size;
-	audio_play_sound(snd_explosion1,10,false);
-	
-	
-	with (explosion) {
-    size = size;
-}
-	
-	instance_destroy();
-	if (instance_exists(obj_player)) 
-	{
-	global.playerInformation.kills++;
-	global.killsThisRoom++;
-	with (obj_zzzHUD) killTextScale = 2;
-	}
-}
-
 }

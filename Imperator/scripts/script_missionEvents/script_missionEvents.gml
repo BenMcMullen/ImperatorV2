@@ -129,7 +129,7 @@ function WeakenNextBeacon() {
     var newShieldedBeacon = global.beaconList[random_index];
 	newShieldedBeacon.shieldDown = true;
 	global.activeBeacon = random_index;
-	var enemy = instance_create_layer(x, y, "Beacons", obj_beaconGuardEnemy);
+	var enemy = instance_create_layer(x, y, "Beacons", obj_beaconHornet);
 	enemy.beaconIndex = global.activeBeacon;
 }
 }

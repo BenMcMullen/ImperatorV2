@@ -1,7 +1,7 @@
 // Check if the beacon is active and has taken damage
 if (initialDeployment) {
 	initialDeployment = false;
-enemy = instance_create_layer(x, y, "Beacons", obj_beaconGuardEnemy);
+enemy = instance_create_layer(x, y, "Beacons", obj_beaconHornet);
 enemy.beaconIndex = other.beaconIndex;
 
 }

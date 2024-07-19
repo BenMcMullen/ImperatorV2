@@ -1,13 +1,14 @@
+
+
+
 // Alarm[0] event
 if (spawnedEnemies <= enemyCount) {
 	
     // Create the object instance
-   var huntingEnemy = instance_create_layer(x + 300, y + 300, "Enemy", obj_huntingEnemy);
-      huntingEnemy.enemyType = enemy[0]
-	  huntingEnemy.enemySprite = enemy[1];
-	  huntingEnemy.roomColumns = enemy[2];
-	  huntingEnemy.roomRows = enemy[3];
-	  huntingEnemy.enemyProjectile = enemy[4];
+   var escortEnemy = instance_create_layer(x + 300, y + 300, "Enemy", obj_escortEnemy);
+      escortEnemy.enemyType = enemy[0]
+	  escortEnemy.enemySprite = enemy[1];
+	  escortEnemy.enemyProjectile = enemy[2];
 
     // Increment the current instance index
     spawnedEnemies += 1;
@@ -17,6 +18,7 @@ if (spawnedEnemies <= enemyCount) {
 	}
 	else {
 		spawnedEnemies = 0;
+		instance_destroy()
 		}
 		
 }

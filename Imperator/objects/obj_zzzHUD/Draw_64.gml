@@ -37,14 +37,14 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
-	   with (obj_beaconFactoryEnemy) {
+	   with (obj_beaconWasp) {
 			if (sensorSensitivity >= 3) {
             var enemy_x = x / room_width * minimap_width;
             var enemy_y = y / room_height * minimap_height;
             draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
-	    with (obj_beaconGuardEnemy) {
+	    with (obj_beaconHornet) {
 			if (sensorSensitivity >= 3) {
             var enemy_x = x / room_width * minimap_width;
             var enemy_y = y / room_height * minimap_height;
@@ -58,7 +58,14 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
-	    with (obj_beaconGuardEnemy) {
+	    with (obj_escortEnemy) {
+			if (sensorSensitivity >= 3) {
+            var enemy_x = x / room_width * minimap_width;
+            var enemy_y = y / room_height * minimap_height;
+            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+			}
+	   }
+	    with (obj_beaconHornet) {
 			if (sensorSensitivity >= 3) {
             var enemy_x = x / room_width * minimap_width;
             var enemy_y = y / room_height * minimap_height;
@@ -76,7 +83,7 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             var escortY = y / room_height * minimap_height;
             draw_sprite(spr_miniMapEscort, 0, escortX, escortY); // Adjust the enemy icon sprite as needed	
 	   }
-	   with (obj_beaconsBeacon) {
+	   with (obj_beaconBeacon) {
             var beaconX = x / room_width * minimap_width;
             var beaconY = y / room_height * minimap_height;
             draw_sprite(spr_miniMapBeacon, 0, beaconX, beaconY); // Adjust the enemy icon sprite as needed	
@@ -91,7 +98,7 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 		}
 		
 		// Draw the factory
-		with (obj_beaconsFactory) {
+		with (obj_beaconFactory) {
             var factoryX = x / room_width * minimap_width;
             var factoryY = y / room_height * minimap_height;
             draw_sprite(spr_miniMapBeaconsFactory, 0, factoryX, factoryY); // Adjust the enemy icon sprite as needed	

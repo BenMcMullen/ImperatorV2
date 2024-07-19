@@ -1,14 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_beaconGuardEnemy",
+  "%Name":"obj_escortEnemy",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_beaconGuardEnemy",
+  "name":"obj_escortEnemy",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -38,7 +37,7 @@
     {"$GMObjectProperty":"v1","%Name":"size","filters":[],"listItems":[],"multiselect":false,"name":"size","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"explosionTimer","filters":[],"listItems":[],"multiselect":false,"name":"explosionTimer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"60","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"debris","filters":[],"listItems":[],"multiselect":false,"name":"debris","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
-    {"$GMObjectProperty":"v1","%Name":"movingToTarget","filters":[],"listItems":[],"multiselect":false,"name":"movingToTarget","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"movingToTarget","filters":[],"listItems":[],"multiselect":false,"name":"movingToTarget","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"shotsFired","filters":[],"listItems":[],"multiselect":false,"name":"shotsFired","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"shootAngle","filters":[],"listItems":[],"multiselect":false,"name":"shootAngle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"360","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"primaryDelay","filters":[],"listItems":[],"multiselect":false,"name":"primaryDelay","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
@@ -47,8 +46,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemyBeaconGuard",
-    "path":"sprites/spr_enemyBeaconGuard/spr_enemyBeaconGuard.yy",
+    "name":"spr_enemyWasp",
+    "path":"sprites/spr_enemyWasp/spr_enemyWasp.yy",
   },
   "spriteMaskId":null,
   "visible":true,

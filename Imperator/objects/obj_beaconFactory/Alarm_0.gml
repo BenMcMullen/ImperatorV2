@@ -2,7 +2,7 @@
 if (current_instance <= (GetCurrentLevel().levelType.factoryResponseQuantity * 4)) {
 	
     // Create the object instance
-   var factory = instance_create_layer(x + 300, y + 300, "Factory", obj_beaconFactoryEnemy);
+   var factory = instance_create_layer(x + 300, y + 300, "Factory", obj_beaconWasp);
     // Increment the current instance index
     current_instance += 1;
 	

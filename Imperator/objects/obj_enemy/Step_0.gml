@@ -92,7 +92,7 @@ else {
 
         if (shotsFired < capacity && cooldownTimer == 0) {
             audio_play_sound(snd_plasma, 10, false);
-            with (instance_create_layer(x, y, "Enemy", obj_enemyPlasma)) {
+            with (instance_create_layer(x, y, "Enemy", obj_enemyWaspPlasma)) {
                 speed = 25;
                 direction = directionToTarget + random_range(-2, 2);
                 image_angle = direction;
