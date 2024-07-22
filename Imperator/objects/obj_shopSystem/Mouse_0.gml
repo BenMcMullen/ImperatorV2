@@ -1,8 +1,9 @@
 /// Mouse Left Pressed event in obj_shopSystem
 
 var currentTime = current_time / 1000;
+  var pause_overlay = instance_find(obj_overlayPause, 0);
 var overlay_instance = instance_find(obj_overlay, 0);
-if (!instance_exists(overlay_instance)) {
+if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
     lastClickTime = currentTime; // Update the last click time
 

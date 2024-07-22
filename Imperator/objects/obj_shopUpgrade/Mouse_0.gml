@@ -1,6 +1,6 @@
-
+   var pause_overlay = instance_find(obj_overlayPause, 0);
    var overlay_instance = instance_find(obj_overlay, 0);
-if (!instance_exists(overlay_instance)) {
+if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 	var array_index = other.array_index;
 	var systemType = other.systemType;
 	var upgrade = GetUpgrade(array_index, systemType);

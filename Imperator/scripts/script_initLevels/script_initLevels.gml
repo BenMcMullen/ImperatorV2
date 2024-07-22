@@ -64,8 +64,9 @@ function InitLevels() {
         };
     }
 
-    function DifficultyConfig(_difficultyModifier) {
+    function DifficultyConfig(_difficultyLevel, _difficultyModifier) {
         return {
+			difficultyLevel: _difficultyLevel,
             difficultyModifier: _difficultyModifier
         };
     }
@@ -150,18 +151,22 @@ function InitLevels() {
     global.difficulties = [];
     // Adding sample difficulties
     global.difficulties[0] = DifficultyConfig(
+		1,
         1
     );
 
     global.difficulties[1] = DifficultyConfig(
+		2,
         1.2
     );
 	
 	global.difficulties[2] = DifficultyConfig(
+		3,
         1.4
     );
 	
 	global.difficulties[3] = DifficultyConfig(
+		4,
         1.8
     );
 

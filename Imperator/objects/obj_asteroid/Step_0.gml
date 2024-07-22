@@ -1,6 +1,7 @@
-// obj_asteroid Step Event
-// Move the asteroid in the direction it's facing
-
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 
 
 // Adjust the sprite based on the size
@@ -13,6 +14,9 @@ switch (size) {
         break;
     case 3:
         size = 3
+        break;
+	case 4:
+        size = 4
         break;
 }
 
@@ -42,4 +46,5 @@ if (y > room_height) {
 // Set a random size between 1 and 3
 
 // Set other properties like speed and rotation speed
-speed = flyingSpeed; // Adjust as needed // Adjust as needed
+x += lengthdir_x(flyingSpeed, direction);
+y += lengthdir_y(flyingSpeed, direction);

@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 // Check if the beacon is active and has taken damage
 if (initialDeployment) {
 	initialDeployment = false;

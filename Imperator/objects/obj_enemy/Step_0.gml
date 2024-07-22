@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 /// obj_enemy Collision Event with obj_mapEdge
 if (place_meeting(x, y, obj_mapEdge)) {
     var collisionInstance = instance_place(x, y, obj_mapEdge);
@@ -93,7 +97,6 @@ else {
         if (shotsFired < capacity && cooldownTimer == 0) {
             audio_play_sound(snd_plasma, 10, false);
             with (instance_create_layer(x, y, "Enemy", obj_enemyWaspPlasma)) {
-                speed = 25;
                 direction = directionToTarget + random_range(-2, 2);
                 image_angle = direction;
             }

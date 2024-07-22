@@ -2,14 +2,9 @@
 x = obj_player.x;
 y = obj_player.y;
 
-
-
-
-
 //TIME BETWEEN SHOTS
 primaryDelay = 0;
 secondaryDelay = 0;
-
 
 //TIME BETWEEN MAGAZINES OF SHOTS
 primaryCooldownDuration = global.selectedShip.primaryWeapon.cooldown / global.selectedShip.passives.veteranCrew;

@@ -1,0 +1,2 @@
+
+ primaryCooldownTimer = primaryCooldownDuration;

@@ -16,7 +16,7 @@ minimap_height = 200; // Adjust as needed
 
 //DO NOT CHANGE THESE VALUES. THESE ARE THE DEFAULT VALUES REQUIRED FOR THE GAME 
 //TO START IN THE CORRECT PLACE AND ORDER
-
+global.isPaused = false;
  //START OFF WITH THE FINCH.
  global.selectedShip = global.playerShips[0];
  global.shoppingSystem = "";
@@ -31,12 +31,14 @@ global.musicPlaying = false;
 global.hasContract = true;
 global.contractCompleted = true;
 global.contractQuantity = 1;
-global.escortWarpReached = false;
 global.beaconFactoryDestroyed = false;
 global.activeBeacon = -1;
 global.beaconFactoryImmune = true;
 global.beaconsOverloaded = 0;
 global.beaconList = [];
+
+global.escortWarpReached = false;
+global.escortTriggerSpawn = false;
 
 global.totalCompletedContracts = 0;
 

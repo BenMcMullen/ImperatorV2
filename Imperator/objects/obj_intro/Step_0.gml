@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 letters += spd;
 text = string_copy(endtext[currentLine],1,floor(letters));
 

@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_escortWarp",
-  "bboxMode":0,
-  "bbox_bottom":711,
+  "bboxMode":2,
+  "bbox_bottom":21,
   "bbox_left":0,
-  "bbox_right":512,
+  "bbox_right":518,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,

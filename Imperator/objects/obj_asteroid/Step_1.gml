@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 if (hp <= 0)
 {
 	var explosion = instance_create_layer(x, y, layer, obj_asteroidExplosion);

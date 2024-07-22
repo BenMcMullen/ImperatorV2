@@ -3,7 +3,6 @@ cx = room_width /2; // Center x
 cy = room_height /2; // Center y
 a = 300;  // Major radius
 b = 250;  // Minor radius
-speed = 0.00188; // Speed of movement
 angle = 345;    // Initial angle
 debounceTime = 0.2;
 lastClickTime = -1;

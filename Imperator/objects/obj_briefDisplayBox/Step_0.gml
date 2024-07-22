@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 var displayBox_width = sprite_get_width(sprite_index); // Replace with actual sprite index if needed
 var displayBox_height = sprite_get_height(sprite_index); // Replace with actual sprite index if needed
 

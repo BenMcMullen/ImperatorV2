@@ -14,8 +14,4 @@ if (distance > escortSpeed) {
     y = finalDestinationY;
 }
 
-// Debug messages for troubleshooting
-show_debug_message("Current Position: " + string(x) + ", " + string(y));
-show_debug_message("Destination: " + string(finalDestinationX) + ", " + string(finalDestinationY));
-show_debug_message("Direction: " + string(escortDirection));
 }

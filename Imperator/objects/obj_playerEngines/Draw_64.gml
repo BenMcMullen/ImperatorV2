@@ -9,4 +9,4 @@ frame = clamp(frame, 0, 20); // Ensure the frame is within the valid range
 
 // Draw the corresponding frame of the sprite
 draw_sprite(spr_HUDBoost, frame, 0, 0); // PlayerHud Shields
-show_debug_message(frame);
+

@@ -1,5 +1,6 @@
 // Mouse Left Pressed event in obj_garageSystem
-
+var overlay_instance = instance_find(obj_overlayConfirmation, 0); var pause_overlay = instance_find(obj_overlayPause, 0); var pause_overlay = instance_find(obj_overlayPause, 0);
+if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 var currentTime = current_time / 1000;
 
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
@@ -97,4 +98,5 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
             instance_destroy();
         }
     }
+}
 }

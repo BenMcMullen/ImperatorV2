@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 if (instance_exists(obj_player)) 
 {
 	with (obj_player)

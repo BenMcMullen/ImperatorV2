@@ -49,7 +49,7 @@ function GetEnemyStats(enemyType) {
             enemy.fireRate = 6 / (rankDifficulty * levelDifficulty);
             enemy.capacity = round((20 * rankDifficulty) * levelDifficulty);
             enemy.cooldownDuration = round(30 / (rankDifficulty * levelDifficulty));
-            enemy.detectionRange = 6000 + ((1000 * rankDifficulty) * levelDifficulty);
+            enemy.detectionRange = 11000 + ((1000 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
             enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
 			enemy.huntCount = round((8 * rankDifficulty) * levelDifficulty)
@@ -61,7 +61,7 @@ function GetEnemyStats(enemyType) {
             enemy.fireRate = 5 / (rankDifficulty * levelDifficulty);
             enemy.capacity = round((30 * rankDifficulty) * levelDifficulty);
             enemy.cooldownDuration = round(20 / (rankDifficulty * levelDifficulty));
-            enemy.detectionRange = 6000 + ((500 * rankDifficulty) * levelDifficulty);
+            enemy.detectionRange = 11000 + ((500 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty);
             enemy.hp = round((10 * rankDifficulty) * levelDifficulty);
             break;

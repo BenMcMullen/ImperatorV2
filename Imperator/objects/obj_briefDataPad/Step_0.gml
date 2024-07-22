@@ -1,3 +1,4 @@
+
 // Check if the animation has reached the last frame
 if (image_index >= image_number - 1) {
     // Stop the animation by setting the image speed to 0

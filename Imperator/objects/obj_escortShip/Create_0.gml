@@ -16,6 +16,17 @@ var destination = instance_find(obj_escortWarp, 0);
     finalDestinationY = destination.y; 
 
 // Set the speed and other properties
+
 escortSpeed = escortLevel.escortSpeed; // Set the speed of the escort ship
-escortHp = escortLevel.damageCap;
+hp = escortLevel.damageCap;
 escortDamage = 0;
+numberOfTriggers = 5;
+if (global.playerInformation.rank.rank > 4) {
+numberOfTriggers ++;	
+}
+if (GetCurrentLevel().difficulty.difficultyLevel > 3) {
+numberOfTriggers ++;	
+}
+
+triggerNumber = 1;
+triggerDistance = room_height / numberOfTriggers;

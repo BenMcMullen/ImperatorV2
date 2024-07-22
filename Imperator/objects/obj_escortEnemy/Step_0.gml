@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 // Step event of obj_enemy
 // Create event of obj_enemy
 if (!initialized) {
@@ -16,22 +20,46 @@ cooldownTimer = 0;
 }
 
 if (instance_exists(obj_player) && initialized) {
-	var detectionRange = GetEnemyStats(enemyType).detectionRange / global.selectedShip.passives.distortion; // Detection range
-	var escortDetectionRange = GetEnemyStats(enemyType).detectionRange / global.selectedShip.passives.distortion;
+	var playerDetectionRange = GetEnemyStats(enemyType).detectionRange / global.selectedShip.passives.distortion; // Detection range
+	var escortDetectionRange = GetEnemyStats(enemyType).detectionRange;
+	
 	if (global.playerCloaked) {
-		detectionRange = 0;
+		playerDetectionRange = 0;
 	}
+	
     var player = instance_find(obj_player, 0); // Reference to the player object
-    var player_x = player.x;
-    var player_y = player.y;
+    var playerX = player.x;
+    var playerY = player.y;
+	var distToPlayer = point_distance(x, y, playerX, playerY);
+	
+	var escort = instance_find(obj_escort, 0); // Reference to the escort object
+	var escortX = escort.x;
+    var escortY = escort.y;
+	var distToEscort = point_distance(x, y, escortX, escortY);
+    
+	
+	var distToTarget;
+	var targetDetectionRange;
+	var targetX;
+	var targetY;
+	
+	if ((distToEscort < distToPlayer) || global.playerCloaked) {
+		targetX = escortX;
+		targetY = escortY;
+		distToTarget = distToEscort;
+		targetDetectionRange = escortDetectionRange
+	} else {
+		targetX = playerX;
+		targetY = playerY;
+		distToTarget = distToPlayer;
+		targetDetectionRange = playerDetectionRange;
+	}
 
-    var dist_to_player = point_distance(x, y, player_x, player_y);
-
-    if (dist_to_player < detectionRange) {
+    if (distToTarget < targetDetectionRange) {
 		
-        if (dist_to_player > attackRange) {
+        if (distToTarget > attackRange) {
             // Move towards the player
-            var enemyDirection = point_direction(x, y, player_x, player_y);
+            var enemyDirection = point_direction(x, y, targetX, targetY);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
             var move_y = lengthdir_y(enemySpeed, enemyDirection);
 
@@ -39,8 +67,8 @@ if (instance_exists(obj_player) && initialized) {
             x += move_x;
             y += move_y;
         } else {
-			if (dist_to_player > 200) {
-			  var enemyDirection = point_direction(x, y, player_x, player_y);
+			if (distToTarget > 200) {
+			  var enemyDirection = point_direction(x, y, targetX, targetY);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
             var move_y = lengthdir_y(enemySpeed, enemyDirection);
 
@@ -55,7 +83,7 @@ if (instance_exists(obj_player) && initialized) {
             // Determine which target (obj_player or obj_escortShip) is closer
             var playerX = player.x;
             var playerY = player.y;
-            var distToPlayer = point_distance(x, y, playerX, playerY);
+            var distToPlayer = point_distance(x, y, targetX, targetY);
 
             if (instance_exists(obj_escortShip)) {
                 var escort = instance_find(obj_escortShip, 0);
@@ -64,7 +92,7 @@ if (instance_exists(obj_player) && initialized) {
                 var distToEscort = point_distance(x, y, escortX, escortY);
 
                 if (distToPlayer < distToEscort) {
-                    targetX = playerX;
+                    targetX = targetX;
                     targetY = playerY;
                     targetDistance = distToPlayer;
                 } else {

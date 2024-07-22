@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 galaxyLayer = layer_get_id("Galaxy");
 spaceStationLayer = layer_get_id("SpaceStation");
 planet1Layer = layer_get_id("Planet1");

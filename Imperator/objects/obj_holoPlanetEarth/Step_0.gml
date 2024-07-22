@@ -1,5 +1,9 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 // Update the angle
-angle += speed;
+angle += 0.00188;
 
 // Calculate the new position
 x = cx + a * cos(angle);

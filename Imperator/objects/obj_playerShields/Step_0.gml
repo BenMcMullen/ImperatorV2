@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 var ship = global.selectedShip;
 if (global.playerShieldGeneratorOverloaded && !restoring) {
 	restoring = true
@@ -10,10 +14,10 @@ if (!global.playerShieldActive && global.playerShieldActiveCharge < ship.shields
 }
 if (global.playerShieldActive) {
 	if (global.playerShieldActiveCharge > global.selectedShip.shields.shieldActive / 5) { //return red sprite if shields below 20%
-	image_index = 0;
+	spriteFrame = 0;
 	}
 	else {
-	image_index = 1
+	spriteFrame = 1
 	}
 	if (global.playerShieldActiveCharge <= 0) {
 		
@@ -27,7 +31,7 @@ else {
 }
 }
 else {
-	image_index = 2;
+	spriteFrame = 2;
 }
 // Follow the player object
 if (instance_exists(obj_player)) {

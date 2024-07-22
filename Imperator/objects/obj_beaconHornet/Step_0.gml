@@ -1,3 +1,7 @@
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
 // Step event of obj_enemy
 if (getWayPoints) {
 waypoints = GetWaypoints(other.beaconIndex);
@@ -13,11 +17,11 @@ if (global.playerCloaked) {
     var player_x = player.x;
     var player_y = player.y;
 
-    var dist_to_player = point_distance(x, y, player_x, player_y);
+    var distToPlayer = point_distance(x, y, player_x, player_y);
 
-    if (dist_to_player < detectionRange) {
+    if (distToPlayer < detectionRange) {
 		
-        if (dist_to_player > attackRange) {
+        if (distToPlayer > attackRange) {
             // Move towards the player
             var enemyDirection = point_direction(x, y, player_x, player_y);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
@@ -27,7 +31,7 @@ if (global.playerCloaked) {
             x += move_x;
             y += move_y;
         } else {
-			if (dist_to_player > 300) {
+			if (distToPlayer > 300) {
 			  var enemyDirection = point_direction(x, y, player_x, player_y);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
             var move_y = lengthdir_y(enemySpeed, enemyDirection);

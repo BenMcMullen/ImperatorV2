@@ -22,16 +22,18 @@ HP HEALING
 RELOADING SHOULD BE R, SHOULD HAVE ICONS ON THE HUD FOR REMAINING AMMO AND COOLDOWN. 
 
 A_R_C_H_I_T_E_C_T_U_R_E_:
-CREATING ALL LEVEL TYPES
-ENEMY TYPES
 MAYBE WHAT WE DO IS THIS- THERE ARE 4-5 SHIP CLASSES, WITH 3-6 SHIPS PER CLASS. SEVERAL POSSIBLE PASSIVE SETS, LETS SAY 10, BUT THEY ARE FAIRLY CLOSE TO EACH OTHER SO THAT THE SHIPS DON'T VARY TOO WILDLY
 SHIPS HAVE AN UPGRADE POINT LIMIT. LIMIT DEPENDS ON CLASS. CLASS SET BY RANK UNLOCKED AT.
 EACH UPGRADE HAS ASSIGNED UPGRADE POINTS.
 EACH SYSTEM SLOT HAS A MAX POINT VALUE
 THERE ARE 4-5 SHIP CLASSES, WITH 3-6 SHIPS PER CLASS. SEVERAL POSSIBLE PASSIVE SETS, LETS SAY 10, BUT THEY ARE FAIRLY CLOSE TO EACH OTHER SO THAT THE SHIPS DON'T VARY TOO WILDLY
 SHIPS HAVE AN UPGRADE POINT LIMIT. LIMIT DEPENDS ON CLASS. CLASS SET BY RANK UNLOCKED AT.
-BOOLEAN VALUE ON LEVELS FOR IF IT HAS ASTEROIDS.
+
+CREATING ALL LEVEL TYPES
+ENEMY TYPES
+NOT ALL LEVELS CAN HAVE ASTEROIDS- END GAME EVERY EVEL TYPE CAN HAVE THEM, EARLY ONLY A FEW AND TEH ASTEROIDS ARE LESS. MORE POINTS FOR ROID LEVELS
 EACH LEVELTYPE OBJ HAS LOGIC FOR IF ASTEROIDS IS TRUE ON CURRENT LEVEL, IN WHICH CASE CREATE SYSTEM TO RANDOMLY PLACE THEM.
+
 
 
 STEALTH MISSION, COMPLETE WITH LIMITED # OF KILLS, PERHAPS EVEN DETECTION. 
@@ -40,16 +42,16 @@ COMPLETING SOME MISSIONS WITHOUT POINT REWARDS?
 
 
 LEVE TYPE IDEAS: 
-Timed challenge, destroy objects within time frame. No enemies neccesarily, at least at the lower elvels. 
+Timed challenge, destroy objects within time frame. No enemies neccesarily, at least at the lower levels. 
 Points are awareded based on speed.
 
-Specific targets- unlimited waves of weak ships, gotta kill the primary targets and escape.
+Specific targets- Pretty much the exact same as hunt mission, but have new enemy type. Faster, strong, and maybe they run away if you are 
+in close range? they want to fire from a distance, so they close on you then run as you shoot as them.
+Everytime you kill one set global var to ++, once it reaches mission requirements then we are done. 
 
 Recon, scout and document areas without being discovered.
 
-Escort missions. 
 
-Asteroid Breaker overloads shields temporarily when hitting other shields
 
 Mission type: Timed kill challenge
 	diffuclty scaling time

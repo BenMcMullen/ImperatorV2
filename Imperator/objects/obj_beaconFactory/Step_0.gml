@@ -1,5 +1,9 @@
-// Step Event of obj_beaconsFactory
 
+if (global.isPaused) {
+    // If the game is paused, exit the step event
+    exit;
+}
+// Step Event of obj_beaconsFactory
 
 if (global.beaconsOverloaded >= GetCurrentLevel().levelType.quantity && global.beaconFactoryImmune){
 	alarm[0] = 10;
