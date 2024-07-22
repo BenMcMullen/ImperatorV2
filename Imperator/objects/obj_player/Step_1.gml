@@ -16,6 +16,7 @@ if (global.selectedShip.hull.hp <= 0)
 	instance_change(obj_playerExplosion,true);
 	instance_destroy(obj_playerEngines);
 	instance_destroy(obj_playerWeapons);
+	instance_destroy(obj_playerCloaking);
 	
 	
 }

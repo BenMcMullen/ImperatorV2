@@ -44,12 +44,15 @@ global.totalCompletedContracts = 0;
 
 global.killsThisRoom = 0;
 global.levelPoints = 0;
-global.playerCloaked = false;
 global.playerShieldActive = false;
 global.playerShieldGeneratorOverloaded = false;
 global.playerShieldActiveCharge = 0;
 global.playerEngineBoosting = false;
 global.playerEngineBoostCharge = 0;
+global.playerCloakingCooldown = 0;
+global.playerCloakingDuration = 0;
+global.playerCloaked = false;
+global.playerCanCloak = true;
 
 //Tracking the shop/garage page's selected system and displayed descriptions
 global.lastClickedShopSystem = noone;

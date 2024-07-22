@@ -104,9 +104,6 @@ if (moving_to_target) {
     }
 	if (global.playerCloaked) {
 		sprite_index = ship.sprites.spriteCloaked;
-		if (mouse_check_button_pressed(mb_any) || keyboard_check_pressed(vk_space))	{
-	global.playerCloaked = false;
-	}
 	}
 	else {
     if (keyBoosting && global.playerEngineBoostCharge > 0 && canBoost) {

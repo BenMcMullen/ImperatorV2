@@ -2,10 +2,6 @@ level = GetCurrentLevel();
 escortLevel = level.levelType;
 destroyed = false;
 
-
-instance_create_layer(x, 500, "Escort", obj_escortWarp);
-
-
 // Find the instance of obj_escortDestination
 var destination = instance_find(obj_escortWarp, 0);
 

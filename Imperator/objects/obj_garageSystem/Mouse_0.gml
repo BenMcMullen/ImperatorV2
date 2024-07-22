@@ -1,5 +1,5 @@
 // Mouse Left Pressed event in obj_garageSystem
-var overlay_instance = instance_find(obj_overlayConfirmation, 0); var pause_overlay = instance_find(obj_overlayPause, 0); var pause_overlay = instance_find(obj_overlayPause, 0);
+var overlay_instance = instance_find(obj_overlayConfirmation, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
 if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 var currentTime = current_time / 1000;
 

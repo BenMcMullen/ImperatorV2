@@ -1,10 +1,10 @@
 
 
-// Set the y coordinate to be 200 units above the current y position of obj_escort
-var newY = room_height - 200;
+xCoor = room_width /2;
+instance_create_layer(xCoor, 500, "Escort", obj_escortWarp);
 
 // Create the obj_escortShip at the calculated coordinates
-instance_create_layer(1500, newY, "Escort", obj_escortShip);
+instance_create_layer(xCoor, room_height - 200, "Escort", obj_escortShip);
 
 // Initialize spawns and states
 spawnList = [];// Number of spawns that need to be destroyed in active state
