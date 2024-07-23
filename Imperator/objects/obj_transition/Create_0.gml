@@ -1,6 +1,9 @@
+// Get the camera object
+cam = view_camera[0];
 
-w = display_get_gui_width();
-h = display_get_gui_height();
+// Get the width and height of the camera view
+w = camera_get_view_width(cam);
+h = camera_get_view_height(cam);
 h_half = h /2;
 enum TRANS_MODE
 {
@@ -12,4 +15,4 @@ target = room;
 tSpeed = 1.1;
 centerX = window_get_width() / 2;
 centerY = window_get_height() / 2;
-depth = -1000;
+depth = -1200;

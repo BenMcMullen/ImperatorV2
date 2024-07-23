@@ -19,7 +19,9 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
         global.lastClickedGarageSystem = id;
 
         // Create the overlay object to intercept click
-
+		if (instance_exists(obj_garageDisplayBox)) {
+		instance_destroy(obj_garageDisplayBox)	
+		}
         // Create a display box object in the middle of the room
         var displayBox = instance_create_layer(room_width / 2, room_height / 2, "Systems", obj_garageDisplayBox);
 

@@ -11,7 +11,7 @@ draw_set_font(font_venite);
 // Draw the title
 var titleText = "Hangar Manager - Choose Your Ship";
 var titleX = room_width / 2 - string_width(titleText) / 2;
-var titleY = 20;
+var titleY = 80;
 draw_set_color(c_black);
 draw_text(titleX, titleY, titleText);
 draw_set_color(c_white);
@@ -22,7 +22,7 @@ var rowSpacing = 150;
 var colSpacing = room_width / columnCount;
 var textVerticalOffset = 20;
 var startX = 50;
-var startY = 80;
+var startY = 120;
 
 // Loop through player ships
 for (var i = 0; i < array_length(global.playerShips); i++) {

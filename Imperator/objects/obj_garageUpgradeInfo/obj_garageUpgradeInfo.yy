@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"ozzzbj_pauseMenu",
+  "%Name":"obj_garageUpgradeInfo",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"ozzzbj_pauseMenu",
+  "name":"obj_garageUpgradeInfo",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pauseMenuHold",
-    "path":"sprites/spr_pauseMenuHold/spr_pauseMenuHold.yy",
+    "name":"spr_shopMessage",
+    "path":"sprites/spr_shopMessage/spr_shopMessage.yy",
   },
   "spriteMaskId":null,
   "visible":true,

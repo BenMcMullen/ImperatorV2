@@ -65,6 +65,10 @@ function DrawPassivesInGarage(x, y) {
         if (spriteIndex != -1) {
             // Draw the passive sprite with the calculated frame index
             draw_sprite(spr_passivesBar, spriteIndex, x, y + yOffset);
+			draw_set_halign(fa_center); // Center align text horizontally
+			draw_set_valign(fa_top); // Align text to the top
+
+			draw_set_font(font_venite)
             draw_set_color(c_black);
             // Draw text above the sprite, adjusted by 10 pixels
             draw_text(x, y + yOffset - 18, passiveText);

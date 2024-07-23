@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_garageUpgrades",
+  "%Name":"obj_garageRepairBox",
   "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_garageUpgrades",
+  "name":"obj_garageRepairBox",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -34,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_shipSystemsLarge",
-    "path":"sprites/spr_shipSystemsLarge/spr_shipSystemsLarge.yy",
+    "name":"spr_garageRepairBox",
+    "path":"sprites/spr_garageRepairBox/spr_garageRepairBox.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -9,7 +9,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
     var rowSpacing = 150; // Vertical spacing between rows
     var colSpacing = room_width / columnCount; // Horizontal spacing based on column count
     var startX = 50; // Starting X position for the first column
-    var startY = 80; // Starting Y position for the first row
+    var startY = 120; // Starting Y position for the first row
     
     // Check if any ship's select box sprite is clicked
     for (var i = 0; i < array_length(global.playerShips); i++) {

@@ -1,1 +1,1 @@
-DrawPassivesInGarage(room_width / 3, y / 2.5);
+DrawPassivesInGarage(room_width - room_width + 200, y / 2.5);

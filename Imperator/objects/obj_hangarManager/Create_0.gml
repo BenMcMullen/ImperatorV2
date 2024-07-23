@@ -12,3 +12,5 @@ purchaseBoxWidth = 100;
 hasControl = true;
 debounceTime = 0.2;
 lastClickTime = -1;
+
+instance_create_layer(x,y, "Instances", obj_hangerRank)
