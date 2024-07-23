@@ -1,7 +1,4 @@
-if (global.isPaused) {
-    // If the game is paused, exit the step event
-    exit;
-}
+
 // obj_menu Step event
 // Ease in items
 menu_x += (menu_x_target - menu_x) / menu_speed;

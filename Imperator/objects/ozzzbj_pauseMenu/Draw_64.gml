@@ -1,6 +1,6 @@
 
-draw_set_font(font_venite);
-draw_set_halign(fa_right);
+draw_set_font(font_veniteLarge);
+draw_set_halign(fa_center); // Center align text horizontally
 draw_set_valign(fa_bottom);
 
 for (var i = 0; i < menu_items; i++) 
@@ -28,6 +28,5 @@ for (var i = 0; i < menu_items; i++)
 	draw_text(xx,yy,txt);
 	
 	draw_set_color(c_white);
-	draw_rectangle(gui_width, gui_height-200, gui_width+900, gui_height, false)
 	
 }

@@ -1,7 +1,4 @@
-if (global.isPaused) {
-    // If the game is paused, exit the step event
-    exit;
-}
+
 // obj_menu Step event
 // Ease in items
 menu_x += (menu_x_target - menu_x) / menu_speed;
@@ -32,19 +29,20 @@ if (menu_control) {
 
 if ((menu_x > gui_width + 150) && (menu_committed != -1)) {
     switch (menu_committed) {
-		 case 3:
-			default:
-			global.isPaused = false;
+        case 3:
+        default:
+            TogglePauseMenu()
             break;
-        case 2: 
-			SaveFile(SAVEFILE)
-			global.isPaused = false;
+        case 2:
+            SaveFile(SAVEFILE);
+            TogglePauseMenu()
             break;
-        case 1: 
-		global.isPaused = false;
-        break;
-        case 0: 
-           SlideTransition(TRANS_MODE.RESTART)
+        case 1:
+            TogglePauseMenu()
+            break;
+        case 0:
+		 TogglePauseMenu()
+            SlideTransition(TRANS_MODE.RESTART);
             break;
     }
 }
