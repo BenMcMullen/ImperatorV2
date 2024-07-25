@@ -14,3 +14,6 @@ function LoadBridgeSetPlanet() {
 	SlideTransition(TRANS_MODE.GOTO, room_bridge);
     
 }
+
+
+

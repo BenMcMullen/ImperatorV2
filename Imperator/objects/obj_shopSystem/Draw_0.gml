@@ -15,5 +15,7 @@ var line_height = 20; // Height of each line, adjust as needed
 var text_x = x +32; // Adjust if needed
 var text_y = y + sprite_height; // Position just below the sprite, adjust 4 as needed
 
-
-draw_text(text_x, text_y + line_height , systemType);
+draw_set_color(c_black);
+draw_text(text_x, text_y , systemType);
+draw_set_color(c_white);
+draw_text(text_x + 2, text_y -2, systemType);

@@ -10,7 +10,8 @@ function GetUpgradeInfo(){
                    "Damage: " + string(upgrade.damage) + "\n" +
                    "Range: " + string(upgrade.range) + "\n" +
                    "Projectile speed: " + string(upgrade.shotSpeed) + "\n" +
-                   "Reload Speed: " + string(upgrade.cooldown) + "\n"; 
+                   "Reload Speed: " + string(upgrade.cooldown) + "\n" +
+				   "System Point Cost: " + string(upgrade.systemStatus.systemPoints) + "\n";
             break;
 
         case "secondaryWeapon":
@@ -19,13 +20,15 @@ function GetUpgradeInfo(){
                    "Damage: " + string(upgrade.damage) + "\n" +
                    "Range: " + string(upgrade.range) + "\n" +
                    "Projectile Speed: " + string(upgrade.shotSpeed) + "\n" +
-                   "Reload Speed: " + string(upgrade.cooldown) + "\n"; 
+                   "Reload Speed: " + string(upgrade.cooldown) + "\n" +
+				    "System Point Cost: " + string(upgrade.systemStatus.systemPoints) + "\n";
             break;
 
         case "hull":
             var upgrade = global.hulls[array_index];
             info =  string(upgrade.name) + "\n" +
-                   "Armor: " + string(upgrade.maxHp) + "\n"; 
+                   "Armor: " + string(upgrade.maxHp) + "\n" +
+				    "System Point Cost: " + string(upgrade.systemStatus.systemPoints) + "\n";
             break;
 
         case "engine":
@@ -33,7 +36,8 @@ function GetUpgradeInfo(){
             info = string(upgrade.name) + "\n" +
                    "Speed: " + string(upgrade.speed) + "\n" +
                    "Boost: " + string(upgrade.boostSpeed) + "\n" +
-                   "Boost Cooldown: " + string(upgrade.cooldown) + "\n"; 
+                   "Boost Cooldown: " + string(upgrade.cooldown) + "\n" +
+				    "System Point Cost: " + string(upgrade.systemStatus.systemPoints) + "\n";
             break;
 
         case "sensors":
@@ -41,7 +45,8 @@ function GetUpgradeInfo(){
             info =  string(upgrade.name) + "\n" +
                    "Range: " + string(upgrade.range) + "\n" +
                    "Radius: " + string(upgrade.radius) + "\n" +
-                   "Sensitivity: " + string(upgrade.sensitivity) + "\n";
+                   "Sensitivity: " + string(upgrade.sensitivity) + "\n" +
+				    "System Point Cost: " + string(upgrade.systemStatus.systemPoints) + "\n";
             break;
 
         case "shields":
@@ -51,7 +56,8 @@ function GetUpgradeInfo(){
                    "Pulse Strength: " + string(upgrade.shieldActive) + "\n" +
                    "Pulse Delay: " + string(upgrade.delay) + "\n" +
                    "Pulse Cooldown: " + string(upgrade.cooldown) + "\n" +
-                   "Uses: " + string(upgrade.uses) + "\n";
+                   "Uses: " + string(upgrade.uses) + "\n" +
+				    "System Point Cost: " + string(upgrade.systemStatus.systemPoints) + "\n";
             break;
 
         default:
@@ -183,4 +189,42 @@ var array_type = argument0; // String representing the array type (e.g., "primar
         break;
 }
 	return upgradeName;
+}
+
+function GetSystemLimit() {
+    var systemType = argument0; // String representing the system type (e.g., "primaryWeapon")
+    var limits;
+
+    switch (systemType) {
+        case "primaryWeapon":
+            limits = global.selectedShip.systemLimits.primaryWeaponLimit;
+            break;
+
+        case "secondaryWeapon":
+            limits = global.selectedShip.systemLimits.secondaryWeaponLimit;
+            break;
+
+        case "hull":
+            limits = global.selectedShip.systemLimits.hullLimit;
+            break;
+
+        case "engine":
+            limits = global.selectedShip.systemLimits.engineLimit;
+            break;
+
+        case "sensors":
+            limits = global.selectedShip.systemLimits.sensorsLimit;
+            break;
+
+        case "shields":
+            limits = global.selectedShip.systemLimits.shieldsLimit;
+            break;
+
+        default:
+            show_debug_message("Unknown system type: " + systemType);
+            limits = undefined;
+            break;
+    }
+
+    return limits;
 }

@@ -12,6 +12,6 @@ with (obj_shopNoButton) {
     instance_destroy();
 }
 with (obj_overlay) {
-    instance_destroy();
+    instance_destroy(obj_overlay);
 }
 instance_destroy();

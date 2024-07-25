@@ -1,0 +1,1 @@
+draw_sprite(spr_garageRepairPopoutLess, image_index, x, y);

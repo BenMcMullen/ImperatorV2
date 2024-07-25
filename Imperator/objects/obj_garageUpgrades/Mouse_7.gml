@@ -1,5 +1,5 @@
 // obj_garageUpgrades Left Mouse Button Release Event
-var overlay_instance = instance_find(obj_overlayConfirmation, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
+var overlay_instance = instance_find(obj_overlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
 if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 if (mouse_check_button_released(mb_left)) {
     if (drag) {
@@ -23,7 +23,11 @@ if (mouse_check_button_released(mb_left)) {
             with (target) {
                 // Check if the creator_id of the upgrade matches the garage system's ID
                 var sourceGarageSystem = instance_find(other.creator_id, 0); // Find the source garage system instance
-                if (sourceGarageSystem != noone && sourceGarageSystem.id == other.creator_id) {
+				if (upgradeData.systemStatus.systemPoints > GetSystemLimit(upgradeDataType)) {
+					   var shopUpgradeInstance = instance_create_layer(x / 2, y / 2, "Systems", obj_garageUpgradeMessage);
+						shopUpgradeInstance.messageText = (upgradeData.name + " exceeds " + upgradeDataType + " system size!");
+				} else {
+                
                     // Check if there is already a contained object
                     if (contained_object != noone) {
                         // Move the old contained object back to its original position
@@ -42,8 +46,7 @@ if (mouse_check_button_released(mb_left)) {
                     // Optionally create a message instance
                     var shopUpgradeInstance = instance_create_layer(x / 2, y / 2, "Systems", obj_garageUpgradeMessage);
                     shopUpgradeInstance.messageText = (upgradeData.name + " installed to " + upgradeDataType + " system");
-                } else {
-                    show_debug_message("creator_id mismatch: expected " + string(sourceGarageSystem.creator_id) + ", got " + string(sourceGarageSystem.id));
+				
                 }
             }
         }

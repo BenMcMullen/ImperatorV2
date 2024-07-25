@@ -1,6 +1,7 @@
 
 
 var messageText = other.messageText;
+draw_set_font(font_veniteMedium)
 
     var boxWidth = sprite_get_width(spr_garageMessage);
     var boxHeight = sprite_get_height(spr_garageMessage);
@@ -11,9 +12,10 @@ var messageText = other.messageText;
     
     var textX = boxX + boxWidth / 2;
     var textY = boxY + boxHeight / 2;
-    
+
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
-    draw_text(textX, textY, messageText);
-    draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
+	draw_set_color(c_black);
+	draw_text(textX, textY, messageText);
+	draw_set_color(c_white);
+	draw_text(textX +2, textY-2, messageText);

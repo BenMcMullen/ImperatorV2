@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_shopPoints",
+    "path":"sprites/spr_shopPoints/spr_shopPoints.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

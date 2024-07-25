@@ -8,7 +8,7 @@ if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 	var confirmationHeight = room_height/2;
 	
 	
-    if ((upgrade.systemStatus.cost < global.playerInformation.points) && !upgrade.systemStatus.isOwned && upgrade.systemStatus.unlocked) {
+    if ((upgrade.systemStatus.cost <= global.playerInformation.points) && !upgrade.systemStatus.isOwned && upgrade.systemStatus.unlocked) {
 		
 		
 		 var shopConfirmation = instance_create_layer(confirmationWidth, confirmationHeight, "Items", obj_shopConfirmationScreen);

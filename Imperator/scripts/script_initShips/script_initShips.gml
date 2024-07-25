@@ -1,6 +1,6 @@
 function InitShips() {
 
-    function ShipConfig(_hull, _engine, _primaryWeapon, _secondaryWeapon, _shields, _sensors, _isOwned, _sprites, _x, _y, _shipName, _shipClass, _passives, _shipGeneration, _unlocked, _destroyed) {
+    function ShipConfig(_hull, _engine, _primaryWeapon, _secondaryWeapon, _shields, _sensors, _isOwned, _sprites,_shipName, _shipClass, _passives, _shipGeneration, _unlocked, _destroyed, _systemLimits) {
         return {
             hull: _hull,
             engine: _engine,
@@ -10,14 +10,13 @@ function InitShips() {
 			 sensors: _sensors,
             isOwned: _isOwned,
             sprites: _sprites,
-            x: _x,
-            y: _y,
             shipName: _shipName,
             shipClass: _shipClass,
 			passives: _passives,
             shipGeneration: _shipGeneration,
             unlocked: _unlocked,
-            destroyed: _destroyed
+            destroyed: _destroyed,
+			systemLimits: _systemLimits
         };
     }
 
@@ -34,7 +33,17 @@ function InitShips() {
         };
     }
 	
-	
+	function ShipSystemLimits(_shipName, _hullLimit, _engineLimit, _primaryWeaponLimit, _secondaryWeaponLimit, _shieldsLimit, _sensorsLimit) {
+        return {
+            shipName: _shipName,
+            hullLimit: _hullLimit,
+            engineLimit: _engineLimit,
+            primaryWeaponLimit: _primaryWeaponLimit,
+            secondaryWeaponLimit: _secondaryWeaponLimit,
+            shieldsLimit: _shieldsLimit,
+			sensorsLimit: _sensorsLimit,
+        };
+    }
 
 	
 	function passivesConfig(_class, _tier, _distortion, _evasion, _hotShot, _fov, _bumper, _cloaking, _enhancedArmory, _veteranCrew, _enhancedCoolingUnit, _activeEnergyDispersionUnit, _passiveEnergyDispersionUnit) {
@@ -110,7 +119,6 @@ function InitShips() {
 	
     global.sprites = [];
 
-    // Adding ship sprite configurations individually
     global.sprites[0] = ShipSpriteConfig(
         1,
         "Finch",             // Ship Name
@@ -143,6 +151,40 @@ function InitShips() {
         spr_sparrowGarage,     // Garage sprite
         spr_sparrowHangar      // Hangar Sprite
     );
+	
+	global.systemLimits = [];
+	
+
+    // Adding ship sprite configurations individually
+    global.systemLimits[0] = ShipSystemLimits(
+        "Finch",             // Ship Name
+        4,					 // hullLimit
+        9,					 // engineLimit
+        6,					 // primaryWeaponLimit
+		6,					 // secondaryWeaponLimit
+        4,					 // shieldsLimit
+        6					 // sensorsLimit
+    );
+
+    global.systemLimits[1] = ShipSystemLimits(
+        "Sparrow",             // Ship Name
+        10,					 // hullLimit
+        7,					 // engineLimit
+        4,					 // primaryWeaponLimit
+		5,					 // secondaryWeaponLimit
+        10,					 // shieldsLimit
+        10					 // sensorsLimit
+    );
+
+    global.systemLimits[2] = ShipSystemLimits(
+        "Raptor",             // Ship Name
+        3,					 // hullLimit
+        8,					 // engineLimit
+        10,					 // primaryWeaponLimit
+		7,					 // secondaryWeaponLimit
+        4,					 // shieldsLimit
+        9					 // sensorsLimit
+    );
 
 
 
@@ -159,14 +201,13 @@ function InitShips() {
         global.sensors[1],                      // Sensors
         true,                                   // Is Owned
         global.sprites[0],                      // Sprites
-        100,                                    // Hangar X position
-        100,                                    // Hangar Y position
         "Finch",                                 // Ship Name
         "Scout",                                // Ship Class
 		global.passives[0],						// Ship Passives
         "Gen 4 Mercurian",                      // Ship Generation
 		true,									// Unlocked
-		false									// Destroyed
+		false,									// Destroyed
+		global.systemLimits[0]					// System Limits
     );
 
     global.playerShips[1] = ShipConfig(
@@ -176,16 +217,15 @@ function InitShips() {
         global.secondaryWeapons[0],				// Secondary Weapon
 		global.shields[0],                      // Shields
 		global.sensors[2],                      // Sensors
-        true,                                   // Is Owned
+        false,                                   // Is Owned
         global.sprites[1],                      // Sprites
-        200,                                    // Hangar X position
-        100,                                    // Hangar Y position
         "Raptor",                               // Ship Name
         "Interceptor",                          // Ship Class
 		global.passives[1],						// Ship Passives
         "Gen 5 Venuzian",                       // Ship Generation
-		true,									// Unlocked
-		false									// Destroyed
+		false,									// Unlocked
+		false,									// Destroyed
+		global.systemLimits[1]					// System Limits
     );
 
     global.playerShips[2] = ShipConfig(
@@ -195,16 +235,15 @@ function InitShips() {
         noone,									// Secondary Weapon
 		noone,									// Shields
 		noone,									// Sensors
-        true,                                   // Is Owned
+        false,                                   // Is Owned
         global.sprites[2],						// Sprites
-        300,                                    // Hangar X position
-        100,                                    // Hangar Y position
         "Sparrow",                              // Ship Name
         "Frigate",								// Ship Class
 		global.passives[0],						// Ship Passives
         "Gen 3 Venuzian",                       // Ship Generation
-		true,									// Unlocked
-		false									// Destroyed
+		false,									// Unlocked
+		false,									// Destroyed
+		global.systemLimits[1]					// System Limits
     );
 
 }

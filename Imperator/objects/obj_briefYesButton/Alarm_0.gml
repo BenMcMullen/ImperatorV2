@@ -6,13 +6,13 @@ var messageText = other.messageText
 		briefsMessage.goHanger = true;
 		
 SelectMission(other.levelIndex)
-with (obj_briefConfirmationScreen) {
-    instance_destroy(obj_briefConfirmationScreen);
+with (obj_briefobj_overlayScreen) {
+    instance_destroy(obj_briefobj_overlayScreen);
 }
 with (obj_briefNoButton) {
     instance_destroy(obj_briefNoButton);
 }
-with (obj_overlayConfirmation) {
-    instance_destroy(obj_overlayConfirmation);
+with (obj_overlay) {
+    instance_destroy(obj_overlay);
 }
 instance_destroy();

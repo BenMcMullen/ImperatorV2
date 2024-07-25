@@ -35,7 +35,3 @@ for (var i = 0; i < num_lines; i++) {
 }
 
 
-/// obj_shopUpgradeDescription Draw Event
- // Draw the object itself
-
-

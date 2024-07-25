@@ -11,7 +11,7 @@ draw_sprite(spr_shopUpgradeInfo, 0, boxX, boxY);
 
 var textX = boxX + boxWidth / 2;
 var textY = boxY + boxHeight / 2;
-
+draw_set_font(font_venite)
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white); // Set text color to yellow

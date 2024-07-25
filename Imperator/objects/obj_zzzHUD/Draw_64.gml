@@ -149,8 +149,8 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 	draw_text_transformed(RES_W -  44, 137, string(primaryCapacity - primaryShotsFired), loseAmmo, loseAmmo, 0);
 	draw_text_transformed(RES_W -  44, 177, string(primaryCapacity), loseAmmo, loseAmmo, 0);
 	draw_set_colour(c_white);
-	draw_text_transformed(RES_W -  46, 135, string(primaryCapacity - primaryShotsFired), loseAmmo, loseAmmo, 0);
-	draw_text_transformed(RES_W -  46, 175, string(primaryCapacity), loseAmmo, loseAmmo, 0);
+	draw_text_transformed(RES_W -  42, 135, string(primaryCapacity - primaryShotsFired), loseAmmo, loseAmmo, 0);
+	draw_text_transformed(RES_W -  42, 175, string(primaryCapacity), loseAmmo, loseAmmo, 0);
 	
 	    // Draw Secondary Ammo
     loseAmmo = max(1 * 0.95, 1);
@@ -158,8 +158,8 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 	draw_text_transformed(RES_W -  40, 259, string(secondaryCapacity - secondaryShotsFired), loseAmmo, loseAmmo, 0);
 	draw_text_transformed(RES_W -  40, 299, string(secondaryCapacity), loseAmmo, loseAmmo, 0);
 	draw_set_colour(c_white);
-	draw_text_transformed(RES_W -  42, 257, string(secondaryCapacity - secondaryShotsFired), loseAmmo, loseAmmo, 0);
-	draw_text_transformed(RES_W -  42, 297, string(secondaryCapacity), loseAmmo, loseAmmo, 0);
+	draw_text_transformed(RES_W -  38, 257, string(secondaryCapacity - secondaryShotsFired), loseAmmo, loseAmmo, 0);
+	draw_text_transformed(RES_W -  38, 297, string(secondaryCapacity), loseAmmo, loseAmmo, 0);
 		}
 	
 	

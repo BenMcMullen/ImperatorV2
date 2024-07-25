@@ -4,7 +4,7 @@ var confirmationHeight = room_height/2;
 var currentTime = current_time / 1000;
 
 
-var overlay_instance = instance_find(obj_overlayConfirmation, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
+var overlay_instance = instance_find(obj_overlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
 if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
     lastClickTime = currentTime; // Update the last click time
@@ -17,9 +17,9 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 			}
 	else if (currentPlanet.missionName != selectedHoloPlanet.missionName) {
 			show_debug_message("New Planet")
-			var holoConfirmation = instance_create_layer(confirmationWidth, confirmationHeight, "HoloItems", obj_holoConfirmationScreen);
-            holoConfirmation.planetName = selectedHoloPlanet.missionName;
-			holoConfirmation.messageText = ("FTL travel to " + selectedHoloPlanet.missionName + " ?");
+			var holoobj_overlay = instance_create_layer(confirmationWidth, confirmationHeight, "HoloItems", obj_holoobj_overlayScreen);
+            holoobj_overlay.planetName = selectedHoloPlanet.missionName;
+			holoobj_overlay.messageText = ("FTL travel to " + selectedHoloPlanet.missionName + " ?");
 			
 			 var yesButton = instance_create_layer(confirmationWidth + 130, confirmationHeight + 55, "HoloItems", obj_holoYesButton); // Adjust positions as needed
             yesButton.messageText = "Calibrating black matter matrix for FTL travel";

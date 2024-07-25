@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var overlay_instance = instance_find(obj_overlayConfirmation, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
+var overlay_instance = instance_find(obj_overlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
 if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 var array_index = other.array_index;
 var systemType = other.systemType;

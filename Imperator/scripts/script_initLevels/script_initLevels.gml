@@ -185,7 +185,7 @@ function InitLevels() {
     global.mercurianTreeLevels = [];
 
     // Martian Levels
-    global.martianTreeLevels[0] = LevelConfigMartian(300, room_escort1, 3, global.levelTypeEscort[0], 1, false, "Operation: Desert Siege", spr_brief, [global.primaryWeapons[2]], 10, global.difficulties[1]);
+    global.martianTreeLevels[0] = LevelConfigMartian(300, room_escort1, 3, global.levelTypeEscort[0], 1, false, "Operation: Desert Siege", spr_brief, [global.primaryWeapons[2]], 100, global.difficulties[1]);
     global.martianTreeLevels[1] = LevelConfigMartian(201, room_beacons1, 2, global.levelTypeHunting[0], 1, false, "Operation: Red Storm", spr_brief, [], 5, global.difficulties[0]);
 	global.martianTreeLevels[2] = LevelConfigMartian(500, room_hunt1, 5, global.levelTypeHunting[0], 3, false, "Operation: Iron Fist", spr_brief, [global.primaryWeapons[3]], 15, global.difficulties[1]);
     global.martianTreeLevels[3] = LevelConfigMartian(800, room_hunt1, 6, global.levelTypeHunting[1], 4, false, "Operation: Twin Blades", spr_brief, [global.primaryWeapons[3]], 20, global.difficulties[1]);

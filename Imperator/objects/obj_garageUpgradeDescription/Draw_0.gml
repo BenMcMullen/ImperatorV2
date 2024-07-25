@@ -5,7 +5,7 @@
 // Set alignment and font properties
 draw_set_halign(fa_center); // Center align text horizontally
 draw_set_valign(fa_top); // Align text to the top
-draw_set_font(font_venite); // Replace with your desired font
+draw_set_font(font_veniteItemLabel); // Replace with your desired font
 
 // Text wrapping parameters
 var max_width = 80; // Maximum width before wrapping

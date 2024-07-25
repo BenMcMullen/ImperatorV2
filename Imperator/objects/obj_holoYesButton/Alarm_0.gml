@@ -7,13 +7,13 @@ var messageText = other.messageText
 		holoMessage.goBridge = true;
 		
 		
-with (obj_holoConfirmationScreen) {
-    instance_destroy(obj_holoConfirmationScreen);
+with (obj_holoobj_overlayScreen) {
+    instance_destroy(obj_holoobj_overlayScreen);
 }
 with (obj_holoNoButton) {
     instance_destroy(obj_holoNoButton);
 }
-with (obj_overlayConfirmation) {
-    instance_destroy(obj_overlayConfirmation);
+with (obj_overlay) {
+    instance_destroy(obj_overlay);
 }
 instance_destroy();

@@ -1,8 +1,9 @@
 function InitSystems() {
     
     // Function to define system status configurations
-    function SystemStatusConfig( _class, _system, _name, _cost, _unlocked, _destroyed, _basic, _isOwned, _quantity) {
+    function SystemStatusConfig(_systemPoints, _class, _system, _name, _cost, _unlocked, _destroyed, _basic, _isOwned, _quantity) {
         return {
+			systemPoints: _systemPoints,
 			class: _class, 
             system: _system,
             name: _name,
@@ -35,11 +36,12 @@ function InitSystems() {
     }
 
     // Function to define hull configurations
-    function HullConfig(_id, _name, _hp, _maxHp, _systemSprite, _systemStatus) {
+    function HullConfig(_id, _name, _hp, _repairability, _maxHp, _systemSprite, _systemStatus) {
         return {
             id: _id,
             name: _name,
             hp: _hp,
+			repairability: _repairability,
             maxHp: _maxHp,
             systemSprite: _systemSprite,
             systemStatus: _systemStatus
@@ -117,6 +119,7 @@ function InitSystems() {
 
     // Primary Weapons System Status
     global.systemStatus[0] = SystemStatusConfig( 
+		5,		//systemPoints
 		"Any",	// ship class
         "primaryWeapons",
         "Plasma Cannon",
@@ -128,7 +131,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[1] = SystemStatusConfig( 
+    global.systemStatus[1] = SystemStatusConfig(  
+		5,		//systemPoints
 		"Any",	// ship class
         "primaryWeapons",
         "Rail Gun",
@@ -140,7 +144,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[2] = SystemStatusConfig( 
+    global.systemStatus[2] = SystemStatusConfig(  
+		5,		//systemPoints
 		"Any",	// ship class
         "primaryWeapons",
         "Beam Cannon",
@@ -152,7 +157,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[3] = SystemStatusConfig( 
+    global.systemStatus[3] = SystemStatusConfig(  
+		5,		//systemPoints
 		"Any",	// ship class
         "primaryWeapons",
         "New Weapon",
@@ -234,7 +240,8 @@ function InitSystems() {
     global.shields = [];
 
     // Shields System Status
-    global.systemStatus[4] = SystemStatusConfig( 
+    global.systemStatus[4] = SystemStatusConfig(  
+		5,		//systemPoints
 		"Any",	// ship class
         "shields",
         "Basic Shields",
@@ -246,7 +253,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[5] = SystemStatusConfig( 
+    global.systemStatus[5] = SystemStatusConfig(  
+		5,		//systemPoints
 		"Any",	// ship class
         "shields",
         "Advanced Shields",
@@ -258,7 +266,8 @@ function InitSystems() {
         1
     );
 
-    global.systemStatus[6] = SystemStatusConfig( 
+    global.systemStatus[6] = SystemStatusConfig(  
+		5,		//systemPoints
 		"Any",	// ship class
         "shields",
         "Elite Shields",
@@ -324,7 +333,8 @@ global.shields[2] = ShieldConfig(
     global.hulls = [];
 
 // Adding system status configurations for hulls
-global.systemStatus[26] = SystemStatusConfig( 
+global.systemStatus[26] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "hulls",
     "Standard Hull",
@@ -336,7 +346,8 @@ global.systemStatus[26] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[27] = SystemStatusConfig( 
+global.systemStatus[27] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "hulls",
     "Advanced Hull",
@@ -348,15 +359,16 @@ global.systemStatus[27] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[28] = SystemStatusConfig( 
-	"Any",	// ship class
+global.systemStatus[28] = SystemStatusConfig(  
+		5,		//systemPoints
+	"Frigate",	// ship class
     "hulls",
     "Frigate Hull",
     500,
    true,    // unlocked
     false,   // destroyed
-    true,    // basic
-    false,    // isOwned
+    false,    // basic
+    true,    // isOwned
     1
 );
 
@@ -365,7 +377,8 @@ global.hulls[0] = HullConfig(
     1,
     "Standard Hull",      // Name
     100,                  // HP
-    100,                  // Max HP
+	3,					  // Repairability
+    150,                  // Max HP
     spr_shopUpgrade,      // Shop Sprite
     global.systemStatus[26] // System Status
 );
@@ -373,7 +386,8 @@ global.hulls[0] = HullConfig(
 global.hulls[1] = HullConfig(
     2,
     "Advanced Hull",      // Name
-    150,                  // HP
+    125,                  // HP
+	4,					  // Repairability
     150,                  // Max HP
     spr_basicTest_1,      // Shop Sprite
     global.systemStatus[27] // System Status
@@ -383,7 +397,8 @@ global.hulls[2] = HullConfig(
     3,
     "Frigate Hull",       // Name
     200,                  // HP
-    200,                  // Max HP
+	5,					  // Repairability
+    275,                  // Max HP
     spr_shipSystemsLarge, // Shop Sprite
     global.systemStatus[28] // System Status
 );
@@ -393,7 +408,8 @@ global.hulls[2] = HullConfig(
 global.engines = [];
 
 // Adding system status configurations for engines
-global.systemStatus[0] = SystemStatusConfig(	
+global.systemStatus[0] = SystemStatusConfig(	 
+		5,		//systemPoints
 	"Any",	// ship class
     "engines",
     "Standard Engine",
@@ -405,7 +421,8 @@ global.systemStatus[0] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[29] = SystemStatusConfig( 
+global.systemStatus[29] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "engines",
     "Advanced Engine",
@@ -417,7 +434,8 @@ global.systemStatus[29] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[30] = SystemStatusConfig( 
+global.systemStatus[30] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "engines",
     "Frigate Engine",
@@ -470,7 +488,8 @@ global.engines[2] = EngineConfig(
 global.secondaryWeapons = [];
 
 // Adding system status configurations for secondary weapons
-global.systemStatus[22] = SystemStatusConfig( 
+global.systemStatus[22] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "secondaryWeapons",
     "Missile Launcher",
@@ -482,7 +501,8 @@ global.systemStatus[22] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[23] = SystemStatusConfig( 
+global.systemStatus[23] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "secondaryWeapons",
     "Swarm Bomb",
@@ -494,7 +514,8 @@ global.systemStatus[23] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[24] = SystemStatusConfig( 
+global.systemStatus[24] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "secondaryWeapons",
     "Energy Cannon",
@@ -506,7 +527,8 @@ global.systemStatus[24] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[25] = SystemStatusConfig( 
+global.systemStatus[25] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "secondaryWeapons",
     "New Secondary",
@@ -587,7 +609,8 @@ global.secondaryWeapons[3] = SecondaryWeaponConfig(
 global.sensors = [];
 
 // Adding system status configurations for sensors
-global.systemStatus[19] = SystemStatusConfig( 
+global.systemStatus[19] = SystemStatusConfig(  
+		27,		//systemPoints
 	"Any",	// ship class
     "sensors",
     "Standard Sensor",
@@ -599,7 +622,8 @@ global.systemStatus[19] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[20] = SystemStatusConfig( 
+global.systemStatus[20] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "sensors",
     "Advanced Sensor",
@@ -611,7 +635,8 @@ global.systemStatus[20] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[21] = SystemStatusConfig( 
+global.systemStatus[21] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Any",	// ship class
     "sensors",
     "Hyper Sensor",
@@ -623,7 +648,8 @@ global.systemStatus[21] = SystemStatusConfig(
     1
 );
 
-global.systemStatus[22] = SystemStatusConfig( 
+global.systemStatus[22] = SystemStatusConfig(  
+		5,		//systemPoints
 	"Interceptor",	// ship class
     "sensors",
     "Integrated Sensor",

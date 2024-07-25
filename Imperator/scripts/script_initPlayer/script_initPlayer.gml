@@ -13,12 +13,13 @@ function InitPlayer(){
 			
         };
     }
-	 function PlayerRank(_title, _rank, _commendationTarget, _rankDifficulty) {
+	 function PlayerRank(_title, _rank, _commendationTarget, _rankDifficulty, _rankBadge) {
         return {
 			title: _title,
 			rank: _rank,
 			commendationTarget: _commendationTarget,
-			rankDifficulty: _rankDifficulty
+			rankDifficulty: _rankDifficulty,
+			rankBadge: _rankBadge
 			
         };
     }
@@ -35,22 +36,22 @@ function InitPlayer(){
 global.playerRanks = [];
 			
 // Adding player ranks individually
-global.playerRanks[0] = PlayerRank("Lieutenant", 1, 21, 1);
-global.playerRanks[1] = PlayerRank("Captain", 2, 25, 1.2);
-global.playerRanks[2] = PlayerRank("Major", 3, 31, 1.4);
-global.playerRanks[3] = PlayerRank("Colonel", 4, 40, 1.7);
-global.playerRanks[4] = PlayerRank("General", 5, 51, 2.1);
-global.playerRanks[5] = PlayerRank("Venator", 6, 60, 2.5);
+global.playerRanks[0] = PlayerRank("Lieutenant", 1, 21, 1, spr_commendations);
+global.playerRanks[1] = PlayerRank("Captain", 2, 25, 1.2, spr_commendations);
+global.playerRanks[2] = PlayerRank("Major", 3, 31, 1.4, spr_commendations);
+global.playerRanks[3] = PlayerRank("Colonel", 4, 40, 1.7, spr_commendations);
+global.playerRanks[4] = PlayerRank("General", 5, 51, 2.1, spr_commendations);
+global.playerRanks[5] = PlayerRank("Venator", 6, 60, 2.5, spr_commendations);
 
 			
 	// Define the struct for playerInformation. in the global scope
 global.playerInformation = {
 	currentTreeIndex:3,
     kills: 0,   // Total kills attributed to the player
-    rank: global.playerRanks[0],
+    rank: global.playerRanks[1],
 	commendations: 0,
     deaths: 0,
-	points: 10000,
+	points: 500,
 	achievements: 0,
 	name: "Fuzzalitious"
 };

@@ -15,7 +15,3 @@ if (global.contractQuantity <= global.killsThisRoom && global.hasContract == tru
 } else {
     global.contractCompleted = false;
 }
-
-if (GetRemainingCommendations() <= 0) {
-	UpgradePlayerRank();
-}

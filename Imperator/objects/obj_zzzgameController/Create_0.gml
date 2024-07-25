@@ -31,19 +31,21 @@ global.musicPlaying = false;
 global.hasContract = true;
 global.contractCompleted = true;
 global.contractQuantity = 1;
+global.totalCompletedContracts = 0;
+global.killsThisRoom = 0;
+global.levelPoints = 0;
+
 global.beaconFactoryDestroyed = false;
 global.activeBeacon = -1;
 global.beaconFactoryImmune = true;
 global.beaconsOverloaded = 0;
 global.beaconList = [];
-
 global.escortWarpReached = false;
 global.escortTriggerSpawn = false;
 
-global.totalCompletedContracts = 0;
 
-global.killsThisRoom = 0;
-global.levelPoints = 0;
+
+
 global.playerShieldActive = false;
 global.playerShieldGeneratorOverloaded = false;
 global.playerShieldActiveCharge = 0;
@@ -64,6 +66,7 @@ global.shopFirstClick = true;
 
 // For data pad animations
 global.dataPadOpen = false;
+global.desiredRepairs = 0;
 
 
 if (!global.musicPlaying) {

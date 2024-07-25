@@ -1,5 +1,5 @@
 // Mouse Left Pressed event in obj_garageSystem
-var overlay_instance = instance_find(obj_overlayConfirmation, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
+var overlay_instance = instance_find(obj_overlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
 if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 var currentTime = current_time / 1000;
 
@@ -27,7 +27,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
         // Define grid layout parameters
         var start_x = displayBox.x - (columns / 2 * spacing_x) + 32;
-        var start_y = displayBox.y - 375; // Adjust as needed for vertical position
+        var start_y = displayBox.y - 360; // Adjust as needed for vertical position
 
         // Iterate through currentArray (replace with your actual array variable)
         var yOffset = 0;

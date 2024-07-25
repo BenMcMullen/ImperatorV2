@@ -1,2 +1,1 @@
-
-			draw_self();
+draw_sprite(spr_garageRepairBtn, image_index, x, y);
