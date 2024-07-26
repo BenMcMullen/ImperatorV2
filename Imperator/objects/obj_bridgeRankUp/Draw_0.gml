@@ -14,7 +14,7 @@ draw_set_font(font_veniteLarge)
 	 draw_sprite(other.rankBadge, 0, boxX /1.5 -32, boxY);
     
     var textX = boxX;
-    var textY = boxY - 80
+    var textY = boxY - 160;
 
  
 	var max_width = 350; // Maximum width before wrapping

@@ -8,7 +8,7 @@ if (spawn) {
 	with (obj_zzzHUD) {
 		levelPhase = 2;
 	}
-	alarm [1] = 120;
+	alarm [1] = 60;
 spawn = false;
 alarm[0] = 10;
 }
