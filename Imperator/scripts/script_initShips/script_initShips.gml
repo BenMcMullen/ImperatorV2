@@ -116,6 +116,36 @@ function InitShips() {
 	17,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
 	4				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
 );
+global.passives[2] = passivesConfig(
+    "Frigate",      // _class
+    "A",            // _tier
+    1,            // _distortion (reduces range of enemy detection)
+    1,           // _evasion (0% chance to evade attacks)
+   1,            // _hotShot (0% more accurate fire)
+    1,            // _fov (20% wider field of view)
+    10,             // _bumper (reduces HP to 0 on collision)
+    10,            // _cloaking (negates enemy sensors for 0 frames)
+    1.0,           // _enhancedArmory (0% increase in primary capacity)
+    1.0,            // _veteranCrew (0% reduction in cooldown) 1-2
+	1,				//_enhancedCoolingUnit (+1 shield restore per step)
+	1,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
+	1				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+);
+global.passives[3] = passivesConfig(
+    "Frigate",      // _class
+    "C",            // _tier
+    2,            // _distortion (reduces range of enemy detection)
+    2,           // _evasion (0% chance to evade attacks)
+	2,            // _hotShot (0% more accurate fire)
+    2,            // _fov (20% wider field of view)
+    80,             // _bumper (reduces HP to 0 on collision)
+    10000,            // _cloaking (negates enemy sensors for 0 frames)
+    2.0,           // _enhancedArmory (0% increase in primary capacity)
+    2.0,            // _veteranCrew (0% reduction in cooldown) 1-2
+	20,				//_enhancedCoolingUnit (+1 shield restore per step)
+	20,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
+	10				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+);
 	
     global.sprites = [];
 
@@ -198,12 +228,12 @@ function InitShips() {
         global.primaryWeapons[0],               // Primary Weapon
         global.secondaryWeapons[0],             // Secondary Weapon
         global.shields[1],                      // Shields
-        global.sensors[1],                      // Sensors
+        global.sensors[2],                      // Sensors
         true,                                   // Is Owned
         global.sprites[0],                      // Sprites
-        "Finch",                                 // Ship Name
+        "Finch",                                // Ship Name
         "Scout",                                // Ship Class
-		global.passives[0],						// Ship Passives
+		global.passives[3],						// Ship Passives
         "Gen 4 Mercurian",                      // Ship Generation
 		true,									// Unlocked
 		false,									// Destroyed
@@ -217,7 +247,7 @@ function InitShips() {
         global.secondaryWeapons[0],				// Secondary Weapon
 		global.shields[0],                      // Shields
 		global.sensors[2],                      // Sensors
-        false,                                   // Is Owned
+        false,                                  // Is Owned
         global.sprites[1],                      // Sprites
         "Raptor",                               // Ship Name
         "Interceptor",                          // Ship Class
@@ -229,19 +259,37 @@ function InitShips() {
     );
 
     global.playerShips[2] = ShipConfig(
-        noone,									// Hull
-        noone,									// Engine
-        noone,									// Primary Weapon
-        noone,									// Secondary Weapon
-		noone,									// Shields
-		noone,									// Sensors
-        false,                                   // Is Owned
+        global.hulls[3],						// Hull
+        global.engines[3],						// Engine
+        global.primaryWeapons[4],				// Primary Weapon
+        global.secondaryWeapons[4],				// Secondary Weapon
+		global.shields[3],						// Shields
+		global.sensors[2],						// Sensors
+        false,                                  // Is Owned
         global.sprites[2],						// Sprites
         "Sparrow",                              // Ship Name
         "Frigate",								// Ship Class
+		noone,									// Ship Passives
+        "Gen 3 Venuzian",                       // Ship Generation
+		true,									// Unlocked
+		false,									// Destroyed
+		global.systemLimits[1]					// System Limits
+    );
+	
+	   global.playerShips[3] = ShipConfig(
+        global.hulls[2],									// Hull
+        global.engines[1],									// Engine
+        global.primaryWeapons[1],									// Primary Weapon
+        global.secondaryWeapons[1],									// Secondary Weapon
+		global.shields[1],									// Shields
+		global.sensors[1],									// Sensors
+        true,                                   // Is Owned
+        global.sprites[2],						// Sprites
+        "Sparrow V2",                              // Ship Name
+        "Frigate",								// Ship Class
 		global.passives[0],						// Ship Passives
         "Gen 3 Venuzian",                       // Ship Generation
-		false,									// Unlocked
+		true,									// Unlocked
 		false,									// Destroyed
 		global.systemLimits[1]					// System Limits
     );

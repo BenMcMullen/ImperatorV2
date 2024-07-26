@@ -17,9 +17,8 @@ function InitSystems() {
     }
 
     // Function to define shield configurations
-    function ShieldConfig(_id, _name, _overloadRestoreTime, _restoreRate, _uses, _spriteStatic, _spriteActive, _shieldStatic, _shieldStaticReduction, _shieldActive, _shieldActiveConsume, _systemSprite, _systemStatus) {
+    function ShieldConfig(_name, _overloadRestoreTime, _restoreRate, _uses, _spriteStatic, _spriteActive, _shieldStatic, _shieldStaticReduction, _shieldActive, _shieldActiveConsume, _systemSprite, _systemStatus) {
         return {
-            id: _id,
             name: _name,
             overloadRestoreTime: _overloadRestoreTime,
             restoreRate: _restoreRate,
@@ -36,9 +35,8 @@ function InitSystems() {
     }
 
     // Function to define hull configurations
-    function HullConfig(_id, _name, _hp, _repairability, _maxHp, _systemSprite, _systemStatus) {
+    function HullConfig(_name, _hp, _repairability, _maxHp, _systemSprite, _systemStatus) {
         return {
-            id: _id,
             name: _name,
             hp: _hp,
 			repairability: _repairability,
@@ -87,9 +85,8 @@ function InitSystems() {
     }
 
     // Function to define sensor configurations
-    function SensorConfig(_id, _name, _radius, _range, _sensitivity, _systemSprite, _systemStatus) {
+    function SensorConfig(_name, _radius, _range, _sensitivity, _systemSprite, _systemStatus) {
         return {
-            id: _id,
             name: _name,
             radius: _radius,
             range: _range,
@@ -100,9 +97,8 @@ function InitSystems() {
     }
 
     // Function to define engine configurations
-    function EngineConfig(_id, _name, _boostSpeed, _speed, _cooldown, _burnup, _capacity, _systemSprite, _systemStatus) {
+    function EngineConfig(_name, _boostSpeed, _speed, _cooldown, _burnup, _capacity, _systemSprite, _systemStatus) {
         return {
-            id: _id,
             name: _name,
             boostSpeed: _boostSpeed,
             speed: _speed,
@@ -169,6 +165,19 @@ function InitSystems() {
         false,    // isOwned
         1
     );
+	
+	global.systemStatus[31] = SystemStatusConfig(  
+		0,		//systemPoints
+		"Frigate",	// ship class
+        "primaryWeapons",
+        "Sparrow Plasma Cannon v1",
+        401,
+        false,    // unlocked
+        false,   // destroyed
+        true,    // basic
+        false,    // isOwned
+        1
+    );
 
     // Adding primary weapons individually
     global.primaryWeapons[0] = PrimaryWeaponConfig(
@@ -178,7 +187,7 @@ function InitSystems() {
         20,      // capacity
         [-2, 2], // accuracy
         25.0,    // shotSpeed
-        1,       // damage
+        30,       // damage
         snd_plasma,
         spr_plasma,
         600,     // range
@@ -234,6 +243,23 @@ function InitSystems() {
         spr_shipSystemsLarge,
         global.systemStatus[3]
     );
+	
+	global.primaryWeapons[4] = PrimaryWeaponConfig(
+        "Sparrow Plasma Cannon v1",
+        5,       // delay
+        80,      // cooldown
+        20,      // capacity
+        [-2, 2], // accuracy
+        25.0,    // shotSpeed
+        1,       // damage
+        snd_plasma,
+        spr_plasma,
+        600,     // range
+		"Energy",
+        spr_shipSystemsLarge,
+        global.systemStatus[31]
+    );
+
 
 
     // Initialize the global array of shields
@@ -278,10 +304,22 @@ function InitSystems() {
         false,    // isOwned
         1
     );
+	
+	global.systemStatus[32] = SystemStatusConfig(  
+		0,		//systemPoints
+		"Frigate",	// ship class
+          "shields",
+        "Sparrow Shields v1",
+        500,
+        false,    // unlocked
+        false,   // destroyed
+        true,    // basic
+        false,    // isOwned
+        1
+    );
 
     // Adding shields individually
 global.shields[0] = ShieldConfig(
-    1,
     "Basic Shields",
     2500,        // delay
     2,      // restoreRate
@@ -297,7 +335,6 @@ global.shields[0] = ShieldConfig(
 );
 		
 global.shields[1] = ShieldConfig(
-    2,
     "Advanced Shields",
     10,        // delay
     2,      // restoreRate
@@ -313,7 +350,6 @@ global.shields[1] = ShieldConfig(
 );
 
 global.shields[2] = ShieldConfig(
-    3,
     "Elite Shields",
     2,      // restoreRate
     2000,      // cooldown
@@ -326,6 +362,21 @@ global.shields[2] = ShieldConfig(
     10,         // active shield consume
     spr_shopUpgrade,
     global.systemStatus[6]
+);
+
+global.shields[3] = ShieldConfig(
+    "Sparrow Shields v1",
+    2500,        // delay
+    2,      // restoreRate
+    1,         // uses
+    spr_raptorShield,
+    spr_raptorShield,
+    2000,      // static shield
+    1,        // static reduction
+    2000,      // active shield
+    10,         // active shield consume
+    spr_shopUpgrade,
+    global.systemStatus[32]
 );
 
 
@@ -372,9 +423,21 @@ global.systemStatus[28] = SystemStatusConfig(
     1
 );
 
+global.systemStatus[33] = SystemStatusConfig(  
+		0,		//systemPoints
+	"Frigate",	// ship class
+    "hulls",
+    "Sparrow Hull v1",
+    500,
+    true,    // unlocked
+    false,   // destroyed
+    true,    // basic
+    false,    // isOwned
+    1
+);
+
 // Adding hulls individually
 global.hulls[0] = HullConfig(
-    1,
     "Standard Hull",      // Name
     100,                  // HP
 	3,					  // Repairability
@@ -384,7 +447,6 @@ global.hulls[0] = HullConfig(
 );
 
 global.hulls[1] = HullConfig(
-    2,
     "Advanced Hull",      // Name
     125,                  // HP
 	4,					  // Repairability
@@ -394,7 +456,6 @@ global.hulls[1] = HullConfig(
 );
 
 global.hulls[2] = HullConfig(
-    3,
     "Frigate Hull",       // Name
     200,                  // HP
 	5,					  // Repairability
@@ -403,12 +464,22 @@ global.hulls[2] = HullConfig(
     global.systemStatus[28] // System Status
 );
 
+global.hulls[3] = HullConfig(
+    "Sparrow Hull v1",      // Name
+    100,                  // HP
+	3,					  // Repairability
+    150,                  // Max HP
+    spr_shopUpgrade,      // Shop Sprite
+    global.systemStatus[33] // System Status
+);
+
+
 
 // Initialize the global array of engines
 global.engines = [];
 
 // Adding system status configurations for engines
-global.systemStatus[0] = SystemStatusConfig(	 
+global.systemStatus[34] = SystemStatusConfig(	 
 		5,		//systemPoints
 	"Any",	// ship class
     "engines",
@@ -447,9 +518,21 @@ global.systemStatus[30] = SystemStatusConfig(
     1
 );
 
+global.systemStatus[35] = SystemStatusConfig(	 
+		5,		//systemPoints
+	"Frigate",	// ship class
+    "engines",
+    "Sparrow Engine v1",
+    500,
+    true,    // unlocked
+    false,   // destroyed
+    true,    // basic
+    false,    // isOwned
+    1
+);
+
 // Adding engines individually
 global.engines[0] = EngineConfig(
-    1,
     "Standard Engine",      // Name
     3.0,                    // Boost Speed
     3.0,                    // Speed
@@ -457,11 +540,10 @@ global.engines[0] = EngineConfig(
 	2,						// Burnup
 	1500,					// Fuel Capacity
     spr_shopUpgrade,        // Shop Sprite
-    global.systemStatus[0]  // System Status
+    global.systemStatus[34]  // System Status
 );
 
 global.engines[1] = EngineConfig(
-    2,
     "Advanced Engine",      // Name
     4.0,                    // Boost Speed
     5.0,                    // Speed
@@ -473,7 +555,6 @@ global.engines[1] = EngineConfig(
 );
 
 global.engines[2] = EngineConfig(
-    3,
     "Frigate Engine",       // Name
     2.5,                    // Boost Speed
     2.0,                    // Speed
@@ -482,6 +563,17 @@ global.engines[2] = EngineConfig(
 	1500,					// Fuel Capacity
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[30] // System Status
+);
+
+global.engines[3] = EngineConfig(
+    "Sparrow Engine v1.1",       // Name
+    2.5,                    // Boost Speed
+    2.0,                    // Speed
+    1,                      // Cooldown
+	2,						// Burnup
+	1500,					// Fuel Capacity
+    spr_shipSystemsLarge,   // Shop Sprite
+    global.systemStatus[35] // System Status
 );
    
 
@@ -537,6 +629,32 @@ global.systemStatus[25] = SystemStatusConfig(
     false,   // destroyed
     true,    // basic
     false,    // isOwned
+    1
+);
+
+global.systemStatus[36] = SystemStatusConfig(  
+		5,		//systemPoints
+	"Frigate",	// ship class
+    "secondaryWeapons",
+    "Sparrow Missile Launcher v1",
+    500,
+   true,    // unlocked
+    false,   // destroyed
+    true,    // basic
+    false,    // isOwned
+    1
+);
+
+global.systemStatus[38] = SystemStatusConfig(  
+		5,		//systemPoints
+	"Frigate",	// ship class
+    "secondaryWeapons",
+    "Big Boy",
+    500,
+   true,    // unlocked
+    false,   // destroyed
+    false,    // basic
+    true,    // isOwned
     1
 );
 
@@ -605,6 +723,38 @@ global.secondaryWeapons[3] = SecondaryWeaponConfig(
     global.systemStatus[25] // System Status
 );
 
+global.secondaryWeapons[4] = SecondaryWeaponConfig(
+    "Sparrow Missile Launcher v1",     // Name
+    0,                      // Delay
+    45,                     // Cooldown
+    1,                      // Capacity
+    [-0.5, 0.5],            // Accuracy
+    10.0,                   // Shot Speed
+    10,                     // Damage
+    snd_missile,            // Audio
+    spr_missile1,           // Deploy Angle
+    750,                    // Projectile Range
+	"Kinetic",
+    spr_shipSystemsLarge,   // Shop Sprite
+    global.systemStatus[36] // System Status
+);
+
+global.secondaryWeapons[5] = SecondaryWeaponConfig(
+    "Big Boy",     // Name
+    0,                      // Delay
+    45,                     // Cooldown
+    1,                      // Capacity
+    [-0.5, 0.5],            // Accuracy
+    10.0,                   // Shot Speed
+    10,                     // Damage
+    snd_missile,            // Audio
+    spr_missile1,           // Deploy Angle
+    750,                    // Projectile Range
+	"Kinetic",
+    spr_shipSystemsLarge,   // Shop Sprite
+    global.systemStatus[38] // System Status
+);
+
 
 global.sensors = [];
 
@@ -661,9 +811,21 @@ global.systemStatus[22] = SystemStatusConfig(
     1
 );
 
+global.systemStatus[37] = SystemStatusConfig(  
+		27,		//systemPoints
+	"Frigate",	// ship class
+    "sensors",
+    "Sparrow Sensors v1",
+    500,
+    false,    // unlocked
+    false,   // destroyed
+    true,    // basic
+    false,    // isOwned
+    1
+);
+
 // Adding sensors individually
 global.sensors[0] = SensorConfig(
-    1,
     "Standard Sensor",      // Name 
     3.0,                    // Radius
     3.0,                    // Range
@@ -673,7 +835,6 @@ global.sensors[0] = SensorConfig(
 );
 
 global.sensors[1] = SensorConfig(
-    2,
     "Advanced Sensor",      // Name
     4,                      // Radius
     5,                      // Range
@@ -683,7 +844,6 @@ global.sensors[1] = SensorConfig(
 );
 
 global.sensors[2] = SensorConfig(
-    3,
     "Hyper Sensor",         // Name
     2.5,                    // Radius
     2.0,                    // Range
@@ -692,14 +852,22 @@ global.sensors[2] = SensorConfig(
     global.systemStatus[21] // System Status
 );
 
-global.sensors[2] = SensorConfig(
-    3,
+global.sensors[3] = SensorConfig(
     "Integrated Sensor",         // Name
     1,                    // Radius
     2.0,                    // Range
     3,                      // Sensitivity
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[22] // System Status
+);
+
+global.sensors[4] = SensorConfig(
+    "Sparrow Sensor v1",      // Name 
+    3.0,                    // Radius
+    3.0,                    // Range
+    1,                      // Sensitivity
+    spr_shipSystemsLarge,   // Shop Sprite
+    global.systemStatus[37] // System Status
 );
 
 }

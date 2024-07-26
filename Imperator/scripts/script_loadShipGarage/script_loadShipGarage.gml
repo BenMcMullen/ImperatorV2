@@ -5,8 +5,7 @@
 function LoadShipGarage() {
 
 		SlideTransition(TRANS_MODE.GOTO, room_garage);
-
-    
+		audio_play_sound(snd_garageTransition, 1, false);    
 }
 
 function AllSystemsInstalled() {
@@ -164,6 +163,7 @@ function DisplayGarageSystem(systemToDisplay) {
 	var display = false;
 	if ((string(systemToDisplay.systemStatus.class) == string(global.selectedShip.shipClass)) || string(systemToDisplay.systemStatus.class) == "Any") {
 		display = true;	
+		show_debug_message(string(systemToDisplay.systemStatus.class))
 	}
 	
 	

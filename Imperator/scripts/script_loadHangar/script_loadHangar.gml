@@ -8,5 +8,4 @@ function LoadHangar() {
 		global.shopFirstClick = true;
 		global.dataPadOpen = false;
 		SlideTransition(TRANS_MODE.GOTO, room_hangar);
-
 }

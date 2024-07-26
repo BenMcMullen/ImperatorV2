@@ -5,6 +5,7 @@
 function LoadBridge() {
 		global.dataPadOpen = false;
 		SlideTransition(TRANS_MODE.GOTO, room_bridge);
+		audio_play_sound(snd_door, 1, false);
 }
 
 function LoadBridgeSetPlanet() {

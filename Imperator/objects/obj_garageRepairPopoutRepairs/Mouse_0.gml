@@ -4,7 +4,6 @@ if (!instance_exists(pause_overlay)) {
  if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
         lastClickTime = currentTime; 
 		if (global.desiredRepairs == 0) {
-			image_index = 2;
 			with (obj_garageRepairPopout) {
 				instance_destroy(obj_garageRepairPopout);
 			}
@@ -29,7 +28,11 @@ if (!instance_exists(pause_overlay)) {
 		global.selectedShip.hull.hp = global.selectedShip.hull.maxHp;	
 		}
 		global.desiredRepairs = 0;
-		
+					audio_play_sound(snd_repair, 1, false);
 		 } 
+		 else {
+			 audio_play_sound(snd_denied, 1, false);
+		 }
     }
-}
+		 } 
+ 

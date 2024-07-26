@@ -163,7 +163,31 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 		}
 	
 	
+	var messageText = hudText;
+	draw_set_font(font_arialHUD);
+    var boxX = RES_W -  470;
+    var boxY = RES_H;
+    var textX = boxX;
+    var textY = boxY - 40
+ 
+	var max_width = 325; // Maximum width before wrapping
+	var line_height = 16; // Height of each line, adjust as needed
+
+	var words = WrapImperatorDialogue(string(messageText), max_width);
+
+	var num_lines = array_length(words);
+
+	// Draw each line
+	for (var i = 0; i < num_lines; i++) {
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+	draw_set_color(c_black);
+	draw_text(textX +162, textY + i * line_height, words[i]);
+	draw_set_color(c_yellow);
+	draw_text(textX +164, textY + i * line_height - 2, words[i]);
 	
+	
+}
 	
 	/*
 	DrawSetText(c_black, font_arial2, fa_left, fa_top);

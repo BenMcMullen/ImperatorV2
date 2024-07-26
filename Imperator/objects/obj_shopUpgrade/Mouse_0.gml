@@ -37,16 +37,19 @@ if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 		var shopUpgradeInstance = instance_create_layer(confirmationWidth, confirmationHeight, "Items", obj_shopUpgradeMessage);
         messageText = "You haven't unlocked this upgrade yet!";
 		shopUpgradeInstance.messageText = messageText;
+		audio_play_sound(snd_denied, 1, false);
     }
 	else if (upgrade.systemStatus.isOwned) {	
 		var shopUpgradeInstance = instance_create_layer(confirmationWidth, confirmationHeight, "Items", obj_shopUpgradeMessage);
         messageText = "You already own " + upgrade.name + "!";
 		shopUpgradeInstance.messageText = messageText;
+		audio_play_sound(snd_denied, 1, false);
     }
 	else {
 		var shopUpgradeInstance = instance_create_layer(confirmationWidth, confirmationHeight, "Items", obj_shopUpgradeMessage);
 
         messageText = "You haven't gathered enough contract points for " + upgrade.name + "!";
 		shopUpgradeInstance.messageText = messageText;
+		audio_play_sound(snd_denied, 1, false);
 	}
 	}

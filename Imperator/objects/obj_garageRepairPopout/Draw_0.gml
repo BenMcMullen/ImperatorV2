@@ -14,7 +14,7 @@ desiredHp = global.selectedShip.hull.maxHp;
 	
 	
 	draw_set_colour(c_black);
-	draw_text_transformed(x - 77, y - 48, string(desiredHp) , loseHpScale, loseHpScale, 0);
+	draw_text_transformed(x - 92, y - 48, string(desiredHp) , loseHpScale, loseHpScale, 0);
 	draw_set_colour(c_black);
 	draw_text_transformed(x -20, y - 48, "/" + string(global.selectedShip.hull.maxHp), loseHpScale, loseHpScale, 0);
 	
@@ -22,7 +22,7 @@ desiredHp = global.selectedShip.hull.maxHp;
 	if (desiredHp == global.selectedShip.hull.hp) {
 		draw_set_colour(c_white);
 	}
-	draw_text_transformed(x -75, y - 50, string(desiredHp), loseHpScale, loseHpScale, 0);
+	draw_text_transformed(x -90, y - 50, string(desiredHp), loseHpScale, loseHpScale, 0);
 	draw_set_colour(c_white);
 	draw_text_transformed(x -22, y - 50, "/" + string(global.selectedShip.hull.maxHp), loseHpScale, loseHpScale, 0);
 	

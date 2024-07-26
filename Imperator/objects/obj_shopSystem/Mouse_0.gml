@@ -47,7 +47,7 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 
         for (var i = 0; i < total_items; i++) {
             var currentUpgrade = target[i];
-			if (!currentUpgrade.systemStatus.destroyed) {
+			if (!currentUpgrade.systemStatus.destroyed && !currentUpgrade.systemStatus.basic) {
 			
             var instance_x = start_x + current_column * spacing_x;
             var instance_y = start_y + current_row * spacing_y;

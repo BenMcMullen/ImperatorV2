@@ -26,6 +26,7 @@ if (mouse_check_button_released(mb_left)) {
 				if (upgradeData.systemStatus.systemPoints > GetSystemLimit(upgradeDataType)) {
 					   var shopUpgradeInstance = instance_create_layer(x / 2, y / 2, "Systems", obj_garageUpgradeMessage);
 						shopUpgradeInstance.messageText = (upgradeData.name + " exceeds " + upgradeDataType + " system size!");
+						audio_play_sound(snd_denied, 1, false);
 				} else {
                 
                     // Check if there is already a contained object
@@ -42,6 +43,7 @@ if (mouse_check_button_released(mb_left)) {
 
                     // Access `system` data from obj_garageUpgrades through `item_data` to upgrade
                     UpgradeShip(upgradeData, upgradeDataType);
+					audio_play_sound(snd_upgrade, 1, false);
                     
                     // Optionally create a message instance
                     var shopUpgradeInstance = instance_create_layer(x / 2, y / 2, "Systems", obj_garageUpgradeMessage);

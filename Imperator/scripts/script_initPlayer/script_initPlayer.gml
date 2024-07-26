@@ -48,7 +48,7 @@ global.playerRanks[5] = PlayerRank("Venator", 6, 60, 2.5, spr_commendations);
 global.playerInformation = {
 	currentTreeIndex:3,
     kills: 0,   // Total kills attributed to the player
-    rank: global.playerRanks[1],
+    rank: global.playerRanks[0],
 	commendations: 0,
     deaths: 0,
 	points: 500,

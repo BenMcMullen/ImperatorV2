@@ -1,0 +1,1 @@
+hudText = GetLevelHUDInstructions(GetCurrentLevel().levelType.type, levelPhase)

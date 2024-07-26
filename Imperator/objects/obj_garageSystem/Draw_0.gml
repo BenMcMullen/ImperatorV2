@@ -21,7 +21,7 @@ draw_text(text_x, textYLimit , string(GetSystemLimit(systemType)));
 draw_set_color(c_white);
 draw_text(text_x + 2, textYLimit -2, string(GetSystemLimit(systemType)));
 
-draw_set_font(font_venite); // Replace with your desired font
+draw_set_font(font_veniteItemLabel); // Replace with your desired font
 draw_set_color(c_black); // Set the default color to white for safety
 // First draw_text (not colored)
 draw_text(text_x, text_y + line_height, systemType);

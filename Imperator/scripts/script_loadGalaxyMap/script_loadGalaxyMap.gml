@@ -3,8 +3,7 @@
 // scr_load_next_level
 
 function LoadGalaxyMap() {
-
 		SlideTransition(TRANS_MODE.GOTO, room_map);
-
+		audio_play_sound(snd_door, 1, false);
     
 }

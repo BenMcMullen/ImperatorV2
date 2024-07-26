@@ -9,6 +9,7 @@ if (!currentLevel.completed && AllSystemsInstalled() != false) {
 	alarm[0] = room_speed * .1;
 }
 else {
+	audio_play_sound(snd_denied, 1, false);
 sprite_index = spr_btnBattle;
 image_index = 3;
 image_speed = 0;

@@ -3,4 +3,10 @@ if (global.isPaused) {
     exit;
 }
 
+if (global.desiredRepairs == 0) {
+	repairSprite = spr_garageRepairPopoutCancelRepairs
+}
+else {
+	repairSprite = spr_garageRepairPopoutMakeRepairs
+}
 

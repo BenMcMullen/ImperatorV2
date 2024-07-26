@@ -10,13 +10,16 @@ if (!instance_exists(pause_overlay)) {
      var currentHp =  global.selectedShip.hull.hp;
 	 var maxHp = global.selectedShip.hull.maxHp;
 	 var currentDesiredHp = global.selectedShip.hull.hp + (global.desiredRepairs * global.selectedShip.hull.repairability);
-           if (currentDesiredHp > maxHp) {
+   	if (currentDesiredHp >= maxHp + global.selectedShip.hull.repairability) {
+			audio_play_sound(snd_denied, 1, false);
+		}else {
+			audio_play_sound(snd_repairValueChange, 1, false);
+		   if (currentDesiredHp > maxHp) {
 			global.desiredRepairs = global.desiredRepairs;
 			}
 			else { 
 			global.desiredRepairs ++;
 			}
-				
-       show_debug_message(global.desiredRepairs)
+		}
     }
 }

@@ -51,7 +51,7 @@ function GetEnemyStats(enemyType) {
             enemy.cooldownDuration = round(30 / (rankDifficulty * levelDifficulty));
             enemy.detectionRange = 11000 + ((1000 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
-            enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
+            enemy.hp = round((1 * rankDifficulty) * levelDifficulty)
 			enemy.huntCount = round((8 * rankDifficulty) * levelDifficulty)
 			enemy.escortCount = round((6 * rankDifficulty) * levelDifficulty)
             break;
@@ -63,7 +63,7 @@ function GetEnemyStats(enemyType) {
             enemy.cooldownDuration = round(20 / (rankDifficulty * levelDifficulty));
             enemy.detectionRange = 11000 + ((500 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty);
-            enemy.hp = round((10 * rankDifficulty) * levelDifficulty);
+            enemy.hp = round((1 * rankDifficulty) * levelDifficulty);
             break;
 			
 		case "Hunting Wasp":

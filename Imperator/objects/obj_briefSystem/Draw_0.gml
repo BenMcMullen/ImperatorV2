@@ -12,6 +12,6 @@ var text_x = x + sprite_width/2 + 32; // Adjust if needed
 var text_y = y + sprite_height; // Position just below the sprite, adjust 4 as needed
 draw_set_color(c_white)
 
-draw_text(text_x, text_y + line_height , "Mission Briefs");
+
 
 draw_self();
