@@ -7,7 +7,6 @@ var currentY = floor(y); //y is set as a floating point number, convert for ==.
 
 if (currentY == (room_height - (triggerDistance * triggerNumber))) {
 	
- show_debug_message("triggerSpawner")
 var spawnLocation = irandom(3);
         var spawn_x, spawn_y;
         

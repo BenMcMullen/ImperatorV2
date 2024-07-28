@@ -10,11 +10,11 @@ if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
         lastClickTime = currentTime; 
 
         if (!level.completed) {
-            var missionobj_overlay = instance_create_layer(confirmationWidth, confirmationHeight, "Briefs", obj_briefobj_overlayScreen);
-            missionobj_overlay.missionName = level.operationName;
+            var missionConfirmation = instance_create_layer(confirmationWidth, confirmationHeight, "Briefs", obj_briefConfirmationScreen);
+            missionConfirmation.missionName = level.operationName;
 
             messageText = "Are you sure you want to select " + level.operationName; // Success message
-            missionobj_overlay.operationName = level.operationName;
+            missionConfirmation.operationName = level.operationName;
 
             
             var yesButton = instance_create_layer(confirmationWidth + 130, confirmationHeight + 55, "Briefs", obj_briefYesButton); // Adjust positions as needed

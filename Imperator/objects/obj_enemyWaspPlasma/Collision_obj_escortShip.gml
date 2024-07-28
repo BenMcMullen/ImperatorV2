@@ -3,6 +3,7 @@ with (other) {
 	flash = 3;
 	with (obj_zzzHUD) {
 		levelPhase = 3;
+		global.HUDUpdate = true;
 	}
 }
 

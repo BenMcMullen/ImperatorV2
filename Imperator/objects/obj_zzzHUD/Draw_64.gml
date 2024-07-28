@@ -11,10 +11,25 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 
     // Draw Minimap
     var minimap_surface = -1;
-    var minimap_width = room_width / 40; // Adjusted to 1/40 of room width
-    var minimap_height = room_height / 40; // Adjusted to 1/40 of room height
+	var sensorWidth = miniMapRadiusW;
+	var sensorHeight = miniMapRadiusH; 
+    var minimap_width = miniMapSize;
+    var minimap_height = miniMapSize;
     var minimap_x = 10; // Adjust as needed
     var minimap_y = RES_H - 10 - minimap_height; // Adjusted to align with bottom edge of screen
+
+	// Get player's position
+        var player_x = obj_player.x;
+        var player_y = obj_player.y;
+
+        // Calculate the top-left corner of the minimap view
+        var view_x = player_x - sensorWidth /2;
+        var view_y = player_y - sensorHeight /2;
+
+        // Clamp the view to ensure it doesn't go out of the room boundaries
+        view_x = clamp(view_x, 0, room_width - sensorWidth);
+        view_y = clamp(view_y, 0, room_height - sensorHeight);
+
 
     // Create the minimap surface if it doesn't exist
     if (minimap_surface == -1) {
@@ -30,83 +45,97 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
         draw_clear_alpha(c_white, 0);
 
         // Draw map contents on minimap surface
-        with (obj_enemy) {
+        with (obj_enemyBouncer) {
 			if (sensorSensitivity >= 3) {
-            var enemy_x = x / room_width * minimap_width;
-            var enemy_y = y / room_height * minimap_height;
-            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
 	   with (obj_beaconWasp) {
 			if (sensorSensitivity >= 3) {
-            var enemy_x = x / room_width * minimap_width;
-            var enemy_y = y / room_height * minimap_height;
-            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
 	    with (obj_beaconHornet) {
 			if (sensorSensitivity >= 3) {
-            var enemy_x = x / room_width * minimap_width;
-            var enemy_y = y / room_height * minimap_height;
-            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+			}
+	   }
+	   with (obj_surgicalEnemy) {
+			if (sensorSensitivity >= 3) {
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+			}
+	   }
+	   with (obj_surgicalPrimaryEnemy) {
+			if (sensorSensitivity >= 3) {
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapSurgicalEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
 	   with (obj_huntingEnemy) {
 			if (sensorSensitivity >= 3) {
-            var enemy_x = x / room_width * minimap_width;
-            var enemy_y = y / room_height * minimap_height;
-            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
 	    with (obj_escortEnemy) {
 			if (sensorSensitivity >= 3) {
-            var enemy_x = x / room_width * minimap_width;
-            var enemy_y = y / room_height * minimap_height;
-            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
 	    with (obj_beaconHornet) {
 			if (sensorSensitivity >= 3) {
-            var enemy_x = x / room_width * minimap_width;
-            var enemy_y = y / room_height * minimap_height;
-            draw_sprite(spr_miniMapenemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
         with (obj_player) {
-            var playerX = x / room_width * minimap_width;
-            var playerY = y / room_height * minimap_height;
+            var playerX = (x - view_x) / sensorWidth * minimap_width;
+            var playerY = (y - view_y) / sensorHeight * minimap_height;
             draw_sprite(spr_miniMapPlayer, 0, playerX, playerY); // Adjust the player icon sprite as needed
         }
 		
 		with (obj_escortShip) {
-            var escortX = x / room_width * minimap_width;
-            var escortY = y / room_height * minimap_height;
+            var escortX = (x - view_x) / sensorWidth * minimap_width;
+            var escortY = (y - view_y) / sensorHeight * minimap_height;
             draw_sprite(spr_miniMapEscort, 0, escortX, escortY); // Adjust the enemy icon sprite as needed	
 	   }
 	   with (obj_beaconBeacon) {
-            var beaconX = x / room_width * minimap_width;
-            var beaconY = y / room_height * minimap_height;
+            var beaconX = (x - view_x) / sensorWidth * minimap_width;
+            var beaconY = (y - view_y) / sensorHeight * minimap_height;
             draw_sprite(spr_miniMapBeacon, 0, beaconX, beaconY); // Adjust the enemy icon sprite as needed	
 	   }
 		
 		 with (obj_asteroid) {
 			 if (sensorSensitivity >= 2) {
-            var asteroidX = x / room_width * minimap_width;
-            var asteroidY = y / room_height * minimap_height;
+            var asteroidX = (x - view_x) / sensorWidth * minimap_width;
+            var asteroidY = (y - view_y) / sensorHeight * minimap_height;
             draw_sprite(spr_miniMapAsteroid, 0, asteroidX, asteroidY); // Adjust the player icon sprite as needed
 			 }
 		}
 		
 		// Draw the factory
 		with (obj_beaconFactory) {
-            var factoryX = x / room_width * minimap_width;
-            var factoryY = y / room_height * minimap_height;
+            var factoryX = (x - view_x) / sensorWidth * minimap_width;
+            var factoryY = (y - view_y) / sensorHeight * minimap_height;
             draw_sprite(spr_miniMapBeaconsFactory, 0, factoryX, factoryY); // Adjust the enemy icon sprite as needed	
 	   }
         // Draw the warp
         with (obj_escortWarp) {
-            var warpX = x / room_width * minimap_width;
-            var warpY = y / room_height * minimap_height;
+            var warpX = (x - view_x) / sensorWidth * minimap_width;
+            var warpY = (y - view_y) / sensorHeight * minimap_height;
             draw_sprite(spr_miniMapEscortWarp, 0, warpX + 12, warpY); // Adjust the hangar icon sprite as needed
         }
         // (Your minimap drawing code here)
@@ -126,9 +155,6 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 
     // Draw HUD elements (HP, Shields, Points, Contract Info)
     draw_set_alpha(0.5); // Set transparency for HUD background
-	
-	  var minimap_x = 10; // Adjust as needed
-    var minimap_y = RES_H - 10 - minimap_height; // Adju
 	
 	draw_set_color(c_white);
     draw_rectangle( 10, RES_H - 10,
@@ -188,7 +214,6 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
 	
 	
 }
-	
 	/*
 	DrawSetText(c_black, font_arial2, fa_left, fa_top);
 	draw_text(RES_W - RES_W + 8, 88, "Points: " + string(global.playerInformation.points));

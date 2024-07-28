@@ -36,6 +36,9 @@ if (moving_to_target) {
         y = target_y;
         moving_to_target = false;
         hasControl = true; // Re-enable player control
+		with (obj_outOfBounds) {
+			destroyWarning = true;
+		}
     }
 } else {
     if (hasControl) {

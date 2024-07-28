@@ -89,7 +89,7 @@ function InitSystems() {
         return {
             name: _name,
             radius: _radius,
-            range: _range,
+            range: _range, //Determines size of minimap coverage
             sensitivity: _sensitivity,
             systemSprite: _systemSprite,
             systemStatus: _systemStatus

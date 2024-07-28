@@ -18,7 +18,7 @@ function GetLevelHUDInstructions(levelType, levelPhase) {
             
         case  "Hunting":
             if (levelPhase == 1) {
-                phaseString = GetCurrentLevel().levelType.quantity - global.killsThisRoom + " targets remaining on this contract.";
+                phaseString = string(GetCurrentLevel().levelType.quantity - global.killsThisRoom) + " targets remaining on this contract.";
             } else if (levelPhase == 2) {
                 phaseString = "Incoming enemy reinforcements detected!";
             } 
@@ -35,6 +35,16 @@ function GetLevelHUDInstructions(levelType, levelPhase) {
                 phaseString = "Passenger ship is coming under fire!";
 			}
             break;
+			
+		case "Surgical Strike":
+            if (levelPhase == 1) {
+                phaseString = "Hunt down the primary targets. Careful, these bots are on Hydra protocol.";
+			}
+			 if (levelPhase == 2) {
+                phaseString = string(GetCurrentLevel().levelType.targetQuantity - global.surgicalKillsThisRoom) + " targets remaining!";
+			}
+            break;
+			
             
         default:
             phaseString = "Unknown level type.";

@@ -45,7 +45,6 @@ if (instance_exists(obj_player) && initialized) {
 	
 	
 	if (distToPlayer < distToEscort && !global.playerCloaked ) {
-	show_debug_message("targetingPlayer")
 		
         if (distToPlayer > attackRange) {
             // Move towards the player
@@ -57,6 +56,16 @@ if (instance_exists(obj_player) && initialized) {
             x += move_x;
             y += move_y;
         } else {
+			if (distToPlayer <= 190) {
+                // Move away from the player to maintain 1000 distance
+                var enemyDirection = point_direction(player_x, player_y, x, y); // Direction away from the player
+                var move_x = lengthdir_x(enemySpeed, enemyDirection);
+                var move_y = lengthdir_y(enemySpeed, enemyDirection);
+
+                // Update position
+                x += move_x;
+                y += move_y;
+            }
 			if (distToPlayer > 200) {
 			  var enemyDirection = point_direction(x, y, player_x, player_y);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
@@ -115,7 +124,6 @@ if (instance_exists(obj_player) && initialized) {
         }
     } 
     } else if (instance_exists(obj_escortShip)){
-		show_debug_message("targetingEscort")
 		
 		escort = instance_find(obj_escortShip, 0);
         if (distToEscort > attackRange) {
@@ -128,6 +136,16 @@ if (instance_exists(obj_player) && initialized) {
             x += move_x;
             y += move_y;
         } else {
+			if (distToEscort <= 300) {
+                // Move away from the player to maintain 1000 distance
+                var enemyDirection = point_direction(escort_x, escort_y, x, y); // Direction away from the player
+                var move_x = lengthdir_x(enemySpeed, enemyDirection);
+                var move_y = lengthdir_y(enemySpeed, enemyDirection);
+
+                // Update position
+                x += move_x;
+                y += move_y;
+            }
             // ATTACKING LOGIC
             // Player and escortShip detection and shooting
             var targetX, targetY, targetDistance;

@@ -34,7 +34,7 @@ global.contractQuantity = 1;
 global.totalCompletedContracts = 0;
 global.killsThisRoom = 0;
 global.levelPoints = 0;
-
+global.HUDUpdate = true;
 global.beaconFactoryDestroyed = false;
 global.activeBeacon = -1;
 global.beaconFactoryImmune = true;
@@ -42,7 +42,7 @@ global.beaconsOverloaded = 0;
 global.beaconList = [];
 global.escortWarpReached = false;
 global.escortTriggerSpawn = false;
-
+global.surgicalKillsThisRoom = 0;
 
 
 

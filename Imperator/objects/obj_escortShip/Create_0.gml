@@ -1,3 +1,4 @@
+depth = 1;
 level = GetCurrentLevel();
 escortLevel = level.levelType;
 destroyed = false;

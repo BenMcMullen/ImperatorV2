@@ -38,7 +38,6 @@ function SaveFile(filename) {
 function LoadFile(filename) {
     // Check if the file exists
     if (!file_exists(filename)) {
-        show_message("Save file does not exist!");
         return;
     }
 
@@ -87,7 +86,7 @@ function DeleteFile(filename) {
             show_debug_message("Save file deleted successfully.");
         }
     } else {
-        show_debug_message("Save file does not exist!");
+        //show_debug_message("Save file does not exist!");
     }
 }
 function TogglePauseMenu() {

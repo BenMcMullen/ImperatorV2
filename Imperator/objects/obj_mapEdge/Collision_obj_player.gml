@@ -1,5 +1,7 @@
 with (obj_player) {
     if (hasControl) {
+		
+		instance_create_layer(x,y,"Player", obj_outOfBounds)
         // Reverse the player's movement direction
         hsp = -hsp;
         vsp = -vsp;

@@ -12,5 +12,5 @@ spawnList = [];// Number of spawns that need to be destroyed in active state
 // Calculate the coordinates for the four corners
 offset = 1100;
 
-
+GetAsteroids(10, 27, false);
 

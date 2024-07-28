@@ -42,14 +42,28 @@ switch (levelType) {
 	case "Shield Beacons":
         triggerEnd = BeaconMissionRequirementsMet();
         break;
+		
+	case "Surgical Strike":
+        triggerEnd = SurgicalMissionRequirementsMet();
+        break;
     
     default:
-        show_debug_message("Unknown level type: " + levelType);
         break;
 }
 
 return triggerEnd;
 }
+
+	function SurgicalMissionRequirementsMet(){
+		var currentLevel = GetCurrentLevel();
+		var quantity = currentLevel.levelType.targetQuantity;
+		if (quantity <= global.surgicalKillsThisRoom) {
+	
+		return true;
+		//go to hangar after each level
+		}
+		return false;
+	}
 
 	function HuntingMissionRequirementsMet(){
 		var currentLevel = GetCurrentLevel();

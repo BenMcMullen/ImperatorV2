@@ -34,3 +34,4 @@ instance_create_layer(roomWidth / 2, roomHeight /2, "Factory", obj_beaconFactory
 
 // Set the first beacon as active
 WeakenNextBeacon();
+GetAsteroids(3, 12, false);

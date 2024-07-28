@@ -15,3 +15,4 @@ instance_create_layer(roomWidth - offset, offset, "Enemy", obj_huntingEnemySpawn
 instance_create_layer(offset, roomHeight - offset, "Enemy", obj_huntingEnemySpawner);
 instance_create_layer(roomWidth - offset, roomHeight - offset, "Enemy", obj_huntingEnemySpawner);
 
+GetAsteroids(25, 50, false);

@@ -6,9 +6,9 @@ if (global.isPaused) {
 // You can write your code in this editor
 if (spawn) {
 	with (obj_zzzHUD) {
+		global.HUDUpdate = true;
 		levelPhase = 2;
 	}
-	alarm [1] = 60;
 spawn = false;
 alarm[0] = 10;
 }

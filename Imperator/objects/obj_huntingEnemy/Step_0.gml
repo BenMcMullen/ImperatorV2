@@ -73,7 +73,18 @@ if (instance_exists(obj_player) && initialized) {
             x += move_x;
             y += move_y;
         } else {
-			if (distToPlayer > 200) {
+			if (distToPlayer <= 290) {
+                // Move away from the player to maintain 1000 distance
+                var enemyDirection = point_direction(player_x, player_y, x, y); // Direction away from the player
+                var move_x = lengthdir_x(enemySpeed, enemyDirection);
+                var move_y = lengthdir_y(enemySpeed, enemyDirection);
+
+                // Update position
+                x += move_x;
+                y += move_y;
+            }
+			
+			if (distToPlayer > 300) {
 			  var enemyDirection = point_direction(x, y, player_x, player_y);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
             var move_y = lengthdir_y(enemySpeed, enemyDirection);
@@ -150,24 +161,5 @@ if (instance_exists(obj_player) && initialized) {
             y += move_y;
         }
     }
-	if (hp <= 0){
-	var explosion = instance_create_layer(x, y, layer, obj_explosion);
-	
-    explosion.size = size;
-	audio_play_sound(snd_explosion1,10,false);
-	
-	
-	with (explosion) {
-    size = size;
-}
-	
-	instance_destroy();
-	if (instance_exists(obj_player)) 
-	{
-	global.playerInformation.kills++;
-	global.killsThisRoom++;
-	with (obj_zzzHUD) killTextScale = 2;
-	}
-}
 
 }

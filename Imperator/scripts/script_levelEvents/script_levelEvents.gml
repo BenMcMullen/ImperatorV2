@@ -31,3 +31,52 @@ function GetCurrentLevel() {
 	var level = tree[levelIndex];
 	return level;
 }
+
+function GetAsteroids(min, max, always) {
+	
+	var modifier = GetDifficultyRankModifier();
+	var minAmount =  min * modifier;
+	var maxAmount = max * modifier;
+	
+	var chance = global.playerInformation.rank.rank;
+    // Ensure chance is within the valid range
+     if (chance < 0) chance = 0;
+    if (chance > 6) chance = 6;
+    
+    // Randomly decide if asteroids should be created based on the chance
+    if (always || irandom(6) <= chance) {
+        // Determine the number of asteroids to create
+        var numAsteroids = irandom_range(minAmount, maxAmount);
+        
+        // Get the player's position
+        var playerX = obj_player.x;
+        var playerY = obj_player.y;
+        
+        // Loop to create the asteroids
+       for (var i = 0; i < numAsteroids; i++) {
+            var asteroidX, asteroidY;
+
+                // Generate random positions within the room
+                asteroidX = irandom(room_width);
+                asteroidY = irandom(room_height);
+                
+                // Calculate the distance from the player
+                var distance = point_distance(playerX, playerY, asteroidX, asteroidY);
+                
+                // Check if the distance is greater than 500
+                if (distance > 500) {
+                   // Create the asteroid at the valid position
+            instance_create_layer(asteroidX, asteroidY, "Asteroids", obj_asteroid);
+                }
+            }
+    }
+	
+}
+
+function GetDifficultyRankModifier() {
+	var rankDifficulty = global.playerInformation.rank.rankDifficulty;
+	var levelDifficulty = GetCurrentLevel().difficulty.difficultyModifier
+	return (1*(rankDifficulty * levelDifficulty))
+}
+
+
