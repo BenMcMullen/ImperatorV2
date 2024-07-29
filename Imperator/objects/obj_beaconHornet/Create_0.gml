@@ -6,7 +6,7 @@ getWayPoints = true;
 waypoints = [];
 current_waypoint = 0;
 cooldownTimer = 0;
-
+ionDamage = 0;
 // Variables for AI behavior
 
 enemy = "Beacon Hornet";

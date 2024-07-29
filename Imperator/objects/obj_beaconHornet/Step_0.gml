@@ -7,7 +7,10 @@ if (getWayPoints) {
 waypoints = GetWaypoints(other.beaconIndex);
 }
 
-if (instance_exists(obj_player)) {
+ionDamage = max(ionDamage - GetEnemyStats(enemy).ionResistance, 0);
+
+
+if (instance_exists(obj_player) && ionDamage <=0) {
 	var detectionRange = GetEnemyStats(enemy).detectionRange / global.selectedShip.passives.distortion; // Detection range
 	
 if (global.playerCloaked) {

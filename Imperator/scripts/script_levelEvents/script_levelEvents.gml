@@ -79,4 +79,56 @@ function GetDifficultyRankModifier() {
 	return (1*(rankDifficulty * levelDifficulty))
 }
 
+function GetCameraStart() {
+var currentLevel = GetCurrentLevel();
+var levelType = currentLevel.levelType.type;
+var coordinates = [];
+ 
+switch (levelType) {
+		
+    case "Escort Detail":
+       return [room_width/2, 500]	
+        break;
+		
+	case "Shield Beacons":
+       return [room_width / 2 + 350, room_height/2 + 325]	
+        break;
+	
+    
+    default:
+        break;
+}
+ return coordinates;
+}
+
+function HasCameraStart() {
+var currentLevel = GetCurrentLevel();
+var levelType = currentLevel.levelType.type;
+var hasCoordinates = false;
+switch (levelType) {
+    case "Hunting":
+        hasCoordinates = false;;
+        break;
+        
+    case "Escort Detail":
+        hasCoordinates = true;
+        break;
+		
+	case "Shield Beacons":
+	show_debug_message("Here at Beacons is true!")
+          hasCoordinates = true;
+        break;
+		
+	case "Surgical Strike":
+          hasCoordinates = false;
+        break;
+    
+    default:
+        break;
+}
+return hasCoordinates;
+}
+	
+
+
 

@@ -3,6 +3,7 @@ if (global.isPaused) {
     exit;
 }
 // Step event of obj_huntingenemy
+
 if (!initialized) {
 cooldownTimer = 0;
 
@@ -50,7 +51,9 @@ current_waypoint = 0;
     
 }
 
-if (instance_exists(obj_player) && initialized) {
+ionDamage = max(ionDamage - GetEnemyStats(enemyType).ionResistance, 0);
+
+if (instance_exists(obj_player) && initialized && ionDamage <=0) {
 	var detectionRange = GetEnemyStats(enemyType).detectionRange / global.selectedShip.passives.distortion; // Detection range
 	if (global.playerCloaked) {
 		detectionRange = 0;
@@ -163,3 +166,4 @@ if (instance_exists(obj_player) && initialized) {
     }
 
 }
+

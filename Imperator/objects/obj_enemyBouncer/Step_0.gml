@@ -3,6 +3,9 @@ if (global.isPaused) {
     exit;
 }
 /// obj_enemy Collision Event with obj_mapEdge
+ionDamage = max(ionDamage - GetEnemyStats(enemyType).ionResistance, 0);
+
+if (instance_exists(obj_player) && ionDamage <=0) {
 if (place_meeting(x, y, obj_mapEdge)) {
     var collisionInstance = instance_place(x, y, obj_mapEdge);
     
@@ -106,4 +109,5 @@ else {
             }
         }
     }
+}
 }

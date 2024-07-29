@@ -51,7 +51,9 @@ current_waypoint = 0;
     
 }
 
-if (instance_exists(obj_player) && initialized) {
+ionDamage = max(ionDamage - GetEnemyStats(enemyType).ionResistance, 0);
+
+if (instance_exists(obj_player) && initialized && ionDamage <=0) {
 	var detectionRange = GetEnemyStats(enemyType).detectionRange / global.selectedShip.passives.distortion; // Detection range
 	if (global.playerCloaked) {
 		detectionRange = 0;

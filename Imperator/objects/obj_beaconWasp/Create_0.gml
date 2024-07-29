@@ -2,6 +2,7 @@
 
 cooldownTimer = 0;
 
+ionDamage = 0;
 // Variables for AI behavior
 enemy = "Beacon Wasp";
 attackRange = GetEnemyStats(enemy).shootRange; // Attack range

@@ -226,7 +226,7 @@ global.passives[3] = passivesConfig(
         global.hulls[1],                        // Hull
         global.engines[1],                      // Engine
         global.primaryWeapons[0],               // Primary Weapon
-        global.secondaryWeapons[0],             // Secondary Weapon
+        global.secondaryWeapons[6],             // Secondary Weapon
         global.shields[1],                      // Shields
         global.sensors[2],                      // Sensors
         true,                                   // Is Owned
