@@ -1,8 +1,15 @@
-
+spawn = true;
  depth = -1
-  var frigateShieldGenerator = instance_create_layer(x, y, "Enemy", obj_frigateShieldGenerator)
+spawnedEnemies = 0;
+enemy = GetRandomFrigateEnemyType(false);
+enemyDefending = GetRandomFrigateEnemyType(true);
+enemyCount = GetCurrentLevel().levelType.quantity * GetDifficultyRankModifier();
 
- var frigateShield = instance_create_layer(x, y, "Enemy", obj_frigateShield)
+var frigateBridge = instance_create_layer(x, y, "Enemy", obj_frigateBridge)
+var frigateShieldGenerator = instance_create_layer(x, y, "Enemy", obj_frigateShieldGenerator)
+var frigateShield = instance_create_layer(x, y, "Enemy", obj_frigateShield)
+
+
 
 var turret1 = instance_create_layer(x - 500, y - 400, "Enemy", obj_frigateTurret);
 turret1.turretX = -500;

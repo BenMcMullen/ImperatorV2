@@ -17,6 +17,7 @@ if (instance_exists(obj_frigateShieldGenerator)) {
 var shieldGenerator = instance_find(obj_frigateShieldGenerator, 0)
 var generatorHp = shieldGenerator.hp
 if (generatorHp <= 0) {
+	
 	audio_play_sound(snd_explosion1,10,false);
 	instance_destroy();	
 }

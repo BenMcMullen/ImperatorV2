@@ -4,7 +4,6 @@ var evasionValue = global.selectedShip.passives.evasion;
 var evasionProbability = 0.05 + (evasionValue - 1) * (0.80 - 0.05);
 
 if (collision == false){
-	show_debug_message("hit!")
     // Evasion failed, proceed with collision handling
 	collision = true;
     with (other) {
@@ -15,9 +14,8 @@ if (collision == false){
 				flash = 5;
 			}
 			else if (global.playerShieldActive) {
-				show_debug_message(global.playerShieldActiveCharge)
 				global.playerShieldActiveCharge -= (enemyDamage - global.selectedShip.passives.activeEnergyDispersionUnit)
-				show_debug_message(global.playerShieldActiveCharge)
+		
 			}
 			else {
 				global.selectedShip.hull.hp -= (enemyDamage - global.selectedShip.shields.shieldStaticReduction)
@@ -29,7 +27,7 @@ if (collision == false){
     }
 
 	ScreenShake(25,12)
-	instance_create_layer(x,y,"Enemy", obj_frigateMissileExplosion)
+	instance_create_layer(x,y,"Enemy", obj_frigateExplosion)
     
 	audio_play_sound(snd_explosion1,10,false);
 	

@@ -25,6 +25,7 @@ var cellHeight = room_height / gridRows;
 
 // Create the 4x4 grid of patrol points
  waypoints = [];
+ 
 for (var row = 0; row < gridRows; row++) {
     for (var col = 0; col < gridCols; col++) {
         var xCoor = (col + 0.5) * cellWidth;

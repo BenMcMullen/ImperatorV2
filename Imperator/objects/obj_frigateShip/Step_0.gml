@@ -3,8 +3,12 @@ if (global.isPaused) {
     exit;
 }
 // Step event of obj_huntingenemy
+if (spawn) {
+spawn = false;
+alarm[0] = 10;
+}
 
-show_debug_message("Frigate is here!")
+
 
 if (instance_exists(obj_player)) {
 	var detectionRange = GetCurrentLevel().levelType.detectionRange / global.selectedShip.passives.distortion; // Detection range
@@ -40,3 +44,4 @@ if (instance_exists(obj_player)) {
 			}
     
 }
+

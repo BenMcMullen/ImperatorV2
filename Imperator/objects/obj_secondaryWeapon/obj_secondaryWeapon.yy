@@ -21,6 +21,7 @@
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_frigateBridge","path":"objects/obj_frigateBridge/obj_frigateBridge.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_frigateMissileLauncher","path":"objects/obj_frigateMissileLauncher/obj_frigateMissileLauncher.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_frigateTurret","path":"objects/obj_frigateTurret/obj_frigateTurret.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_frigateEnemy","path":"objects/obj_frigateEnemy/obj_frigateEnemy.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_secondaryWeapon",

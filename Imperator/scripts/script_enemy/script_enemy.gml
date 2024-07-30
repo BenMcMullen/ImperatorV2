@@ -1,5 +1,23 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function GetRandomFrigateEnemyType(defending) {
+	var options = [];
+	if (defending) {
+		show_debug_message("Triggering Defense Hornet")
+		 options = [ //typeString, sprite, column, row, projectile
+        ["Frigate Defense Hornet", spr_enemyFrigateDefenseHornet, obj_enemyHornetPlasma]
+    ];
+	} else {
+     options = [ //typeString, sprite, column, row, projectile
+        ["Frigate Wasp", spr_enemyWasp, obj_enemyWaspPlasma],
+        ["Frigate Hornet", spr_enemyHornet, obj_enemyHornetPlasma]
+    ];
+	}
+    var index = irandom(array_length(options) - 1);
+    return options[index];
+}
+
+
 function GetSurgicalPrimaryTargetEnemyType() {
 	
      var target = ["Surgical Primary Target", spr_surgicalPrimary, 4, 4, obj_enemyWaspPlasma]
@@ -63,6 +81,42 @@ function GetEnemyStats(enemyType) {
 
     // Assign values to the fields based on the parameters
     switch (enemyType) {
+			
+		 case "Frigate Defense Hornet":
+          	enemy.shootRange = (1100 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 5 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((40 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = round(20 / (rankDifficulty * levelDifficulty));
+            enemy.detectionRange =  GetCurrentLevel().levelType.detectionRange;
+			enemy.enemySpeed = round((12 * rankDifficulty) * levelDifficulty);
+            enemy.hp = 1;
+			enemy.ionResistance = 5;
+            break;
+		
+		 case "Frigate Wasp":
+       		enemy.shootRange = (450 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 6 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((20 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = round(30 / (rankDifficulty * levelDifficulty));
+            enemy.detectionRange = 11000 + ((1000 * rankDifficulty) * levelDifficulty);
+			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
+            enemy.hp = round((1 * rankDifficulty) * levelDifficulty)
+			enemy.spawnCount = round((8 * rankDifficulty) * levelDifficulty)
+			enemy.escortCount = 1
+			enemy.ionResistance = 1;
+            break;
+			
+		 case "Frigate Hornet":
+          	enemy.shootRange = (900 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 5 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((30 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = round(20 / (rankDifficulty * levelDifficulty));
+            enemy.detectionRange = 11000 + ((500 * rankDifficulty) * levelDifficulty);
+			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty);
+            enemy.hp = 1;
+			enemy.ionResistance = 5;
+            break;
+			
 		
 		 case "Surgical Primary Target":
        		enemy.shootRange = 1000;

@@ -86,7 +86,6 @@ if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > deboun
 		}
     } else {
         // This object is the last clicked object
-        show_debug_message("This object was already clicked. Click another object first.");
         global.lastClickedGarageSystem = noone;
         // Destroy all obj_garageUpgrades instances and text instances and the display box
         with (obj_garageUpgrades) {      

@@ -8,47 +8,39 @@ cooldownTimer = 0;
 
 // Variables for AI behavior
  enemy = enemyType;
- show_debug_message(string(enemyType))
  attackRange = GetEnemyStats(enemy).shootRange; // Attack range
  hp = GetEnemyStats(enemy).hp;
  capacity = GetEnemyStats(enemy).capacity;
  fireRate = GetEnemyStats(enemy).fireRate;
  enemySpeed = GetEnemyStats(enemy).enemySpeed;
- cooldownDuration = GetEnemyStats(enemy).cooldownDuration;
+ cooldownDuration = GetEnemyStats(enemy).cooldownDuration
+ var frigateInstance = instance_find(obj_frigateShip, 0) 
 
-
-// Calculate the size of each grid cell
-var gridRows = roomRows;
-var gridCols = roomColumns;
-var cellWidth = room_width / gridCols;
-var cellHeight = room_height / gridRows;
-
-// Create the 4x4 grid of patrol points
- waypoints = [];
-for (var row = 0; row < gridRows; row++) {
-    for (var col = 0; col < gridCols; col++) {
-        var xCoor = (col + 0.5) * cellWidth;
-        var yCoor = (row + 0.5) * cellHeight;
+    // Create 100 points along the oval
+    waypoints = [];
+    for (var i = 0; i < 100; i++) {
+        var angle = i * (360 / 100); // Angle in degrees
+        var rad = degtorad(angle); // Convert to radians
+        var xCoor = frigateInstance.x + cos(rad) * 1500;
+        var yCoor = frigateInstance.y + sin(rad) * 900;
         array_push(waypoints, [xCoor, yCoor]);
     }
-}
- 
-// Shuffle the patrol points to randomize the order
-var shuffledWaypoints = [];
-while (array_length(waypoints) > 0) {
-    var index = irandom(array_length(waypoints) - 1);
-    array_push(shuffledWaypoints, waypoints[index]);
-    array_delete(waypoints, index, 1);
-}
 
-// Assign the shuffled waypoints to the enemy's patrol path
-waypoints = shuffledWaypoints;
+    // Shuffle the patrol points to randomize the order
+    var shuffledWaypoints = [];
+    while (array_length(waypoints) > 0) {
+        var index = irandom(array_length(waypoints) - 1);
+        array_push(shuffledWaypoints, waypoints[index]);
+        array_delete(waypoints, index, 1);
+    }
 
-// Initialize the current waypoint
-current_waypoint = 0;
+    // Assign the shuffled waypoints to the enemy's patrol path
+    waypoints = shuffledWaypoints;
 
- initialized = true;
-    
+    // Initialize the current waypoint
+    current_waypoint = 0;
+
+    initialized = true;
 }
 
 ionDamage = max(ionDamage - GetEnemyStats(enemyType).ionResistance, 0);
