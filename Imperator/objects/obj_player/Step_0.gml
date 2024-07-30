@@ -10,12 +10,19 @@ if (!global.musicPlaying) {
     global.currentMusic = audio_play_sound(snd_level1, 1, true);
     global.musicPlaying = true;
 }
+
+var ship = global.selectedShip;
+
+if (!hullIntegrityWarningGiven && (GetCurrentHpPercent(ship.hull.maxHp, ship.hull.hp) < 20)) {
+	hullIntegrityWarningGiven = true;
+	instance_create_layer(x,y,"Player",obj_hullIntegrityWarning)
+	alarm[4] = 240;
+}
+
 if (canBoost && global.playerEngineBoostCharge == 0) {
 canBoost = false;
 alarm[2] = 30
 }
-
-var ship = global.selectedShip;
 
 if (moving_to_target) {
     // Move towards the target position
@@ -36,7 +43,7 @@ if (moving_to_target) {
         y = target_y;
         moving_to_target = false;
         hasControl = true; // Re-enable player control
-		with (obj_outOfBounds) {
+		with (obj_outOfBoundsWarning) {
 			destroyWarning = true;
 		}
     }

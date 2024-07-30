@@ -1,0 +1,1 @@
+shieldStatus = 0;

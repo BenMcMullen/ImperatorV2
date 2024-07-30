@@ -43,6 +43,8 @@ global.beaconList = [];
 global.escortWarpReached = false;
 global.escortTriggerSpawn = false;
 global.surgicalKillsThisRoom = 0;
+global.frigateBridgeExposed = false;
+global.frigateBridgeDestroyed = false;
 
 
 

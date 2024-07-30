@@ -14,7 +14,6 @@ if (follow_player && instance_exists(follow)) {
     yTo = follow.y;
 
 } else if (HasCameraStart()) {
-	show_debug_message("CameraStartCoordinates")
         xTo = GetCameraStart()[0];
         yTo = GetCameraStart()[1];
     } 

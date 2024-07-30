@@ -73,6 +73,13 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
 			}
 	   }
+	   with (obj_frigateEnemy) {
+			if (sensorSensitivity >= 3) {
+            var enemy_x = (x - view_x) / sensorWidth * minimap_width;
+            var enemy_y = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEnemy, 0, enemy_x, enemy_y); // Adjust the enemy icon sprite as needed
+			}
+	   }
 	   with (obj_surgicalPrimaryEnemy) {
 			if (sensorSensitivity >= 3) {
             var enemy_x = (x - view_x) / sensorWidth * minimap_width;
@@ -137,6 +144,16 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             var warpX = (x - view_x) / sensorWidth * minimap_width;
             var warpY = (y - view_y) / sensorHeight * minimap_height;
             draw_sprite(spr_miniMapEscortWarp, 0, warpX + 12, warpY); // Adjust the hangar icon sprite as needed
+        }
+		with (obj_frigateShip) {
+            var warpX = (x - view_x) / sensorWidth * minimap_width;
+            var warpY = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapFrigate, 0, warpX + 12, warpY); // Adjust the hangar icon sprite as needed
+        }
+		with (obj_frigateAllyFrigate) {
+            var warpX = (x - view_x) / sensorWidth * minimap_width;
+            var warpY = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapFrigateAllyFrigate, 0, warpX + 12, warpY); // Adjust the hangar icon sprite as needed
         }
         // (Your minimap drawing code here)
 

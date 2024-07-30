@@ -93,6 +93,10 @@ switch (levelType) {
 	case "Shield Beacons":
        return [room_width / 2 + 350, room_height/2 + 325]	
         break;
+
+	case "Frigate Assault":
+       return [room_width - 500, room_height/2]
+        break;
 	
     
     default:
@@ -121,6 +125,10 @@ switch (levelType) {
 		
 	case "Surgical Strike":
           hasCoordinates = false;
+        break;
+			
+	case "Frigate Assault":
+          hasCoordinates = true;
         break;
     
     default:

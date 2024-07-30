@@ -4,6 +4,13 @@
 HERES THE DEAL. HERE IS A ROUGH TODO-LIST TO BRING MY GAME TO MVP
 
 
+FRIGATE LEVEL:  Needs to launch wasps and hornets too.
+Killing the bridge is the only way to kill the ship.
+Still need enemy spawning, and end conditions for winning and losing. Particle beam?
+
+
+
+
 
 
 A NEW LEVEL, MAYBE A BLACK SCREEN WITH A BIG MESSAGE BREIFING BOX, GIVING YOU TIPS AND EXPECTATIONS ON THE COMING LEVEL TYPE. CLICK TO SKIP.

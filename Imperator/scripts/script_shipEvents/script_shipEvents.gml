@@ -7,3 +7,10 @@ function player_performed_action_during_cloak() {
     }
     return false;
 }
+
+function GetCurrentHpPercent(max_hp, current_hp) {
+    if (max_hp == 0) {
+        return 0; // Prevent division by zero
+    }
+    return (current_hp / max_hp) * 100;
+}

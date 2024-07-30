@@ -45,6 +45,15 @@ function GetLevelHUDInstructions(levelType, levelPhase) {
 			}
             break;
 			
+		case "Frigate Assault":
+            if (levelPhase == 1) {
+                phaseString = "Bring down the forward shield to expose the bridge to your attacks.";
+			}
+			 if (levelPhase == 2) {
+                phaseString = "The bridge is exposed- incapacitate that frigate before it can finish our damaged destroyer!";
+			}
+            break;
+			
             
         default:
             phaseString = "Unknown level type.";
