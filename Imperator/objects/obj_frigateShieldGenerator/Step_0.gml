@@ -15,9 +15,12 @@ alarm[0] = 10;
 } else {
 shieldStatus = 2;
 global.frigateBridgeExposed = true;
+if (secondSpawn) {
+	secondSpawn = false;
 with (obj_frigateShip) {
-	spawn = true;	
+	spawnDefense = true;	
 	}
+}
 with (obj_zzzHUD) {
 		levelPhase = 2;
 	}

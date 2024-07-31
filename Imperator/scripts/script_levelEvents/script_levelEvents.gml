@@ -137,6 +137,12 @@ switch (levelType) {
 return hasCoordinates;
 }
 	
-
+function MetFrigateParticleCannonConditions() {
+	if (global.frigateParticleCannonWithinRange || global.frigateBridgeExposed || global.frigateLaunchersDestroyed >= 2) {
+		return true 
+		}
+		
+return false;
+}
 
 

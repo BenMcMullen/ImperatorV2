@@ -45,6 +45,11 @@ global.escortTriggerSpawn = false;
 global.surgicalKillsThisRoom = 0;
 global.frigateBridgeExposed = false;
 global.frigateBridgeDestroyed = false;
+global.frigateParticleCannonBeamDirection = 0;
+global.frigateParticleCannonDirection = 0;
+global.frigateParticleCannonFiring = false;
+global.frigateParticleCannonWithinRange = false;
+global.frigateLaunchersDestroyed = 0;
 
 
 

@@ -78,14 +78,16 @@ function InitLevels() {
         };
     }
 	
-	function FrigateLevelTypeConfig(_type, _frigateSpeed, _turretFireRate, _quantity, _detectionRange, _generatorHp) {
+	function FrigateLevelTypeConfig(_type, _frigateSpeed, _turretFireRate, _quantity, _detectionRange, _generatorHp, _huntRange, _particleBeamRange) {
         return {
 			type: _type,
             frigateSpeed: _frigateSpeed,
 			turretFireRate: _turretFireRate,
 			quantity: _quantity,
 			detectionRange: _detectionRange,
-			generatorHp: _generatorHp
+			generatorHp: _generatorHp,
+			huntRange: _huntRange,
+			particleBeamRange: _particleBeamRange
         };
     }
 	
@@ -126,7 +128,9 @@ function InitLevels() {
 		5,
 		12,
 		2000,
-		10
+		10,
+		3000,
+		40000
     );
 	  global.levelTypeFrigate[1] = FrigateLevelTypeConfig(
         "Frigate Assault",
@@ -134,7 +138,9 @@ function InitLevels() {
 		7,
 		16,
 		2300,
-		600
+		600,
+		4000,
+		6000
     );
 	
 

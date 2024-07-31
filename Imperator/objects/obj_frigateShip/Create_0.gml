@@ -1,13 +1,17 @@
 spawn = true;
+spawnDefense = false;
+firingParticleCannon = false;
  depth = -1
+ alarm[2] = 10;
 spawnedEnemies = 0;
-enemy = GetRandomFrigateEnemyType(false);
-enemyDefending = GetRandomFrigateEnemyType(true);
+enemy = GetRandomFrigateEnemyType();
+enemyDefenders = GetRandomFrigateDefenseEnemyType();
 enemyCount = GetCurrentLevel().levelType.quantity * GetDifficultyRankModifier();
 
 var frigateBridge = instance_create_layer(x, y, "Enemy", obj_frigateBridge)
 var frigateShieldGenerator = instance_create_layer(x, y, "Enemy", obj_frigateShieldGenerator)
 var frigateShield = instance_create_layer(x, y, "Enemy", obj_frigateShield)
+var frigateParticleCannon = instance_create_layer(x, y, "Enemy", obj_frigateParticleCannon)
 
 
 

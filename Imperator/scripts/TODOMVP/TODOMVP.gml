@@ -4,7 +4,7 @@
 HERES THE DEAL. HERE IS A ROUGH TODO-LIST TO BRING MY GAME TO MVP
 
 
-FRIGATE LEVEL:  Needs to launch wasps and hornets too. Particle beam?
+Fix second defense launch. See if we can keep enemies from overlapping Particle beam? enemies aren't patrolling around the ship
 
 
 

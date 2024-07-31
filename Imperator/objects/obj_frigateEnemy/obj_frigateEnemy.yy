@@ -45,7 +45,7 @@
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"spr_enemyWasp",
     "path":"sprites/spr_enemyWasp/spr_enemyWasp.yy",

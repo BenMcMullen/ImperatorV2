@@ -36,7 +36,7 @@ switch (levelType) {
         break;
         
     case "Escort Detail":
-        triggerEnd = ProtectionMissionRequirementsMet();
+        triggerEnd = EscortMissionRequirementsMet();
         break;
 		
 	case "Shield Beacons":
@@ -90,7 +90,7 @@ return triggerEnd;
 		return false;
 	}
 	
-	function ProtectionMissionRequirementsMet(){
+	function EscortMissionRequirementsMet(){
 		if (global.escortWarpReached == true) {
 			return true;	
 		}

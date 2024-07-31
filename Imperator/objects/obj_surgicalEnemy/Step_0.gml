@@ -8,7 +8,6 @@ cooldownTimer = 0;
 
 // Variables for AI behavior
  enemy = enemyType;
- show_debug_message(string(enemyType))
  attackRange = GetEnemyStats(enemy).shootRange; // Attack range
  hp = GetEnemyStats(enemy).hp;
  capacity = GetEnemyStats(enemy).capacity;

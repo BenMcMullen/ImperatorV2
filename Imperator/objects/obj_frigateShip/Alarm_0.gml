@@ -1,10 +1,6 @@
 // Alarm[0] event
 if (spawnedEnemies <= enemyCount) {
-	var enemyToSpawn = enemy;
-	if (global.frigateBridgeExposed) {
-		
-		enemyToSpawn = enemyDefending;
-	}
+	
     // Create the object instance
    var huntingEnemy = instance_create_layer(x, y, "Enemy", obj_frigateEnemy);
       huntingEnemy.enemyType = enemy[0]

@@ -448,7 +448,7 @@ global.hulls[0] = HullConfig(
 
 global.hulls[1] = HullConfig(
     "Advanced Hull",      // Name
-    125,                  // HP
+    10000,                  // HP
 	4,					  // Repairability
     150,                  // Max HP
     spr_basicTest_1,      // Shop Sprite

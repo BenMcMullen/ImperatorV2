@@ -2,15 +2,38 @@ if (global.isPaused) {
     // If the game is paused, exit the step event
     exit;
 }
-// Step event of obj_huntingenemy
+// Step event 
+
 if (spawn) {
-spawn = false;
+spawn = false
 alarm[0] = 10;
+} 
+
+if (spawnDefense) {
+spawnDefense = false
+alarm[1] = 10;
+} 
+
+ var allyFrigate = instance_find(obj_frigateAllyFrigate, 0); // Reference to the player object
+    var ally_x = allyFrigate.x;
+    var ally_y = allyFrigate.y;
+
+    var distToFrigate = point_distance(x, y, ally_x, ally_y);
+	if (distToFrigate <= GetCurrentLevel().levelType.particleBeamRange) {
+	global.frigateParticleCannonWithinRange = true;	
+	}
+
+if (instance_exists(obj_frigateParticleCannon)) {
+var particleCannon = instance_find(obj_frigateParticleCannon, 0); // Reference to the player object
+if (particleCannon.firing) 
+{
+firingParticleCannon = true	
 }
-
-
-
-if (instance_exists(obj_player)) {
+else {
+firingParticleCannon = false;	
+}
+}
+if (instance_exists(obj_player) && !firingParticleCannon) {
 	var detectionRange = GetCurrentLevel().levelType.detectionRange / global.selectedShip.passives.distortion; // Detection range
 	if (global.playerCloaked) {
 		detectionRange = 300/ global.selectedShip.passives.distortion;

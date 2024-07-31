@@ -1,22 +1,20 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function GetRandomFrigateEnemyType(defending) {
-	var options = [];
-	if (defending) {
-		show_debug_message("Triggering Defense Hornet")
-		 options = [ //typeString, sprite, column, row, projectile
-        ["Frigate Defense Hornet", spr_enemyFrigateDefenseHornet, obj_enemyHornetPlasma]
+function GetRandomFrigateDefenseEnemyType() {
+	
+     var target = ["Frigate Defense Hornet", spr_enemyFrigateDefenseHornet, obj_enemyHornetPlasma]
+	 
+    return target;
+}
+
+function GetRandomFrigateEnemyType() {
+     var options = [ //typeString, sprite, column, row, projectile
+        ["Frigate Wasp", spr_enemyWasp,obj_enemyWaspPlasma],
+        ["Frigate Hornet", spr_enemyHornet,obj_enemyHornetPlasma]
     ];
-	} else {
-     options = [ //typeString, sprite, column, row, projectile
-        ["Frigate Wasp", spr_enemyWasp, obj_enemyWaspPlasma],
-        ["Frigate Hornet", spr_enemyHornet, obj_enemyHornetPlasma]
-    ];
-	}
     var index = irandom(array_length(options) - 1);
     return options[index];
 }
-
 
 function GetSurgicalPrimaryTargetEnemyType() {
 	
@@ -88,7 +86,7 @@ function GetEnemyStats(enemyType) {
             enemy.capacity = round((40 * rankDifficulty) * levelDifficulty);
             enemy.cooldownDuration = round(20 / (rankDifficulty * levelDifficulty));
             enemy.detectionRange =  GetCurrentLevel().levelType.detectionRange;
-			enemy.enemySpeed = round((12 * rankDifficulty) * levelDifficulty);
+			enemy.enemySpeed = round((23 * rankDifficulty) * levelDifficulty);
             enemy.hp = 1;
 			enemy.ionResistance = 5;
             break;
@@ -101,7 +99,6 @@ function GetEnemyStats(enemyType) {
             enemy.detectionRange = 11000 + ((1000 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
             enemy.hp = round((1 * rankDifficulty) * levelDifficulty)
-			enemy.spawnCount = round((8 * rankDifficulty) * levelDifficulty)
 			enemy.escortCount = 1
 			enemy.ionResistance = 1;
             break;
