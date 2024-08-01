@@ -4,7 +4,7 @@
 HERES THE DEAL. HERE IS A ROUGH TODO-LIST TO BRING MY GAME TO MVP
 
 
-Fix second defense launch. See if we can keep enemies from overlapping Particle beam? enemies aren't patrolling around the ship
+
 
 
 
