@@ -3,7 +3,7 @@ var confirmationWidth = room_width/2;
 var confirmationHeight = room_height/2;
 var currentTime = current_time / 1000;
 
-var overlay_instance = instance_find(obj_overlay, 0); var pause_overlay = instance_find(Pause, 0);
+var overlay_instance = instance_find(obj_overlay, 0); var pause_overlay = instance_find(obj_pauseOverlay, 0);
 if (!instance_exists(overlay_instance) && !instance_exists(pause_overlay)) {
 if (mouse_check_button_pressed(mb_left) && (currentTime - lastClickTime > debounceTime)) {
     lastClickTime = currentTime; // Update the last click time

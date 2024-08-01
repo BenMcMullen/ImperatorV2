@@ -6,7 +6,6 @@ if (global.selectedShip.hull.hp <= 0)
     audio_stop_sound(global.currentMusic);
     global.currentMusic = -1;
     global.musicPlaying = false;
-    show_debug_message("Music Stopped");
 }
 
 	global.kills =- global.killsThisRoom;

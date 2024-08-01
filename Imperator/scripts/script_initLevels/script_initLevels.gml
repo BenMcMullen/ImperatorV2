@@ -78,6 +78,20 @@ function InitLevels() {
         };
     }
 	
+	function FrigateLevelTypeConfig(_type, _frigateSpeed, _turretFireRate, _quantity, _detectionRange, _generatorHp, _huntRange, _particleBeamRange) {
+        return {
+			type: _type,
+            frigateSpeed: _frigateSpeed,
+			turretFireRate: _turretFireRate,
+			quantity: _quantity,
+			detectionRange: _detectionRange,
+			generatorHp: _generatorHp,
+			huntRange: _huntRange,
+			particleBeamRange: _particleBeamRange
+        };
+    }
+	
+	
 	function SurgicalLevelTypeConfig(_type, _targetQuantity, _hydra, _startingSquadSize) {
         return {
             type: _type,
@@ -105,6 +119,30 @@ function InitLevels() {
 			factoryResponseQuantity: _factoryResponseQuantity
         };
     }
+	
+	global.levelTypeFrigate = [];
+	
+	  global.levelTypeFrigate[0] = FrigateLevelTypeConfig(
+        "Frigate Assault",
+		3,
+		5,
+		12,
+		2000,
+		10,
+		3000,
+		20000
+    );
+	  global.levelTypeFrigate[1] = FrigateLevelTypeConfig(
+        "Frigate Assault",
+		4,
+		7,
+		16,
+		2300,
+		600,
+		4000,
+		6000
+    );
+	
 
 	global.levelTypeSurgical = [];
 	
@@ -212,6 +250,10 @@ function InitLevels() {
 	global.enemyTypes[5] = "Escort Hornet";
 	global.enemyTypes[6] = "Surgical Wasp";
 	global.enemyTypes[7] = "Surgical Hornet";
+	global.enemyTypes[8] = "Surgical Primary Target";
+	global.enemyTypes[9] = "Frigate Wasp";
+	global.enemyTypes[10] = "Frigate Hornet";
+	
 
     // Define trees
     global.martianTreeLevels = [];
@@ -220,7 +262,7 @@ function InitLevels() {
     global.mercurianTreeLevels = [];
 
     // Martian Levels
-    global.martianTreeLevels[0] = LevelConfigMartian(300, room_levelSurgical, 3, global.levelTypeSurgical[0], 1, false, "Operation: Desert Siege", spr_brief, noone, 100, global.difficulties[0]);
+    global.martianTreeLevels[0] = LevelConfigMartian(300, room_levelFrigate, 3, global.levelTypeFrigate[0], 1, false, "Operation: Desert Siege", spr_brief, noone, 100, global.difficulties[0]);
     global.martianTreeLevels[1] = LevelConfigMartian(201, room_levelHunting, 2, global.levelTypeHunting[0], 1, false, "Operation: Red Storm", spr_brief, noone, 5, global.difficulties[0]);
 	global.martianTreeLevels[2] = LevelConfigMartian(500, room_levelBeacons, 5, global.levelTypeBeacon[0], 3, false, "Operation: Iron Fist", spr_brief, noone, 15, global.difficulties[1]);
     global.martianTreeLevels[3] = LevelConfigMartian(800, room_levelHunting, 6, global.levelTypeHunting[1], 4, false, "Operation: Twin Blades", spr_brief, [global.primaryWeapons[3]], 20, global.difficulties[1]);

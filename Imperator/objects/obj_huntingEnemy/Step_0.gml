@@ -3,6 +3,7 @@ if (global.isPaused) {
     exit;
 }
 // Step event of obj_huntingenemy
+
 if (!initialized) {
 cooldownTimer = 0;
 
@@ -24,6 +25,7 @@ var cellHeight = room_height / gridRows;
 
 // Create the 4x4 grid of patrol points
  waypoints = [];
+ 
 for (var row = 0; row < gridRows; row++) {
     for (var col = 0; col < gridCols; col++) {
         var xCoor = (col + 0.5) * cellWidth;
@@ -50,7 +52,9 @@ current_waypoint = 0;
     
 }
 
-if (instance_exists(obj_player) && initialized) {
+ionDamage = max(ionDamage - GetEnemyStats(enemyType).ionResistance, 0);
+
+if (instance_exists(obj_player) && initialized && ionDamage <=0) {
 	var detectionRange = GetEnemyStats(enemyType).detectionRange / global.selectedShip.passives.distortion; // Detection range
 	if (global.playerCloaked) {
 		detectionRange = 0;
@@ -163,3 +167,4 @@ if (instance_exists(obj_player) && initialized) {
     }
 
 }
+

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_frigateMissile",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":3.056325,
+  "name":"snd_frigateMissile",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_frigateMissile.mp3",
+  "type":0,
+  "volume":0.09,
+}

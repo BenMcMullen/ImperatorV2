@@ -36,7 +36,7 @@ switch (levelType) {
         break;
         
     case "Escort Detail":
-        triggerEnd = ProtectionMissionRequirementsMet();
+        triggerEnd = EscortMissionRequirementsMet();
         break;
 		
 	case "Shield Beacons":
@@ -46,6 +46,10 @@ switch (levelType) {
 	case "Surgical Strike":
         triggerEnd = SurgicalMissionRequirementsMet();
         break;
+		
+	case "Frigate Assault":
+        triggerEnd = FrigateMissionRequirementsMet();
+        break;
     
     default:
         break;
@@ -53,6 +57,16 @@ switch (levelType) {
 
 return triggerEnd;
 }
+
+	function FrigateMissionRequirementsMet(){
+		var currentLevel = GetCurrentLevel();
+		if (global.frigateBridgeDestroyed) {
+	
+		return true;
+		//go to hangar after each level
+		}
+		return false;
+	}
 
 	function SurgicalMissionRequirementsMet(){
 		var currentLevel = GetCurrentLevel();
@@ -76,7 +90,7 @@ return triggerEnd;
 		return false;
 	}
 	
-	function ProtectionMissionRequirementsMet(){
+	function EscortMissionRequirementsMet(){
 		if (global.escortWarpReached == true) {
 			return true;	
 		}

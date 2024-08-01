@@ -1,0 +1,11 @@
+image_index = 0;
+ depth = -3
+priming = false;
+firing = false;
+beginFiringSequence = true;
+shootAngle = 360; 
+primaryDelay = 0;
+fireRate = GetCurrentLevel().levelType.turretFireRate;
+cooldownTimer = 0;
+cooldownDuration = 5;
+capacity = 50;

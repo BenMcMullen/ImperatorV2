@@ -1,7 +1,7 @@
 
 
 xCoor = room_width /2;
-instance_create_layer(xCoor, 500, "Escort", obj_escortWarp);
+instance_create_layer(xCoor - 256, 500, "Escort", obj_escortWarp);
 
 // Create the obj_escortShip at the calculated coordinates
 instance_create_layer(xCoor, room_height - 200, "Escort", obj_escortShip);

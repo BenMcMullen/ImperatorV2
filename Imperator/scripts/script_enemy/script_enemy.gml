@@ -1,5 +1,21 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function GetRandomFrigateDefenseEnemyType() {
+	
+     var target = ["Frigate Defense Hornet", spr_enemyFrigateDefenseHornet, obj_enemyHornetPlasma]
+	 
+    return target;
+}
+
+function GetRandomFrigateEnemyType() {
+     var options = [ //typeString, sprite, column, row, projectile
+        ["Frigate Wasp", spr_enemyWasp,obj_enemyWaspPlasma],
+        ["Frigate Hornet", spr_enemyHornet,obj_enemyHornetPlasma]
+    ];
+    var index = irandom(array_length(options) - 1);
+    return options[index];
+}
+
 function GetSurgicalPrimaryTargetEnemyType() {
 	
      var target = ["Surgical Primary Target", spr_surgicalPrimary, 4, 4, obj_enemyWaspPlasma]
@@ -56,12 +72,48 @@ function GetEnemyStats(enemyType) {
 		escortCount: 0,
 		hydraCount: 0,
 		startingSquadSize: 0,
+		ionResistance: 0,
 
     };
 	
 
     // Assign values to the fields based on the parameters
     switch (enemyType) {
+			
+		 case "Frigate Defense Hornet":
+          	enemy.shootRange = (1100 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 5 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((40 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = round(20 / (rankDifficulty * levelDifficulty));
+            enemy.detectionRange =  GetCurrentLevel().levelType.detectionRange;
+			enemy.enemySpeed = round((23 * rankDifficulty) * levelDifficulty);
+            enemy.hp = 1;
+			enemy.ionResistance = 5;
+            break;
+		
+		 case "Frigate Wasp":
+       		enemy.shootRange = (450 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 6 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((20 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = round(30 / (rankDifficulty * levelDifficulty));
+            enemy.detectionRange = 11000 + ((1000 * rankDifficulty) * levelDifficulty);
+			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
+            enemy.hp = round((1 * rankDifficulty) * levelDifficulty)
+			enemy.escortCount = 1
+			enemy.ionResistance = 1;
+            break;
+			
+		 case "Frigate Hornet":
+          	enemy.shootRange = (900 * rankDifficulty) * levelDifficulty;
+            enemy.fireRate = 5 / (rankDifficulty * levelDifficulty);
+            enemy.capacity = round((30 * rankDifficulty) * levelDifficulty);
+            enemy.cooldownDuration = round(20 / (rankDifficulty * levelDifficulty));
+            enemy.detectionRange = 11000 + ((500 * rankDifficulty) * levelDifficulty);
+			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty);
+            enemy.hp = 1;
+			enemy.ionResistance = 5;
+            break;
+			
 		
 		 case "Surgical Primary Target":
        		enemy.shootRange = 1000;
@@ -69,8 +121,9 @@ function GetEnemyStats(enemyType) {
             enemy.capacity = round((60 * rankDifficulty) * levelDifficulty);
             enemy.cooldownDuration = round(10 / (rankDifficulty * levelDifficulty));
             enemy.detectionRange = 1000;
-			enemy.enemySpeed = round((12 * rankDifficulty) * levelDifficulty)
-            enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
+			enemy.enemySpeed = round((12 * rankDifficulty) * levelDifficulty);
+            enemy.hp = round((5 * rankDifficulty) * levelDifficulty);
+			enemy.ionResistance = 20;
 			
 		 case "Surgical Wasp":
        		enemy.shootRange = (350 * rankDifficulty) * levelDifficulty;
@@ -82,6 +135,7 @@ function GetEnemyStats(enemyType) {
             enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
 			enemy.hydraCount = GetCurrentLevel().levelType.hydra
 			enemy.startingSquadSize = GetCurrentLevel().levelType.startingSquadSize
+			enemy.ionResistance = 1;
             break;
 			
          case "Surgical Hornet":
@@ -94,6 +148,7 @@ function GetEnemyStats(enemyType) {
 			enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
             enemy.hydraCount = GetCurrentLevel().levelType.hydra
 			enemy.startingSquadSize = GetCurrentLevel().levelType.startingSquadSize
+			enemy.ionResistance = 5;
             break;
 		
 		 case "Escort Wasp":
@@ -106,6 +161,7 @@ function GetEnemyStats(enemyType) {
             enemy.hp = round((1 * rankDifficulty) * levelDifficulty)
 			enemy.spawnCount = round((8 * rankDifficulty) * levelDifficulty)
 			enemy.escortCount = 1
+			enemy.ionResistance = 1;
             break;
 			
 		  case "Escort Hornet":
@@ -116,6 +172,7 @@ function GetEnemyStats(enemyType) {
             enemy.detectionRange = 11000 + ((500 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty);
             enemy.hp = 1;
+			enemy.ionResistance = 5;
             break;
 			
 		case "Hunting Wasp":
@@ -126,8 +183,8 @@ function GetEnemyStats(enemyType) {
             enemy.detectionRange = 3500 + ((1000 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
             enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
-			enemy.spawnCount = round((8 * rankDifficulty) * levelDifficulty)
-			enemy.escortCount = round((6 * rankDifficulty) * levelDifficulty)
+			enemy.spawnCount = round((18 * rankDifficulty) * levelDifficulty)
+			enemy.ionResistance = 1;
             break;
 			
          case "Hunting Hornet":
@@ -138,6 +195,8 @@ function GetEnemyStats(enemyType) {
             enemy.detectionRange = 2000 + ((500 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty);
             enemy.hp = round((10 * rankDifficulty) * levelDifficulty);
+			enemy.spawnCount = round((12 * rankDifficulty) * levelDifficulty)
+			enemy.ionResistance = 5;
             break;
 			
 		case "Beacon Wasp":
@@ -148,6 +207,7 @@ function GetEnemyStats(enemyType) {
             enemy.detectionRange = 2000 + ((1000 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
             enemy.hp = round((5 * rankDifficulty) * levelDifficulty)
+			enemy.ionResistance = 1;
             break;
 			
 					
@@ -159,6 +219,7 @@ function GetEnemyStats(enemyType) {
             enemy.detectionRange = 2000 + ((500 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((15 * rankDifficulty) * levelDifficulty);
             enemy.hp = round((10 * rankDifficulty) * levelDifficulty);
+			enemy.ionResistance = 15
             break;
 			
 			

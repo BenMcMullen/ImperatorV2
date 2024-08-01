@@ -4,8 +4,12 @@
 HERES THE DEAL. HERE IS A ROUGH TODO-LIST TO BRING MY GAME TO MVP
 
 
-WHEN HITTING OUT OF BOUNDS BIG RED LETTSRS FLASHING ON SCREEN "DO NOT LEAVE ARENA OF ENGAGMENT- AUTOPILOT ENGAGED" JUST WRITE IT IN A SPRITE, FADE IN FADE OUT
-CENTER ON CAMERA
+
+
+
+
+
+
 
 A NEW LEVEL, MAYBE A BLACK SCREEN WITH A BIG MESSAGE BREIFING BOX, GIVING YOU TIPS AND EXPECTATIONS ON THE COMING LEVEL TYPE. CLICK TO SKIP.
 
@@ -18,6 +22,15 @@ ENEMY TYPES ADD AT LEAST 3 MORE
 
 FINAL BOSS
 
+Frigate level- there are 6 pulse weapons and 2 rocket weapons (new, detonate when within 100 distance of player. this destorys the rocket and creates expanding pulse field that damages- look at hgpt to figure out how)
+these weapons, all 8 of them, are matched to locations on the ship. should be achievable with 2 objects. a third object is the shield in front of the frigate.
+This shield stays up until the frigate takes x damage. Until this point the frigate won't fire if the projectile is ona  vector to hit it's own shield
+but once it's shield goes down its all fair game. squdrans spwan during time based intervels. Oh, and the frigate and weapons stop moving if within firing range of your ship!
+Ion attacks can disable the cannons, but not the rocket launchers. Launchers can be destroyed with kinetic rounds after 500+ damage dealt
+Go towards a location, the whole time missiles and pulse shots and enemies are flying at you. Along the way there are large asteroids, they are moving at different speeds. There are also ship hulks, enemy frigates and ally frigates. they can all give you shelter temprarily, but the asteroids 
+and dead hulks will take damage over time (once they are withing player sensors or maybe POV). The particle cannons will start as a white line, then bloom into massive beam that shakes the screen. instant death?
+You are carrying a bomb which will replace secondary. Can be release when it range or some target.
+
 
 
 STEALTH MISSION, COMPLETE WITH LIMITED # OF KILLS, PERHAPS EVEN DETECTION. 
@@ -27,10 +40,6 @@ STEALTH MISSION, COMPLETE WITH LIMITED # OF KILLS, PERHAPS EVEN DETECTION.
 LEVE TYPE IDEAS: 
 Timed challenge, destroy objects within time frame. No enemies neccesarily, at least at the lower levels. 
 Points are awareded based on speed.
-
-Specific targets- Pretty much the exact same as hunt mission, but have new enemy type. Faster, strong, and maybe they run away if you are 
-in close range? they want to fire from a distance, so they close on you then run as you shoot as them.
-Everytime you kill one set global var to ++, once it reaches mission requirements then we are done. 
 
 Recon, scout and document areas without being discovered.
 

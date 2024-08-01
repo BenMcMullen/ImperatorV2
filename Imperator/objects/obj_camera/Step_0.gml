@@ -8,14 +8,24 @@ planet1Layer = layer_get_id("Planet1");
 planet2Layer = layer_get_id("Planet2");
 
 // Update camera destination
-if (instance_exists(follow)) {
+
+if (follow_player && instance_exists(follow)) {
     xTo = follow.x;
     yTo = follow.y;
 
-    if (follow.object_index == obj_playerExplosion) {
-        x = xTo;
-        y = yTo;
-    }
+} else if (HasCameraStart()) {
+        xTo = GetCameraStart()[0];
+        yTo = GetCameraStart()[1];
+    } 
+	else if (instance_exists(follow)){
+    // Initial position remains the same until follow_player is true
+     xTo = follow.x;
+    yTo = follow.y;
+}
+	else {
+    // Initial position remains the same until follow_player is true
+    xTo = room_width / 2;
+    yTo = room_height / 2;
 }
 
 // Update object position

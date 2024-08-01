@@ -448,7 +448,7 @@ global.hulls[0] = HullConfig(
 
 global.hulls[1] = HullConfig(
     "Advanced Hull",      // Name
-    125,                  // HP
+    10000,                  // HP
 	4,					  // Repairability
     150,                  // Max HP
     spr_basicTest_1,      // Shop Sprite
@@ -545,11 +545,11 @@ global.engines[0] = EngineConfig(
 
 global.engines[1] = EngineConfig(
     "Advanced Engine",      // Name
-    4.0,                    // Boost Speed
+    5.0,                    // Boost Speed
     5.0,                    // Speed
     1,                      // Cooldown
-	2,						// Burnup
-	1500,					// Fuel Capacity
+	0,						// Burnup
+	10000,					// Fuel Capacity
     spr_basicTest_1,        // Shop Sprite
     global.systemStatus[29] // System Status
 );
@@ -658,6 +658,19 @@ global.systemStatus[38] = SystemStatusConfig(
     1
 );
 
+global.systemStatus[39] = SystemStatusConfig(  
+		5,		//systemPoints
+	"Scout",	// ship class
+    "secondaryWeapons",
+    "Ion Cannon",
+    500,
+   true,    // unlocked
+    false,   // destroyed
+    false,    // basic
+    true,    // isOwned
+    1
+);
+
 // Adding secondary weapons individually
 global.secondaryWeapons[0] = SecondaryWeaponConfig(
     "Missile Launcher",     // Name
@@ -753,6 +766,22 @@ global.secondaryWeapons[5] = SecondaryWeaponConfig(
 	"Kinetic",
     spr_shipSystemsLarge,   // Shop Sprite
     global.systemStatus[38] // System Status
+);
+
+global.secondaryWeapons[6] = SecondaryWeaponConfig(
+    "Ion Cannon",     // Name
+    0,                      // Delay
+    45,                     // Cooldown
+    1,                      // Capacity
+    [-0.5, 0.5],            // Accuracy
+    20.0,                   // Shot Speed
+    500,                     // Damage
+    snd_ionSmall,            // Audio
+    spr_ionCannon,           // Deploy Angle
+    750,                    // Projectile Range
+	"Ion",
+    spr_shipSystemsLarge,   // Shop Sprite
+    global.systemStatus[39] // System Status
 );
 
 

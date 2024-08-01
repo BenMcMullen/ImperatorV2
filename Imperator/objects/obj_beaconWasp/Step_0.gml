@@ -2,8 +2,11 @@ if (global.isPaused) {
     // If the game is paused, exit the step event
     exit;
 }
+
+ionDamage = max(ionDamage - GetEnemyStats(enemy).ionResistance, 0);
+
 // Step event of obj_enemy
-if (instance_exists(obj_player)) {
+if (instance_exists(obj_player) && ionDamage <=0) {
 	var detectionRange = GetEnemyStats(enemy).detectionRange / global.selectedShip.passives.distortion; // Detection range
 	if (global.playerCloaked) {
 		detectionRange = 0;

@@ -1,7 +1,6 @@
 with (other) {
 if (shieldDown == true) {
-	hp -= GetWeaponDamage("primary", true);
-	
+	hp -= global.selectedShip.primaryWeapon.damage;
 	flash = 5;
 	ScreenShake(2,10);
 } else {

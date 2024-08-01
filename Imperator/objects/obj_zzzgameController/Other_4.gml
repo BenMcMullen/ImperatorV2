@@ -1,3 +1,21 @@
 global.killsThisRoom = 0;
+global.beaconFactoryDestroyed = false;
+global.activeBeacon = -1;
+global.beaconFactoryImmune = true;
+global.beaconsOverloaded = 0;
+global.beaconList = [];
+global.escortWarpReached = false;
+global.escortTriggerSpawn = false;
 global.surgicalKillsThisRoom = 0;
-
+global.frigateBridgeExposed = false;
+global.frigateBridgeDestroyed = false;
+global.frigateParticleCannonBeamDirection = 0;
+global.frigateParticleCannonDirection = 0;
+global.frigateParticleCannonFiring = false;
+global.frigateParticleCannonWithinRange = false;
+global.frigateLaunchersDestroyed = 0;
+global.playerShieldActive = false;
+global.playerShieldGeneratorOverloaded = false;
+global.playerEngineBoosting = false;
+global.playerCloaked = false;
+global.playerCanCloak = true;

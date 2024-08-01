@@ -8,7 +8,6 @@ cooldownTimer = 0;
 
 // Variables for AI behavior
  enemy = enemyType;
- show_debug_message(string(enemyType))
  attackRange = GetEnemyStats(enemy).shootRange; // Attack range
  hp = GetEnemyStats(enemy).hp;
  capacity = GetEnemyStats(enemy).capacity;
@@ -51,7 +50,10 @@ current_waypoint = 0;
     
 }
 
-if (instance_exists(obj_player) && initialized) {
+ionDamage = max(ionDamage - GetEnemyStats(enemyType).ionResistance, 0);
+
+
+if (instance_exists(obj_player) && initialized && ionDamage <=0) {
 	var detectionRange = GetEnemyStats(enemyType).detectionRange; // Detection range
 	if (global.playerCloaked) {
 		detectionRange = 0;
