@@ -2,10 +2,7 @@ if (global.isPaused) {
     // If the game is paused, exit the step event
     exit;
 }
-show_debug_message("firing")
-show_debug_message(firing)
-show_debug_message("priming")
-show_debug_message(priming)
+
 // Step event of obj_huntingenemy
 var frigate = instance_find(obj_frigateShip, 0);
 x = frigate.x;
@@ -67,7 +64,7 @@ if (MetFrigateParticleCannonConditions()) {
     }
 	
 }
-if (firing) {
+if (instance_exists(obj_player) && instance_exists(obj_frigateAllyFrigate) && firing) {
 	show_debug_message("should be firing particlecannon!")
 	if (global.frigateParticleCannonWithinRange) {
 		

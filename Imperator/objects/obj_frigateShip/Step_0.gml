@@ -13,11 +13,13 @@ if (spawnDefense) {
 spawnDefense = false
 alarm[1] = 10;
 } 
-
+ var ally_x = x
+    var ally_y = y;
+	if (instance_exists(obj_frigateAllyFrigate)) {
  var allyFrigate = instance_find(obj_frigateAllyFrigate, 0); // Reference to the player object
-    var ally_x = allyFrigate.x;
-    var ally_y = allyFrigate.y;
-
+    ally_x = allyFrigate.x;
+    ally_y = allyFrigate.y;
+	}
     var distToFrigate = point_distance(x, y, ally_x, ally_y);
 	if (distToFrigate <= GetCurrentLevel().levelType.particleBeamRange) {
 	global.frigateParticleCannonWithinRange = true;	
@@ -33,7 +35,7 @@ else {
 firingParticleCannon = false;	
 }
 }
-if (instance_exists(obj_player) && !firingParticleCannon) {
+if (instance_exists(obj_player) && instance_exists(obj_frigateAllyFrigate) && !firingParticleCannon) {
 	var detectionRange = GetCurrentLevel().levelType.detectionRange / global.selectedShip.passives.distortion; // Detection range
 	if (global.playerCloaked) {
 		detectionRange = 300/ global.selectedShip.passives.distortion;
