@@ -448,7 +448,7 @@ global.hulls[0] = HullConfig(
 
 global.hulls[1] = HullConfig(
     "Advanced Hull",      // Name
-    10000,                  // HP
+    150,                  // HP
 	4,					  // Repairability
     150,                  // Max HP
     spr_basicTest_1,      // Shop Sprite
@@ -548,8 +548,8 @@ global.engines[1] = EngineConfig(
     5.0,                    // Boost Speed
     5.0,                    // Speed
     1,                      // Cooldown
-	0,						// Burnup
-	10000,					// Fuel Capacity
+	2,						// Burnup
+	2000,					// Fuel Capacity
     spr_basicTest_1,        // Shop Sprite
     global.systemStatus[29] // System Status
 );

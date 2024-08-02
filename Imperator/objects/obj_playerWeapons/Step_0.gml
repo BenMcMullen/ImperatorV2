@@ -165,7 +165,14 @@ if (secondaryCooldownTimer > 0) {
 }
 
 // Firing Mechanism
-if (mouse_check_button(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryDelay <= 0)) {
+if (GetCurrentLevel().levelType.type == "Payload Delivery" && 
+mouse_check_button(mb_right) && instance_exists(obj_payloadNuke)) {
+	var payloadNuke = instance_find(obj_payloadNuke,0)
+	if (payloadNuke.payloadInRange) {
+		payloadNuke.launch = true;
+	}
+} 
+else if (mouse_check_button(mb_right) && (secondaryCooldownTimer <= 0) && (secondaryDelay <= 0)) {
     // Fire Secondary weapon
     secondaryDelay = global.selectedShip.secondaryWeapon.delay;
     audio_play_sound(global.selectedShip.secondaryWeapon.audio, 0, false);

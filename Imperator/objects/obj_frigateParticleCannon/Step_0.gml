@@ -33,8 +33,10 @@ if (MetFrigateParticleCannonConditions()) {
         var player_y = player.y;
 
         var pointToPlayer = point_direction(x, y, player_x, player_y);
+		if (!global.playerCloaked) {
         global.frigateParticleCannonDirection = pointToPlayer + 180;
-        image_angle = pointToPlayer + 180;
+		}
+        image_angle = global.frigateParticleCannonDirection;
 
         // ATTACKING LOGIC
         // Player and escortShip detection and shooting
@@ -54,7 +56,10 @@ if (MetFrigateParticleCannonConditions()) {
         // Determine if the target is within range and angle to shoot plasma
         var distanceToTarget = distance_to_point(targetX, targetY);
         var angleToTarget = abs(angle_difference(image_angle, directionToTarget));
-        global.frigateParticleCannonBeamDirection = directionToTarget;
+		if (!global.playerCloaked) {
+         global.frigateParticleCannonBeamDirection = directionToTarget;
+		}
+        
 
         with (instance_create_layer(x, y, "Enemy", obj_frigateParticleCannonTargetingLaser)) {
 			

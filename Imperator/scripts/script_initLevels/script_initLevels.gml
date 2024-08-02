@@ -124,13 +124,13 @@ function InitLevels() {
 	
 	  global.levelTypeFrigate[0] = FrigateLevelTypeConfig(
         "Frigate Assault",
-		3,
-		5,
-		12,
-		2000,
-		10,
+		4,		//_frigateSpeed
+		10,		//_turretFireRate
+		12,		//_enemy quantity
+		2000,	//_detectionRange
+		250,		//_generatorHp
 		3000,
-		20000
+		10000
     );
 	  global.levelTypeFrigate[1] = FrigateLevelTypeConfig(
         "Frigate Assault",

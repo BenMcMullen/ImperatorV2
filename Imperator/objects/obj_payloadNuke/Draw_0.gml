@@ -1,0 +1,1 @@
+draw_sprite(spr_payloadNuke, image_index, x, y);

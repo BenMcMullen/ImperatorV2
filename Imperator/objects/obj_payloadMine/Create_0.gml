@@ -1,0 +1,2 @@
+initialized = false;
+lockedOn = false;

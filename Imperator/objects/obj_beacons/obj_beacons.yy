@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_beacons",
+  "%Name":"obj_BEACONS",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_beacons",
+  "name":"obj_BEACONS",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",

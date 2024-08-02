@@ -5,7 +5,7 @@ initialDeployment = true;
 // Create event of obj_beaconsBeacon
 
 // Reference to the manager object
-manager = obj_beacons;
+manager = obj_BEACONS;
 level = GetCurrentLevel();
 hp = level.levelType.beaconHp
 

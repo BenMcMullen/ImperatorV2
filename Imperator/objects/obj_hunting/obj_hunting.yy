@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hunting",
+  "%Name":"obj_HUNTING",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_hunting",
+  "name":"obj_HUNTING",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
