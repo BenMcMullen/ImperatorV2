@@ -2,6 +2,10 @@ if (global.isPaused) {
     // If the game is paused, exit the step event
     exit;
 }
+if (ionDamageTaken > 0) {
+ionDamageTaken --;	
+}
+
 // Player input
 if (!global.musicPlaying) {
     if (global.currentMusic != -1) {
@@ -48,7 +52,7 @@ if (moving_to_target) {
 		}
     }
 } else {
-    if (hasControl) {
+    if (hasControl && ionDamageTaken <= 0) {
         keyLeft = keyboard_check(vk_left) || keyboard_check(ord("A"));
         keyRight = keyboard_check(vk_right) || keyboard_check(ord("D"));
         keyUp = keyboard_check(vk_up) || keyboard_check(ord("W"));
@@ -67,7 +71,7 @@ if (moving_to_target) {
     var moveY = keyDown - keyUp;
     var moveSpeed = ship.engine.speed;
 
-    if (keyBoosting && global.playerEngineBoostCharge > 0 && canBoost) {
+    if (keyBoosting && global.playerEngineBoostCharge > 0 && canBoost && ionDamageTaken <= 0) {
 		global.playerEngineBoosting = true;
         // Increase movement speed when boosting
         sprite_index = ship.sprites.spriteBoosting;
@@ -116,7 +120,7 @@ if (moving_to_target) {
 		sprite_index = ship.sprites.spriteCloaked;
 	}
 	else {
-    if (keyBoosting && global.playerEngineBoostCharge > 0 && canBoost) {
+    if (keyBoosting && global.playerEngineBoostCharge > 0 && canBoost&& ionDamageTaken <= 0) {
         sprite_index = ship.sprites.spriteBoosting;
     } else if (moveX != 0 || moveY != 0) {
         sprite_index = ship.sprites.spriteMoving;

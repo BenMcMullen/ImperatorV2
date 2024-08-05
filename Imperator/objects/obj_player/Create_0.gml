@@ -5,6 +5,7 @@ target_x = x;
 target_y = y;
 canBoost = true;
 hullIntegrityWarningGiven = false;
+ionDamageTaken = 0;
 global.playerShieldActiveCharge = global.selectedShip.shields.shieldActive;
 depth = -5;
 instance_create_layer(x, y, "Player", obj_playerShields);

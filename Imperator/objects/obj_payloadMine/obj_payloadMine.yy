@@ -51,8 +51,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemyWasp",
-    "path":"sprites/spr_enemyWasp/spr_enemyWasp.yy",
+    "name":"spr_payloadMine",
+    "path":"sprites/spr_payloadMine/spr_payloadMine.yy",
   },
   "spriteMaskId":null,
   "visible":true,

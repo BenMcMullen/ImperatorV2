@@ -46,7 +46,7 @@ function InitShips() {
     }
 
 	
-	function passivesConfig(_class, _tier, _distortion, _evasion, _hotShot, _fov, _bumper, _cloaking, _enhancedArmory, _veteranCrew, _enhancedCoolingUnit, _activeEnergyDispersionUnit, _passiveEnergyDispersionUnit) {
+	function passivesConfig(_class, _tier, _distortion, _evasion, _hotShot, _fov, _bumper, _cloaking, _enhancedArmory, _veteranCrew, _enhancedCoolingUnit, _activeEnergyDispersionUnit, _passiveEnergyDispersionUnit, _ionShielding) {
    
         return {
 			//the class of ship this passive can be applied to
@@ -75,6 +75,8 @@ function InitShips() {
 			activeEnergyDispersionUnit: _activeEnergyDispersionUnit,
 			//increased damage soak on passive shields
 			passiveEnergyDispersionUnit: _passiveEnergyDispersionUnit,
+			//reduction in ion damage taken
+			ionShielding: _ionShielding
 			
            
         };
@@ -98,7 +100,8 @@ function InitShips() {
     1.5,            // _veteranCrew (50% reduction in weapons cooldown)
 	1,				//_enhancedCoolingUnit (+1 shield restore per step)
 	1,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
-	1				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	1,				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	1.5				//_ionShielding (50% reduction in ion damage taken)
 );
 
  global.passives[1] = passivesConfig(
@@ -114,7 +117,8 @@ function InitShips() {
     1.0,            // _veteranCrew (0% reduction in cooldown) 1-2
 	11,				//_enhancedCoolingUnit (+1 shield restore per step)
 	17,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
-	4				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	4,				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	1.5				//_ionShielding (50% reduction in ion damage taken)
 );
 global.passives[2] = passivesConfig(
     "Frigate",      // _class
@@ -129,7 +133,8 @@ global.passives[2] = passivesConfig(
     1.0,            // _veteranCrew (0% reduction in cooldown) 1-2
 	1,				//_enhancedCoolingUnit (+1 shield restore per step)
 	1,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
-	1				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	1,				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	1.5				//_ionShielding (50% reduction in ion damage taken)
 );
 global.passives[3] = passivesConfig(
     "Frigate",      // _class
@@ -144,7 +149,8 @@ global.passives[3] = passivesConfig(
     2.0,            // _veteranCrew (0% reduction in cooldown) 1-2
 	20,				//_enhancedCoolingUnit (+1 shield restore per step)
 	20,				//_activeEnergyDispersionUnit (-1 damage soak on active shields )
-	10				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	10,				//_passiveEnergyDispersionUnit (-1 damage soak on passive shields )
+	1.5				//_ionShielding (50% reduction in ion damage taken)
 );
 	
     global.sprites = [];

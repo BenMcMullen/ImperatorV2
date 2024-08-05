@@ -1,3 +1,4 @@
+if (activated) { 
 with (other) {
 	hp = 0;
 	flash = 3;
@@ -6,3 +7,4 @@ with (other) {
 }
 
 instance_destroy();
+}
