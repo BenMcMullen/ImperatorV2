@@ -32,7 +32,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"Imperator",
   "resources":[
@@ -148,6 +148,7 @@
     {"id":{"name":"obj_payloadNuke","path":"objects/obj_payloadNuke/obj_payloadNuke.yy",},},
     {"id":{"name":"obj_payloadParticleCannon","path":"objects/obj_payloadParticleCannon/obj_payloadParticleCannon.yy",},},
     {"id":{"name":"obj_payloadParticleCannonBeam","path":"objects/obj_payloadParticleCannonBeam/obj_payloadParticleCannonBeam.yy",},},
+    {"id":{"name":"obj_payloadParticleCannonSpawner","path":"objects/obj_payloadParticleCannonSpawner/obj_payloadParticleCannonSpawner.yy",},},
     {"id":{"name":"obj_payloadParticleCannonTargetingLaser","path":"objects/obj_payloadParticleCannonTargetingLaser/obj_payloadParticleCannonTargetingLaser.yy",},},
     {"id":{"name":"obj_plasma","path":"objects/obj_plasma/obj_plasma.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
@@ -207,7 +208,6 @@
     {"id":{"name":"script_displayFunctions","path":"scripts/script_displayFunctions/script_displayFunctions.yy",},},
     {"id":{"name":"script_drawSetText","path":"scripts/script_drawSetText/script_drawSetText.yy",},},
     {"id":{"name":"script_enemy","path":"scripts/script_enemy/script_enemy.yy",},},
-    {"id":{"name":"script_escortEvents","path":"scripts/script_escortEvents/script_escortEvents.yy",},},
     {"id":{"name":"script_fileSaveandLoad","path":"scripts/script_fileSaveandLoad/script_fileSaveandLoad.yy",},},
     {"id":{"name":"script_gameStates","path":"scripts/script_gameStates/script_gameStates.yy",},},
     {"id":{"name":"script_HUD","path":"scripts/script_HUD/script_HUD.yy",},},

@@ -7,6 +7,7 @@ waypoints = [];
 current_waypoint = 0;
 cooldownTimer = 0;
 ionDamage = 0;
+followDistance = irandom_range(250, 300);
 // Variables for AI behavior
 
 enemy = "Beacon Hornet";

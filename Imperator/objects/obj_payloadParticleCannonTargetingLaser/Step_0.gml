@@ -8,4 +8,4 @@ if (global.isPaused) {
 // Move the plasma bolt (Your existing movement code)
 x += lengthdir_x(projectileSpeed, direction);
 y += lengthdir_y(projectileSpeed, direction);
-// Destroy the plasma bolt if it has traveled the maximum distance
+

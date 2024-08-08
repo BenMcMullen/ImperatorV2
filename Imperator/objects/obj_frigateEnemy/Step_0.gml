@@ -81,7 +81,8 @@ if (instance_exists(obj_player) && initialized && ionDamage <= 0) {
             x += move_x;
             y += move_y;
         } else {
-            if (distToPlayer < 190) {
+			
+            if (distToPlayer < followDistance) {
                 // Move away from the player to maintain distance
                 var enemyDirection = point_direction(player_x, player_y, x, y); // Direction away from the player
                 var move_x = lengthdir_x(enemySpeed, enemyDirection);
@@ -90,7 +91,7 @@ if (instance_exists(obj_player) && initialized && ionDamage <= 0) {
                 // Update position
                 x += move_x;
                 y += move_y;
-            } else if (distToPlayer > 200) {
+            } else if (distToPlayer > followDistance + 10) {
                 var enemyDirection = point_direction(x, y, player_x, player_y);
                 var move_x = lengthdir_x(enemySpeed, enemyDirection);
                 var move_y = lengthdir_y(enemySpeed, enemyDirection);

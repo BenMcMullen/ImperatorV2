@@ -71,6 +71,13 @@ function InitLevels() {
         };
     }
     
+	function PayloadLevelTypeConfig(_type, _payloadTime) {
+        return {
+			type: _type,
+            payloadTime: _payloadTime
+        };
+    }
+	
     function HuntLevelTypeConfig(_type, _quantity) {
         return {
             type: _type,
@@ -119,6 +126,18 @@ function InitLevels() {
 			factoryResponseQuantity: _factoryResponseQuantity
         };
     }
+	
+		global.levelTypePayload = [];
+	
+	  global.levelTypePayload[0] = PayloadLevelTypeConfig(
+        "Payload Delivery",
+		5400
+    );
+	
+	 global.levelTypePayload[1] = PayloadLevelTypeConfig(
+        "Payload Delivery",
+		5000
+    );
 	
 	global.levelTypeFrigate = [];
 	
@@ -262,7 +281,7 @@ function InitLevels() {
     global.mercurianTreeLevels = [];
 
     // Martian Levels
-    global.martianTreeLevels[0] = LevelConfigMartian(300, room_levelFrigate, 3, global.levelTypeFrigate[0], 1, false, "Operation: Desert Siege", spr_brief, noone, 100, global.difficulties[0]);
+    global.martianTreeLevels[0] = LevelConfigMartian(300, room_levelPayload, 3, global.levelTypePayload[0], 1, false, "Operation: Desert Siege", spr_brief, noone, 100, global.difficulties[0]);
     global.martianTreeLevels[1] = LevelConfigMartian(201, room_levelHunting, 2, global.levelTypeHunting[0], 1, false, "Operation: Red Storm", spr_brief, noone, 5, global.difficulties[0]);
 	global.martianTreeLevels[2] = LevelConfigMartian(500, room_levelBeacons, 5, global.levelTypeBeacon[0], 3, false, "Operation: Iron Fist", spr_brief, noone, 15, global.difficulties[1]);
     global.martianTreeLevels[3] = LevelConfigMartian(800, room_levelHunting, 6, global.levelTypeHunting[1], 4, false, "Operation: Twin Blades", spr_brief, [global.primaryWeapons[3]], 20, global.difficulties[1]);

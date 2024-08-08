@@ -501,8 +501,8 @@
     {"name":"inst_6F5912C0","path":"rooms/room_levelEscort/room_levelEscort.yy",},
     {"name":"inst_10B82F98","path":"rooms/room_levelEscort/room_levelEscort.yy",},
     {"name":"inst_6AFB518","path":"rooms/room_levelEscort/room_levelEscort.yy",},
-    {"name":"inst_3E5ECC96","path":"rooms/room_levelEscort/room_levelEscort.yy",},
     {"name":"inst_767A0D13","path":"rooms/room_levelEscort/room_levelEscort.yy",},
+    {"name":"inst_3E5ECC96","path":"rooms/room_levelEscort/room_levelEscort.yy",},
   ],
   "isDnd":false,
   "layers":[

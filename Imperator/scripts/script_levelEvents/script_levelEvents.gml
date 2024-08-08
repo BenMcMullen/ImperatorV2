@@ -146,3 +146,33 @@ return false;
 }
 
 
+function EscortMovement(){
+    // Define the speed of the escort ship
+
+  var escortDirection = point_direction(x, y, finalDestinationX, finalDestinationY);
+var distance = point_distance(x, y, finalDestinationX, finalDestinationY);
+
+// Move towards the final destination if the distance is greater than the speed
+if (distance > escortSpeed) {
+    x = finalDestinationX;
+    y += lengthdir_y(escortSpeed, escortDirection);
+} else {
+    // Snap to the final destination if within speed range
+    x = finalDestinationX;
+    y = finalDestinationY;
+}
+
+}
+
+function SpawnPayloadParticleCannons() {
+
+		
+	var numberOfCannons = global.playerInformation.rank.rank + 2;
+	
+	
+
+	  for (var i = 0; i <= numberOfCannons; i++) {
+		var cannonXCoord = irandom_range(500, room_width - 500);
+		  instance_create_layer(cannonXCoord, y, "Enemy", obj_payloadParticleCannon)
+}
+}

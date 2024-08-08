@@ -70,7 +70,6 @@ if (MetFrigateParticleCannonConditions()) {
 	
 }
 if (instance_exists(obj_player) && instance_exists(obj_frigateAllyFrigate) && firing) {
-	show_debug_message("should be firing particlecannon!")
 	if (global.frigateParticleCannonWithinRange) {
 		
 	 var player = instance_find(obj_player, 0); // Reference to the player object
@@ -104,6 +103,8 @@ if (instance_exists(obj_player) && instance_exists(obj_frigateAllyFrigate) && fi
         var angleToTarget = abs(angle_difference(image_angle, directionToTarget));
         global.frigateParticleCannonBeamDirection = directionToTarget;
 
+		audio_play_sound(snd_particleBeam, 10, false);
+	  
         with (instance_create_layer(x, y, "Enemy", obj_frigateParticleCannonBeam)) {
 			
             direction = global.frigateParticleCannonBeamDirection;

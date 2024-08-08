@@ -7,6 +7,7 @@ if (!launched && instance_exists(obj_player)) {
     var player = instance_find(obj_player, 0);
     x = player.x;
     y = player.y;
+	direction = player.direction;
     image_angle = player.image_angle;
     image_xscale = player.image_xscale;
     image_yscale = player.image_yscale;

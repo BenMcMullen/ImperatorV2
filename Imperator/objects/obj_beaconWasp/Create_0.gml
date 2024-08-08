@@ -11,6 +11,7 @@ capacity = GetEnemyStats(enemy).capacity;
 fireRate = GetEnemyStats(enemy).fireRate;
 enemySpeed = GetEnemyStats(enemy).enemySpeed;
 cooldownDuration = GetEnemyStats(enemy).cooldownDuration;
+followDistance = irandom_range(150, 200);
 
 // Calculate center of the map
 center_x = room_width / 2;

@@ -7,7 +7,6 @@ HERES THE DEAL. HERE IS A ROUGH TODO-LIST TO BRING MY GAME TO MVP
 INTERTIAL DAMPENING SLOWDOWN. GPT has provided some solutions, definitely worth a look! ION NEEDS TO REMOVE EVERYTHING BUT THE DAMPENER SLOWDOWN.
 
 
-ALSO ADD A WARNING IN YELLOW FOR INCOMING PARTICLE BEAM DURING THE DELAY BETWEEN LASER AND FIRING?
 
 HIVE ENEMIES? SHOOTING BIG SLOW BOYS, SLOW MOVING, BUT IF THEY GET DESTROYED THEY TURN INTO TINY SUICIDE ION DRONES OR SOMETHING. DRONE IS A GOOD NAME FOR AN ENEMY TYPE.
 
@@ -26,15 +25,20 @@ ENEMY TYPES ADD AT LEAST 3 MORE
 
 FINAL BOSS
 
-
-
-Go towards a location, the whole time missiles and pulse shots and enemies are flying at you. Along the way there are large asteroids, they are moving at different speeds. There are also ship hulks, enemy frigates and ally frigates. they can all give you shelter temprarily, but the asteroids 
-and dead hulks will take damage over time (once they are withing player sensors or maybe POV). 
 You are carrying a bomb which will replace secondary. Can be release when it range or some target.
+Particle cannons- i want as many as the rank we are at. They should fire on the same intervals, but they should 
+come from a different direction each time.
 
+At start of level set asteroids and ally/enemy frigates moving. its a time level so that solves waiting t hem out.
+Spawn at different points on y axis. Add zoomout to camera to take in the scope of the mission.
+
+No small asteroids.
+
+Queen Bees come from enemy frigates when you get within range of them- can rarely be avoided if at all. 
+
+gotta get the actual launching of the nuke to work
 
 
 STEALTH MISSION, COMPLETE WITH LIMITED # OF KILLS, PERHAPS EVEN DETECTION LIMITS. 
 
 
-CONSIDER ACTIVATEABLE BOMBS AND MISSILES. FIRST RIGHT CLICK FIRES, SECOND EXPLODES
