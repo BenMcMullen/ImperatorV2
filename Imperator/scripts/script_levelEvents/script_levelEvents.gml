@@ -86,7 +86,7 @@ var coordinates = [];
  
 switch (levelType) {
 		
-    case "Escort Detail":
+    case "asteroid Detail":
        return [room_width/2, 500]	
         break;
 		
@@ -114,7 +114,7 @@ switch (levelType) {
         hasCoordinates = false;;
         break;
         
-    case "Escort Detail":
+    case "asteroid Detail":
         hasCoordinates = true;
         break;
 		
@@ -146,16 +146,16 @@ return false;
 }
 
 
-function EscortMovement(){
-    // Define the speed of the escort ship
+function asteroidMovement(){
+    // Define the speed of the asteroid ship
 
-  var escortDirection = point_direction(x, y, finalDestinationX, finalDestinationY);
+  var asteroidDirection = point_direction(x, y, finalDestinationX, finalDestinationY);
 var distance = point_distance(x, y, finalDestinationX, finalDestinationY);
 
 // Move towards the final destination if the distance is greater than the speed
-if (distance > escortSpeed) {
+if (distance > asteroidSpeed) {
     x = finalDestinationX;
-    y += lengthdir_y(escortSpeed, escortDirection);
+    y += lengthdir_y(asteroidSpeed, asteroidDirection);
 } else {
     // Snap to the final destination if within speed range
     x = finalDestinationX;
@@ -173,6 +173,101 @@ function SpawnPayloadParticleCannons() {
 
 	  for (var i = 0; i <= numberOfCannons; i++) {
 		var cannonXCoord = irandom_range(500, room_width - 500);
-		  instance_create_layer(cannonXCoord, y, "Enemy", obj_payloadParticleCannon)
+		 instance_create_layer(cannonXCoord, y, "Enemy", obj_payloadParticleCannon)
 }
+}
+
+
+function SpawnPayloadObstacles(num_asteroids, num_frigates) {
+    // Define the grid dimensions
+    var grid_width = room_width / 10;
+    var grid_height = (room_height - 1000) / 10; // Exclude top and bottom 500 units
+
+    // Arrays to track used grid squares and x-axes for frigates
+    var used_grid_squares = [];
+    var used_frigate_x_axes = [];
+
+    // Function to generate a grid position
+    function generate_grid_position() {
+        var grid_x = irandom(9);
+        var grid_y = irandom(9);
+        return [grid_x, grid_y];
+    }
+
+    // Spawn asteroids
+    for (var i = 0; i < num_asteroids; i++) {
+        var pos;
+        var valid_position = false;
+
+        repeat (100) { // Limit the number of attempts to avoid infinite loops
+            pos = generate_grid_position();
+            if (!array_exists(used_grid_squares, pos)) {
+                valid_position = true;
+                break;
+            }
+        }
+
+        if (valid_position) {
+            array_push(used_grid_squares, pos);
+
+            var spawn_x = pos[0] * grid_width + grid_width / 2;
+            var spawn_y = pos[1] * grid_height + grid_height / 2 + 500; // Offset by 500 units
+			
+          instance_create_layer(spawn_x, spawn_y, "Enemy", obj_payloadAsteroid)
+		}
+    }
+
+    // Spawn frigates
+    for (var j = 0; j < num_frigates; j++) {
+        var pos;
+        var valid_position = false;
+
+        repeat (100) { // Limit the number of attempts to avoid infinite loops
+            pos = generate_grid_position();
+            if (!array_exists(used_grid_squares, pos) && !array_exists_x(used_frigate_x_axes, pos[0])) {
+                valid_position = true;
+                break;
+            }
+        }
+
+        if (valid_position) {
+            array_push(used_grid_squares, pos);
+            array_push(used_frigate_x_axes, pos[0]);
+
+            var spawn_x = pos[0] * grid_width + grid_width / 2;
+            var spawn_y = pos[1] * grid_height + grid_height / 2 + 500; // Offset by 500 units
+
+            var frigate_instance = instance_create_layer(spawn_x, spawn_y, "Enemy", obj_payloadEnemyFrigateShip); // Assuming obj_payloadEnemyFrigateShip exists
+            // Additional setup for frigate_instance can go here
+        }
+    }
+}
+
+// Helper function to check if a value exists in a 2D array
+function array_exists(arr, value) {
+    for (var i = 0; i < array_length(arr); i++) {
+        if (arr[i][0] == value[0] && arr[i][1] == value[1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function array_exists_x(arr, value) {
+    for (var i = 0; i < array_length(arr); i++) {
+        if (arr[i] == value) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function GetObjectDirection(xCoor) {
+    var middle = room_width / 2; // Calculate the middle of the room
+    
+    if (xCoor < middle) {
+        return true; // Closer to the left side
+    } else {
+        return false; // Closer to the right side
+    }
 }

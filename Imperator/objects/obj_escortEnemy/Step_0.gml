@@ -15,9 +15,7 @@ cooldownTimer = 0;
  enemySpeed = GetEnemyStats(enemy).enemySpeed;
  cooldownDuration = GetEnemyStats(enemy).cooldownDuration;
 
-
  initialized = true;
-    
 }
 
 ionDamage = max(ionDamage - GetEnemyStats(enemyType).ionResistance, 0);
@@ -34,19 +32,20 @@ if (instance_exists(obj_player) && initialized && ionDamage <=0) {
     var distToPlayer = point_distance(x, y, player_x, player_y);
 	
 	
-	 var escort;
+	var escort;
     var escort_x;
     var escort_y;
-	var distToEscort = 16000;
+	var distToescort = 16000;
+	
 	if (instance_exists(obj_escortShip)) {
 	escort = instance_find(obj_escortShip, 0); 
     escort_x = escort.x;
     escort_y = escort.y;
-	distToEscort = point_distance(x, y, escort_x, escort_y);
+	distToescort = point_distance(x, y, escort_x, escort_y);
 	}
 	
 	
-	if (distToPlayer < distToEscort && !global.playerCloaked ) {
+	if (distToPlayer < distToescort && !global.playerCloaked ) {
 		
         if (distToPlayer > attackRange) {
             // Move towards the player
@@ -128,7 +127,7 @@ if (instance_exists(obj_player) && initialized && ionDamage <=0) {
     } else if (instance_exists(obj_escortShip)){
 		
 		escort = instance_find(obj_escortShip, 0);
-        if (distToEscort > attackRange) {
+        if (distToescort > attackRange) {
             // Move towards the player
             var enemyDirection = point_direction(x, y, escort_x, escort_y);
             var move_x = lengthdir_x(enemySpeed, enemyDirection);
@@ -138,7 +137,7 @@ if (instance_exists(obj_player) && initialized && ionDamage <=0) {
             x += move_x;
             y += move_y;
         } else {
-			if (distToEscort <= 300) {
+			if (distToescort <= 300) {
                 // Move away from the player to maintain 1000 distance
                 var enemyDirection = point_direction(escort_x, escort_y, x, y); // Direction away from the player
                 var move_x = lengthdir_x(enemySpeed, enemyDirection);
@@ -155,12 +154,12 @@ if (instance_exists(obj_player) && initialized && ionDamage <=0) {
             // Determine which target (obj_player or obj_escortShip) is closer
             var escortX = escort.x;
             var escortY = escort.y;
-            var distToEscort = point_distance(x, y, escortX, escortY);
+            var distToescort = point_distance(x, y, escortX, escortY);
 
             
             targetX = escortX;
             targetY = escortY;
-            targetDistance = distToEscort;
+            targetDistance = distToescort;
             
 
             // Calculate direction towards the target

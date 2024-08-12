@@ -3,8 +3,8 @@ planetIndex = global.playerInformation.currentTreeIndex
 levelDifficulty = GetCurrentLevel().difficulty.difficultyModifier
 spawn = true;
 spawnedEnemies = 0;
-enemy = GetRandomEscortEnemyType();
-enemyCount = GetEnemyStats(enemy[0]).escortCount;
+enemy = GetRandomescortEnemyType();
+enemyCount = GetEnemyStats(enemy[0]).asteroidCount;
 enemyType = enemy[1]
 
 

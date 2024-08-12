@@ -45,30 +45,30 @@ if (vsp != 0) image_yscale = sign(vsp) * size;
 
 
 if (instance_exists(obj_player)) {
-// Player and escortShip detection and shooting
+// Player and asteroidShip detection and shooting
 var targetX, targetY, targetDistance;
 
-// Determine which target (obj_player or obj_escortShip) is closer
+// Determine which target (obj_player or obj_asteroidShip) is closer
 var player = instance_find(obj_player, 0);
     var playerX = player.x;
     var playerY = player.y;
     var distToPlayer = point_distance(x, y, playerX, playerY);
 
 if (instance_exists(obj_escortShip)) {
-var escort = instance_find(obj_escortShip, 0);
-    var escortX = escort.x;
-    var escortY = escort.y;
-    var distToEscort = point_distance(x, y, escortX, escortY);
+var asteroid = instance_find(obj_escortShip, 0);
+    var asteroidX = asteroid.x;
+    var asteroidY = asteroid.y;
+    var distToasteroid = point_distance(x, y, asteroidX, asteroidY);
 
 
-        if (distToPlayer < distToEscort) {
+        if (distToPlayer < distToasteroid) {
             targetX = playerX;
             targetY = playerY;
             targetDistance = distToPlayer;
         } else {
-            targetX = escortX;
-            targetY = escortY;
-            targetDistance = distToEscort;
+            targetX = asteroidX;
+            targetY = asteroidY;
+            targetDistance = distToasteroid;
         }
 }
 else {

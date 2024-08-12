@@ -2,7 +2,7 @@ if (global.isPaused) {
     // If the game is paused, exit the step event
     exit;
 }
-EscortMovement();
+asteroidMovement();
 var currentY = floor(y); //y is set as a floating point number, convert for ==.
 
 if (currentY == (room_height - (triggerDistance * triggerNumber))) {

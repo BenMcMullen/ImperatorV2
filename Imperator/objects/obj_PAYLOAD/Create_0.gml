@@ -1,4 +1,4 @@
-
+SpawnPayloadObstacles(3, 6);
 payloadInRange = false;
 var player = instance_find(obj_player, 0);
 

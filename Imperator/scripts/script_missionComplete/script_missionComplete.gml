@@ -35,8 +35,8 @@ switch (levelType) {
         triggerEnd = HuntingMissionRequirementsMet();
         break;
         
-    case "Escort Detail":
-        triggerEnd = EscortMissionRequirementsMet();
+    case "asteroid Detail":
+        triggerEnd = asteroidMissionRequirementsMet();
         break;
 		
 	case "Shield Beacons":
@@ -90,8 +90,8 @@ return triggerEnd;
 		return false;
 	}
 	
-	function EscortMissionRequirementsMet(){
-		if (global.escortWarpReached == true) {
+	function asteroidMissionRequirementsMet(){
+		if (global.asteroidWarpReached == true) {
 			return true;	
 		}
 			return false;

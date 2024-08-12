@@ -1,6 +1,6 @@
 
-if (escortDamage >= hp) {
+if (asteroidDamage >= hp) {
 	
-instance_change(obj_escortExplosion,true);
+instance_change(obj_asteroidExplosion,true);
 
 }

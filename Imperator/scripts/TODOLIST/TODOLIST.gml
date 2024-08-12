@@ -105,7 +105,7 @@ Specific targets- unlimited waves of weak ships, gotta kill the primary targets 
 
 Recon, scout and document areas without being discovered.
 
-Escort missions. 
+asteroid missions. 
 
 Asteroid Breaker overloads shields temporarily when hitting other shields
 

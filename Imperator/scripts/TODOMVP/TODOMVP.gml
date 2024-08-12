@@ -26,13 +26,13 @@ ENEMY TYPES ADD AT LEAST 3 MORE
 FINAL BOSS
 
 You are carrying a bomb which will replace secondary. Can be release when it range or some target.
-Particle cannons- i want as many as the rank we are at. They should fire on the same intervals, but they should 
-come from a different direction each time.
+
 
 At start of level set asteroids and ally/enemy frigates moving. its a time level so that solves waiting t hem out.
 Spawn at different points on y axis. Add zoomout to camera to take in the scope of the mission.
 
-No small asteroids.
+Fix spawning of frigates so they don't interact. Add movement to giant asteroids
+Asteroids needs random but still slow movement. They have hp, and are targeted by frigates. 
 
 Queen Bees come from enemy frigates when you get within range of them- can rarely be avoided if at all. 
 

@@ -33,10 +33,10 @@ if (instance_exists(obj_player)) {
 		
 		
             // ATTACKING LOGIC
-            // Player and escortShip detection and shooting
+            // Player and asteroidShip detection and shooting
             var targetX, targetY, targetDistance;
 
-            // Determine which target (obj_player or obj_escortShip) is closer
+            // Determine which target (obj_player or obj_asteroidShip) is closer
             var playerX = player.x;
             var playerY = player.y;
             var distToPlayer = point_distance(x, y, playerX, playerY);

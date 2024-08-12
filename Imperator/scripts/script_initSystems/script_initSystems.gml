@@ -545,11 +545,11 @@ global.engines[0] = EngineConfig(
 
 global.engines[1] = EngineConfig(
     "Advanced Engine",      // Name
-    5.0,                    // Boost Speed
+    15.0,                    // Boost Speed
     5.0,                    // Speed
     1,                      // Cooldown
 	2,						// Burnup
-	2000,					// Fuel Capacity
+	20000,					// Fuel Capacity
     spr_basicTest_1,        // Shop Sprite
     global.systemStatus[29] // System Status
 );

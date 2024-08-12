@@ -34,10 +34,8 @@ if (instance_exists(obj_player) && ionDamage <=0) {
 		
 		
             // ATTACKING LOGIC
-            // Player and escortShip detection and shooting
             var targetX, targetY, targetDistance;
 
-            // Determine which target (obj_player or obj_escortShip) is closer
             var playerX = player.x;
             var playerY = player.y;
             var distToPlayer = point_distance(x, y, playerX, playerY);

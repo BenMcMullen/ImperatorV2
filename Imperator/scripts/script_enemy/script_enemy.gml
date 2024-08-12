@@ -1,5 +1,21 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function GetRandomPayloadDefenseEnemyType() {
+	
+     var target = ["Frigate Defense Hornet", spr_enemyFrigateDefenseHornet, obj_enemyHornetPlasma]
+	 
+    return target;
+}
+
+function GetRandomPayloadEnemyType() {
+     var options = [ //typeString, sprite, column, row, projectile
+        ["Frigate Wasp", spr_enemyWasp,obj_enemyWaspPlasma],
+        ["Frigate Hornet", spr_enemyHornet,obj_enemyHornetPlasma]
+    ];
+    var index = irandom(array_length(options) - 1);
+    return options[index];
+}
+
 function GetRandomFrigateDefenseEnemyType() {
 	
      var target = ["Frigate Defense Hornet", spr_enemyFrigateDefenseHornet, obj_enemyHornetPlasma]
@@ -43,10 +59,10 @@ function GetRandomHuntingEnemyType() {
 }
 
 
-function GetRandomEscortEnemyType() {
+function GetRandomescortEnemyType() {
      var options = [ //typeString, sprite, column, row
-        ["Escort Wasp", spr_enemyWasp, obj_enemyWaspPlasma],
-        ["Escort Hornet", spr_enemyHornet, obj_enemyHornetPlasma]
+        ["asteroid Wasp", spr_enemyWasp, obj_enemyWaspPlasma],
+        ["asteroid Hornet", spr_enemyHornet, obj_enemyHornetPlasma]
     ];
     var index = irandom(array_length(options) - 1);
     return options[index];
@@ -69,7 +85,7 @@ function GetEnemyStats(enemyType) {
 		enemySpeed: 0,
         hp: 0,
 		spawnCount: 0,
-		escortCount: 0,
+		asteroidCount: 0,
 		hydraCount: 0,
 		startingSquadSize: 0,
 		ionResistance: 0,
@@ -99,7 +115,7 @@ function GetEnemyStats(enemyType) {
             enemy.detectionRange = 11000 + ((1000 * rankDifficulty) * levelDifficulty);
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
             enemy.hp = round((1 * rankDifficulty) * levelDifficulty)
-			enemy.escortCount = 1
+			enemy.asteroidCount = 1
 			enemy.ionResistance = 1;
             break;
 			
@@ -151,7 +167,7 @@ function GetEnemyStats(enemyType) {
 			enemy.ionResistance = 5;
             break;
 		
-		 case "Escort Wasp":
+		 case "asteroid Wasp":
        		enemy.shootRange = (450 * rankDifficulty) * levelDifficulty;
             enemy.fireRate = 6 / (rankDifficulty * levelDifficulty);
             enemy.capacity = round((20 * rankDifficulty) * levelDifficulty);
@@ -160,11 +176,11 @@ function GetEnemyStats(enemyType) {
 			enemy.enemySpeed = round((8 * rankDifficulty) * levelDifficulty)
             enemy.hp = round((1 * rankDifficulty) * levelDifficulty)
 			enemy.spawnCount = round((8 * rankDifficulty) * levelDifficulty)
-			enemy.escortCount = 1
+			enemy.asteroidCount = 1
 			enemy.ionResistance = 1;
             break;
 			
-		  case "Escort Hornet":
+		  case "asteroid Hornet":
           	enemy.shootRange = (900 * rankDifficulty) * levelDifficulty;
             enemy.fireRate = 5 / (rankDifficulty * levelDifficulty);
             enemy.capacity = round((30 * rankDifficulty) * levelDifficulty);

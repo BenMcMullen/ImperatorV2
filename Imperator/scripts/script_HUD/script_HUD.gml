@@ -24,9 +24,9 @@ function GetLevelHUDInstructions(levelType, levelPhase) {
             } 
             break;
             
-        case "Escort Detail":
+        case "asteroid Detail":
             if (levelPhase == 1) {
-                phaseString = "Escort the passenger ship safely to the warp.";
+                phaseString = "asteroid the passenger ship safely to the warp.";
 			}
 			 if (levelPhase == 2) {
                 phaseString = "Incoming Enemy Sqaudron!";

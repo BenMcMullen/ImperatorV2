@@ -5,8 +5,21 @@ if (global.isPaused) {
 
 
 // Adjust the sprite based on the size
+switch (size) {
+    case 1:
+        size = 1
+        break;
+    case 2:
+        size = 2
+        break;
+    case 3:
+        size = 3
+        break;
+}
 
 
+image_xscale = size;
+image_yscale = size;
 
 // Rotate the asteroid for visual effect
 image_angle += rotationSpeed;

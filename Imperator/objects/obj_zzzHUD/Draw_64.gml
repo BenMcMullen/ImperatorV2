@@ -115,9 +115,9 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
         }
 		
 		with (obj_escortShip) {
-            var escortX = (x - view_x) / sensorWidth * minimap_width;
-            var escortY = (y - view_y) / sensorHeight * minimap_height;
-            draw_sprite(spr_miniMapEscort, 0, escortX, escortY); // Adjust the enemy icon sprite as needed	
+            var asteroidX = (x - view_x) / sensorWidth * minimap_width;
+            var asteroidY = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapEscort, 0, asteroidX, asteroidY); // Adjust the enemy icon sprite as needed	
 	   }
 	   with (obj_beaconBeacon) {
             var beaconX = (x - view_x) / sensorWidth * minimap_width;
@@ -132,7 +132,18 @@ if (room != room_menu && room != room_intro && instance_exists(obj_player)) {
             draw_sprite(spr_miniMapAsteroid, 0, asteroidX, asteroidY); // Adjust the player icon sprite as needed
 			 }
 		}
-		
+		 with (obj_payloadAsteroid) {
+			 if (sensorSensitivity >= 2) {
+            var asteroidX = (x - view_x) / sensorWidth * minimap_width;
+            var asteroidY = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapPayloadAsteroid, 0, asteroidX, asteroidY); // Adjust the player icon sprite as needed
+			 }
+		}
+		with (obj_payloadEnemyFrigateShip) {
+            var warpX = (x - view_x) / sensorWidth * minimap_width;
+            var warpY = (y - view_y) / sensorHeight * minimap_height;
+            draw_sprite(spr_miniMapFrigate, 0, warpX + 12, warpY); // Adjust the hangar icon sprite as needed
+        }
 		// Draw the factory
 		with (obj_beaconFactory) {
             var factoryX = (x - view_x) / sensorWidth * minimap_width;

@@ -71,10 +71,14 @@ function InitLevels() {
         };
     }
     
-	function PayloadLevelTypeConfig(_type, _payloadTime) {
+	function PayloadLevelTypeConfig(_type, _payloadTime, _frigateEnemyQuantity, _detectionRange, _generatorHp, _turretFireRate) {
         return {
 			type: _type,
-            payloadTime: _payloadTime
+            payloadTime: _payloadTime,
+			frigateEnemyQuantity: _frigateEnemyQuantity,
+			detectionRange: _detectionRange,
+			generatorHp: _generatorHp,
+			turretFireRate: _turretFireRate,
         };
     }
 	
@@ -108,11 +112,11 @@ function InitLevels() {
         };
     }
 
-    function EscortLevelTypeConfig(_type, _damageCap, _escortSpeed) {
+    function asteroidLevelTypeConfig(_type, _damageCap, _asteroidSpeed) {
         return {
             type: _type,
 			damageCap: _damageCap,
-			escortSpeed: _escortSpeed,
+			asteroidSpeed: _asteroidSpeed,
         };
     }
 	
@@ -129,14 +133,24 @@ function InitLevels() {
 	
 		global.levelTypePayload = [];
 	
+
+	
 	  global.levelTypePayload[0] = PayloadLevelTypeConfig(
-        "Payload Delivery",
-		5400
+        "Payload Delivery",		// _type
+		5400,		//_payloadTime
+		12,				//_frigateEnemyQuantity
+		2000,		//_detectionRange
+		3000,		// _generatorHp
+		12			//_turretFireRate
     );
 	
 	 global.levelTypePayload[1] = PayloadLevelTypeConfig(
         "Payload Delivery",
-		5000
+		5000,
+		16,
+		250,		//_generatorHp
+		3000,
+		10
     );
 	
 	global.levelTypeFrigate = [];
@@ -189,14 +203,14 @@ function InitLevels() {
 
     global.levelTypeEscort = [];
 	
-    global.levelTypeEscort[0] = EscortLevelTypeConfig(
-        "Escort Detail",
+    global.levelTypeEscort[0] = asteroidLevelTypeConfig(
+        "asteroid Detail",
 		150,
 		5
     );
 
-    global.levelTypeEscort[1] = EscortLevelTypeConfig(
-        "Escort Detail",
+    global.levelTypeEscort[1] = asteroidLevelTypeConfig(
+        "asteroid Detail",
 		100,
 		8
     );
@@ -265,8 +279,8 @@ function InitLevels() {
 	global.enemyTypes[1] = "Hunting Hornet";
 	global.enemyTypes[2] = "Beacon Wasp";
 	global.enemyTypes[3] = "Beacon Hornet";
-	global.enemyTypes[4] = "Escort Wasp";
-	global.enemyTypes[5] = "Escort Hornet";
+	global.enemyTypes[4] = "asteroid Wasp";
+	global.enemyTypes[5] = "asteroid Hornet";
 	global.enemyTypes[6] = "Surgical Wasp";
 	global.enemyTypes[7] = "Surgical Hornet";
 	global.enemyTypes[8] = "Surgical Primary Target";

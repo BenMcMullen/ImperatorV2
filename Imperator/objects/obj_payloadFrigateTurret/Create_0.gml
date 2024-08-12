@@ -1,0 +1,11 @@
+ionDamage = 0;
+depth = -2
+moveSpeed = 0.5
+parent_frigate = other;
+shotsFired = 0
+shootAngle = 360; 
+primaryDelay = 0;
+fireRate = GetCurrentLevel().levelType.turretFireRate;
+cooldownTimer = 0;
+cooldownDuration = 5;
+capacity = 50;

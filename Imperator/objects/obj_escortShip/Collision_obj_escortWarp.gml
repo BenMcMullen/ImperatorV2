@@ -1,1 +1,1 @@
-global.escortWarpReached = true;
+global.asteroidWarpReached = true;
